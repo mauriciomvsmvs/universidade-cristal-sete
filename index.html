@@ -15,23 +15,23 @@ body {
 .container { max-width: 1200px; margin: 0 auto; }
 .header {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center;
 }
 .selo-universidade {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 20px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
   display: block;
 }
 .logo { 
-  font-size: 24px; 
+  font-size: 22px; 
   font-weight: bold; 
   color: #1a3d8f; 
-  margin-top: 10px;
+  margin-top: 8px;
 }
 .version { font-size: 11px; color: #999; margin-top: 5px; }
 .stats-grid {
@@ -574,15 +574,16 @@ body {
   /* Seção Nossos Valores */
   .valores-section {
     background: linear-gradient(135deg, #1a3d8f 0%, #0d2660 100%);
-    padding: 25px 20px;
+    padding: 18px;
     border-radius: 12px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
+    border-bottom: 4px solid #E87722;
   }
   
   .valores-image {
-    max-width: 700px;
+    max-width: 380px;
     width: 100%;
     height: auto;
     display: block;
@@ -590,6 +591,12 @@ body {
   }
   
   @media (max-width: 768px) {
+    .valores-image {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
     .valores-image {
       max-width: 100%;
     }
