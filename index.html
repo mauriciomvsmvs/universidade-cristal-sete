@@ -604,8 +604,8 @@ function saveData() {
 const PDF_LINKS = {
   1: "https://drive.google.com/file/d/1C5G7IdjNGpWyo7k4dfEdG1gZaXbFSSHq/preview?usp=drive_link",
   2: "https://drive.google.com/file/d/1CLK3RiW4a2hJJg3lFbNpgYCrDn62IAGT/preview?usp=drive_link",
-  3: "https://drive.google.com/file/d/1jsTAl_0ytWEwJDZ-auANS-Cklv2BjO8S/preview?usp=drive_link",
-  4: "https://drive.google.com/file/d/1M7k8rSgL_2H0zVDsiXzBv-aM8XqUVA03/preview?usp=drive_link",
+  3: "https://drive.google.com/file/d/1M7k8rSgL_2H0zVDsiXzBv-aM8XqUVA03/preview?usp=drive_link",
+  4: "https://drive.google.com/file/d/1jsTAl_0ytWEwJDZ-auANS-Cklv2BjO8S/preview?usp=drive_link",
   5: "https://drive.google.com/file/d/1DhxsQbEtK0RVMhFl1kMlvxBxhOI9ZFZU/preview?usp=drive_link",
   6: "https://drive.google.com/file/d/1N60EjuQFmMRlURWUwZpptf68F63O9uJ1/preview?usp=drive_link",
   7: "https://drive.google.com/file/d/1JDGxonLTyhXX3UyIVecrniTjPkV8s5ci/preview?usp=drive_link",
@@ -676,13 +676,13 @@ const VIDEOS = {
     {title: "Blindex; Sistemas de Envidraçamento Completos", url: "https://www.youtube.com/watch?v=o1_WVg9O-PI", duration: "1:00"},
     {title: "Todo Vidro Temperado é Blindex?", url: "https://www.youtube.com/watch?v=ozpINihKM_c", duration: "3:04"}
   ],  // Franquias Blindex
-  3: [],  // Características Vidro Temperado
-  4: [
+  3: [
     {title: "Cristal Sete: Bastidores do Vidro Temperado", url: "https://www.youtube.com/watch?v=7ywFhllHHis", duration: "4:31"},
     {title: "Diferença Entre Vidro Laminado e Vidro Temperado", url: "https://www.youtube.com/watch?v=lM3QiOR4KK4", duration: "4:27"},
     {title: "Como Se Fabrica o Vidro Float", url: "https://www.youtube.com/watch?v=KiSYdFXPJgc", duration: "8:53"},
     {title: "Como São Fabricados os Espelhos", url: "https://www.youtube.com/watch?v=FBGDuYQccRY", duration: "8:37"}
   ],  // Do Vidro Bruto ao Acabado
+  4: [],  // Características Vidro Temperado
   5: [
     {title: "Como Escolher o Vidro Para o Box", url: "https://www.youtube.com/watch?v=bmYalUICYvg", duration: "3:48"},
     {title: "Box Blindex Mais Segurança", url: "https://www.youtube.com/watch?v=m3X8DTNTXQk", duration: "3:45"}
@@ -722,18 +722,18 @@ const QUIZZES = {
     {q: "O sistema Blindex® se diferencia no mercado principalmente por:", opts: ["Trabalhar com menor custo", "Ter poucas unidades", "Garantir padrão de qualidade uniforme entre franqueados", "Produzir apenas vidro comum"], correct: 2}
   ],
   3: [
-    {q: "Os chamados 'defeitos inerentes' do vidro temperado são:", opts: ["Falhas de fabricação que exigem substituição imediata", "Problemas causados exclusivamente pela instalação", "Características naturais do processo de têmpera", "Indícios de baixa qualidade do material"], correct: 2},
-    {q: "A anisotropia no vidro temperado ocorre devido a:", opts: ["Variações de temperatura ambiente", "Tensões internas geradas no processo de têmpera", "Defeitos na matéria-prima", "Falta de controle no resfriamento"], correct: 1},
-    {q: "Em relação ao empenamento do vidro temperado, é correto afirmar que:", opts: ["O vidro temperado permanece perfeitamente plano após o processo", "Qualquer deformação é considerada defeito", "Ondulações podem ocorrer, mas são aceitas dentro da norma", "O empenamento ocorre apenas em vidros laminados"], correct: 2},
-    {q: "Segundo a NBR 14698, defeitos pontuais com tamanho inferior a 0,2 mm:", opts: ["Devem ser considerados defeitos graves", "São tolerados apenas na borda", "Não são considerados defeitos", "Devem ser analisados apenas na área central"], correct: 2},
-    {q: "Após o processo de têmpera, o vidro:", opts: ["Pode ser ajustado com ferramentas específicas", "Pode sofrer pequenas alterações dimensionais", "Pode ser retrabalhado nas bordas", "Não pode ser cortado ou furado"], correct: 3}
-  ],
-  4: [
     {q: "A principal matéria-prima do vidro é:", opts: ["Calcário", "Barrilha", "Sílica", "Dolomita"], correct: 2},
     {q: "O processo Float consiste em:", opts: ["Resfriamento rápido", "Flutuação do vidro sobre estanho", "Mistura de materiais", "Corte manual"], correct: 1},
     {q: "O vidro extra clear possui:", opts: ["Mais ferro", "Menos transparência", "Baixo teor de ferro", "Mais resistência"], correct: 2},
     {q: "Vidros texturizados são feitos por:", opts: ["Pintura", "Laminação a frio", "Rolos com padrão", "Polimento químico"], correct: 2},
     {q: "O vidro acidato é obtido por:", opts: ["Alta temperatura", "Tratamento químico", "Corte especial", "Mistura metálica"], correct: 1}
+  ],
+  4: [
+    {q: "Os chamados 'defeitos inerentes' do vidro temperado são:", opts: ["Falhas de fabricação que exigem substituição imediata", "Problemas causados exclusivamente pela instalação", "Características naturais do processo de têmpera", "Indícios de baixa qualidade do material"], correct: 2},
+    {q: "A anisotropia no vidro temperado ocorre devido a:", opts: ["Variações de temperatura ambiente", "Tensões internas geradas no processo de têmpera", "Defeitos na matéria-prima", "Falta de controle no resfriamento"], correct: 1},
+    {q: "Em relação ao empenamento do vidro temperado, é correto afirmar que:", opts: ["O vidro temperado permanece perfeitamente plano após o processo", "Qualquer deformação é considerada defeito", "Ondulações podem ocorrer, mas são aceitas dentro da norma", "O empenamento ocorre apenas em vidros laminados"], correct: 2},
+    {q: "Segundo a NBR 14698, defeitos pontuais com tamanho inferior a 0,2 mm:", opts: ["Devem ser considerados defeitos graves", "São tolerados apenas na borda", "Não são considerados defeitos", "Devem ser analisados apenas na área central"], correct: 2},
+    {q: "Após o processo de têmpera, o vidro:", opts: ["Pode ser ajustado com ferramentas específicas", "Pode sofrer pequenas alterações dimensionais", "Pode ser retrabalhado nas bordas", "Não pode ser cortado ou furado"], correct: 3}
   ],
   5: [
     {q: "O vidro temperado é considerado vidro de segurança porque:", opts: ["É mais leve que o vidro comum", "Não quebra em nenhuma situação", "Pode ser cortado após instalado", "Fragmenta em pedaços pequenos e menos cortantes"], correct: 3},
