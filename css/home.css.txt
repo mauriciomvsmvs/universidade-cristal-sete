@@ -1,0 +1,447 @@
+/* ============================================
+   UNIVERSIDADE CRISTAL SETE - ESTILOS DA HOME
+   ============================================ */
+
+/* HERO SECTION */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(43, 95, 166, 0.1) 0%, rgba(30, 58, 95, 0.05) 100%);
+    pointer-events: none;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ANIMAÇÃO DO LOGO NO HERO */
+.hero-section img {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* CARDS DE VALORES */
+.value-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--primary);
+    transition: height 0.3s ease;
+}
+
+.value-card:hover::before {
+    height: 100%;
+}
+
+.value-card:hover {
+    border-left: 4px solid transparent;
+}
+
+/* ÍCONES DOS VALORES */
+.value-card svg {
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover svg {
+    transform: scale(1.1);
+}
+
+/* SEÇÃO DE METODOLOGIA */
+.metodologia-step {
+    position: relative;
+}
+
+.metodologia-step::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary), transparent);
+    transform: translateY(-50%);
+}
+
+.metodologia-step:last-child::after {
+    display: none;
+}
+
+/* NÚMERO DO PASSO */
+.metodologia-step .step-number {
+    position: relative;
+    z-index: 1;
+}
+
+.metodologia-step .step-number::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(43, 95, 166, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* CTA SECTION */
+.cta-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -25%;
+    width: 150%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: cta-glow 8s ease-in-out infinite;
+}
+
+@keyframes cta-glow {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+}
+
+/* BOTÕES DA HOME */
+.hero-section .btn-primary,
+.hero-section .btn-secondary {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.hero-section .btn-primary {
+    animation-delay: 0.3s;
+}
+
+.hero-section .btn-secondary {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* EFEITO DE VIDRO (GLASSMORPHISM) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* GRID DE VALORES - ANIMAÇÃO ESCALONADA */
+.value-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.value-card:nth-child(1) { animation-delay: 0.1s; }
+.value-card:nth-child(2) { animation-delay: 0.2s; }
+.value-card:nth-child(3) { animation-delay: 0.3s; }
+.value-card:nth-child(4) { animation-delay: 0.4s; }
+.value-card:nth-child(5) { animation-delay: 0.5s; }
+.value-card:nth-child(6) { animation-delay: 0.6s; }
+.value-card:nth-child(7) { animation-delay: 0.7s; }
+
+/* ÍCONES DA MISSÃO */
+.mission-icon {
+    transition: all 0.3s ease;
+}
+
+.mission-icon:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* SEÇÃO DE PARCEIROS */
+.partners-section img {
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.partners-section img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ELEMENTOS GEOMÉTRICOS DECORATIVOS */
+.geometric-bg {
+    position: relative;
+}
+
+.geometric-bg::before,
+.geometric-bg::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, rgba(43, 95, 166, 0.05) 0%, transparent 100%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    pointer-events: none;
+}
+
+.geometric-bg::before {
+    top: -150px;
+    left: -150px;
+    animation: rotate-geometric 20s linear infinite;
+}
+
+.geometric-bg::after {
+    bottom: -150px;
+    right: -150px;
+    animation: rotate-geometric 20s linear infinite reverse;
+}
+
+@keyframes rotate-geometric {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .metodologia-step::after {
+        display: none;
+    }
+    
+    .value-card {
+        animation-delay: 0s !important;
+    }
+}
+
+/* ESTADO DE CARREGAMENTO */
+.loading-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--gray-200);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* SEÇÃO DE ESTATÍSTICAS */
+.stats-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.stat-item {
+    position: relative;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* TOOLTIP CUSTOMIZADO */
+.info-tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.info-tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    padding: 0.5rem 1rem;
+    background: var(--gray-900);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.info-tooltip:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* SEÇÃO DE DEPOIMENTOS (PARA FUTURA EXPANSÃO) */
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 8rem;
+    color: var(--primary);
+    opacity: 0.1;
+    font-family: Georgia, serif;
+}
+
+/* BOTÃO DE SCROLL TO TOP */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(43, 95, 166, 0.3);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(43, 95, 166, 0.4);
+}
+
+/* ANIMAÇÃO DE ENTRADA PARA SEÇÕES */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* GRID RESPONSIVO DE VALORES */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* MODO ESCURO (PREPARAÇÃO PARA FUTURA IMPLEMENTAÇÃO) */
+@media (prefers-color-scheme: dark) {
+    /* Estilos para modo escuro podem ser adicionados aqui */
+}

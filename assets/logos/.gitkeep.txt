@@ -1,0 +1,5 @@
+# Este arquivo existe apenas para garantir que a pasta logos/ 
+# seja incluída no repositório Git, mesmo estando vazia.
+# 
+# O Git não rastreia pastas vazias, apenas arquivos.
+# Quando você adicionar suas logos aqui, pode deletar este arquivo.
