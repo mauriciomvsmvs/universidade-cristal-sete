@@ -4,8 +4,22 @@
 
 // FUNÇÕES DO PLAYER DE VÍDEO
 
+function hideAllPlayers() {
+    const videoPlayer = document.getElementById('video-player');
+    const slidePlayer = document.getElementById('slide-player');
+    const quizPlayer = document.getElementById('quiz-player');
+    const loadingPlayer = document.getElementById('loading-player');
+    
+    if (videoPlayer) videoPlayer.classList.add('hidden');
+    if (slidePlayer) slidePlayer.classList.add('hidden');
+    if (quizPlayer) quizPlayer.classList.add('hidden');
+    if (loadingPlayer) loadingPlayer.classList.add('hidden');
+}
+
 function initVideoPlayer(videoUrl) {
     console.log('Inicializando player de vídeo:', videoUrl);
+    
+    hideAllPlayers();
     
     const videoPlayer = document.getElementById('video-player');
     const videoIframe = document.getElementById('video-iframe');
@@ -67,6 +81,8 @@ function stopVideo() {
 function initSlidePlayer(slideUrl) {
     console.log('Inicializando player de slides:', slideUrl);
     
+    hideAllPlayers();
+    
     const slidePlayer = document.getElementById('slide-player');
     const slideIframe = document.getElementById('slide-iframe');
     
@@ -119,6 +135,33 @@ function convertToSlideEmbedUrl(url) {
     
     // Já é URL embed ou outra plataforma
     return url;
+}
+
+// FUNÇÕES DO PLAYER DE QUIZ
+
+function initQuizPlayer(perguntas) {
+    console.log('🎯 Inicializando quiz com', perguntas.length, 'perguntas');
+    
+    hideAllPlayers();
+    
+    const quizPlayer = document.getElementById('quiz-player');
+    
+    if (!quizPlayer) {
+        console.error('Elemento do quiz player não encontrado');
+        return;
+    }
+    
+    // Mostrar o quiz
+    quizPlayer.classList.remove('hidden');
+    
+    // Iniciar o quiz (função definida em quiz-modern.js)
+    if (typeof iniciarQuiz === 'function') {
+        iniciarQuiz(perguntas);
+    } else {
+        console.error('Função iniciarQuiz não encontrada. Verifique se quiz-modern.js está carregado.');
+    }
+    
+    console.log('✅ Quiz inicializado com sucesso');
 }
 
 // FUNÇÕES DE CONTROLE DE REPRODUÇÃO
