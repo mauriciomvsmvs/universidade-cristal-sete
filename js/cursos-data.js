@@ -59,6 +59,62 @@ const cursos = [
                         url: "https://www.youtube.com/watch?v=tWMhQh4blbI",
                         duracao: "10min",
                         descricao: "Como a Cristal Sete cresceu e se expandiu ao longo dos anos."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Nossa História",
+                        perguntas: [
+                            {
+                                pergunta: "Quem fundou a primeira vidraçaria de Apucarana, dando início à história da Cristal Sete?",
+                                opcoes: [
+                                    "Sandro Henriques",
+                                    "Marcus Pezotti",
+                                    "Milton Bastos Henriquis",
+                                    "Rosângela Henriques"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Em que ano nasceu oficialmente a Cristal Sete?",
+                                opcoes: [
+                                    "1984",
+                                    "1999",
+                                    "2003",
+                                    "2009"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual foi um dos grandes diferenciais da Cristal Sete logo no início de sua operação?",
+                                opcoes: [
+                                    "Produção de esquadrias de alumínio",
+                                    "Atendimento ao consumidor final",
+                                    "Primeiro forno vertical com tecnologia 100% nacional",
+                                    "Importação de vidros europeus"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O que aconteceu em 2009 na história da Cristal Sete?",
+                                opcoes: [
+                                    "Conquista do selo Inmetro",
+                                    "Construção da nova sede",
+                                    "Criação da Visatta",
+                                    "Aquisição das franquias Blindex® do Paraná e interior de São Paulo"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Qual é o foco principal de atendimento da Cristal Sete desde o início?",
+                                opcoes: [
+                                    "Consumidor final",
+                                    "Grandes construtoras",
+                                    "Vidraçarias e esquadrias",
+                                    "Arquitetos e engenheiros"
+                                ],
+                                correta: 2
+                            }
+                        ]
                     }
                 ]
             }
