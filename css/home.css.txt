@@ -445,3 +445,29 @@
 @media (prefers-color-scheme: dark) {
     /* Estilos para modo escuro podem ser adicionados aqui */
 }
+
+/* ============================================
+   AJUSTE - LOGO MAIOR NA HOME
+   ============================================ */
+
+.hero-section img {
+    width: 280px !important;
+    height: 280px !important;
+    margin-bottom: 2rem;
+}
+
+/* No tablet */
+@media (min-width: 768px) {
+    .hero-section img {
+        width: 350px !important;
+        height: 350px !important;
+    }
+}
+
+/* No desktop */
+@media (min-width: 1024px) {
+    .hero-section img {
+        width: 400px !important;
+        height: 400px !important;
+    }
+}
