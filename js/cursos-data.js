@@ -12,8 +12,64 @@
    ============================================ */
 
 const cursos = [
+    // ============================================
+    // CURSO INSTITUCIONAL (OBRIGATÓRIO)
+    // ============================================
     {
         id: 1,
+        titulo: "Bem-vindo à Cristal Sete",
+        descricao: "Conheça a história, valores e cultura da Cristal Sete. Este curso é obrigatório para todos os novos colaboradores e apresenta como tudo começou, nossos principais marcos e o crescimento da empresa ao longo dos anos.",
+        categoria: "Institucional",
+        nivel: "Iniciante",
+        duracao: "30min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-bem-vindo.jpg",
+        obrigatorio: true,
+        objetivos: [
+            "Conhecer a história e origem da Cristal Sete",
+            "Entender os principais marcos e conquistas da empresa",
+            "Compreender o crescimento e expansão ao longo dos anos",
+            "Conectar-se com a cultura e valores organizacionais"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Nossa História",
+                aulas: [
+                    {
+                        tipo: "video",
+                        titulo: "Como Tudo Começou",
+                        url: "https://www.youtube.com/watch?v=SFSDhaNYpfM",
+                        duracao: "10min",
+                        descricao: "Conheça a origem da Cristal Sete, os fundadores e como tudo começou."
+                    },
+                    {
+                        tipo: "slide",
+                        titulo: "Marcos Importantes",
+                        url: "https://docs.google.com/presentation/d/1RIKbRm4AFEHd8cI3sdfY_Tqwqe3YXMFl/edit?slide=id.p1#slide=id.p1",
+                        slides: 10,
+                        descricao: "Os principais marcos e conquistas que moldaram nossa trajetória."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Crescimento e Expansão",
+                        url: "https://www.youtube.com/watch?v=tWMhQh4blbI",
+                        duracao: "10min",
+                        descricao: "Como a Cristal Sete cresceu e se expandiu ao longo dos anos."
+                    }
+                ]
+            }
+        ]
+    },
+    
+    // ============================================
+    // CURSOS TÉCNICOS
+    // ============================================
+    {
+        id: 2,
         titulo: "Técnicas de Instalação de Box de Vidro",
         descricao: "Aprenda as melhores práticas para instalação de box de vidro temperado, desde a medição até o acabamento final.",
         categoria: "Técnico",
@@ -146,7 +202,7 @@ const cursos = [
     },
     
     {
-        id: 2,
+        id: 3,
         titulo: "Excelência no Atendimento ao Cliente",
         descricao: "Desenvolva habilidades essenciais para proporcionar um atendimento excepcional e fidelizar clientes.",
         categoria: "Vendas",
@@ -488,7 +544,7 @@ const cursos = [
     },
     
     {
-        id: 5,
+        id: 4,
         titulo: "Controle de Qualidade em Vidros",
         descricao: "Aprenda a garantir a qualidade dos produtos de vidro desde o recebimento até a entrega final.",
         categoria: "Qualidade",
