@@ -490,3 +490,23 @@
 .hero-section p {
     font-family: 'Montserrat', sans-serif !important;
 }
+
+/* ============================================
+   IMAGEM DOS VALORES COM COR AZUL
+   ============================================ */
+
+.valores-img {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(37%) sepia(58%) saturate(1247%) hue-rotate(195deg) brightness(92%) contrast(93%);
+}
+
+/* No mobile - menor */
+@media (max-width: 768px) {
+    .valores-img {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+}
