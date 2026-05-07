@@ -4,47 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universidade Cristal Sete - Conhecimento com Propósito</title>
-    <meta name="description" content="Plataforma de treinamento e desenvolvimento para colaboradores da Cristal Sete">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- CSS Global -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/logos/universidade.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Header/Navegação -->
-    <header class="header">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
+<body class="font-inter bg-gray-50">
+    
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-3">
-                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12 w-12">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12">
                     <div>
                         <h1 class="text-xl font-bold text-primary">Universidade Cristal Sete</h1>
                         <p class="text-xs text-gray-600">Conhecimento com Propósito</p>
                     </div>
-                </a>
+                </div>
                 
                 <!-- Menu Desktop -->
-                <nav class="hidden md:flex items-center gap-6">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="index.html" class="nav-link active">Início</a>
                     <a href="cursos.html" class="nav-link">Cursos</a>
                     <a href="meu-perfil.html" class="nav-link">Meu Perfil</a>
-                    <a href="admin.html" class="nav-link">Administração</a>
-                </nav>
+                    <a href="admin.html" class="nav-link">Admin</a>
+                </div>
                 
-                <!-- Botão Mobile Menu -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                <!-- Botão Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -52,263 +41,213 @@
             </div>
             
             <!-- Menu Mobile -->
-            <nav id="mobile-menu" class="mobile-menu">
-                <a href="index.html" class="mobile-menu-link active">Início</a>
-                <a href="cursos.html" class="mobile-menu-link">Cursos</a>
-                <a href="meu-perfil.html" class="mobile-menu-link">Meu Perfil</a>
-                <a href="admin.html" class="mobile-menu-link">Administração</a>
-            </nav>
-        </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Início</a>
+                <a href="cursos.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cursos</a>
+                <a href="meu-perfil.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Meu Perfil</a>
+                <a href="admin.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Admin</a>
+            </div>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container mx-auto px-4 text-center">
-            <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="hero-logo">
-            <h1 class="hero-title">Universidade Cristal Sete</h1>
-            <p class="hero-subtitle">Desenvolvendo talentos, fortalecendo valores e construindo o futuro da excelência em vidros de segurança</p>
-            
-            <div class="flex flex-wrap gap-4 justify-center mt-8">
-                <a href="cursos.html" class="btn-primary px-8 py-3 text-lg rounded-lg font-semibold">
-                    Explorar Cursos
-                </a>
-                <a href="meu-perfil.html" class="btn-secondary px-8 py-3 text-lg rounded-lg font-semibold">
-                    Meu Perfil
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre a Universidade -->
-    <section class="py-16 bg-white">
+    <!-- HERO SECTION -->
+    <section class="hero-section bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Nossa Missão</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-8">
-                    A Universidade Cristal Sete nasceu com o propósito de desenvolver continuamente nossos colaboradores, 
-                    promovendo conhecimento técnico, habilidades de vendas, segurança e liderança. Acreditamos que pessoas 
-                    capacitadas constroem uma empresa mais forte, segura e inovadora.
+                <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-32 mx-auto mb-6 drop-shadow-lg">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Universidade Cristal Sete
+                </h1>
+                <p class="text-xl md:text-2xl mb-4 font-light">
+                    Conhecimento com Propósito
                 </p>
-                
-                <div class="grid md:grid-cols-3 gap-8 mt-12">
-                    <div class="card p-6 text-center">
-                        <div class="text-4xl mb-4">🎓</div>
-                        <h3 class="text-xl font-semibold mb-2">Capacitação Contínua</h3>
-                        <p class="text-gray-600">Treinamentos atualizados com as melhores práticas do mercado</p>
-                    </div>
-                    
-                    <div class="card p-6 text-center">
-                        <div class="text-4xl mb-4">🏆</div>
-                        <h3 class="text-xl font-semibold mb-2">Excelência Profissional</h3>
-                        <p class="text-gray-600">Desenvolvimento de competências técnicas e comportamentais</p>
-                    </div>
-                    
-                    <div class="card p-6 text-center">
-                        <div class="text-4xl mb-4">🚀</div>
-                        <h3 class="text-xl font-semibold mb-2">Crescimento de Carreira</h3>
-                        <p class="text-gray-600">Certificações e trilhas personalizadas para seu desenvolvimento</p>
-                    </div>
+                <p class="text-lg md:text-xl mb-8 opacity-90">
+                    Desenvolvendo talentos, fortalecendo valores e construindo o futuro da excelência em vidros de segurança
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="cursos.html" class="btn-primary px-8 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
+                        Explorar Cursos
+                    </a>
+                    <a href="meu-perfil.html" class="btn-secondary px-8 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
+                        Meu Perfil
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nossos Valores -->
+    <!-- MISSÃO E PROPÓSITO -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Nossa Missão
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Capacitar, desenvolver e inspirar colaboradores da Cristal Sete através de programas 
+                    educacionais estruturados, promovendo crescimento profissional contínuo, excelência técnica 
+                    e alinhamento aos valores organizacionais.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Capacitação Contínua</h3>
+                    <p class="text-gray-600">Programas estruturados de desenvolvimento técnico e comportamental</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Excelência Técnica</h3>
+                    <p class="text-gray-600">Conhecimento aplicado aos mais altos padrões de qualidade</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Cultura de Valores</h3>
+                    <p class="text-gray-600">Reforço constante dos princípios que nos guiam</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALORES ORGANIZACIONAIS -->
+    <!-- VALORES ORGANIZACIONAIS -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nossos Valores</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Os pilares que sustentam nossa cultura organizacional e orientam todas as nossas ações
-                </p>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+                Nossos Valores
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Os pilares que sustentam nossa cultura organizacional e orientam todas as nossas ações
+            </p>
             
             <div class="flex justify-center">
-                <img src="assets/valores.png" alt="Nossos Valores - Cristal Sete" class="valores-img" style="max-width: 900px; width: 100%; height: auto;">
+                <img src="assets/valores.png" alt="Nossos Valores - Cristal Sete" class="max-w-full w-full md:max-w-4xl h-auto">
             </div>
         </div>
     </section>
 
-    <!-- Nossa Metodologia -->
+                            <p class="text-gray-600">Dedicação integral aos objetivos da empresa e crescimento coletivo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODOLOGIA -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nossa Metodologia</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Aprendizado estruturado em trilhas personalizadas para cada função
-                </p>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+                Nossa Metodologia
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Aprendizado estruturado, prático e orientado a resultados
+            </p>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <!-- Passo 1 -->
-                <div class="card p-6 text-center relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+            <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                         1
                     </div>
-                    <div class="mt-6">
-                        <div class="text-4xl mb-4">📚</div>
-                        <h3 class="text-lg font-semibold mb-2">Teoria</h3>
-                        <p class="text-gray-600 text-sm">Conceitos fundamentais e conhecimento técnico</p>
-                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Aprenda</h3>
+                    <p class="text-sm text-gray-600">Conteúdo em vídeo, slides e materiais complementares</p>
                 </div>
                 
-                <!-- Passo 2 -->
-                <div class="card p-6 text-center relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                         2
                     </div>
-                    <div class="mt-6">
-                        <div class="text-4xl mb-4">🎥</div>
-                        <h3 class="text-lg font-semibold mb-2">Vídeos</h3>
-                        <p class="text-gray-600 text-sm">Demonstrações práticas e casos reais</p>
-                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Pratique</h3>
+                    <p class="text-sm text-gray-600">Exercícios, quizzes e atividades práticas</p>
                 </div>
                 
-                <!-- Passo 3 -->
-                <div class="card p-6 text-center relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                         3
                     </div>
-                    <div class="mt-6">
-                        <div class="text-4xl mb-4">✅</div>
-                        <h3 class="text-lg font-semibold mb-2">Avaliação</h3>
-                        <p class="text-gray-600 text-sm">Quizzes e exercícios práticos</p>
-                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Aplique</h3>
+                    <p class="text-sm text-gray-600">Leve o conhecimento para o dia a dia</p>
                 </div>
                 
-                <!-- Passo 4 -->
-                <div class="card p-6 text-center relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                         4
                     </div>
-                    <div class="mt-6">
-                        <div class="text-4xl mb-4">🎓</div>
-                        <h3 class="text-lg font-semibold mb-2">Certificação</h3>
-                        <p class="text-gray-600 text-sm">Reconhecimento do aprendizado</p>
-                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Certifique-se</h3>
+                    <p class="text-sm text-gray-600">Receba seu certificado de conclusão</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Estatísticas -->
-    <section class="py-16 bg-primary text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-5xl font-bold mb-2" id="stat-courses">5</div>
-                    <div class="text-lg opacity-90">Cursos Disponíveis</div>
-                </div>
-                
-                <div>
-                    <div class="text-5xl font-bold mb-2">50+</div>
-                    <div class="text-lg opacity-90">Horas de Conteúdo</div>
-                </div>
-                
-                <div>
-                    <div class="text-5xl font-bold mb-2" id="stat-students">0</div>
-                    <div class="text-lg opacity-90">Alunos Ativos</div>
-                </div>
-                
-                <div>
-                    <div class="text-5xl font-bold mb-2" id="stat-certificates">0</div>
-                    <div class="text-lg opacity-90">Certificados Emitidos</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section class="py-16 bg-white">
+    <!-- CTA FINAL -->
+    <section class="py-16 bg-gradient-to-r from-primary to-primary-dark text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Comece Sua Jornada de Aprendizado Hoje</h2>
-            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Acesse nosso catálogo completo de cursos e trilhas de desenvolvimento profissional
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Pronto para Começar?
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                Explore nossos cursos e dê o próximo passo na sua carreira
             </p>
-            <a href="cursos.html" class="btn-primary px-8 py-3 text-lg rounded-lg font-semibold inline-block">
+            <a href="cursos.html" class="inline-block bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
                 Ver Todos os Cursos
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Coluna 1 -->
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Universidade Cristal Sete</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <h3 class="text-lg font-bold mb-4">Universidade Cristal Sete</h3>
+                    <p class="text-gray-400 text-sm">
                         Desenvolvendo talentos e construindo o futuro da excelência em vidros de segurança.
                     </p>
                 </div>
                 
-                <!-- Coluna 2 -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white text-sm">Início</a></li>
-                        <li><a href="cursos.html" class="text-gray-400 hover:text-white text-sm">Cursos</a></li>
-                        <li><a href="meu-perfil.html" class="text-gray-400 hover:text-white text-sm">Meu Perfil</a></li>
-                        <li><a href="admin.html" class="text-gray-400 hover:text-white text-sm">Administração</a></li>
+                    <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white">Início</a></li>
+                        <li><a href="cursos.html" class="hover:text-white">Cursos</a></li>
+                        <li><a href="meu-perfil.html" class="hover:text-white">Meu Perfil</a></li>
+                        <li><a href="admin.html" class="hover:text-white">Administração</a></li>
                     </ul>
                 </div>
                 
-                <!-- Coluna 3 -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Parceiros</h3>
-                    <div class="flex gap-4 items-center">
-                        <img src="assets/logos/cristal-sete.png" alt="Cristal Sete" class="h-8">
-                        <img src="assets/logos/blindex.png" alt="Blindex" class="h-8">
+                    <h3 class="text-lg font-bold mb-4">Parceiros</h3>
+                    <div class="flex items-center space-x-4">
+                        <img src="assets/logos/cristal-sete.png" alt="Cristal Sete" class="h-8 opacity-80 hover:opacity-100">
+                        <img src="assets/logos/blindex.png" alt="Blindex" class="h-8 opacity-80 hover:opacity-100">
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
                 <p>&copy; 2020-2025 Universidade Cristal Sete. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JAVASCRIPT -->
     <script src="js/navigation.js"></script>
     
-    <!-- Animação de números nas estatísticas -->
-    <script>
-        // Animar contadores das estatísticas
-        function animateCounter(id, target, duration = 2000) {
-            const element = document.getElementById(id);
-            if (!element) return;
-            
-            let start = 0;
-            const increment = target / (duration / 16); // 60fps
-            
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start);
-                }
-            }, 16);
-        }
-        
-        // Animar quando a seção aparecer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter('stat-students', 150);
-                    animateCounter('stat-certificates', 89);
-                    observer.disconnect();
-                }
-            });
-        });
-        
-        const statsSection = document.querySelector('.bg-primary');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
-    </script>
 </body>
 </html>
