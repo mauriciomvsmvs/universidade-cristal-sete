@@ -4,36 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universidade Cristal Sete - Conhecimento com Propósito</title>
+    <meta name="description" content="Plataforma de treinamento e desenvolvimento para colaboradores da Cristal Sete">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Global -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body class="font-inter bg-gray-50">
     
-    <!-- HEADER / NAVEGAÇÃO -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logos/universidade.png">
+</head>
+<body>
+    <!-- Header/Navegação -->
+    <header class="header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12 w-12">
                     <div>
                         <h1 class="text-xl font-bold text-primary">Universidade Cristal Sete</h1>
                         <p class="text-xs text-gray-600">Conhecimento com Propósito</p>
                     </div>
-                </div>
+                </a>
                 
                 <!-- Menu Desktop -->
-                <div class="hidden md:flex items-center space-x-6">
+                <nav class="hidden md:flex items-center gap-6">
                     <a href="index.html" class="nav-link active">Início</a>
                     <a href="cursos.html" class="nav-link">Cursos</a>
                     <a href="meu-perfil.html" class="nav-link">Meu Perfil</a>
-                    <a href="admin.html" class="nav-link">Admin</a>
-                </div>
+                    <a href="admin.html" class="nav-link">Administração</a>
+                </nav>
                 
-                <!-- Botão Mobile -->
-                <button id="mobile-menu-btn" class="md:hidden">
+                <!-- Botão Mobile Menu -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -41,324 +52,263 @@
             </div>
             
             <!-- Menu Mobile -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
-                <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Início</a>
-                <a href="cursos.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cursos</a>
-                <a href="meu-perfil.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Meu Perfil</a>
-                <a href="admin.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Admin</a>
-            </div>
-        </nav>
+            <nav id="mobile-menu" class="mobile-menu">
+                <a href="index.html" class="mobile-menu-link active">Início</a>
+                <a href="cursos.html" class="mobile-menu-link">Cursos</a>
+                <a href="meu-perfil.html" class="mobile-menu-link">Meu Perfil</a>
+                <a href="admin.html" class="mobile-menu-link">Administração</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container mx-auto px-4 text-center">
+            <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="hero-logo">
+            <h1 class="hero-title">Universidade Cristal Sete</h1>
+            <p class="hero-subtitle">Desenvolvendo talentos, fortalecendo valores e construindo o futuro da excelência em vidros de segurança</p>
+            
+            <div class="flex flex-wrap gap-4 justify-center mt-8">
+                <a href="cursos.html" class="btn-primary px-8 py-3 text-lg rounded-lg font-semibold">
+                    Explorar Cursos
+                </a>
+                <a href="meu-perfil.html" class="btn-secondary px-8 py-3 text-lg rounded-lg font-semibold">
+                    Meu Perfil
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Universidade -->
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-32 mx-auto mb-6 drop-shadow-lg">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Universidade Cristal Sete
-                </h1>
-                <p class="text-xl md:text-2xl mb-4 font-light">
-                    Conhecimento com Propósito
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Nossa Missão</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    A Universidade Cristal Sete nasceu com o propósito de desenvolver continuamente nossos colaboradores, 
+                    promovendo conhecimento técnico, habilidades de vendas, segurança e liderança. Acreditamos que pessoas 
+                    capacitadas constroem uma empresa mais forte, segura e inovadora.
                 </p>
-                <p class="text-lg md:text-xl mb-8 opacity-90">
-                    Desenvolvendo talentos, fortalecendo valores e construindo o futuro da excelência em vidros de segurança
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="cursos.html" class="btn-primary px-8 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
-                        Explorar Cursos
-                    </a>
-                    <a href="meu-perfil.html" class="btn-secondary px-8 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
-                        Meu Perfil
-                    </a>
+                
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="card p-6 text-center">
+                        <div class="text-4xl mb-4">🎓</div>
+                        <h3 class="text-xl font-semibold mb-2">Capacitação Contínua</h3>
+                        <p class="text-gray-600">Treinamentos atualizados com as melhores práticas do mercado</p>
+                    </div>
+                    
+                    <div class="card p-6 text-center">
+                        <div class="text-4xl mb-4">🏆</div>
+                        <h3 class="text-xl font-semibold mb-2">Excelência Profissional</h3>
+                        <p class="text-gray-600">Desenvolvimento de competências técnicas e comportamentais</p>
+                    </div>
+                    
+                    <div class="card p-6 text-center">
+                        <div class="text-4xl mb-4">🚀</div>
+                        <h3 class="text-xl font-semibold mb-2">Crescimento de Carreira</h3>
+                        <p class="text-gray-600">Certificações e trilhas personalizadas para seu desenvolvimento</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MISSÃO E PROPÓSITO -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Nossa Missão
-                </h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Capacitar, desenvolver e inspirar colaboradores da Cristal Sete através de programas 
-                    educacionais estruturados, promovendo crescimento profissional contínuo, excelência técnica 
-                    e alinhamento aos valores organizacionais.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Capacitação Contínua</h3>
-                    <p class="text-gray-600">Programas estruturados de desenvolvimento técnico e comportamental</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Excelência Técnica</h3>
-                    <p class="text-gray-600">Conhecimento aplicado aos mais altos padrões de qualidade</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Cultura de Valores</h3>
-                    <p class="text-gray-600">Reforço constante dos princípios que nos guiam</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VALORES ORGANIZACIONAIS -->
+    <!-- Nossos Valores -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-                Nossos Valores
-            </h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                Os pilares que sustentam nossa cultura organizacional e orientam todas as nossas ações
-            </p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nossos Valores</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Os pilares que sustentam nossa cultura organizacional e orientam todas as nossas ações
+                </p>
+            </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <!-- Integridade -->
-                <div class="value-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Integridade</h3>
-                            <p class="text-gray-600">Agir com ética, transparência e honestidade em todas as relações</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Excelência -->
-                <div class="value-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Excelência</h3>
-                            <p class="text-gray-600">Buscar constantemente a melhoria contínua e superar expectativas</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Inovação -->
-                <div class="value-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Inovação</h3>
-                            <p class="text-gray-600">Criar soluções criativas e estar aberto a novas possibilidades</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Respeito -->
-                <div class="value-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Respeito</h3>
-                            <p class="text-gray-600">Valorizar pessoas, diversidade e diferentes perspectivas</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Responsabilidade -->
-                <div class="value-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Responsabilidade</h3>
-                            <p class="text-gray-600">Assumir compromissos e responder por nossas ações</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Trabalho em Equipe -->
-                <div class="value-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Trabalho em Equipe</h3>
-                            <p class="text-gray-600">Colaborar, compartilhar conhecimento e alcançar objetivos juntos</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Comprometimento -->
-                <div class="value-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow lg:col-start-2">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Comprometimento</h3>
-                            <p class="text-gray-600">Dedicação integral aos objetivos da empresa e crescimento coletivo</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex justify-center">
+                <img src="assets/valores.png" alt="Nossos Valores - Cristal Sete" class="valores-img" style="max-width: 900px; width: 100%; height: auto;">
             </div>
         </div>
     </section>
 
-    <!-- METODOLOGIA -->
+    <!-- Nossa Metodologia -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-                Nossa Metodologia
-            </h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                Aprendizado estruturado, prático e orientado a resultados
-            </p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nossa Metodologia</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Aprendizado estruturado em trilhas personalizadas para cada função
+                </p>
+            </div>
             
-            <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Passo 1 -->
+                <div class="card p-6 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
                         1
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Aprenda</h3>
-                    <p class="text-sm text-gray-600">Conteúdo em vídeo, slides e materiais complementares</p>
+                    <div class="mt-6">
+                        <div class="text-4xl mb-4">📚</div>
+                        <h3 class="text-lg font-semibold mb-2">Teoria</h3>
+                        <p class="text-gray-600 text-sm">Conceitos fundamentais e conhecimento técnico</p>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                <!-- Passo 2 -->
+                <div class="card p-6 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
                         2
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Pratique</h3>
-                    <p class="text-sm text-gray-600">Exercícios, quizzes e atividades práticas</p>
+                    <div class="mt-6">
+                        <div class="text-4xl mb-4">🎥</div>
+                        <h3 class="text-lg font-semibold mb-2">Vídeos</h3>
+                        <p class="text-gray-600 text-sm">Demonstrações práticas e casos reais</p>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                <!-- Passo 3 -->
+                <div class="card p-6 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
                         3
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Aplique</h3>
-                    <p class="text-sm text-gray-600">Leve o conhecimento para o dia a dia</p>
+                    <div class="mt-6">
+                        <div class="text-4xl mb-4">✅</div>
+                        <h3 class="text-lg font-semibold mb-2">Avaliação</h3>
+                        <p class="text-gray-600 text-sm">Quizzes e exercícios práticos</p>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                <!-- Passo 4 -->
+                <div class="card p-6 text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
                         4
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Certifique-se</h3>
-                    <p class="text-sm text-gray-600">Receba seu certificado de conclusão</p>
+                    <div class="mt-6">
+                        <div class="text-4xl mb-4">🎓</div>
+                        <h3 class="text-lg font-semibold mb-2">Certificação</h3>
+                        <p class="text-gray-600 text-sm">Reconhecimento do aprendizado</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="py-16 bg-gradient-to-r from-primary to-primary-dark text-white">
+    <!-- Estatísticas -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-5xl font-bold mb-2" id="stat-courses">5</div>
+                    <div class="text-lg opacity-90">Cursos Disponíveis</div>
+                </div>
+                
+                <div>
+                    <div class="text-5xl font-bold mb-2">50+</div>
+                    <div class="text-lg opacity-90">Horas de Conteúdo</div>
+                </div>
+                
+                <div>
+                    <div class="text-5xl font-bold mb-2" id="stat-students">0</div>
+                    <div class="text-lg opacity-90">Alunos Ativos</div>
+                </div>
+                
+                <div>
+                    <div class="text-5xl font-bold mb-2" id="stat-certificates">0</div>
+                    <div class="text-lg opacity-90">Certificados Emitidos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                Pronto para Começar?
-            </h2>
-            <p class="text-xl mb-8 opacity-90">
-                Explore nossos cursos e dê o próximo passo na sua carreira
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Comece Sua Jornada de Aprendizado Hoje</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Acesse nosso catálogo completo de cursos e trilhas de desenvolvimento profissional
             </p>
-            <a href="cursos.html" class="inline-block bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
+            <a href="cursos.html" class="btn-primary px-8 py-3 text-lg rounded-lg font-semibold inline-block">
                 Ver Todos os Cursos
             </a>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Coluna 1 -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Universidade Cristal Sete</h3>
-                    <p class="text-gray-400 text-sm">
+                    <h3 class="text-lg font-semibold mb-4">Universidade Cristal Sete</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         Desenvolvendo talentos e construindo o futuro da excelência em vidros de segurança.
                     </p>
                 </div>
                 
+                <!-- Coluna 2 -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-white">Início</a></li>
-                        <li><a href="cursos.html" class="hover:text-white">Cursos</a></li>
-                        <li><a href="meu-perfil.html" class="hover:text-white">Meu Perfil</a></li>
-                        <li><a href="admin.html" class="hover:text-white">Administração</a></li>
+                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white text-sm">Início</a></li>
+                        <li><a href="cursos.html" class="text-gray-400 hover:text-white text-sm">Cursos</a></li>
+                        <li><a href="meu-perfil.html" class="text-gray-400 hover:text-white text-sm">Meu Perfil</a></li>
+                        <li><a href="admin.html" class="text-gray-400 hover:text-white text-sm">Administração</a></li>
                     </ul>
                 </div>
                 
+                <!-- Coluna 3 -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Parceiros</h3>
-                    <div class="flex items-center space-x-4">
-                        <img src="assets/logos/cristal-sete.png" alt="Cristal Sete" class="h-8 opacity-80 hover:opacity-100">
-                        <img src="assets/logos/blindex.png" alt="Blindex" class="h-8 opacity-80 hover:opacity-100">
+                    <h3 class="text-lg font-semibold mb-4">Parceiros</h3>
+                    <div class="flex gap-4 items-center">
+                        <img src="assets/logos/cristal-sete.png" alt="Cristal Sete" class="h-8">
+                        <img src="assets/logos/blindex.png" alt="Blindex" class="h-8">
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
                 <p>&copy; 2020-2025 Universidade Cristal Sete. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- Scripts -->
     <script src="js/navigation.js"></script>
     
+    <!-- Animação de números nas estatísticas -->
+    <script>
+        // Animar contadores das estatísticas
+        function animateCounter(id, target, duration = 2000) {
+            const element = document.getElementById(id);
+            if (!element) return;
+            
+            let start = 0;
+            const increment = target / (duration / 16); // 60fps
+            
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start);
+                }
+            }, 16);
+        }
+        
+        // Animar quando a seção aparecer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('stat-students', 150);
+                    animateCounter('stat-certificates', 89);
+                    observer.disconnect();
+                }
+            });
+        });
+        
+        const statsSection = document.querySelector('.bg-primary');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
 </body>
 </html>
-<<<<<<< HEAD:index.html.txt
-
-<!-- Valores -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Nossos Valores</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                Os pilares que sustentam nossa cultura organizacional e orientam todas as nossas ações
-            </p>
-        </div>
-        
-        <img src="assets/valores.png" alt="Nossos Valores - Cristal Sete" class="valores-img">
-    </div>
-</section>
-=======
->>>>>>> c8323244c5cbeafe214426c1fc3bb77251644e75:index.html
