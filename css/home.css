@@ -445,6 +445,7 @@
 @media (prefers-color-scheme: dark) {
     /* Estilos para modo escuro podem ser adicionados aqui */
 }
+<<<<<<< HEAD:css/home.css.txt
 
 /* ============================================
    AJUSTE - LOGO MAIOR NA HOME
@@ -510,3 +511,5 @@
         padding: 0 1rem;
     }
 }
+=======
+>>>>>>> c8323244c5cbeafe214426c1fc3bb77251644e75:css/home.css
