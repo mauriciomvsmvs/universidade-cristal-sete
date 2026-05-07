@@ -304,9 +304,17 @@
         }
         
         function carregarQuiz(aula) {
-            document.getElementById('quiz-titulo').textContent = aula.titulo;
-            iniciarQuiz(aula.perguntas);
-            document.getElementById('quiz-player').classList.remove('hidden');
+            // Usar a função do player.js que inicializa o quiz moderno
+            if (typeof initQuizPlayer === 'function') {
+                initQuizPlayer(aula.perguntas);
+            } else {
+                console.error('Função initQuizPlayer não encontrada em player.js');
+                // Fallback: tentar iniciar diretamente
+                document.getElementById('quiz-player').classList.remove('hidden');
+                if (typeof iniciarQuiz === 'function') {
+                    iniciarQuiz(aula.perguntas);
+                }
+            }
         }
         
         // NAVEGAÇÃO
