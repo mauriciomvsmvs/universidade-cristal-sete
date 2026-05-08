@@ -295,20 +295,12 @@ function refazerQuiz() {
 
 function gerarCertificado() {
     const urlParams = new URLSearchParams(window.location.search);
-    const cursoId = parseInt(urlParams.get('cursoId'));
-    
-    console.log('🎓 Gerando certificado para curso ID:', cursoId);
+    const cursoId = urlParams.get('cursoId');
     
     // Obter informações do curso
-    const curso = getCursoById(cursoId);
+    const curso = getCursoById(parseInt(cursoId));
     
-    if (!curso) {
-        console.error('❌ Curso não encontrado. ID:', cursoId);
-        console.log('📚 Cursos disponíveis:', typeof cursos !== 'undefined' ? cursos.map(c => c.id) : 'cursos não definido');
-        return;
-    }
-    
-    console.log('✅ Curso encontrado:', curso.titulo);
+    if (!curso) return;
     
     // Dados do certificado
     const certificado = {
@@ -323,24 +315,19 @@ function gerarCertificado() {
     // Salvar certificado
     salvarCertificado(cursoId, certificado);
     
-    console.log('📜 Certificado gerado e salvo:', certificado);
+    console.log('📜 Certificado gerado:', certificado);
 }
 
 function baixarCertificado() {
     const urlParams = new URLSearchParams(window.location.search);
-    const cursoId = parseInt(urlParams.get('cursoId'));
-    
-    console.log('📥 Tentando baixar certificado do curso:', cursoId);
+    const cursoId = urlParams.get('cursoId');
     
     const certificado = obterCertificado(cursoId);
     
     if (!certificado) {
-        console.error('❌ Certificado não encontrado no localStorage');
-        alert('Certificado não encontrado. Isso pode acontecer se você ainda não concluiu o quiz com aprovação (70%+).');
+        alert('Certificado não encontrado');
         return;
     }
-    
-    console.log('✅ Certificado encontrado:', certificado);
     
     // Abrir modal de certificado
     mostrarModalCertificado(certificado);
