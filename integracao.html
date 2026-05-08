@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integração - Universidade Cristal Sete</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cursos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-gray-50">
+    
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12">
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">Universidade Cristal Sete</h1>
+                        <p class="text-xs text-gray-600">Conhecimento com Propósito</p>
+                    </div>
+                </a>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="integracao.html" class="nav-link active">Integração</a>
+                    <a href="cursos.html" class="nav-link">Cursos</a>
+                    <a href="meu-perfil.html" class="nav-link">Meu Perfil</a>
+                    <a href="admin.html" class="nav-link">Admin</a>
+                </div>
+                
+                <!-- Botão Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Início</a>
+                <a href="integracao.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Integração</a>
+                <a href="cursos.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cursos</a>
+                <a href="meu-perfil.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Meu Perfil</a>
+                <a href="admin.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Admin</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    OBRIGATÓRIO PARA NOVOS COLABORADORES
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Trilha de Integração</h1>
+                <p class="text-xl opacity-90">Bem-vindo à Cristal Sete! Comece sua jornada conhecendo nossa história, cultura e valores.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARRA DE PROGRESSO -->
+    <section class="bg-white py-6 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium text-gray-700">Seu Progresso na Integração</span>
+                    <span class="text-sm font-bold text-primary">0/2 cursos concluídos</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURSOS DA INTEGRAÇÃO -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    
+                    <!-- CURSO 1: BEM-VINDO À CRISTAL SETE -->
+                    <div class="course-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                        <div class="relative">
+                            <img src="assets/cursos/curso-bem-vindo.jpg" alt="Bem-vindo à Cristal Sete" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                    OBRIGATÓRIO
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Bem-vindo à Cristal Sete</h3>
+                            <p class="text-gray-600 text-sm mb-4">Conheça a história, valores e cultura da Cristal Sete. Como tudo começou, nossos principais marcos e o crescimento da empresa ao longo dos anos.</p>
+                            
+                            <div class="flex items-center text-sm text-gray-500 mb-4 space-x-4">
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    30min
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    5 aulas
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-600">Nível: Iniciante</span>
+                                <a href="curso-detalhe.html?id=1" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                    Começar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CURSO 2: FRANQUIAS BLINDEX -->
+                    <div class="course-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                        <div class="relative">
+                            <img src="assets/cursos/curso-blindex.jpg" alt="Franquias Blindex" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                    OBRIGATÓRIO
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Franquias Blindex</h3>
+                            <p class="text-gray-600 text-sm mb-4">Conheça o Sistema Blindex de Franquias, o maior e mais forte grupo temperador do Brasil. Padrões de qualidade e rastreabilidade dos produtos.</p>
+                            
+                            <div class="flex items-center text-sm text-gray-500 mb-4 space-x-4">
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    30min
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    3 aulas
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-600">Nível: Iniciante</span>
+                                <a href="curso-detalhe.html?id=2" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold hover:scale-105 transition-transform">
+                                    Começar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- INFORMAÇÕES IMPORTANTES -->
+                <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Importante!</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Estes cursos são <strong>obrigatórios</strong> para todos os novos colaboradores</li>
+                                <li>• Complete os dois cursos para finalizar sua integração</li>
+                                <li>• Você receberá um certificado ao concluir a trilha completa</li>
+                                <li>• Qualquer dúvida, entre em contato com o RH</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Universidade Cristal Sete</h3>
+                    <p class="text-gray-400 text-sm">
+                        Capacitação contínua e crescimento profissional para todos os colaboradores.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white">Início</a></li>
+                        <li><a href="integracao.html" class="hover:text-white">Integração</a></li>
+                        <li><a href="cursos.html" class="hover:text-white">Cursos</a></li>
+                        <li><a href="meu-perfil.html" class="hover:text-white">Meu Perfil</a></li>
+                        <li><a href="admin.html" class="hover:text-white">Administração</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Parceiros</h3>
+                    <div class="flex items-center justify-start space-x-6 mb-4">
+                        <img src="assets/logos/cristal-sete.png" alt="Cristal Sete" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
+                        <img src="assets/logos/blindex.png" alt="Blindex" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Desenvolvendo talentos e construindo o futuro da excelência em vidros de segurança.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2020-2026 Universidade Cristal Sete. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/navigation.js"></script>
+    
+</body>
+</html>
