@@ -1,17 +1,17 @@
 /* ============================================
    UNIVERSIDADE CRISTAL SETE - DADOS DOS CURSOS
-   ✅ VERSÃO LIMPA - APENAS 2 CURSOS
+   ✅ VERSÃO ATUALIZADA - TRILHA DE INTEGRAÇÃO
    ============================================ */
 
 const cursos = [
     // ============================================
-    // CURSO 1: BEM-VINDO À CRISTAL SETE
+    // CURSO 1: BEM-VINDO À CRISTAL SETE (TRILHA DE INTEGRAÇÃO)
     // ============================================
     {
         id: 1,
         titulo: "Bem-vindo à Cristal Sete",
         descricao: "Conheça a história, valores e cultura da Cristal Sete. Este curso é obrigatório para todos os novos colaboradores e apresenta como tudo começou, nossos principais marcos e o crescimento da empresa ao longo dos anos.",
-        categoria: "Institucional",
+        categoria: "Integração",
         nivel: "Iniciante",
         duracao: "30min",
         instrutor: "Equipe Cristal Sete",
@@ -121,18 +121,18 @@ const cursos = [
     },
     
     // ============================================
-    // CURSO 2: FRANQUIAS BLINDEX
+    // CURSO 2: FRANQUIAS BLINDEX (TRILHA DE INTEGRAÇÃO)
     // ============================================
     {
         id: 2,
         titulo: "Franquias Blindex",
         descricao: "Conheça o Sistema Blindex de Franquias, o maior e mais forte grupo temperador do Brasil. Entenda como funciona a rede, os padrões de qualidade e o sistema de rastreabilidade dos produtos.",
-        categoria: "Institucional",
+        categoria: "Integração",
         nivel: "Iniciante",
         duracao: "30min",
         instrutor: "Equipe Cristal Sete",
         thumbnail: "assets/cursos/curso-blindex.jpg",
-        obrigatorio: false,
+        obrigatorio: true,
         objetivos: [
             "Compreender o funcionamento do Sistema Blindex de Franquias",
             "Conhecer o padrão de qualidade e rastreabilidade dos produtos",
@@ -274,6 +274,10 @@ function searchCursos(query) {
         curso.categoria.toLowerCase().includes(lowerQuery) ||
         curso.instrutor.toLowerCase().includes(lowerQuery)
     );
+}
+
+function getCursosIntegracao() {
+    return cursos.filter(curso => curso.categoria === "Integração");
 }
 
 function getEstatisticas() {
