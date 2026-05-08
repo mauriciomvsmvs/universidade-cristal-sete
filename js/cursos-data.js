@@ -1,17 +1,17 @@
 /* ============================================
    UNIVERSIDADE CRISTAL SETE - DADOS DOS CURSOS
-   ✅ VERSÃO ATUALIZADA - TRILHA DE INTEGRAÇÃO
+   ✅ VERSÃO LIMPA - APENAS 2 CURSOS
    ============================================ */
 
 const cursos = [
     // ============================================
-    // CURSO 1: BEM-VINDO À CRISTAL SETE (TRILHA DE INTEGRAÇÃO)
+    // CURSO 1: BEM-VINDO À CRISTAL SETE
     // ============================================
     {
         id: 1,
         titulo: "Bem-vindo à Cristal Sete",
         descricao: "Conheça a história, valores e cultura da Cristal Sete. Este curso é obrigatório para todos os novos colaboradores e apresenta como tudo começou, nossos principais marcos e o crescimento da empresa ao longo dos anos.",
-        categoria: "Integração",
+        categoria: "Institucional",
         nivel: "Iniciante",
         duracao: "30min",
         instrutor: "Equipe Cristal Sete",
@@ -121,18 +121,18 @@ const cursos = [
     },
     
     // ============================================
-    // CURSO 2: FRANQUIAS BLINDEX (TRILHA DE INTEGRAÇÃO)
+    // CURSO 2: FRANQUIAS BLINDEX
     // ============================================
     {
         id: 2,
         titulo: "Franquias Blindex",
         descricao: "Conheça o Sistema Blindex de Franquias, o maior e mais forte grupo temperador do Brasil. Entenda como funciona a rede, os padrões de qualidade e o sistema de rastreabilidade dos produtos.",
-        categoria: "Integração",
+        categoria: "Institucional",
         nivel: "Iniciante",
         duracao: "30min",
         instrutor: "Equipe Cristal Sete",
         thumbnail: "assets/cursos/curso-blindex.jpg",
-        obrigatorio: true,
+        obrigatorio: false,
         objetivos: [
             "Compreender o funcionamento do Sistema Blindex de Franquias",
             "Conhecer o padrão de qualidade e rastreabilidade dos produtos",
@@ -169,7 +169,7 @@ const cursos = [
                                 pergunta: "O principal objetivo da criação do Sistema de Franquias Blindex® foi:",
                                 opcoes: [
                                     "Reduzir custos de produção",
-                                    "Expandir a cobertura geográfica da marca",
+                                    "Expandar a cobertura geográfica da marca",
                                     "Substituir distribuidores regionais",
                                     "Padronizar apenas o marketing"
                                 ],
@@ -274,10 +274,6 @@ function searchCursos(query) {
         curso.categoria.toLowerCase().includes(lowerQuery) ||
         curso.instrutor.toLowerCase().includes(lowerQuery)
     );
-}
-
-function getCursosIntegracao() {
-    return cursos.filter(curso => curso.categoria === "Integração");
 }
 
 function getEstatisticas() {
