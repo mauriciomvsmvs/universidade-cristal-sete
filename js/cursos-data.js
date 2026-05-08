@@ -720,6 +720,138 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 2: FRANQUIAS BLINDEX
+    // ============================================
+    {
+        id: 2,
+        titulo: "Franquias Blindex",
+        descricao: "Conheça o Sistema Blindex de Franquias, o maior e mais forte grupo temperador do Brasil. Entenda como funciona a rede, os padrões de qualidade e o sistema de rastreabilidade dos produtos.",
+        categoria: "Institucional",
+        nivel: "Iniciante",
+        duracao: "30min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-blindex.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender o funcionamento do Sistema Blindex de Franquias",
+            "Conhecer o padrão de qualidade e rastreabilidade dos produtos",
+            "Entender a identificação e marcação dos vidros",
+            "Reconhecer a posição da Cristal Sete dentro da rede Blindex"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Sistema Blindex de Franquias",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "O maior e mais forte grupo temperador do Brasil",
+                        url: "https://docs.google.com/presentation/d/1hZ2FhZyNCZUkC92uP4r2g0HxwSnR42he/edit?slide=id.p1#slide=id.p1",
+                        slides: 8,
+                        descricao: "Apresentação institucional do Sistema Blindex de Franquias e sua importância no mercado."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Sistemas de Franquia Blindex",
+                        url: "https://www.youtube.com/watch?v=arlXtLTFdbU",
+                        duracao: "15min",
+                        descricao: "Entenda como funciona o sistema de franquias e a padronização de qualidade."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Sistema Blindex",
+                        perguntas: [
+                            {
+                                pergunta: "O principal objetivo da criação do Sistema de Franquias Blindex® foi:",
+                                opcoes: [
+                                    "Reduzir custos de produção",
+                                    "Expandir a cobertura geográfica da marca",
+                                    "Substituir distribuidores regionais",
+                                    "Padronizar apenas o marketing"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Para fazer parte da rede Blindex®, as empresas precisam:",
+                                opcoes: [
+                                    "Ter o menor preço do mercado",
+                                    "Trabalhar apenas com vidro comum",
+                                    "Ter histórico comprovado e reputação sólida",
+                                    "Estar localizadas apenas em capitais"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A rastreabilidade dos vidros Blindex® é garantida por:",
+                                opcoes: [
+                                    "Nota fiscal do produto",
+                                    "Código de barras na embalagem",
+                                    "Marcação no vidro",
+                                    "Certificado digital enviado ao cliente"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Um vidro com dois traços na borda indica:",
+                                opcoes: [
+                                    "Produto com defeito",
+                                    "Vidro de segunda linha",
+                                    "Unidade adicional do mesmo grupo franqueado",
+                                    "Vidro importado"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A marcação nos vidros Blindex® é considerada:",
+                                opcoes: [
+                                    "Removível em manutenção",
+                                    "Temporária",
+                                    "Decorativa",
+                                    "Permanente e não falsificável"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "A Cristal Sete, dentro do sistema Blindex®, é identificada por:",
+                                opcoes: [
+                                    "Dois traços",
+                                    "Um traço",
+                                    "Sem identificação",
+                                    "Código numérico"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O sistema Blindex® se diferencia no mercado principalmente por:",
+                                opcoes: [
+                                    "Trabalhar com menor custo",
+                                    "Ter poucas unidades",
+                                    "Garantir padrão de qualidade uniforme entre franqueados",
+                                    "Produzir apenas vidro comum"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O conjunto de empresas da rede Blindex® é caracterizado como:",
+                                opcoes: [
+                                    "Pequenas operações independentes",
+                                    "Negócios improvisados",
+                                    "Empresas estruturadas com gestão profissional",
+                                    "Revendedores informais"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
