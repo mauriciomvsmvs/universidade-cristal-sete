@@ -179,11 +179,7 @@
         function renderizarModulos() {
             const container = document.getElementById('modulos-lista');
             
-            const html = cursoAtual.modulos.map(modulo => {
-                // Contador global de aulas (sem contar quiz)
-                let contadorAula = 0;
-                
-                return `
+            const html = cursoAtual.modulos.map(modulo => `
                 <div class="modulo-section">
                     <div class="px-4 py-3 bg-gray-750">
                         <h3 class="text-white font-medium">Módulo ${modulo.numero}: ${modulo.titulo}</h3>
@@ -195,15 +191,6 @@
                             const isAtual = modulo.numero === moduloAtual && aulaNum === aulaAtual;
                             const isConcluida = verificarAulaConcluida(modulo.numero, aulaNum);
                             
-                            // Sistema profissional de numeração
-                            let prefixoAula = '';
-                            if (aula.tipo === 'quiz') {
-                                prefixoAula = ''; // Quiz não tem número
-                            } else {
-                                contadorAula++;
-                                prefixoAula = `Aula ${contadorAula} - `;
-                            }
-                            
                             return `
                                 <div onclick="navegarParaAula(${modulo.numero}, ${aulaNum})" 
                                      class="px-4 py-3 cursor-pointer hover:bg-gray-700 transition-colors ${isAtual ? 'bg-gray-700 border-l-4 border-primary' : ''}">
@@ -211,7 +198,7 @@
                                         <div class="flex items-center space-x-3 flex-1">
                                             ${getAulaIconSidebar(aula.tipo)}
                                             <div class="flex-1">
-                                                <div class="text-white text-sm ${isAtual ? 'font-semibold' : ''}">${prefixoAula}${aula.titulo}</div>
+                                                <div class="text-white text-sm ${isAtual ? 'font-semibold' : ''}">${aula.tipo === 'quiz' ? '' : 'Aula ' + aulaNum + ' - '}${aula.titulo}</div>
                                                 ${aula.duracao ? `<div class="text-gray-400 text-xs">${aula.duracao}</div>` : ''}
                                             </div>
                                         </div>
@@ -248,23 +235,8 @@
             const aula = modulo.aulas[aulaAtual - 1];
             if (!aula) return;
             
-            // Sistema profissional de numeração no header
-            let tituloHeader = '';
-            if (aula.tipo === 'quiz') {
-                tituloHeader = aula.titulo; // Quiz aparece sem prefixo
-            } else {
-                // Contar quantas aulas (não-quiz) vieram antes
-                let numeroAula = 0;
-                for (let i = 0; i < aulaAtual; i++) {
-                    if (modulo.aulas[i].tipo !== 'quiz') {
-                        numeroAula++;
-                    }
-                }
-                tituloHeader = `Aula ${numeroAula} - ${aula.titulo}`;
-            }
-            
             // Atualizar título da aula no header
-            document.getElementById('aula-titulo-header').textContent = tituloHeader;
+            document.getElementById('aula-titulo-header').textContent = (aula.tipo === 'quiz' ? '' : 'Aula ' + aulaAtual + ' - ') + aula.titulo;
             
             // Ocultar todos os players
             document.getElementById('video-player').classList.add('hidden');
