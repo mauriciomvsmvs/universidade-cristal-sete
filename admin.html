@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Administrativo - Universidade Cristal Sete</title>
+    <title>Administração - Universidade Cristal Sete</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/global.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,17 +15,18 @@
         <nav class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
                     <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12">
                     <div>
                         <h1 class="text-xl font-bold text-primary">Universidade Cristal Sete</h1>
-                        <p class="text-xs text-gray-600">Painel Administrativo</p>
+                        <p class="text-xs text-gray-600">Conhecimento com Propósito</p>
                     </div>
-                </div>
+                </a>
                 
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="index.html" class="nav-link">Início</a>
+                    <a href="integracao.html" class="nav-link">Integração</a>
                     <a href="cursos.html" class="nav-link">Cursos</a>
                     <a href="meu-perfil.html" class="nav-link">Meu Perfil</a>
                     <a href="admin.html" class="nav-link active">Admin</a>
@@ -42,6 +43,7 @@
             <!-- Menu Mobile -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
                 <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Início</a>
+                <a href="integracao.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Integração</a>
                 <a href="cursos.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cursos</a>
                 <a href="meu-perfil.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Meu Perfil</a>
                 <a href="admin.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Admin</a>
@@ -49,291 +51,155 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO ADMIN -->
     <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Painel Administrativo</h1>
-                    <p class="text-xl opacity-90">Gerencie cursos, aulas e conteúdos da plataforma</p>
-                </div>
-                <div class="hidden md:block">
-                    <svg class="w-24 h-24 opacity-20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
-                    </svg>
-                </div>
-            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Painel Administrativo</h1>
+            <p class="text-xl opacity-90">Gerencie cursos, usuários e conteúdo da plataforma</p>
         </div>
     </section>
 
-    <!-- DASHBOARD DE ESTATÍSTICAS -->
-    <section class="py-8 bg-white shadow-sm">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary" id="admin-total-cursos">0</div>
-                    <div class="text-sm text-gray-600">Total de Cursos</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary" id="admin-total-alunos">120</div>
-                    <div class="text-sm text-gray-600">Alunos Ativos</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary" id="admin-total-aulas">0</div>
-                    <div class="text-sm text-gray-600">Total de Aulas</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary" id="admin-certificados">0</div>
-                    <div class="text-sm text-gray-600">Certificados Emitidos</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TABS DE NAVEGAÇÃO -->
-    <section class="bg-white border-b sticky top-16 z-40">
-        <div class="container mx-auto px-4">
-            <div class="flex space-x-8 overflow-x-auto">
-                <button onclick="switchTab('adicionar')" id="tab-adicionar" class="tab-button active py-4 px-2 border-b-2 border-primary font-semibold text-primary whitespace-nowrap">
-                    Adicionar Curso
-                </button>
-                <button onclick="switchTab('gerenciar')" id="tab-gerenciar" class="tab-button py-4 px-2 border-b-2 border-transparent font-semibold text-gray-600 hover:text-primary whitespace-nowrap">
-                    Gerenciar Cursos
-                </button>
-                <button onclick="switchTab('relatorios')" id="tab-relatorios" class="tab-button py-4 px-2 border-b-2 border-transparent font-semibold text-gray-600 hover:text-primary whitespace-nowrap">
-                    Relatórios
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTEÚDO DAS ABAS -->
+    <!-- CONTEÚDO ADMIN -->
     <section class="py-12">
         <div class="container mx-auto px-4">
-            
-            <!-- ABA: ADICIONAR CURSO -->
-            <div id="content-adicionar" class="tab-content">
-                <div class="max-w-4xl mx-auto">
-                    <div class="bg-white rounded-xl shadow-sm p-8">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Adicionar Novo Curso</h2>
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- CARDS DE ESTATÍSTICAS -->
+                <div class="grid md:grid-cols-4 gap-6 mb-12">
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-900 mb-1">12</div>
+                        <div class="text-sm text-gray-600">Total de Cursos</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-900 mb-1">120</div>
+                        <div class="text-sm text-gray-600">Alunos Ativos</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-900 mb-1">85</div>
+                        <div class="text-sm text-gray-600">Certificados Emitidos</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-900 mb-1">92%</div>
+                        <div class="text-sm text-gray-600">Taxa de Conclusão</div>
+                    </div>
+                </div>
+                
+                <!-- AÇÕES RÁPIDAS -->
+                <div class="bg-white rounded-xl shadow-sm p-8 mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Ações Rápidas</h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <button class="flex items-center justify-center gap-3 bg-primary text-white px-6 py-4 rounded-lg font-semibold hover:scale-105 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            Novo Curso
+                        </button>
                         
-                        <form id="form-adicionar-curso" class="space-y-6">
-                            <!-- Informações Básicas -->
-                            <div class="border-b pb-6">
-                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Informações Básicas</h3>
-                                
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-2">Título do Curso *</label>
-                                        <input type="text" id="titulo" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ex: Técnicas de Instalação de Box">
-                                    </div>
-                                    
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-2">Categoria *</label>
-                                        <select id="categoria" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                                            <option value="">Selecione...</option>
-                                            <option value="Técnico">Técnico</option>
-                                            <option value="Vendas">Vendas e Atendimento</option>
-                                            <option value="Segurança">Segurança</option>
-                                            <option value="Liderança">Liderança</option>
-                                            <option value="Qualidade">Qualidade</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-2">Nível *</label>
-                                        <select id="nivel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                                            <option value="">Selecione...</option>
-                                            <option value="Iniciante">Iniciante</option>
-                                            <option value="Intermediário">Intermediário</option>
-                                            <option value="Avançado">Avançado</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-2">Duração *</label>
-                                        <input type="text" id="duracao" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ex: 2h 30min">
-                                    </div>
-                                    
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-2">Instrutor *</label>
-                                        <input type="text" id="instrutor" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Nome do instrutor">
-                                    </div>
-                                    
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-2">URL da Thumbnail *</label>
-                                        <input type="url" id="thumbnail" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="https://...">
-                                    </div>
-                                </div>
-                                
-                                <div class="mt-4">
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Descrição *</label>
-                                    <textarea id="descricao" required rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Descrição breve do curso"></textarea>
-                                </div>
-                            </div>
-                            
-                            <!-- Objetivos -->
-                            <div class="border-b pb-6">
-                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Objetivos de Aprendizagem</h3>
-                                
-                                <div id="objetivos-container" class="space-y-2">
-                                    <div class="flex gap-2">
-                                        <input type="text" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="O que o aluno vai aprender?">
-                                        <button type="button" onclick="adicionarObjetivo()" class="btn-primary px-4 py-2 rounded-lg font-semibold whitespace-nowrap">
-                                            + Adicionar
-                                        </button>
-                                    </div>
-                                </div>
-                                
-                                <div id="objetivos-lista" class="mt-4 space-y-2">
-                                    <!-- Objetivos adicionados aparecerão aqui -->
-                                </div>
-                            </div>
-                            
-                            <!-- Pré-requisitos -->
-                            <div class="border-b pb-6">
-                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Pré-requisitos</h3>
-                                
-                                <div id="prerequisitos-container" class="space-y-2">
-                                    <div class="flex gap-2">
-                                        <input type="text" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ex: Conhecimento básico de vidros">
-                                        <button type="button" onclick="adicionarPrerequisito()" class="btn-primary px-4 py-2 rounded-lg font-semibold whitespace-nowrap">
-                                            + Adicionar
-                                        </button>
-                                    </div>
-                                </div>
-                                
-                                <div id="prerequisitos-lista" class="mt-4 space-y-2">
-                                    <!-- Pré-requisitos adicionados aparecerão aqui -->
-                                </div>
-                            </div>
-                            
-                            <!-- Módulos e Aulas -->
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Módulos e Aulas</h3>
-                                <p class="text-sm text-gray-600 mb-4">
-                                    Para adicionar módulos e aulas, edite o arquivo <code class="bg-gray-100 px-2 py-1 rounded">js/cursos-data.js</code> após criar o curso.
-                                </p>
-                                
-                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                                    <h4 class="font-semibold text-blue-900 mb-2">📝 Instruções:</h4>
-                                    <ol class="text-sm text-blue-800 space-y-1 list-decimal list-inside">
-                                        <li>Preencha as informações básicas acima</li>
-                                        <li>Clique em "Gerar Código do Curso"</li>
-                                        <li>Copie o código gerado</li>
-                                        <li>Abra o arquivo <code class="bg-blue-100 px-1 rounded">js/cursos-data.js</code></li>
-                                        <li>Cole o código dentro do array <code class="bg-blue-100 px-1 rounded">cursos</code></li>
-                                        <li>Salve o arquivo e recarregue a página</li>
-                                    </ol>
-                                </div>
-                            </div>
-                            
-                            <!-- Botões de Ação -->
-                            <div class="flex gap-4 pt-6">
-                                <button type="button" onclick="gerarCodigoCurso()" class="flex-1 btn-primary py-3 rounded-lg font-semibold">
-                                    Gerar Código do Curso
-                                </button>
-                                <button type="reset" class="px-8 btn-secondary py-3 rounded-lg font-semibold">
-                                    Limpar
-                                </button>
-                            </div>
-                        </form>
+                        <button class="flex items-center justify-center gap-3 bg-gray-100 text-gray-700 px-6 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            Novo Aluno
+                        </button>
+                        
+                        <button class="flex items-center justify-center gap-3 bg-gray-100 text-gray-700 px-6 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Gerar Relatório
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- TABELA DE CURSOS -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="p-6 border-b border-gray-200">
+                        <h2 class="text-2xl font-bold text-gray-900">Gerenciar Cursos</h2>
                     </div>
                     
-                    <!-- Modal de Código Gerado -->
-                    <div id="modal-codigo" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-                        <div class="bg-white rounded-xl max-w-4xl w-full max-h-[80vh] overflow-y-auto p-8">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-2xl font-bold text-gray-900">Código Gerado</h3>
-                                <button onclick="fecharModal()" class="text-gray-400 hover:text-gray-600">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            
-                            <p class="text-gray-600 mb-4">Copie o código abaixo e cole no arquivo <code class="bg-gray-100 px-2 py-1 rounded">js/cursos-data.js</code></p>
-                            
-                            <div class="relative">
-                                <pre id="codigo-gerado" class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm"></pre>
-                                <button onclick="copiarCodigo()" class="absolute top-4 right-4 bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition-transform">
-                                    Copiar Código
-                                </button>
-                            </div>
-                        </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Curso</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Categoria</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Alunos</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="font-medium text-gray-900">Bem-vindo à Cristal Sete</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">Institucional</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">120</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Ativo</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-primary-dark mr-3">Editar</button>
+                                        <button class="text-red-600 hover:text-red-900">Excluir</button>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="font-medium text-gray-900">Franquias Blindex</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">Institucional</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">98</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Ativo</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-primary-dark mr-3">Editar</button>
+                                        <button class="text-red-600 hover:text-red-900">Excluir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-            
-            <!-- ABA: GERENCIAR CURSOS -->
-            <div id="content-gerenciar" class="tab-content hidden">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Gerenciar Cursos Existentes</h2>
                 
-                <div id="lista-cursos-admin" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Preenchido pelo JavaScript -->
-                </div>
             </div>
-            
-            <!-- ABA: RELATÓRIOS -->
-            <div id="content-relatorios" class="tab-content hidden">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Relatórios e Análises</h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Cursos Mais Acessados -->
-                    <div class="bg-white rounded-xl shadow-sm p-6">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4">Cursos Mais Acessados</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="text-gray-700">Técnicas de Instalação</span>
-                                <span class="font-semibold text-primary">85 alunos</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-gray-700">Atendimento ao Cliente</span>
-                                <span class="font-semibold text-primary">72 alunos</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-gray-700">Segurança no Trabalho</span>
-                                <span class="font-semibold text-primary">68 alunos</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Taxa de Conclusão -->
-                    <div class="bg-white rounded-xl shadow-sm p-6">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4">Taxa de Conclusão</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-gray-700">Técnico</span>
-                                    <span class="font-semibold text-primary">78%</span>
-                                </div>
-                                <div class="w-full h-2 bg-gray-200 rounded-full">
-                                    <div class="h-full bg-primary rounded-full" style="width: 78%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-gray-700">Vendas</span>
-                                    <span class="font-semibold text-primary">65%</span>
-                                </div>
-                                <div class="w-full h-2 bg-gray-200 rounded-full">
-                                    <div class="h-full bg-primary rounded-full" style="width: 65%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-gray-700">Segurança</span>
-                                    <span class="font-semibold text-primary">82%</span>
-                                </div>
-                                <div class="w-full h-2 bg-gray-200 rounded-full">
-                                    <div class="h-full bg-primary rounded-full" style="width: 82%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </section>
 
@@ -344,7 +210,7 @@
                 <div>
                     <h3 class="text-lg font-bold mb-4">Universidade Cristal Sete</h3>
                     <p class="text-gray-400 text-sm">
-                        Desenvolvendo talentos e construindo o futuro da excelência em vidros de segurança.
+                        Capacitação contínua e crescimento profissional para todos os colaboradores.
                     </p>
                 </div>
                 
@@ -352,6 +218,7 @@
                     <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="index.html" class="hover:text-white">Início</a></li>
+                        <li><a href="integracao.html" class="hover:text-white">Integração</a></li>
                         <li><a href="cursos.html" class="hover:text-white">Cursos</a></li>
                         <li><a href="meu-perfil.html" class="hover:text-white">Meu Perfil</a></li>
                         <li><a href="admin.html" class="hover:text-white">Administração</a></li>
@@ -368,199 +235,13 @@
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; 2020-2025 Universidade Cristal Sete. Todos os direitos reservados.</p>
+                <p>&copy; 2020-2026 Universidade Cristal Sete. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script src="js/navigation.js"></script>
-    <script src="js/cursos-data.js"></script>
-    
-    <script>
-        let objetivosArray = [];
-        let prerequisitosArray = [];
-        
-        // GERENCIAMENTO DE ABAS
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.add('hidden');
-            });
-            
-            document.querySelectorAll('.tab-button').forEach(btn => {
-                btn.classList.remove('active', 'border-primary', 'text-primary');
-                btn.classList.add('border-transparent', 'text-gray-600');
-            });
-            
-            document.getElementById(`content-${tabName}`).classList.remove('hidden');
-            
-            const activeBtn = document.getElementById(`tab-${tabName}`);
-            activeBtn.classList.add('active', 'border-primary', 'text-primary');
-            activeBtn.classList.remove('border-transparent', 'text-gray-600');
-            
-            if (tabName === 'gerenciar') {
-                carregarCursosParaGerenciar();
-            }
-        }
-        
-        // ADICIONAR OBJETIVO
-        function adicionarObjetivo() {
-            const input = document.querySelector('#objetivos-container input');
-            const valor = input.value.trim();
-            
-            if (valor) {
-                objetivosArray.push(valor);
-                atualizarListaObjetivos();
-                input.value = '';
-            }
-        }
-        
-        function atualizarListaObjetivos() {
-            const lista = document.getElementById('objetivos-lista');
-            lista.innerHTML = objetivosArray.map((obj, index) => `
-                <div class="flex items-center justify-between bg-gray-50 px-4 py-2 rounded-lg">
-                    <span class="text-gray-700">${obj}</span>
-                    <button type="button" onclick="removerObjetivo(${index})" class="text-red-500 hover:text-red-700">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            `).join('');
-        }
-        
-        function removerObjetivo(index) {
-            objetivosArray.splice(index, 1);
-            atualizarListaObjetivos();
-        }
-        
-        // ADICIONAR PRÉ-REQUISITO
-        function adicionarPrerequisito() {
-            const input = document.querySelector('#prerequisitos-container input');
-            const valor = input.value.trim();
-            
-            if (valor) {
-                prerequisitosArray.push(valor);
-                atualizarListaPrerequisitos();
-                input.value = '';
-            }
-        }
-        
-        function atualizarListaPrerequisitos() {
-            const lista = document.getElementById('prerequisitos-lista');
-            lista.innerHTML = prerequisitosArray.map((pre, index) => `
-                <div class="flex items-center justify-between bg-gray-50 px-4 py-2 rounded-lg">
-                    <span class="text-gray-700">${pre}</span>
-                    <button type="button" onclick="removerPrerequisito(${index})" class="text-red-500 hover:text-red-700">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            `).join('');
-        }
-        
-        function removerPrerequisito(index) {
-            prerequisitosArray.splice(index, 1);
-            atualizarListaPrerequisitos();
-        }
-        
-        // GERAR CÓDIGO DO CURSO
-        function gerarCodigoCurso() {
-            const form = document.getElementById('form-adicionar-curso');
-            
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-            
-            const novoCurso = {
-                id: cursos.length + 1,
-                titulo: document.getElementById('titulo').value,
-                descricao: document.getElementById('descricao').value,
-                categoria: document.getElementById('categoria').value,
-                nivel: document.getElementById('nivel').value,
-                duracao: document.getElementById('duracao').value,
-                instrutor: document.getElementById('instrutor').value,
-                thumbnail: document.getElementById('thumbnail').value,
-                objetivos: objetivosArray,
-                prerequisitos: prerequisitosArray,
-                modulos: [
-                    {
-                        numero: 1,
-                        titulo: "Módulo 1 - Introdução",
-                        aulas: [
-                            {
-                                tipo: "video",
-                                titulo: "Bem-vindo ao Curso",
-                                url: "https://www.youtube.com/watch?v=SEU_VIDEO_ID",
-                                duracao: "10min"
-                            }
-                        ]
-                    }
-                ]
-            };
-            
-            const codigo = JSON.stringify(novoCurso, null, 2);
-            document.getElementById('codigo-gerado').textContent = codigo;
-            document.getElementById('modal-codigo').classList.remove('hidden');
-        }
-        
-        function copiarCodigo() {
-            const codigo = document.getElementById('codigo-gerado').textContent;
-            navigator.clipboard.writeText(codigo).then(() => {
-                alert('Código copiado para a área de transferência!');
-            });
-        }
-        
-        function fecharModal() {
-            document.getElementById('modal-codigo').classList.add('hidden');
-        }
-        
-        // CARREGAR CURSOS PARA GERENCIAR
-        function carregarCursosParaGerenciar() {
-            const container = document.getElementById('lista-cursos-admin');
-            
-            container.innerHTML = cursos.map(curso => `
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-                    <img src="${curso.thumbnail}" alt="${curso.titulo}" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <span class="text-xs font-semibold text-primary">${curso.categoria}</span>
-                        <h3 class="text-lg font-bold text-gray-900 mt-2 mb-2">${curso.titulo}</h3>
-                        <p class="text-sm text-gray-600 mb-4">${curso.instrutor} • ${curso.duracao}</p>
-                        
-                        <div class="flex gap-2">
-                            <a href="curso-detalhe.html?id=${curso.id}" class="flex-1 text-center btn-secondary py-2 rounded-lg text-sm font-semibold">
-                                Visualizar
-                            </a>
-                            <button onclick="editarCurso(${curso.id})" class="flex-1 btn-primary py-2 rounded-lg text-sm font-semibold">
-                                Editar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        function editarCurso(id) {
-            alert(`Edição de curso será implementada em breve!\n\nPor enquanto, edite manualmente o arquivo js/cursos-data.js`);
-        }
-        
-        // ATUALIZAR ESTATÍSTICAS
-        function atualizarEstatisticas() {
-            document.getElementById('admin-total-cursos').textContent = cursos.length;
-            
-            const totalAulas = cursos.reduce((acc, curso) => {
-                return acc + curso.modulos.reduce((acc2, mod) => acc2 + mod.aulas.length, 0);
-            }, 0);
-            document.getElementById('admin-total-aulas').textContent = totalAulas;
-            
-            document.getElementById('admin-certificados').textContent = '12'; // Simulado
-        }
-        
-        // INICIAR
-        document.addEventListener('DOMContentLoaded', atualizarEstatisticas);
-    </script>
     
 </body>
 </html>
