@@ -53,6 +53,13 @@ const cursos = [
                         descricao: "Como a Cristal Sete cresceu e se expandiu ao longo dos anos."
                     },
                     {
+                        tipo: "slide",
+                        titulo: "Apresentação Institucional",
+                        url: "https://docs.google.com/presentation/d/1ubOkcaFkpGXkOrFQZxjdcd80r-dcMYVi/edit?slide=id.p1#slide=id.p1",
+                        slides: 19,
+                        descricao: "Conheça a Cristal Sete em detalhes: estrutura, processos e diferenciais competitivos que nos tornam referência no mercado de vidros de segurança."
+                    },
+                    {
                         tipo: "quiz",
                         titulo: "Quiz - Nossa História",
                         perguntas: [
