@@ -304,19 +304,17 @@
         }
         
         function carregarQuiz(aula) {
-            // Esconder todos os outros players primeiro
-            document.getElementById('video-player').classList.add('hidden');
-            document.getElementById('slide-player').classList.add('hidden');
-            document.getElementById('loading-player').classList.add('hidden');
-            
-            // Atualizar título
-            document.getElementById('quiz-titulo').textContent = aula.titulo;
-            
-            // Mostrar o quiz player
-            document.getElementById('quiz-player').classList.remove('hidden');
-            
-            // Iniciar o quiz
-            iniciarQuiz(aula.perguntas);
+            // Usar a função do player.js que inicializa o quiz moderno
+            if (typeof initQuizPlayer === 'function') {
+                initQuizPlayer(aula.perguntas);
+            } else {
+                console.error('Função initQuizPlayer não encontrada em player.js');
+                // Fallback: tentar iniciar diretamente
+                document.getElementById('quiz-player').classList.remove('hidden');
+                if (typeof iniciarQuiz === 'function') {
+                    iniciarQuiz(aula.perguntas);
+                }
+            }
         }
         
         // NAVEGAÇÃO

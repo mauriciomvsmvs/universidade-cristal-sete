@@ -120,7 +120,7 @@ console.log(JSON.stringify(dados));
 
 ---
 
-## 📞 Suporte 
+## 📞 Suporte
 
 ### Problemas ou Dúvidas?
 
@@ -160,6 +160,6 @@ Desenvolvido para uso interno da Cristal Sete - Vidros de Segurança
 
 **🎉 Pronto! Sua Universidade Corporativa está funcionando!**
 
-Para adicionar seu primeiro curso, vá em `admin.html` e comece a criar conteúdo. 
+Para adicionar seu primeiro curso, vá em `admin.html` e comece a criar conteúdo.
 
 Bons estudos! 📚✨
