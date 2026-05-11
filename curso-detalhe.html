@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/cursos.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="font-inter bg-gray-50">
     
@@ -57,7 +58,7 @@
         <div class="container mx-auto px-4">
             <div class="max-w-5xl mx-auto">
                 <div class="flex items-center gap-2 mb-4">
-                    <a href="cursos.html" class="text-white hover:text-white/80 text-sm flex items-center">
+                    <a href="cursos.html" class="text-sm flex items-center" style="color: #2F60AB;">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
@@ -222,9 +223,9 @@
             // RENDERIZAR HEADER
             document.getElementById('curso-header').innerHTML = `
                 <div class="md:col-span-2">
-                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold text-white">${curso.categoria}</span>
-                    <h1 class="text-3xl md:text-4xl font-bold mt-3 mb-4 text-white">${curso.titulo}</h1>
-                    <p class="text-lg text-white/90">${curso.descricao}</p>
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold" style="color: #2F60AB; background-color: rgba(255,255,255,0.9);">${curso.categoria}</span>
+                    <h1 class="text-3xl md:text-4xl font-bold mt-3 mb-4" style="font-family: 'Montserrat', sans-serif; color: #2F60AB;">${curso.titulo}</h1>
+                    <p class="text-lg" style="font-family: 'Montserrat', sans-serif; color: #2F60AB;">${curso.descricao}</p>
                 </div>
                 <div class="flex items-center justify-center">
                     <img src="${curso.thumbnail}" alt="${curso.titulo}" class="w-full max-w-xs rounded-xl shadow-lg">
