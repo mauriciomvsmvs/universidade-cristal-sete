@@ -1,453 +1,335 @@
-/* ============================================
-   UNIVERSIDADE CRISTAL SETE - DADOS DOS CURSOS
-   ✅ ATUALIZADO - 3 CURSOS
-   ============================================ */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula - Universidade Cristal Sete</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-gray-900">
+    
+    <!-- HEADER MINIMALISTA -->
+    <header class="bg-gray-800 border-b border-gray-700">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-10">
+                    <div>
+                        <h1 class="text-sm font-bold text-white">Universidade Cristal Sete</h1>
+                    </div>
+                </a>
+                
+                <!-- Título do Curso -->
+                <div class="hidden md:block">
+                    <h2 id="curso-titulo-header" class="text-white font-semibold"></h2>
+                </div>
+                
+                <!-- Botão Sair -->
+                <a href="#" id="btn-sair-curso" class="text-gray-300 hover:text-white text-sm flex items-center">
+                    <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                    Sair
+                </a>
+            </div>
+        </nav>
+    </header>
 
-const cursos = [
-    // ============================================
-    // CURSO 1: BEM-VINDO À CRISTAL SETE (INTEGRAÇÃO)
-    // ============================================
-    {
-        id: 1,
-        titulo: "Bem-vindo à Cristal Sete",
-        descricao: "Conheça a história, valores e cultura da Cristal Sete. Este curso é obrigatório para todos os novos colaboradores e apresenta como tudo começou, nossos principais marcos e o crescimento da empresa ao longo dos anos.",
-        categoria: "Institucional",
-        nivel: "Iniciante",
-        duracao: "30min",
-        instrutor: "Equipe Cristal Sete",
-        thumbnail: "assets/cursos/curso-bem-vindo.jpg",
-        obrigatorio: true,
-        objetivos: [
-            "Conhecer a história e origem da Cristal Sete",
-            "Entender os principais marcos e conquistas da empresa",
-            "Compreender o crescimento e expansão ao longo dos anos",
-            "Conectar-se com a cultura e valores organizacionais"
-        ],
-        prerequisitos: [
-            "Nenhum pré-requisito necessário"
-        ],
-        modulos: [
-            {
-                numero: 1,
-                titulo: "Nossa História",
-                aulas: [
-                    {
-                        tipo: "video",
-                        titulo: "Como Tudo Começou",
-                        url: "https://www.youtube.com/watch?v=SFSDhaNYpfM",
-                        duracao: "10min",
-                        descricao: "Conheça a origem da Cristal Sete, os fundadores e como tudo começou."
-                    },
-                    {
-                        tipo: "slide",
-                        titulo: "Marcos Importantes",
-                        url: "https://docs.google.com/presentation/d/1RIKbRm4AFEHd8cI3sdfY_Tqwqe3YXMFl/edit?slide=id.p1#slide=id.p1",
-                        slides: 10,
-                        descricao: "Os principais marcos e conquistas que moldaram nossa trajetória."
-                    },
-                    {
-                        tipo: "video",
-                        titulo: "Crescimento e Expansão",
-                        url: "https://www.youtube.com/watch?v=tWMhQh4blbI",
-                        duracao: "10min",
-                        descricao: "Como a Cristal Sete cresceu e se expandiu ao longo dos anos."
-                    },
-                    {
-                        tipo: "slide",
-                        titulo: "Apresentação Institucional",
-                        url: "https://docs.google.com/presentation/d/1ubOkcaFkpGXkOrFQZxjdcd80r-dcMYVi/edit?slide=id.p1#slide=id.p1",
-                        slides: 19,
-                        descricao: "Conheça a Cristal Sete em detalhes: estrutura, processos e diferenciais competitivos que nos tornam referência no mercado de vidros de segurança."
-                    },
-                    {
-                        tipo: "quiz",
-                        titulo: "Quiz - Nossa História",
-                        perguntas: [
-                            {
-                                pergunta: "Quem fundou a primeira vidraçaria de Apucarana, dando início à história da Cristal Sete?",
-                                opcoes: [
-                                    "Sandro Henriques",
-                                    "Marcus Pezotti",
-                                    "Milton Bastos Henriquis",
-                                    "Rosângela Henriques"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "Em que ano nasceu oficialmente a Cristal Sete?",
-                                opcoes: [
-                                    "1984",
-                                    "1999",
-                                    "2003",
-                                    "2009"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "Qual foi um dos grandes diferenciais da Cristal Sete logo no início de sua operação?",
-                                opcoes: [
-                                    "Produção de esquadrias de alumínio",
-                                    "Atendimento ao consumidor final",
-                                    "Primeiro forno vertical com tecnologia 100% nacional",
-                                    "Importação de vidros europeus"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "O que aconteceu em 2009 na história da Cristal Sete?",
-                                opcoes: [
-                                    "Conquista do selo Inmetro",
-                                    "Construção da nova sede",
-                                    "Criação da Visatta",
-                                    "Aquisição das franquias Blindex® do Paraná e interior de São Paulo"
-                                ],
-                                correta: 3
-                            },
-                            {
-                                pergunta: "Qual é o foco principal de atendimento da Cristal Sete desde o início?",
-                                opcoes: [
-                                    "Consumidor final",
-                                    "Grandes construtoras",
-                                    "Vidraçarias e esquadrias",
-                                    "Arquitetos e engenheiros"
-                                ],
-                                correta: 2
-                            }
-                        ]
-                    }
-                ]
+    <!-- PLAYER LAYOUT -->
+    <div class="flex h-[calc(100vh-61px)]">
+        
+        <!-- ÁREA DO PLAYER -->
+        <div class="flex-1 flex flex-col">
+            
+            <!-- PLAYER DE CONTEÚDO -->
+            <div id="player-container" class="flex-1 bg-black flex items-center justify-center">
+                <div class="text-white text-center p-8">
+                    <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto mb-4"></div>
+                    <p>Carregando aula...</p>
+                </div>
+            </div>
+            
+            <!-- CONTROLES E INFO -->
+            <div class="bg-gray-800 p-6 border-t border-gray-700">
+                <div class="container mx-auto">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h1 id="aula-titulo" class="text-2xl font-bold text-white mb-2">Carregando...</h1>
+                            <p id="aula-descricao" class="text-gray-400"></p>
+                        </div>
+                        
+                        <button id="btn-marcar-concluida" onclick="marcarConcluida()" class="btn-primary px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
+                            Marcar como Concluída
+                        </button>
+                    </div>
+                    
+                    <!-- NAVEGAÇÃO ENTRE AULAS -->
+                    <div class="flex items-center justify-between">
+                        <button id="btn-aula-anterior" onclick="aulaAnterior()" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            Aula Anterior
+                        </button>
+                        
+                        <div class="text-gray-400 text-sm">
+                            Aula <span id="aula-numero-atual">1</span> de <span id="total-aulas">1</span>
+                        </div>
+                        
+                        <button id="btn-proxima-aula" onclick="proximaAula()" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                            Próxima Aula
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- SIDEBAR COM PLAYLIST -->
+        <div class="w-96 bg-gray-800 border-l border-gray-700 overflow-y-auto">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-4">Conteúdo do Curso</h3>
+                
+                <!-- PROGRESSO -->
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-medium text-gray-400">Progresso</span>
+                        <span id="progresso-texto" class="text-sm font-bold text-primary">0%</span>
+                    </div>
+                    <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div id="progresso-barra" class="h-full bg-primary transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <!-- LISTA DE AULAS -->
+                <div id="playlist-container" class="space-y-2">
+                    <!-- Preenchido pelo JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/navigation.js"></script>
+    <script src="js/cursos-data.js"></script>
+    <script src="js/progress.js"></script>
+    
+    <script>
+        // PEGAR PARÂMETROS DA URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const cursoId = parseInt(urlParams.get('curso'));
+        const moduloNumero = parseInt(urlParams.get('modulo'));
+        const aulaNumero = parseInt(urlParams.get('aula'));
+        
+        // Verificar se os dados do curso existem
+        if (!cursos || cursos.length === 0) {
+            document.getElementById('player-container').innerHTML = `
+                <div class="text-white text-center p-8">
+                    <h2 class="text-2xl font-bold mb-4">Erro ao carregar dados</h2>
+                    <p class="mb-4">Não foi possível carregar os dados dos cursos.</p>
+                    <a href="cursos.html" class="btn-primary px-6 py-3 rounded-lg font-semibold inline-block">
+                        Voltar aos Cursos
+                    </a>
+                </div>
+            `;
+        } else {
+            // CARREGAR CURSO
+            const curso = cursos.find(c => c.id === cursoId);
+            
+            if (!curso) {
+                document.getElementById('player-container').innerHTML = `
+                    <div class="text-white text-center p-8">
+                        <h2 class="text-2xl font-bold mb-4">Curso não encontrado</h2>
+                        <p class="mb-4">ID: ${cursoId}</p>
+                        <a href="cursos.html" class="btn-primary px-6 py-3 rounded-lg font-semibold inline-block">
+                            Voltar aos Cursos
+                        </a>
+                    </div>
+                `;
+            } else {
+                const modulo = curso.modulos.find(m => m.numero === moduloNumero);
+                const aula = modulo ? modulo.aulas[aulaNumero - 1] : null;
+                
+                if (!aula) {
+                    document.getElementById('player-container').innerHTML = `
+                        <div class="text-white text-center p-8">
+                            <h2 class="text-2xl font-bold mb-4">Aula não encontrada</h2>
+                            <a href="curso-detalhe.html?id=${cursoId}" class="btn-primary px-6 py-3 rounded-lg font-semibold inline-block">
+                                Voltar ao Curso
+                            </a>
+                        </div>
+                    `;
+                } else {
+                    // ATUALIZAR HEADER
+                    document.getElementById('curso-titulo-header').textContent = curso.titulo;
+                    document.getElementById('btn-sair-curso').href = `curso-detalhe.html?id=${cursoId}`;
+                    
+                    // ATUALIZAR INFO DA AULA
+                    document.getElementById('aula-titulo').textContent = aula.titulo;
+                    document.getElementById('aula-descricao').textContent = aula.descricao || '';
+                    
+                    // CARREGAR CONTEÚDO DA AULA
+                    carregarAula(aula);
+                    
+                    // RENDERIZAR PLAYLIST
+                    renderizarPlaylist();
+                    
+                    // ATUALIZAR PROGRESSO
+                    atualizarProgressoDisplay();
+                    
+                    // ATUALIZAR CONTADORES
+                    const totalAulas = curso.modulos.reduce((acc, mod) => acc + mod.aulas.length, 0);
+                    let aulaAtualNumero = 0;
+                    curso.modulos.forEach((mod) => {
+                        if (mod.numero < moduloNumero) {
+                            aulaAtualNumero += mod.aulas.length;
+                        } else if (mod.numero === moduloNumero) {
+                            aulaAtualNumero += aulaNumero;
+                        }
+                    });
+                    
+                    document.getElementById('aula-numero-atual').textContent = aulaAtualNumero;
+                    document.getElementById('total-aulas').textContent = totalAulas;
+                }
             }
-        ]
-    },
-    
-    // ============================================
-    // CURSO 2: FRANQUIAS BLINDEX (INTEGRAÇÃO)
-    // ============================================
-    {
-        id: 2,
-        titulo: "Franquias Blindex",
-        descricao: "Conheça o Sistema Blindex de Franquias, o maior e mais forte grupo temperador do Brasil. Entenda como funciona a rede, os padrões de qualidade e o sistema de rastreabilidade dos produtos.",
-        categoria: "Institucional",
-        nivel: "Iniciante",
-        duracao: "30min",
-        instrutor: "Equipe Cristal Sete",
-        thumbnail: "assets/cursos/curso-blindex.jpg",
-        obrigatorio: false,
-        objetivos: [
-            "Compreender o funcionamento do Sistema Blindex de Franquias",
-            "Conhecer o padrão de qualidade e rastreabilidade dos produtos",
-            "Entender a identificação e marcação dos vidros",
-            "Reconhecer a posição da Cristal Sete dentro da rede Blindex"
-        ],
-        prerequisitos: [
-            "Nenhum pré-requisito necessário"
-        ],
-        modulos: [
-            {
-                numero: 1,
-                titulo: "Sistema Blindex de Franquias",
-                aulas: [
-                    {
-                        tipo: "slide",
-                        titulo: "O maior e mais forte grupo temperador do Brasil",
-                        url: "https://docs.google.com/presentation/d/1hZ2FhZyNCZUkC92uP4r2g0HxwSnR42he/edit?slide=id.p1#slide=id.p1",
-                        slides: 8,
-                        descricao: "Apresentação institucional do Sistema Blindex de Franquias e sua importância no mercado."
-                    },
-                    {
-                        tipo: "video",
-                        titulo: "Sistemas de Franquia Blindex",
-                        url: "https://www.youtube.com/watch?v=arlXtLTFdbU",
-                        duracao: "15min",
-                        descricao: "Entenda como funciona o sistema de franquias e a padronização de qualidade."
-                    },
-                    {
-                        tipo: "quiz",
-                        titulo: "Quiz - Sistema Blindex",
-                        perguntas: [
-                            {
-                                pergunta: "O principal objetivo da criação do Sistema de Franquias Blindex® foi:",
-                                opcoes: [
-                                    "Reduzir custos de produção",
-                                    "Expandir a cobertura geográfica da marca",
-                                    "Substituir distribuidores regionais",
-                                    "Padronizar apenas o marketing"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "Para fazer parte da rede Blindex®, as empresas precisam:",
-                                opcoes: [
-                                    "Ter o menor preço do mercado",
-                                    "Trabalhar apenas com vidro comum",
-                                    "Ter histórico comprovado e reputação sólida",
-                                    "Estar localizadas apenas em capitais"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "A rastreabilidade dos vidros Blindex® é garantida por:",
-                                opcoes: [
-                                    "Nota fiscal do produto",
-                                    "Código de barras na embalagem",
-                                    "Marcação no vidro",
-                                    "Certificado digital enviado ao cliente"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "Um vidro com dois traços na borda indica:",
-                                opcoes: [
-                                    "Produto com defeito",
-                                    "Vidro de segunda linha",
-                                    "Unidade adicional do mesmo grupo franqueado",
-                                    "Vidro importado"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "A marcação nos vidros Blindex® é considerada:",
-                                opcoes: [
-                                    "Removível em manutenção",
-                                    "Temporária",
-                                    "Decorativa",
-                                    "Permanente e não falsificável"
-                                ],
-                                correta: 3
-                            },
-                            {
-                                pergunta: "A Cristal Sete, dentro do sistema Blindex®, é identificada por:",
-                                opcoes: [
-                                    "Dois traços",
-                                    "Um traço",
-                                    "Sem identificação",
-                                    "Código numérico"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "O sistema Blindex® se diferencia no mercado principalmente por:",
-                                opcoes: [
-                                    "Trabalhar com menor custo",
-                                    "Ter poucas unidades",
-                                    "Garantir padrão de qualidade uniforme entre franqueados",
-                                    "Produzir apenas vidro comum"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "O conjunto de empresas da rede Blindex® é caracterizado como:",
-                                opcoes: [
-                                    "Pequenas operações independentes",
-                                    "Negócios improvisados",
-                                    "Empresas estruturadas com gestão profissional",
-                                    "Revendedores informais"
-                                ],
-                                correta: 2
-                            }
-                        ]
-                    }
-                ]
+        }
+        
+        function carregarAula(aula) {
+            const container = document.getElementById('player-container');
+            
+            if (aula.tipo === 'video') {
+                // Extrair ID do YouTube
+                const videoId = extrairYouTubeId(aula.url);
+                container.innerHTML = `
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        src="https://www.youtube.com/embed/${videoId}" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                `;
+            } else if (aula.tipo === 'slide') {
+                // Extrair ID do Google Slides
+                const slideId = extrairGoogleSlidesId(aula.url);
+                container.innerHTML = `
+                    <iframe 
+                        src="https://docs.google.com/presentation/d/${slideId}/embed?start=false&loop=false&delayms=3000" 
+                        frameborder="0" 
+                        width="100%" 
+                        height="100%" 
+                        allowfullscreen="true" 
+                        mozallowfullscreen="true" 
+                        webkitallowfullscreen="true">
+                    </iframe>
+                `;
+            } else if (aula.tipo === 'quiz') {
+                container.innerHTML = `
+                    <div class="w-full h-full flex items-center justify-center p-8">
+                        <div class="bg-white rounded-xl p-8 max-w-2xl w-full">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Quiz</h2>
+                            <p class="text-gray-600 mb-6">O quiz será carregado aqui.</p>
+                            <div id="quiz-container"></div>
+                        </div>
+                    </div>
+                `;
+                // Carregar quiz (implementação futura)
             }
-        ]
-    },
-    
-    // ============================================
-    // CURSO 3: PRODUÇÃO DO VIDRO FLOAT (NOVO!)
-    // ============================================
-    {
-        id: 3,
-        titulo: "Produção do Vidro Float",
-        descricao: "Conheça todo o processo de fabricação do vidro float, desde a matéria-prima até o produto final.",
-        categoria: "Técnico",
-        nivel: "Iniciante",
-        duracao: "1h",
-        instrutor: "Equipe Cristal Sete",
-        thumbnail: "assets/cursos/curso-vidro-float.jpg",
-        obrigatorio: false,
-        objetivos: [
-            "Compreender o processo completo de fabricação do vidro float",
-            "Identificar as principais etapas da produção: fusão, flutuação, recozimento e corte",
-            "Reconhecer a composição e matérias-primas utilizadas",
-            "Entender as características e propriedades do vidro float",
-            "Conhecer os equipamentos e tecnologias utilizados na fabricação"
-        ],
-        prerequisitos: [
-            "Nenhum pré-requisito necessário"
-        ],
-        modulos: [
-            {
-                numero: 1,
-                titulo: "Fabricação do Vidro Float",
-                aulas: [
-                    {
-                        tipo: "slide",
-                        titulo: "Produção do Vidro Float",
-                        url: "https://docs.google.com/presentation/d/1z8s8EFXhLHjfnMhLuYFS4CscjJWxA_C3/edit?slide=id.p1#slide=id.p1",
-                        slides: 20,
-                        descricao: "Apresentação completa sobre o processo de fabricação do vidro float."
-                    },
-                    {
-                        tipo: "video",
-                        titulo: "Processo de Produção do Vidro Float",
-                        url: "https://www.youtube.com/watch?v=FBGDuYQccRY",
-                        duracao: "15min",
-                        descricao: "Vídeo demonstrando todas as etapas da fabricação industrial do vidro float."
-                    },
-                    {
-                        tipo: "quiz",
-                        titulo: "Quiz - Produção do Vidro Float",
-                        perguntas: [
-                            {
-                                pergunta: "Qual é a principal matéria-prima utilizada na fabricação do vidro?",
-                                opcoes: [
-                                    "Calcário",
-                                    "Areia (sílica)",
-                                    "Barrilha (carbonato de sódio)",
-                                    "Feldspato"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "Em qual temperatura aproximada ocorre a fusão das matérias-primas para formar o vidro?",
-                                opcoes: [
-                                    "500°C",
-                                    "1000°C",
-                                    "1550°C",
-                                    "2000°C"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "No processo float, sobre qual material o vidro fundido flutua para obter a planicidade?",
-                                opcoes: [
-                                    "Água",
-                                    "Estanho fundido",
-                                    "Areia",
-                                    "Óleo industrial"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "Qual é a função do processo de recozimento (annealing) na produção do vidro?",
-                                opcoes: [
-                                    "Aumentar a temperatura do vidro",
-                                    "Colorir o vidro",
-                                    "Aliviar tensões internas e evitar quebras",
-                                    "Cortar o vidro"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "Qual é a principal característica do vidro float em relação à sua superfície?",
-                                opcoes: [
-                                    "Superfície ondulada",
-                                    "Superfície perfeitamente plana e paralela",
-                                    "Superfície rugosa",
-                                    "Superfície com textura"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "O que significa o termo 'float' no processo de fabricação do vidro?",
-                                opcoes: [
-                                    "Flutuação do vidro sobre estanho líquido",
-                                    "Resfriamento rápido",
-                                    "Polimento do vidro",
-                                    "Corte automático"
-                                ],
-                                correta: 0
-                            },
-                            {
-                                pergunta: "Qual componente é adicionado à mistura para facilitar a fusão e reduzir a temperatura necessária?",
-                                opcoes: [
-                                    "Areia",
-                                    "Barrilha (carbonato de sódio)",
-                                    "Alumina",
-                                    "Calcário"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "Após o recozimento, qual é a próxima etapa do processo de produção do vidro float?",
-                                opcoes: [
-                                    "Fusão",
-                                    "Têmpera",
-                                    "Inspeção e corte",
-                                    "Embalagem"
-                                ],
-                                correta: 2
-                            },
-                            {
-                                pergunta: "Por que o vidro float é considerado superior ao vidro comum antigo?",
-                                opcoes: [
-                                    "É mais barato",
-                                    "Tem maior planicidade e qualidade óptica",
-                                    "É mais colorido",
-                                    "É mais fácil de quebrar"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "O vidro float pode ser transformado em outros tipos de vidro, como:",
-                                opcoes: [
-                                    "Apenas vidro colorido",
-                                    "Vidro temperado, laminado, insulado, entre outros",
-                                    "Apenas vidro espelhado",
-                                    "Nenhuma das anteriores"
-                                ],
-                                correta: 1
-                            }
-                        ]
-                    }
-                ]
+        }
+        
+        function extrairYouTubeId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+        
+        function extrairGoogleSlidesId(url) {
+            const match = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
+            return match ? match[1] : null;
+        }
+        
+        function renderizarPlaylist() {
+            const container = document.getElementById('playlist-container');
+            const curso = cursos.find(c => c.id === cursoId);
+            
+            container.innerHTML = curso.modulos.map(mod => `
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-gray-400 mb-2">Módulo ${mod.numero}: ${mod.titulo}</div>
+                    ${mod.aulas.map((a, idx) => {
+                        const isAtual = mod.numero === moduloNumero && (idx + 1) === aulaNumero;
+                        const concluida = false; // Implementar verificação
+                        
+                        return `
+                            <a href="aula-player.html?curso=${cursoId}&modulo=${mod.numero}&aula=${idx + 1}" 
+                               class="block p-3 rounded-lg mb-2 transition-colors ${isAtual ? 'bg-primary text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center flex-1">
+                                        <div class="w-8 h-8 rounded flex items-center justify-center mr-3 ${isAtual ? 'bg-white/20' : 'bg-gray-600'}">
+                                            <span class="text-xs">${idx + 1}</span>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium">${a.titulo}</div>
+                                            <div class="text-xs opacity-75">${a.duracao || (a.slides ? a.slides + ' slides' : 'Quiz')}</div>
+                                        </div>
+                                    </div>
+                                    ${isAtual ? '<div class="text-xs font-bold">▶</div>' : ''}
+                                </div>
+                            </a>
+                        `;
+                    }).join('')}
+                </div>
+            `).join('');
+        }
+        
+        function atualizarProgressoDisplay() {
+            const progresso = 0; // Implementar cálculo real
+            document.getElementById('progresso-texto').textContent = progresso + '%';
+            document.getElementById('progresso-barra').style.width = progresso + '%';
+        }
+        
+        function marcarConcluida() {
+            alert('Aula marcada como concluída!');
+            proximaAula();
+        }
+        
+        function proximaAula() {
+            const curso = cursos.find(c => c.id === cursoId);
+            const modulo = curso.modulos.find(m => m.numero === moduloNumero);
+            
+            if (aulaNumero < modulo.aulas.length) {
+                window.location.href = `aula-player.html?curso=${cursoId}&modulo=${moduloNumero}&aula=${aulaNumero + 1}`;
+            } else {
+                const proximoModulo = curso.modulos.find(m => m.numero === moduloNumero + 1);
+                if (proximoModulo) {
+                    window.location.href = `aula-player.html?curso=${cursoId}&modulo=${proximoModulo.numero}&aula=1`;
+                } else {
+                    alert('Parabéns! Você concluiu o curso!');
+                    window.location.href = `curso-detalhe.html?id=${cursoId}`;
+                }
             }
-        ]
-    }
-];
-
-// FUNÇÕES AUXILIARES
-function getCursoById(id) {
-    return cursos.find(curso => curso.id === id);
-}
-
-function getCursosByCategoria(categoria) {
-    return cursos.filter(curso => curso.categoria === categoria);
-}
-
-function getCursosByNivel(nivel) {
-    return cursos.filter(curso => curso.nivel === nivel);
-}
-
-function searchCursos(query) {
-    const lowerQuery = query.toLowerCase();
-    return cursos.filter(curso => 
-        curso.titulo.toLowerCase().includes(lowerQuery) ||
-        curso.descricao.toLowerCase().includes(lowerQuery) ||
-        curso.categoria.toLowerCase().includes(lowerQuery) ||
-        curso.instrutor.toLowerCase().includes(lowerQuery)
-    );
-}
-
-function getEstatisticas() {
-    const totalCursos = cursos.length;
-    const totalHoras = cursos.reduce((acc, curso) => {
-        const horas = parseInt(curso.duracao.match(/\d+/)[0]);
-        return acc + horas;
-    }, 0);
+        }
+        
+        function aulaAnterior() {
+            if (aulaNumero > 1) {
+                window.location.href = `aula-player.html?curso=${cursoId}&modulo=${moduloNumero}&aula=${aulaNumero - 1}`;
+            } else if (moduloNumero > 1) {
+                const curso = cursos.find(c => c.id === cursoId);
+                const moduloAnterior = curso.modulos.find(m => m.numero === moduloNumero - 1);
+                if (moduloAnterior) {
+                    window.location.href = `aula-player.html?curso=${cursoId}&modulo=${moduloAnterior.numero}&aula=${moduloAnterior.aulas.length}`;
+                }
+            }
+        }
+    </script>
     
-    const categorias = [...new Set(cursos.map(c => c.categoria))];
-    const instrutores = [...new Set(cursos.map(c => c.instrutor))];
-    
-    return {
-        totalCursos,
-        totalHoras,
-        totalCategorias: categorias.length,
-        totalInstrutores: instrutores.length,
-        categorias,
-        instrutores
-    };
-}
-
-console.log('📚 Base de dados de cursos carregada:', cursos.length, 'cursos disponíveis');
-console.log('📊 Estatísticas:', getEstatisticas());
+</body>
+</html>
