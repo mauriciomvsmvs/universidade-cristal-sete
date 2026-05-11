@@ -1,11 +1,11 @@
 /* ============================================
    UNIVERSIDADE CRISTAL SETE - DADOS DOS CURSOS
-   ✅ VERSÃO LIMPA - APENAS 2 CURSOS
+   ✅ ATUALIZADO - 3 CURSOS
    ============================================ */
 
 const cursos = [
     // ============================================
-    // CURSO 1: BEM-VINDO À CRISTAL SETE
+    // CURSO 1: BEM-VINDO À CRISTAL SETE (INTEGRAÇÃO)
     // ============================================
     {
         id: 1,
@@ -121,7 +121,7 @@ const cursos = [
     },
     
     // ============================================
-    // CURSO 2: FRANQUIAS BLINDEX
+    // CURSO 2: FRANQUIAS BLINDEX (INTEGRAÇÃO)
     // ============================================
     {
         id: 2,
@@ -169,7 +169,7 @@ const cursos = [
                                 pergunta: "O principal objetivo da criação do Sistema de Franquias Blindex® foi:",
                                 opcoes: [
                                     "Reduzir custos de produção",
-                                    "Expandar a cobertura geográfica da marca",
+                                    "Expandir a cobertura geográfica da marca",
                                     "Substituir distribuidores regionais",
                                     "Padronizar apenas o marketing"
                                 ],
@@ -244,6 +244,159 @@ const cursos = [
                                     "Revendedores informais"
                                 ],
                                 correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    
+    // ============================================
+    // CURSO 3: PRODUÇÃO DO VIDRO FLOAT (TÉCNICO)
+    // ============================================
+    {
+        id: 3,
+        titulo: "Produção do Vidro Float",
+        descricao: "Conheça todo o processo de fabricação do vidro float, desde a matéria-prima até o produto final.",
+        categoria: "Técnico",
+        nivel: "Iniciante",
+        duracao: "1h",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-vidro-float.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender o processo completo de fabricação do vidro float",
+            "Identificar as principais etapas da produção: fusão, flutuação, recozimento e corte",
+            "Reconhecer a composição e matérias-primas utilizadas",
+            "Entender as características e propriedades do vidro float",
+            "Conhecer os equipamentos e tecnologias utilizados na fabricação"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Fabricação do Vidro Float",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Produção do Vidro Float",
+                        url: "https://docs.google.com/presentation/d/1z8s8EFXhLHjfnMhLuYFS4CscjJWxA_C3/edit?slide=id.p1#slide=id.p1",
+                        slides: 20,
+                        descricao: "Apresentação completa sobre o processo de fabricação do vidro float."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Processo de Produção do Vidro Float",
+                        url: "https://www.youtube.com/watch?v=FBGDuYQccRY",
+                        duracao: "15min",
+                        descricao: "Vídeo demonstrando todas as etapas da fabricação industrial do vidro float."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Produção do Vidro Float",
+                        perguntas: [
+                            {
+                                pergunta: "Qual é a principal matéria-prima utilizada na fabricação do vidro?",
+                                opcoes: [
+                                    "Calcário",
+                                    "Areia (sílica)",
+                                    "Barrilha (carbonato de sódio)",
+                                    "Feldspato"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Em qual temperatura aproximada ocorre a fusão das matérias-primas para formar o vidro?",
+                                opcoes: [
+                                    "500°C",
+                                    "1000°C",
+                                    "1550°C",
+                                    "2000°C"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "No processo float, sobre qual material o vidro fundido flutua para obter a planicidade?",
+                                opcoes: [
+                                    "Água",
+                                    "Estanho fundido",
+                                    "Areia",
+                                    "Óleo industrial"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é a função do processo de recozimento (annealing) na produção do vidro?",
+                                opcoes: [
+                                    "Aumentar a temperatura do vidro",
+                                    "Colorir o vidro",
+                                    "Aliviar tensões internas e evitar quebras",
+                                    "Cortar o vidro"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é a principal característica do vidro float em relação à sua superfície?",
+                                opcoes: [
+                                    "Superfície ondulada",
+                                    "Superfície perfeitamente plana e paralela",
+                                    "Superfície rugosa",
+                                    "Superfície com textura"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O que significa o termo 'float' no processo de fabricação do vidro?",
+                                opcoes: [
+                                    "Flutuação do vidro sobre estanho líquido",
+                                    "Resfriamento rápido",
+                                    "Polimento do vidro",
+                                    "Corte automático"
+                                ],
+                                correta: 0
+                            },
+                            {
+                                pergunta: "Qual componente é adicionado à mistura para facilitar a fusão e reduzir a temperatura necessária?",
+                                opcoes: [
+                                    "Areia",
+                                    "Barrilha (carbonato de sódio)",
+                                    "Alumina",
+                                    "Calcário"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Após o recozimento, qual é a próxima etapa do processo de produção do vidro float?",
+                                opcoes: [
+                                    "Fusão",
+                                    "Têmpera",
+                                    "Inspeção e corte",
+                                    "Embalagem"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Por que o vidro float é considerado superior ao vidro comum antigo?",
+                                opcoes: [
+                                    "É mais barato",
+                                    "Tem maior planicidade e qualidade óptica",
+                                    "É mais colorido",
+                                    "É mais fácil de quebrar"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O vidro float pode ser transformado em outros tipos de vidro, como:",
+                                opcoes: [
+                                    "Apenas vidro colorido",
+                                    "Vidro temperado, laminado, insulado, entre outros",
+                                    "Apenas vidro espelhado",
+                                    "Nenhuma das anteriores"
+                                ],
+                                correta: 1
                             }
                         ]
                     }
