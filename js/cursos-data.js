@@ -543,6 +543,132 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 5: CARACTERÍSTICAS DO PROCESSO DE TÊMPERA (TÉCNICO)
+    // ============================================
+    {
+        id: 5,
+        titulo: "Características do Processo de Têmpera",
+        descricao: "Conheça as características inerentes ao processo de têmpera do vidro. Aprenda sobre anisotropia, empenamento, defeitos tolerados pela norma NBR 14698 e os limites aceitáveis de qualidade.",
+        categoria: "Técnico",
+        nivel: "Intermediário",
+        duracao: "30min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-caracteristicas-tempera.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender os defeitos inerentes ao processo de têmpera",
+            "Identificar anisotropia e empenamento no vidro temperado",
+            "Conhecer os limites da norma NBR 14698",
+            "Diferenciar defeitos aceitáveis de defeitos críticos",
+            "Entender as limitações após o processo de têmpera"
+        ],
+        prerequisitos: [
+            "Recomendado: Curso 'Como é feito o Vidro Temperado?'"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Características Inerentes",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Características do Vidro Temperado",
+                        url: "https://docs.google.com/presentation/d/1fZ9L7uQqJwJECqhtP7cgaIXLXU0lSQkX/edit?slide=id.p1#slide=id.p1",
+                        slides: 13,
+                        descricao: "Defeitos inerentes, anisotropia, empenamento e normas técnicas."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Características do Processo de Têmpera",
+                        perguntas: [
+                            {
+                                pergunta: "Os chamados 'defeitos inerentes' do vidro temperado são:",
+                                opcoes: [
+                                    "Falhas de fabricação que exigem substituição imediata",
+                                    "Problemas causados exclusivamente pela instalação",
+                                    "Características naturais do processo de têmpera",
+                                    "Indícios de baixa qualidade do material"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A anisotropia no vidro temperado ocorre devido a:",
+                                opcoes: [
+                                    "Variações de temperatura ambiente",
+                                    "Tensões internas geradas no processo de têmpera",
+                                    "Defeitos na matéria-prima",
+                                    "Falta de controle no resfriamento"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Em relação ao empenamento do vidro temperado, é correto afirmar que:",
+                                opcoes: [
+                                    "O vidro temperado permanece perfeitamente plano após o processo",
+                                    "Qualquer deformação é considerada defeito",
+                                    "Ondulações podem ocorrer, mas são aceitas dentro da norma",
+                                    "O empenamento ocorre apenas em vidros laminados"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Segundo a NBR 14698, defeitos pontuais com tamanho inferior a 0,2 mm:",
+                                opcoes: [
+                                    "Devem ser considerados defeitos graves",
+                                    "São tolerados apenas na borda",
+                                    "Não são considerados defeitos",
+                                    "Devem ser analisados apenas na área central"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Sobre defeitos lineares (riscos e arranhões), é correto afirmar que:",
+                                opcoes: [
+                                    "Qualquer risco é considerado defeito",
+                                    "Riscos menores que 30 mm não são considerados",
+                                    "São proibidos apenas na borda",
+                                    "Não possuem limite definido"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Em relação aos defeitos de borda, é correto afirmar que:",
+                                opcoes: [
+                                    "São irrelevantes para a segurança do vidro",
+                                    "Podem causar quebra espontânea do vidro",
+                                    "São aceitos em qualquer condição",
+                                    "Não precisam de tratamento antes da têmpera"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "As marcas de pinça no vidro temperado:",
+                                opcoes: [
+                                    "Indicam erro de fabricação",
+                                    "São causadas por impacto externo",
+                                    "São características do processo de têmpera vertical",
+                                    "Devem ser eliminadas após instalação"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Após o processo de têmpera, o vidro:",
+                                opcoes: [
+                                    "Pode ser ajustado com ferramentas específicas",
+                                    "Pode sofrer pequenas alterações dimensionais",
+                                    "Pode ser retrabalhado nas bordas",
+                                    "Não pode ser cortado ou furado"
+                                ],
+                                correta: 3
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
@@ -591,4 +717,3 @@ function getEstatisticas() {
 
 console.log('📚 Base de dados de cursos carregada:', cursos.length, 'cursos disponíveis');
 console.log('📊 Estatísticas:', getEstatisticas());
-
