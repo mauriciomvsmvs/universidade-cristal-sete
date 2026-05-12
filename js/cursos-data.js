@@ -416,7 +416,7 @@ const cursos = [
         nivel: "Iniciante",
         duracao: "45min",
         instrutor: "Equipe Cristal Sete",
-        thumbnail: "assets/cursos/curso-vidro-temperado.jpg",
+        thumbnail: "assets/cursos/curso-vidro-temperado.jpeg",
         obrigatorio: false,
         objetivos: [
             "Compreender o que é vidro temperado e suas aplicações",
