@@ -283,7 +283,7 @@ const cursos = [
                     {
                         tipo: "slide",
                         titulo: "Produção do Vidro Float",
-                        url: "https://docs.google.com/presentation/d/1z8s8EFXhLHjfnMhLuYFS4CscjJWxA_C3/edit?slide=id.p1#slide=id.p1",
+                        url: "https://docs.google.com/presentation/d/1PHwyyOl5m6r2NpThg3GokSmPVpvsyyaw/edit?slide=id.p1#slide=id.p1",
                         slides: 20,
                         descricao: "Apresentação completa sobre o processo de fabricação do vidro float."
                     },
