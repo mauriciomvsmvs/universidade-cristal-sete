@@ -150,7 +150,7 @@ const cursos = [
                     {
                         tipo: "slide",
                         titulo: "O maior e mais forte grupo temperador do Brasil",
-                        url: "https://docs.google.com/presentation/d/1hZ2FhZyNCZUkC92uP4r2g0HxwSnR42he/edit?slide=id.p1#slide=id.p1",
+                        url: "https://docs.google.com/presentation/d/1ntqT94rHvTjJDNcc3qt59z7RL9JeuG3B/edit?slide=id.p1#slide=id.p1",
                         slides: 8,
                         descricao: "Apresentação institucional do Sistema Blindex de Franquias e sua importância no mercado."
                     },
