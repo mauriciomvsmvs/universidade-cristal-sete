@@ -1,6 +1,6 @@
 /* ============================================
    UNIVERSIDADE CRISTAL SETE - DADOS DOS CURSOS
-   ✅ ATUALIZADO - 3 CURSOS
+   ✅ ATUALIZADO - 4 CURSOS
    ============================================ */
 
 const cursos = [
@@ -395,6 +395,146 @@ const cursos = [
                                     "Vidro temperado, laminado, insulado, entre outros",
                                     "Apenas vidro espelhado",
                                     "Nenhuma das anteriores"
+                                ],
+                                correta: 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    
+    // ============================================
+    // CURSO 4: COMO É FEITO O VIDRO TEMPERADO (TÉCNICO)
+    // ============================================
+    {
+        id: 4,
+        titulo: "Como é feito o Vidro Temperado?",
+        descricao: "Aprenda o processo completo de têmpera do vidro, desde o corte até o resfriamento. Entenda as etapas de aquecimento, têmpera e controle de qualidade que garantem a resistência e segurança do produto final.",
+        categoria: "Técnico",
+        nivel: "Iniciante",
+        duracao: "45min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-vidro-temperado.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender o que é vidro temperado e suas aplicações",
+            "Identificar as etapas do processo de têmpera: corte, lapidação, furação, lavagem, aquecimento e resfriamento",
+            "Reconhecer os padrões de qualidade e normas técnicas",
+            "Entender as características de resistência e segurança",
+            "Conhecer os equipamentos utilizados na têmpera"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Processo de Têmpera",
+                aulas: [
+                    {
+                        tipo: "video",
+                        titulo: "Introdução ao Vidro Temperado",
+                        url: "https://www.youtube.com/watch?v=PLACEHOLDER",
+                        duracao: "10min",
+                        descricao: "O que é vidro temperado, suas características e principais aplicações."
+                    },
+                    {
+                        tipo: "slide",
+                        titulo: "Etapas do Processo de Têmpera",
+                        url: "https://docs.google.com/presentation/d/PLACEHOLDER/edit",
+                        slides: 15,
+                        descricao: "Passo a passo completo do processo de têmpera do vidro."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Processo de Fabricação na Prática",
+                        url: "https://www.youtube.com/watch?v=PLACEHOLDER",
+                        duracao: "20min",
+                        descricao: "Acompanhe o processo de têmpera acontecendo na linha de produção."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Vidro Temperado",
+                        perguntas: [
+                            {
+                                pergunta: "O que é o processo de têmpera do vidro?",
+                                opcoes: [
+                                    "Aquecimento e resfriamento rápido controlado",
+                                    "Aplicação de película protetora",
+                                    "Colagem de camadas de vidro",
+                                    "Polimento da superfície"
+                                ],
+                                correta: 0
+                            },
+                            {
+                                pergunta: "Qual é a principal característica do vidro temperado?",
+                                opcoes: [
+                                    "É mais barato que o vidro comum",
+                                    "É até 5 vezes mais resistente que o vidro comum",
+                                    "Pode ser cortado após a têmpera",
+                                    "É mais pesado que o vidro comum"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Em qual temperatura aproximada o vidro é aquecido durante a têmpera?",
+                                opcoes: [
+                                    "200°C",
+                                    "400°C",
+                                    "650°C",
+                                    "1000°C"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Por que o vidro não pode ser cortado, furado ou lapidado APÓS a têmpera?",
+                                opcoes: [
+                                    "Porque fica muito duro",
+                                    "Porque quebraria completamente devido às tensões internas",
+                                    "Porque perde a transparência",
+                                    "Porque fica muito macio"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Como o vidro temperado se quebra?",
+                                opcoes: [
+                                    "Em lascas grandes e pontiagudas",
+                                    "Não quebra nunca",
+                                    "Em pequenos fragmentos sem pontas cortantes",
+                                    "Apenas racha mas não quebra"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual etapa vem ANTES do aquecimento no forno?",
+                                opcoes: [
+                                    "Resfriamento",
+                                    "Lavagem",
+                                    "Embalagem",
+                                    "Instalação"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é o objetivo do resfriamento rápido (choque térmico) na têmpera?",
+                                opcoes: [
+                                    "Deixar o vidro frio para embalar",
+                                    "Criar tensões que aumentam a resistência",
+                                    "Limpar o vidro",
+                                    "Reduzir o peso do vidro"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Onde o vidro temperado é mais utilizado?",
+                                opcoes: [
+                                    "Apenas em janelas residenciais",
+                                    "Box de banheiro, portas, fachadas e aplicações de segurança",
+                                    "Somente em carros",
+                                    "Apenas em espelhos"
                                 ],
                                 correta: 1
                             }
