@@ -591,3 +591,4 @@ function getEstatisticas() {
 
 console.log('📚 Base de dados de cursos carregada:', cursos.length, 'cursos disponíveis');
 console.log('📊 Estatísticas:', getEstatisticas());
+
