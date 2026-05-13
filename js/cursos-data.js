@@ -945,6 +945,166 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 8: VIDROS ESPECIAIS (TÉCNICO)
+    // ============================================
+    {
+        id: 8,
+        titulo: "Vidros Especiais",
+        descricao: "Explore vidros com propriedades técnicas diferenciadas: vidro polarizado (SPD), plumbífero para proteção radiológica, borossilicato resistente a choque térmico e vidro blindado. Conheça aplicações e normas técnicas.",
+        categoria: "Técnico",
+        nivel: "Avançado",
+        duracao: "1h",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-vidros-especiais.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Conhecer os principais tipos de vidros especiais",
+            "Compreender o funcionamento do vidro polarizado (SPD)",
+            "Identificar aplicações de vidro plumbífero e borossilicato",
+            "Entender os níveis de blindagem e norma NBR 15000",
+            "Reconhecer quando especificar cada tipo de vidro especial"
+        ],
+        prerequisitos: [
+            "Recomendado: Cursos 'Vidro Temperado' e 'Vidro Laminado'"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Tipos e Aplicações",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Vidros Especiais",
+                        url: "https://docs.google.com/presentation/d/1006wfLfm7twz5bv63xiGWeQmWee4AEoz/edit?slide=id.p1#slide=id.p1",
+                        slides: 20,
+                        descricao: "Vidro polarizado, plumbífero, borossilicato, blindado e suas aplicações."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Vidro Polarizado em Ação",
+                        url: "https://www.youtube.com/watch?v=Xy-PUtETExo",
+                        duracao: "8min",
+                        descricao: "Veja como funciona o vidro polarizado (SPD) alternando entre transparente e opaco."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Vidro Blindado e Proteção Balística",
+                        url: "https://www.youtube.com/watch?v=qVzVH68knuQ",
+                        duracao: "12min",
+                        descricao: "Entenda os níveis de blindagem e testes de resistência balística."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Vidros Especiais",
+                        perguntas: [
+                            {
+                                pergunta: "Qual é a principal característica dos vidros especiais?",
+                                opcoes: [
+                                    "São utilizados apenas em decoração",
+                                    "Possuem propriedades técnicas diferenciadas para aplicações específicas",
+                                    "São mais baratos que vidros comuns",
+                                    "Não possuem tecnologia diferenciada"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Como funciona o vidro polarizado (SPD)?",
+                                opcoes: [
+                                    "Fica sempre transparente",
+                                    "Utiliza gás argônio para escurecimento",
+                                    "Altera a transparência através de corrente elétrica",
+                                    "Usa película adesiva removível"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Quando o vidro polarizado está sem energia elétrica, ele fica:",
+                                opcoes: [
+                                    "Totalmente transparente",
+                                    "Azul refletivo",
+                                    "Opaco/translúcido",
+                                    "Espelhado"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é a principal função do vidro plumbífero?",
+                                opcoes: [
+                                    "Reduzir temperatura interna",
+                                    "Bloquear ruídos externos",
+                                    "Proteger contra radiação ionizante",
+                                    "Aumentar a luminosidade"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Em quais ambientes o vidro plumbífero é obrigatório?",
+                                opcoes: [
+                                    "Escritórios comuns",
+                                    "Salas de raio-X e radioterapia",
+                                    "Residências térreas",
+                                    "Fachadas comerciais simples"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O que diferencia o vidro borossilicato do vidro comum?",
+                                opcoes: [
+                                    "Sua capacidade de mudar de cor",
+                                    "Sua alta resistência térmica e química",
+                                    "Seu peso extremamente leve",
+                                    "Sua composição com chumbo"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é uma das grandes vantagens do vidro borossilicato?",
+                                opcoes: [
+                                    "Não quebra em nenhuma situação",
+                                    "Suporta mudanças bruscas de temperatura",
+                                    "Não necessita limpeza",
+                                    "Dispensa tratamento industrial"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O vidro blindado segue qual norma brasileira?",
+                                opcoes: [
+                                    "NBR 7199",
+                                    "NBR 14698",
+                                    "NBR 15000",
+                                    "NBR 10821"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é o nível de vidro blindado mais comum no Brasil?",
+                                opcoes: [
+                                    "Nível I",
+                                    "Nível II",
+                                    "Nível III-A",
+                                    "Nível IV"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual órgão exige certificação obrigatória para comercialização de vidro blindado?",
+                                opcoes: [
+                                    "CREA",
+                                    "Corpo de Bombeiros",
+                                    "Exército Brasileiro",
+                                    "Prefeitura Municipal"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
