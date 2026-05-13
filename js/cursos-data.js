@@ -669,6 +669,129 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 6: O QUE É VIDRO LAMINADO (TÉCNICO)
+    // ============================================
+    {
+        id: 6,
+        titulo: "O que é Vidro Laminado?",
+        descricao: "Conheça o vidro laminado, sua composição com películas PVB e EVA, o processo de fabricação e as principais aplicações em segurança. Entenda como funciona a proteção após a quebra e os benefícios deste tipo de vidro.",
+        categoria: "Técnico",
+        nivel: "Iniciante",
+        duracao: "40min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-vidro-laminado.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender o que é vidro laminado e sua estrutura",
+            "Conhecer as películas PVB e EVA e suas diferenças",
+            "Entender o processo de laminação e uso da autoclave",
+            "Reconhecer as aplicações e benefícios do vidro laminado",
+            "Identificar quando usar vidro laminado em projetos"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Conceitos e Aplicações",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "O que é Vidro Laminado?",
+                        url: "https://docs.google.com/presentation/d/1BeDC2sVzALv-G3CxEhzuHSM0eZk7gPKy/edit?slide=id.p1#slide=id.p1",
+                        slides: 15,
+                        descricao: "Composição, películas PVB e EVA, processo de fabricação e aplicações."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Vidro Laminado na Prática",
+                        url: "https://www.youtube.com/watch?v=KIMw7X3ekYY",
+                        duracao: "15min",
+                        descricao: "Veja como funciona o vidro laminado e seus benefícios em aplicações reais."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Vidro Laminado",
+                        perguntas: [
+                            {
+                                pergunta: "O que caracteriza o vidro laminado?",
+                                opcoes: [
+                                    "Uma única chapa de vidro temperado",
+                                    "Duas ou mais chapas unidas por uma película resistente",
+                                    "Um vidro com pintura especial",
+                                    "Um vidro produzido apenas com resina"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é a principal função da película no vidro laminado?",
+                                opcoes: [
+                                    "Aumentar o brilho do vidro",
+                                    "Impedir totalmente a quebra",
+                                    "Manter os fragmentos unidos após a quebra",
+                                    "Reduzir o peso da estrutura"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual material é utilizado nas chapas que a Cristal Sete adquire já laminadas da Cebrace?",
+                                opcoes: [
+                                    "EVA",
+                                    "PVC",
+                                    "Acrílico",
+                                    "PVB"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "No processo de laminação com PVB, qual equipamento é utilizado para fusão total da película?",
+                                opcoes: [
+                                    "Forno comum",
+                                    "Estufa elétrica",
+                                    "Autoclave",
+                                    "Câmara fria"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual benefício é citado tanto no PVB quanto no EVA?",
+                                opcoes: [
+                                    "Proteção UV de até 99%",
+                                    "Eliminação da quebra do vidro",
+                                    "Dispensa inspeção de qualidade",
+                                    "Redução total do peso do vidro"
+                                ],
+                                correta: 0
+                            },
+                            {
+                                pergunta: "Qual é uma característica do EVA utilizado pela Cristal Sete?",
+                                opcoes: [
+                                    "Necessita obrigatoriamente de autoclave",
+                                    "Permite laminação local sem autoclave",
+                                    "Não pode ser utilizado em vidros de segurança",
+                                    "Só pode ser aplicado em vidros finos"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Segundo o treinamento, o vidro laminado:",
+                                opcoes: [
+                                    "Nunca quebra",
+                                    "É mais frágil que o vidro comum",
+                                    "Controla o comportamento do vidro após a quebra",
+                                    "Não pode ser utilizado em guarda-corpos"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
