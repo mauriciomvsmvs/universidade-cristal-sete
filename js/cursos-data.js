@@ -792,6 +792,159 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 7: O QUE É VIDRO INSULADO (TÉCNICO)
+    // ============================================
+    {
+        id: 7,
+        titulo: "O que é Vidro Insulado?",
+        descricao: "Descubra o vidro insulado, sistema com duas ou mais lâminas separadas por câmara de gás. Aprenda sobre isolamento térmico e acústico, espaçadores warm edge, selantes e suas aplicações em projetos que exigem conforto.",
+        categoria: "Técnico",
+        nivel: "Intermediário",
+        duracao: "45min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-vidro-insulado.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender o conceito e estrutura do vidro insulado",
+            "Conhecer o sistema de espaçadores Quanex warm edge",
+            "Entender os selantes butyl e polissulfeto",
+            "Reconhecer os benefícios térmicos e acústicos",
+            "Identificar aplicações ideais para vidro insulado"
+        ],
+        prerequisitos: [
+            "Recomendado: Curso 'Produção do Vidro Float'"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Sistema Insulado",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "O que é Vidro Insulado?",
+                        url: "https://docs.google.com/presentation/d/1s-xOeV7WRbJba2msUZoVXBb5n8AVzCgj/edit?slide=id.p1#slide=id.p1",
+                        slides: 18,
+                        descricao: "Estrutura, espaçadores, selantes, isolamento térmico e acústico."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Vidro Insulado na Prática",
+                        url: "https://www.youtube.com/watch?v=A8V1ZZHdnWE",
+                        duracao: "12min",
+                        descricao: "Veja o processo de fabricação e os benefícios do vidro insulado."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Vidro Insulado",
+                        perguntas: [
+                            {
+                                pergunta: "O que é o vidro insulado?",
+                                opcoes: [
+                                    "Um vidro laminado com película colorida",
+                                    "Um sistema com duas ou mais lâminas separadas e seladas hermeticamente",
+                                    "Um vidro simples tratado termicamente",
+                                    "Um vidro comum com proteção UV"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é a principal função da câmara de gás no vidro insulado?",
+                                opcoes: [
+                                    "Decorar o vidro",
+                                    "Aumentar o peso do conjunto",
+                                    "Melhorar o isolamento térmico e acústico",
+                                    "Facilitar a quebra do vidro"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual espaçador é utilizado pela Cristal Sete nos vidros insulados?",
+                                opcoes: [
+                                    "Alumex",
+                                    "SuperGlass",
+                                    "Quanex",
+                                    "Thermobox"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é um dos diferenciais do sistema Quanex?",
+                                opcoes: [
+                                    "Conduz mais calor para o ambiente",
+                                    "Reduz ponte térmica em até 80%",
+                                    "Elimina a necessidade de selagem",
+                                    "Dispensa dessecante integrado"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual selante é utilizado como barreira primária contra umidade?",
+                                opcoes: [
+                                    "Silicone",
+                                    "EVA",
+                                    "Polissulfeto",
+                                    "Butyl"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Segundo o treinamento, a Cristal Sete realiza injeção de gás argônio nos vidros insulados?",
+                                opcoes: [
+                                    "Sim, em todos os modelos",
+                                    "Apenas em fachadas",
+                                    "Não realiza atualmente",
+                                    "Apenas em hospitais"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual benefício térmico o vidro insulado pode proporcionar?",
+                                opcoes: [
+                                    "Aumento do consumo de energia",
+                                    "Redução de até 70% na transmissão de calor",
+                                    "Eliminação total da temperatura externa",
+                                    "Aquecimento automático do ambiente"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Em relação ao isolamento acústico, o vidro insulado pode reduzir ruídos em média de:",
+                                opcoes: [
+                                    "5 a 10 dB",
+                                    "10 a 20 dB",
+                                    "30 a 40 dB",
+                                    "50 a 60 dB"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é uma das vantagens do espaçador warm edge?",
+                                opcoes: [
+                                    "Aumentar a condensação",
+                                    "Reduzir embaçamento interno",
+                                    "Diminuir a durabilidade do vidro",
+                                    "Facilitar infiltrações"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual dessas aplicações é ideal para vidro insulado?",
+                                opcoes: [
+                                    "Apenas móveis decorativos",
+                                    "Ambientes que exigem conforto térmico e acústico",
+                                    "Somente pequenas vitrines",
+                                    "Apenas coberturas industriais simples"
+                                ],
+                                correta: 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
