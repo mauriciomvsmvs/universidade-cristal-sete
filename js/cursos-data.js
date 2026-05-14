@@ -1105,6 +1105,139 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 9: VIDROS RESISTENTES AO FOGO (TÉCNICO)
+    // ============================================
+    {
+        id: 9,
+        titulo: "Vidros Resistentes ao Fogo",
+        descricao: "Conheça os vidros corta-fogo e suas classificações E, EI e EW. Aprenda sobre compartimentação, norma NBR 14925, gel intumescente e o sistema completo de proteção passiva contra incêndio.",
+        categoria: "Técnico",
+        nivel: "Avançado",
+        duracao: "50min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-vidros-fogo.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender a função dos vidros resistentes ao fogo",
+            "Conhecer as classificações E, EI e EW",
+            "Entender o sistema completo: vidro, esquadria, vedações e fixações",
+            "Identificar a norma NBR 14925 e tempos de resistência",
+            "Reconhecer aplicações de vidros corta-fogo"
+        ],
+        prerequisitos: [
+            "Recomendado: Curso 'Vidro Laminado'"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Proteção Passiva Contra Incêndio",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Vidros Resistentes ao Fogo",
+                        url: "https://docs.google.com/presentation/d/12pLnis8-FIoL2OHgxJO55G-2PZYHeo4r/edit?slide=id.p1#slide=id.p1",
+                        slides: 16,
+                        descricao: "Classificações, normas, gel intumescente e sistemas completos."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Teste de Resistência ao Fogo",
+                        url: "https://www.youtube.com/watch?v=YV-VU_FV6qM",
+                        duracao: "10min",
+                        descricao: "Veja testes reais de vidros corta-fogo em ação."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Vidros Resistentes ao Fogo",
+                        perguntas: [
+                            {
+                                pergunta: "A principal função dos vidros resistentes ao fogo é:",
+                                opcoes: [
+                                    "Reduzir custos de construção",
+                                    "Aumentar a transparência dos ambientes",
+                                    "Compartimentar o fogo e permitir evacuação segura",
+                                    "Melhorar o isolamento acústico"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A norma principal que regula vidros corta-fogo no Brasil é:",
+                                opcoes: [
+                                    "NBR 7199",
+                                    "NBR 10821",
+                                    "NBR 14925",
+                                    "NBR 14698"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O sistema completo de um elemento resistente ao fogo é composto por:",
+                                opcoes: [
+                                    "Apenas o vidro",
+                                    "Vidro e esquadria",
+                                    "Vidro, esquadria e fixações",
+                                    "Vidro, esquadria, vedações e fixações"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "A classificação E (para-chamas) garante:",
+                                opcoes: [
+                                    "Bloqueio total de calor",
+                                    "Apenas isolamento térmico",
+                                    "Bloqueio de chamas e fumaça, mas permite passagem de calor",
+                                    "Redução parcial de radiação"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A classificação EI se diferencia da classificação E porque:",
+                                opcoes: [
+                                    "Permite passagem de calor",
+                                    "Não bloqueia fumaça",
+                                    "Também isola a passagem de calor",
+                                    "É usada apenas em fachadas"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A classificação EW tem como principal característica:",
+                                opcoes: [
+                                    "Bloquear totalmente o calor",
+                                    "Reduzir a radiação térmica",
+                                    "Permitir passagem de fumaça",
+                                    "Ser aplicada apenas em portas"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O tempo de resistência ao fogo é medido em:",
+                                opcoes: [
+                                    "Graus Celsius",
+                                    "Milímetros",
+                                    "Minutos",
+                                    "Quilowatts"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O gel intumescente, quando exposto ao calor, tem como função:",
+                                opcoes: [
+                                    "Resfriar o vidro",
+                                    "Tornar o vidro mais transparente",
+                                    "Expandir e formar uma barreira isolante",
+                                    "Reduzir o peso do vidro"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
