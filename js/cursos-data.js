@@ -1558,6 +1558,152 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 12: TERMOS ESSENCIAIS DO MUNDO DOS NEGÓCIOS (VENDAS)
+    // ============================================
+    {
+        id: 12,
+        titulo: "Termos Essenciais do Mundo dos Negócios",
+        descricao: "Domine o vocabulário corporativo: market share, benchmark, diferencial competitivo, funil de vendas, ticket médio, ROI, upsell, cross-sell, gargalo e escalabilidade. Linguagem essencial para negócios.",
+        categoria: "Vendas",
+        nivel: "Iniciante",
+        duracao: "30min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-termos-negocios.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender termos fundamentais do mundo corporativo",
+            "Dominar conceitos de vendas e marketing",
+            "Conhecer métricas financeiras básicas",
+            "Entender processos de gestão e operação",
+            "Comunicar-se com propriedade no ambiente de negócios"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Vocabulário Corporativo",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Termos Essenciais do Mundo dos Negócios",
+                        url: "https://docs.google.com/presentation/d/1KqxmQ2dv0LRDc9dp4sS5TvJeAKiRKjU9/edit?slide=id.p1#slide=id.p1",
+                        slides: 25,
+                        descricao: "Glossário completo de termos corporativos, vendas e gestão."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Termos de Negócios",
+                        perguntas: [
+                            {
+                                pergunta: "O conceito de 'Market Share' representa:",
+                                opcoes: [
+                                    "O faturamento total da empresa",
+                                    "A margem de lucro por produto",
+                                    "A fatia de mercado que a empresa ocupa",
+                                    "O número de clientes ativos"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Fazer benchmark significa:",
+                                opcoes: [
+                                    "Reduzir custos operacionais",
+                                    "Copiar diretamente concorrentes",
+                                    "Usar referências do mercado para melhorar processos",
+                                    "Criar um novo produto"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Diferencial competitivo é:",
+                                opcoes: [
+                                    "O menor preço do mercado",
+                                    "O que torna a empresa única e difícil de copiar",
+                                    "A quantidade de produtos vendidos",
+                                    "O tempo de entrega"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Um 'lead' é definido como:",
+                                opcoes: [
+                                    "Cliente fidelizado",
+                                    "Cliente inadimplente",
+                                    "Potencial cliente com interesse",
+                                    "Parceiro comercial"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O conceito de 'funil de vendas' representa:",
+                                opcoes: [
+                                    "A estrutura financeira da empresa",
+                                    "O caminho que o cliente percorre até a compra",
+                                    "O fluxo de caixa",
+                                    "A margem de lucro"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O 'ticket médio' é:",
+                                opcoes: [
+                                    "O valor total de vendas",
+                                    "O valor médio gasto por cliente",
+                                    "O custo do produto",
+                                    "O lucro líquido da empresa"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "A diferença entre upsell e cross-sell é que:",
+                                opcoes: [
+                                    "Upsell aumenta quantidade e cross-sell reduz preço",
+                                    "Upsell é venda complementar e cross-sell é venda superior",
+                                    "Upsell oferece produto melhor e cross-sell oferece produto complementar",
+                                    "Não existe diferença entre eles"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O ROI (Return on Investment) indica:",
+                                opcoes: [
+                                    "O valor total investido",
+                                    "O retorno obtido sobre um investimento",
+                                    "O custo fixo da empresa",
+                                    "O fluxo de caixa mensal"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Um gargalo dentro da operação significa:",
+                                opcoes: [
+                                    "Aumento de vendas",
+                                    "Redução de custos",
+                                    "Um ponto que trava ou atrasa o processo",
+                                    "Crescimento da empresa"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O conceito de 'escalar' um negócio significa:",
+                                opcoes: [
+                                    "Aumentar custos para crescer",
+                                    "Crescer mantendo os mesmos resultados",
+                                    "Crescer sem aumentar proporcionalmente os custos",
+                                    "Reduzir o tamanho da empresa"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
