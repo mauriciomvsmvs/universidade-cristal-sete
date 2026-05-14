@@ -41,7 +41,7 @@ const cursos = [
                     {
                         tipo: "slide",
                         titulo: "Marcos Importantes",
-                        url: "https://docs.google.com/presentation/d/1RIKbRm4AFEHd8cI3sdfY_Tqwqe3YXMFl/edit?slide=id.p1#slide=id.p1",
+                        url: "https://docs.google.com/presentation/d/1ZK1OAnADEVn78QyunxfoQ2fxBkVpgSTg/edit?slide=id.p1#slide=id.p1",
                         slides: 10,
                         descricao: "Os principais marcos e conquistas que moldaram nossa trajetória."
                     },
