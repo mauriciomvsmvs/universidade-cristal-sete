@@ -1704,6 +1704,208 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 13: CÁLCULO DE ÁREA E COBRANÇA (TÉCNICO)
+    // ============================================
+    {
+        id: 13,
+        titulo: "Cálculo de Área e Cobrança",
+        descricao: "Domine o cálculo correto de área em m², conversões, arredondamento, medida real vs cobrança, transpasse e fórmulas para diferentes formatos: retângulos, círculos, triângulos e projetos com múltiplas peças.",
+        categoria: "Técnico",
+        nivel: "Intermediário",
+        duracao: "2h",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-calculo-area.jpg",
+        obrigatorio: true,
+        objetivos: [
+            "Dominar conversões de milímetros para metros",
+            "Aplicar regras de arredondamento da Cristal Sete",
+            "Diferenciar medida real de medida de cobrança",
+            "Calcular áreas de diferentes formatos geométricos",
+            "Resolver cálculos de projetos com múltiplas peças"
+        ],
+        prerequisitos: [
+            "Matemática básica"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Fundamentos e Cálculos Práticos",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Cálculo de Área e Cobrança",
+                        url: "https://docs.google.com/presentation/d/1BT9WGTE0c-bbz4-ipyZwCJphZie1V8Ij/edit?slide=id.p1#slide=id.p1",
+                        slides: 20,
+                        descricao: "Conversões, arredondamento, medidas e fórmulas completas."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Introdução ao Cálculo de Área",
+                        url: "https://www.youtube.com/watch?v=vdQMamMsPN4",
+                        duracao: "8min",
+                        descricao: "Conceitos básicos e importância do cálculo correto."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Conversão de Milímetros para Metros",
+                        url: "https://www.youtube.com/watch?v=aIKxhaxynJ8",
+                        duracao: "6min",
+                        descricao: "Como converter corretamente as medidas para calcular m²."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Regra de Arredondamento Cristal Sete",
+                        url: "https://www.youtube.com/watch?v=UXoBHQBT5OE",
+                        duracao: "7min",
+                        descricao: "Arredondamento de 50 em 50mm e aplicação prática."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Medida Real vs Medida de Cobrança",
+                        url: "https://www.youtube.com/watch?v=wkyLfHIYP9w",
+                        duracao: "5min",
+                        descricao: "Diferenças e quando usar cada tipo de medida."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Cálculo de Transpasse",
+                        url: "https://www.youtube.com/watch?v=8QjE6LON_Y0",
+                        duracao: "6min",
+                        descricao: "Como calcular quando duas peças se sobrepõem."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Área de Peças Circulares",
+                        url: "https://www.youtube.com/watch?v=R-sjOtYdmHs",
+                        duracao: "8min",
+                        descricao: "Cálculo correto usando raio e fórmula do círculo."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Área de Triângulos",
+                        url: "https://www.youtube.com/watch?v=9wJcIcqw8Q0",
+                        duracao: "5min",
+                        descricao: "Aplicação da fórmula (base × altura) ÷ 2."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Projetos com Múltiplas Peças",
+                        url: "https://www.youtube.com/watch?v=ItA_X8fT0bY",
+                        duracao: "10min",
+                        descricao: "Como somar corretamente áreas de várias peças no mesmo projeto."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Cálculo de Área",
+                        perguntas: [
+                            {
+                                pergunta: "Para calcular corretamente a área em m², as medidas devem estar em:",
+                                opcoes: [
+                                    "Milímetros",
+                                    "Centímetros",
+                                    "Metros",
+                                    "Polegadas"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A conversão correta de milímetros para metros é feita:",
+                                opcoes: [
+                                    "Multiplicando por 1000",
+                                    "Dividindo por 100",
+                                    "Dividindo por 1000",
+                                    "Multiplicando por 10"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Segundo a regra da Cristal Sete, o arredondamento das medidas deve ser feito:",
+                                opcoes: [
+                                    "De 10 em 10 mm",
+                                    "De 25 em 25 mm",
+                                    "De 50 em 50 mm",
+                                    "De 100 em 100 mm"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A principal diferença entre medida real e medida de cobrança é:",
+                                opcoes: [
+                                    "A medida real inclui impostos",
+                                    "A medida de cobrança é sempre menor",
+                                    "A medida de cobrança é arredondada para cálculo do valor",
+                                    "Não existe diferença entre elas"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Segundo o treinamento, a área deve ser calculada utilizando:",
+                                opcoes: [
+                                    "Sempre a medida real",
+                                    "A média entre real e cobrança",
+                                    "A medida de cobrança (arredondada)",
+                                    "A menor medida possível"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O transpasse ocorre quando:",
+                                opcoes: [
+                                    "O vidro é menor que o vão",
+                                    "O vidro é cortado com erro",
+                                    "Duas peças se sobrepõem para vedação ou funcionalidade",
+                                    "O vidro não encaixa corretamente"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Em peças circulares, antes de calcular a área, deve-se:",
+                                opcoes: [
+                                    "Dividir o diâmetro por 2",
+                                    "Multiplicar o diâmetro por 2",
+                                    "Adicionar 100 mm ao diâmetro",
+                                    "Subtrair 50 mm do diâmetro"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A fórmula para cálculo da área de um triângulo é:",
+                                opcoes: [
+                                    "Base × altura",
+                                    "(Base × altura) ÷ 2",
+                                    "Base + altura ÷ 2",
+                                    "Base × 2 × altura"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Em projetos com múltiplas peças de vidro, o cálculo correto é:",
+                                opcoes: [
+                                    "Calcular apenas a maior peça",
+                                    "Fazer média das áreas",
+                                    "Somar todas as áreas individuais",
+                                    "Multiplicar largura total pela altura"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Um erro comum que deve ser evitado no cálculo é:",
+                                opcoes: [
+                                    "Converter mm para m",
+                                    "Arredondar antes de calcular",
+                                    "Utilizar medidas em metros",
+                                    "Calcular área sem arredondar as medidas"
+                                ],
+                                correta: 3
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
