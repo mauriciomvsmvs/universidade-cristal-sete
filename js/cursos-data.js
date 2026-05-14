@@ -1238,6 +1238,173 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 10: BOX BLINDEX (PRODUTOS)
+    // ============================================
+    {
+        id: 10,
+        titulo: "Box Blindex",
+        descricao: "Conheça a linha completa de boxes Blindex: vidros de segurança temperados, película exclusiva, kits Chromus, Flex e Dual Door. Aprenda sobre norma NBR 14207, instalação e diferenciais técnicos.",
+        categoria: "Produtos",
+        nivel: "Intermediário",
+        duracao: "1h 10min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-box-blindex.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Conhecer a linha completa de boxes Blindex",
+            "Compreender os diferenciais da película de segurança",
+            "Identificar os kits Chromus, Flex e Dual Door",
+            "Entender a norma NBR 14207 para boxes de banheiro",
+            "Reconhecer os componentes técnicos e instalação"
+        ],
+        prerequisitos: [
+            "Recomendado: Curso 'Como é feito o Vidro Temperado?'"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Linha Box Blindex",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Box Blindex - Linha Completa",
+                        url: "https://docs.google.com/presentation/d/1B4tygy9qxpxm_vhSnN4Zx__FNdq4Vkbx/edit?slide=id.p1#slide=id.p1",
+                        slides: 25,
+                        descricao: "Vidros, película de segurança, kits e normas técnicas."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Kit Chromus Blindex",
+                        url: "https://www.youtube.com/watch?v=FAf2T3CkhMk",
+                        duracao: "5min",
+                        descricao: "Conheça o kit premium com roldanas aparentes e design sofisticado."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Kit Flex Blindex",
+                        url: "https://www.youtube.com/watch?v=bmYalUICYvg",
+                        duracao: "4min",
+                        descricao: "Sistema versátil e funcional para diversos projetos."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Kit Dual Door Blindex",
+                        url: "https://www.youtube.com/watch?v=hB6hkNAj8JI",
+                        duracao: "6min",
+                        descricao: "Solução com porta dupla para maior amplitude de abertura."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Box Blindex",
+                        perguntas: [
+                            {
+                                pergunta: "Por que o vidro temperado é considerado um vidro de segurança?",
+                                opcoes: [
+                                    "Porque nunca quebra",
+                                    "Porque possui película de fábrica",
+                                    "Porque é mais resistente e fragmenta em pedaços menos cortantes",
+                                    "Porque é mais leve que o vidro comum"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Segundo o treinamento, o vidro temperado pode ser até:",
+                                opcoes: [
+                                    "2x mais resistente que o vidro comum",
+                                    "3x mais resistente que o vidro comum",
+                                    "5x mais resistente que o vidro comum",
+                                    "10x mais resistente que o vidro comum"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual norma brasileira regulamenta boxes de banheiro com vidro de segurança?",
+                                opcoes: [
+                                    "ABNT NBR 7199",
+                                    "ABNT NBR 10821",
+                                    "ABNT NBR 14698",
+                                    "ABNT NBR 14207"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Onde a película de segurança Blindex® deve ser instalada?",
+                                opcoes: [
+                                    "No lado interno do box",
+                                    "Entre os vidros",
+                                    "No lado externo do box",
+                                    "Em qualquer lado do vidro"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A película de segurança Blindex® pode ser aplicada em:",
+                                opcoes: [
+                                    "Qualquer tipo de vidro texturizado",
+                                    "Apenas vidros float lisos",
+                                    "Apenas espelhos",
+                                    "Somente vidros laminados"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual vidro da linha Blindex® possui baixíssimo teor de ferro e máxima transparência?",
+                                opcoes: [
+                                    "Bronze",
+                                    "Verde",
+                                    "Extra Clear",
+                                    "Cinza"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é um dos diferenciais do Kit Chromus Blindex®?",
+                                opcoes: [
+                                    "Ausência de travas de segurança",
+                                    "Roldanas aparentes com design premium",
+                                    "Utilização exclusiva em janelas",
+                                    "Não possui regulagem de altura"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é a vantagem do trilho em 'V invertido' do Kit Blindex®?",
+                                opcoes: [
+                                    "Acumular mais sujeira",
+                                    "Reduzir a estabilidade da porta",
+                                    "Aumentar segurança e evitar acúmulo de sujeira",
+                                    "Diminuir a vida útil das roldanas"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "As roldanas blindadas do Kit Blindex® possuem:",
+                                opcoes: [
+                                    "Apenas um componente",
+                                    "Dois componentes simples",
+                                    "Três componentes para maior segurança e resistência",
+                                    "Sistema sem rolamento"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Quem deve realizar a instalação do Box Original Blindex®?",
+                                opcoes: [
+                                    "Qualquer consumidor final",
+                                    "Apenas eletricistas",
+                                    "Profissional autorizado Blindex®",
+                                    "Apenas arquitetos"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
