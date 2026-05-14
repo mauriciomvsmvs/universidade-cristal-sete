@@ -1405,6 +1405,159 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 11: SDR - CONCEITO E O PAPEL NA CRISTAL SETE (VENDAS)
+    // ============================================
+    {
+        id: 11,
+        titulo: "SDR: Conceito e o Papel na Cristal Sete",
+        descricao: "Aprenda o papel do Sales Development Representative: prospecção, qualificação de leads, uso de CRM, estratégias outbound e inbound, ICP (Ideal Customer Profile) e técnicas de comunicação profissional.",
+        categoria: "Vendas",
+        nivel: "Iniciante",
+        duracao: "45min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-sdr.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Compreender o papel do SDR no processo comercial",
+            "Conhecer técnicas de prospecção e qualificação de leads",
+            "Dominar o uso do CRM para gestão de leads",
+            "Identificar o perfil de cliente ideal (ICP)",
+            "Aplicar boas práticas de comunicação profissional"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Do Lead à Parceria de Sucesso",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "SDR: Conceito e o Papel na Cristal Sete",
+                        url: "https://docs.google.com/presentation/d/1yuDtyhxdJkdUVgpM8hMYL9VUo4DeFBRr/edit?slide=id.p1#slide=id.p1",
+                        slides: 30,
+                        descricao: "Prospecção, qualificação, CRM, ICP e técnicas de comunicação."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "O que faz um SDR?",
+                        url: "https://www.youtube.com/watch?v=35gAlZ8Ed8E",
+                        duracao: "10min",
+                        descricao: "Entenda na prática o papel do Sales Development Representative."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - SDR",
+                        perguntas: [
+                            {
+                                pergunta: "O principal papel do SDR dentro do processo comercial é:",
+                                opcoes: [
+                                    "Fechar vendas diretamente",
+                                    "Fazer pós-venda com clientes ativos",
+                                    "Prospectar e qualificar leads para o time de vendas",
+                                    "Definir estratégias de marketing"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O conceito de ICP (Ideal Customer Profile) serve para:",
+                                opcoes: [
+                                    "Aumentar o número de leads",
+                                    "Definir o cliente ideal com maior potencial de parceria",
+                                    "Reduzir o tempo de atendimento",
+                                    "Criar campanhas publicitárias"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Um lead deve ser desqualificado quando:",
+                                opcoes: [
+                                    "Não responde rapidamente",
+                                    "Está fora do perfil ideal ou apresenta risco financeiro",
+                                    "Solicita orçamento",
+                                    "Tem dúvidas técnicas"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Na classificação de pontos comerciais, um lead 'Latão' deve:",
+                                opcoes: [
+                                    "Ser priorizado",
+                                    "Ser acompanhado com frequência",
+                                    "Ser ativado no funil",
+                                    "Ser desqualificado e não atendido"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "O uso do CRM tem como principal objetivo:",
+                                opcoes: [
+                                    "Substituir o contato com o cliente",
+                                    "Centralizar e organizar todas as interações com leads",
+                                    "Reduzir o número de vendas",
+                                    "Controlar apenas o financeiro"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Uma boa prática no uso do CRM é:",
+                                opcoes: [
+                                    "Registrar apenas vendas fechadas",
+                                    "Atualizar apenas quando solicitado",
+                                    "Registrar todas as interações com o lead",
+                                    "Evitar comentários detalhados"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "No modelo outbound, a empresa:",
+                                opcoes: [
+                                    "Aguarda o cliente entrar em contato",
+                                    "Trabalha apenas com leads quentes",
+                                    "Vai ativamente atrás de novos clientes",
+                                    "Depende exclusivamente de marketing"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Em uma ligação profissional, o atendente deve:",
+                                opcoes: [
+                                    "Ser informal para criar proximidade",
+                                    "Falar rapidamente para otimizar tempo",
+                                    "Ter tom confiante, ouvir e conduzir a conversa",
+                                    "Focar apenas em vender"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Uma comunicação adequada no WhatsApp deve:",
+                                opcoes: [
+                                    "Usar abreviações para agilizar",
+                                    "Ser informal e direta",
+                                    "Ser clara, profissional e revisada antes de enviar",
+                                    "Utilizar muitos emojis"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O microcompromisso no processo de SDR tem como função:",
+                                opcoes: [
+                                    "Encerrar a conversa",
+                                    "Pressionar o cliente",
+                                    "Criar pequenos acordos que avançam a negociação",
+                                    "Reduzir o tempo de prospecção"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
