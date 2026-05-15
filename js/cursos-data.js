@@ -1906,6 +1906,152 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 14: COBRANÇAS ESPECIAIS (TÉCNICO)
+    // ============================================
+    {
+        id: 14,
+        titulo: "Cobranças Especiais",
+        descricao: "Aprenda as regras de cobrança para formatos diferenciados: redondo, oval, meia lua, cuba, fora de esquadro, orgânico e escadaria. Entenda acréscimos, medidas de cobrança e quando exigir molde.",
+        categoria: "Técnico",
+        nivel: "Intermediário",
+        duracao: "40min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-cobrancas-especiais.jpg",
+        obrigatorio: true,
+        objetivos: [
+            "Identificar formatos que exigem cobrança especial",
+            "Aplicar corretamente os acréscimos percentuais",
+            "Calcular medidas de cobrança com acréscimos de 50mm por lado",
+            "Reconhecer quando solicitar molde do cliente",
+            "Compreender a justificativa técnica das cobranças especiais"
+        ],
+        prerequisitos: [
+            "Curso 'Cálculo de Área e Cobrança'"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Formatos Diferenciados e Acréscimos",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Cobranças Especiais",
+                        url: "https://docs.google.com/presentation/d/1eeJnxAIW37FDNamnmP8_whslNt-XACBm/edit?slide=id.p1#slide=id.p1",
+                        slides: 18,
+                        descricao: "Regras de cobrança para formatos especiais e complexos."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Cobranças Especiais",
+                        perguntas: [
+                            {
+                                pergunta: "Para peças no formato redondo, a cobrança aplicada é:",
+                                opcoes: [
+                                    "+10% no valor",
+                                    "+20% no valor",
+                                    "+50% no valor",
+                                    "+80% no valor"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "A área de cobrança para formatos especiais, de forma geral, considera:",
+                                opcoes: [
+                                    "A medida exata do cliente",
+                                    "Acréscimo de 25mm por lado",
+                                    "Acréscimo de 50mm por lado",
+                                    "Acréscimo de 100mm total"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Uma peça oval com medida 800x1200mm será considerada para cobrança como:",
+                                opcoes: [
+                                    "800x1200mm",
+                                    "850x1250mm",
+                                    "900x1300mm",
+                                    "1000x1400mm"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O formato 'meia lua com recorte' possui qual tipo de cobrança?",
+                                opcoes: [
+                                    "+40%",
+                                    "+50%",
+                                    "+80%",
+                                    "+100%"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Em peças no formato 'cuba' (com furo), a cobrança aplicada é:",
+                                opcoes: [
+                                    "+20%",
+                                    "+40%",
+                                    "+80%",
+                                    "+100%"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Para formatos 'fora de esquadro' (formas irregulares), a cobrança padrão é:",
+                                opcoes: [
+                                    "+10%",
+                                    "+20%",
+                                    "+50%",
+                                    "+100%"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O formato orgânico possui cobrança diferenciada de:",
+                                opcoes: [
+                                    "+20%",
+                                    "+40%",
+                                    "+80%",
+                                    "+100%"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Em relação ao envio de molde, é correto afirmar que:",
+                                opcoes: [
+                                    "Sempre é obrigatório",
+                                    "Nunca deve ser enviado",
+                                    "Só é necessário quando o vidro for encaixado",
+                                    "É exigido apenas para peças grandes"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O formato 'escadaria alta modelagem' possui qual característica de cobrança?",
+                                opcoes: [
+                                    "+50% no valor",
+                                    "+80% no valor",
+                                    "+100% no valor",
+                                    "Sem acréscimo"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O principal motivo para aplicar cobranças especiais em formatos diferenciados é:",
+                                opcoes: [
+                                    "Aumentar o valor do produto sem justificativa",
+                                    "Compensar a dificuldade de corte e complexidade do formato",
+                                    "Reduzir o tempo de produção",
+                                    "Padronizar todos os vidros"
+                                ],
+                                correta: 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
