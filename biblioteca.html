@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Universidade Cristal Sete</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="global.css">
+    <style>
+        .card-ebook {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .card-ebook:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(43, 95, 166, 0.15);
+        }
+        .filtro-btn {
+            background: white;
+            color: #374151;
+            border: 2px solid #e5e7eb;
+        }
+        .filtro-btn.active {
+            background: #2B5FA6;
+            color: white;
+            border-color: #2B5FA6;
+        }
+        .badge-categoria {
+            background: #EEF2FF;
+            color: #2B5FA6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- NAVIGATION -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="flex items-center">
+                        <img src="universidade.png" alt="Universidade Cristal Sete" class="h-12">
+                    </a>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-gray-700 hover:text-primary transition">Início</a>
+                        <a href="cursos.html" class="text-gray-700 hover:text-primary transition">Cursos</a>
+                        <a href="biblioteca.html" class="text-primary font-semibold">📚 Biblioteca</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="meu-perfil.html" class="text-gray-700 hover:text-primary transition">Meu Perfil</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: #2F60AB;">
+                    📚 Biblioteca de Conhecimento
+                </h1>
+                <p class="text-xl text-gray-600">
+                    E-books, manuais, guias e materiais complementares para aprofundar seu conhecimento.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="py-8 bg-white border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-3">
+                <button onclick="filtrarCategoria('todos')" id="filtro-todos" class="filtro-btn active px-4 py-2 rounded-lg font-semibold transition-colors">
+                    Todos
+                </button>
+                <button onclick="filtrarCategoria('Técnico')" id="filtro-Técnico" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
+                    Técnico
+                </button>
+                <button onclick="filtrarCategoria('Vendas')" id="filtro-Vendas" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
+                    Vendas
+                </button>
+                <button onclick="filtrarCategoria('Financeiro')" id="filtro-Financeiro" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
+                    Financeiro
+                </button>
+                <button onclick="filtrarCategoria('Segurança')" id="filtro-Segurança" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
+                    Segurança
+                </button>
+                <button onclick="filtrarCategoria('Liderança')" id="filtro-Liderança" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
+                    Liderança
+                </button>
+                <button onclick="filtrarCategoria('Qualidade')" id="filtro-Qualidade" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
+                    Qualidade
+                </button>
+                <button onclick="filtrarCategoria('Produtos')" id="filtro-Produtos" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
+                    Produtos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- LISTA DE E-BOOKS -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div id="ebooks-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- E-books serão carregados aqui via JavaScript -->
+            </div>
+            
+            <!-- Mensagem quando não houver e-books -->
+            <div id="sem-ebooks" class="text-center py-16 hidden">
+                <div class="text-6xl mb-4">📚</div>
+                <h3 class="text-2xl font-bold text-gray-700 mb-2">Nenhum e-book encontrado</h3>
+                <p class="text-gray-500">Aguarde! Em breve teremos materiais nesta categoria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL VISUALIZADOR DE PDF -->
+    <div id="pdf-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg w-full max-w-6xl h-[90vh] flex flex-col">
+            <!-- Header do Modal -->
+            <div class="flex items-center justify-between p-4 border-b">
+                <h3 id="modal-titulo" class="text-xl font-bold text-gray-800"></h3>
+                <div class="flex items-center gap-3">
+                    <a id="btn-download" href="#" download class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Baixar PDF
+                    </a>
+                    <button onclick="fecharModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                </div>
+            </div>
+            <!-- Visualizador PDF -->
+            <div class="flex-1 overflow-hidden">
+                <iframe id="pdf-viewer" class="w-full h-full" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/ebooks-data.js"></script>
+    <script>
+        // Variável global para armazenar categoria ativa
+        let categoriaAtiva = 'todos';
+
+        // Função para filtrar por categoria
+        function filtrarCategoria(categoria) {
+            categoriaAtiva = categoria;
+            
+            // Atualizar botões ativos
+            document.querySelectorAll('.filtro-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('filtro-' + categoria).classList.add('active');
+            
+            // Renderizar e-books
+            renderizarEbooks();
+        }
+
+        // Função para renderizar e-books
+        function renderizarEbooks() {
+            const grid = document.getElementById('ebooks-grid');
+            const semEbooks = document.getElementById('sem-ebooks');
+            
+            // Filtrar e-books
+            let ebooksFiltrados = ebooks;
+            if (categoriaAtiva !== 'todos') {
+                ebooksFiltrados = ebooks.filter(e => e.categoria === categoriaAtiva);
+            }
+            
+            // Verificar se há e-books
+            if (ebooksFiltrados.length === 0) {
+                grid.classList.add('hidden');
+                semEbooks.classList.remove('hidden');
+                return;
+            }
+            
+            grid.classList.remove('hidden');
+            semEbooks.classList.add('hidden');
+            
+            // Renderizar cards
+            grid.innerHTML = ebooksFiltrados.map(ebook => `
+                <div class="card-ebook bg-white rounded-xl shadow-md overflow-hidden" onclick="abrirEbook(${ebook.id})">
+                    <div class="relative h-64 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
+                        ${ebook.capa ? 
+                            `<img src="${ebook.capa}" alt="${ebook.titulo}" class="w-full h-full object-cover">` :
+                            `<div class="text-6xl">📄</div>`
+                        }
+                        <div class="absolute top-3 right-3">
+                            <span class="badge-categoria">${ebook.categoria}</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${ebook.titulo}</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">${ebook.descricao}</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span>📄 ${ebook.paginas} páginas</span>
+                            <span class="text-primary font-semibold">Abrir →</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Função para abrir e-book no modal
+        function abrirEbook(id) {
+            const ebook = ebooks.find(e => e.id === id);
+            if (!ebook) return;
+            
+            const modal = document.getElementById('pdf-modal');
+            const viewer = document.getElementById('pdf-viewer');
+            const titulo = document.getElementById('modal-titulo');
+            const btnDownload = document.getElementById('btn-download');
+            
+            // Configurar modal
+            titulo.textContent = ebook.titulo;
+            
+            // Converter link do Google Drive para embed
+            const driveId = ebook.arquivo.match(/\/d\/(.+?)\//)?.[1] || ebook.arquivo.match(/id=(.+?)(&|$)/)?.[1];
+            if (driveId) {
+                viewer.src = `https://drive.google.com/file/d/${driveId}/preview`;
+                btnDownload.href = `https://drive.google.com/uc?export=download&id=${driveId}`;
+            } else {
+                viewer.src = ebook.arquivo;
+                btnDownload.href = ebook.arquivo;
+            }
+            
+            // Abrir modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Função para fechar modal
+        function fecharModal() {
+            const modal = document.getElementById('pdf-modal');
+            const viewer = document.getElementById('pdf-viewer');
+            
+            modal.classList.add('hidden');
+            viewer.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fechar modal ao clicar fora
+        document.getElementById('pdf-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharModal();
+            }
+        });
+
+        // Fechar modal com tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                fecharModal();
+            }
+        });
+
+        // Renderizar e-books ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            renderizarEbooks();
+        });
+    </script>
+</body>
+</html>
