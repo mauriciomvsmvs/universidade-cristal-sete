@@ -2205,6 +2205,152 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 16: BIRÔS DE CRÉDITO E ANÁLISE DE RISCO (FINANCEIRO)
+    // ============================================
+    {
+        id: 16,
+        titulo: "Birôs de Crédito e Análise de Risco",
+        descricao: "Domine a consulta e análise de crédito usando Serasa e SPC Brasil. Aprenda a interpretar score, identificar pendências bancárias, aplicar regras de aprovação e escalar decisões com segurança.",
+        categoria: "Financeiro",
+        nivel: "Intermediário",
+        duracao: "45min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-biros-credito.jpg",
+        obrigatorio: true,
+        objetivos: [
+            "Compreender a função dos birôs de crédito",
+            "Interpretar corretamente o score de crédito",
+            "Identificar pendências bancárias de risco",
+            "Aplicar regras de aprovação e reprovação",
+            "Consultar Serasa e SPC Brasil de forma eficiente"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Análise de Crédito com Serasa e SPC",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Birôs de Crédito e Análise de Risco",
+                        url: "https://docs.google.com/presentation/d/16Or2SYsTyukfx6a8ervzZJV4fIb_2c5T/edit?slide=id.p1#slide=id.p1",
+                        slides: 22,
+                        descricao: "Score, pendências, regras de aprovação e boas práticas."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Birôs de Crédito",
+                        perguntas: [
+                            {
+                                pergunta: "Os birôs de crédito têm como principal função:",
+                                opcoes: [
+                                    "Definir taxas de juros do mercado",
+                                    "Controlar o faturamento das empresas",
+                                    "Avaliar o risco de crédito de clientes",
+                                    "Gerar contratos comerciais"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O score de crédito representa:",
+                                opcoes: [
+                                    "O valor total de dívidas do cliente",
+                                    "A probabilidade de pagamento em dia",
+                                    "O faturamento mensal da empresa",
+                                    "O número de consultas realizadas"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Segundo o treinamento, a análise de crédito deve considerar:",
+                                opcoes: [
+                                    "Apenas o score",
+                                    "Apenas pendências bancárias",
+                                    "O conjunto completo de informações",
+                                    "Apenas histórico de consultas"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Um cliente com score abaixo de 300 em qualquer birô deve:",
+                                opcoes: [
+                                    "Ser aprovado com limite reduzido",
+                                    "Ser analisado manualmente",
+                                    "Ser aprovado apenas à vista",
+                                    "Ter crédito reprovado automaticamente"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Pendências bancárias acima de R$ 50.000 indicam:",
+                                opcoes: [
+                                    "Situação normal de mercado",
+                                    "Risco moderado",
+                                    "Impedimento para crédito",
+                                    "Necessidade de desconto"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Segundo o exemplo prático do Serasa (página 6), um cliente com score 50 e alta inadimplência deve:",
+                                opcoes: [
+                                    "Ser aprovado com limite baixo",
+                                    "Ser aprovado com garantia",
+                                    "Ser analisado pelo gerente",
+                                    "Ter crédito não aprovado"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "A principal diferença entre Serasa e SPC é que:",
+                                opcoes: [
+                                    "Apenas o SPC possui score",
+                                    "O Serasa mostra mais detalhes das pendências",
+                                    "O SPC não possui informações financeiras",
+                                    "Ambos mostram exatamente os mesmos dados"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O SPC Brasil se diferencia por:",
+                                opcoes: [
+                                    "Ter menos dados que o Serasa",
+                                    "Focar apenas em bancos",
+                                    "Exibir histórico de consultas e dados complementares",
+                                    "Não apresentar score"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Segundo as boas práticas, o correto é:",
+                                opcoes: [
+                                    "Consultar apenas um birô",
+                                    "Priorizar o mais rápido",
+                                    "Consultar sempre ambos os birôs",
+                                    "Consultar apenas em grandes vendas"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A regra 'na dúvida, escale' significa:",
+                                opcoes: [
+                                    "Aprovar o crédito automaticamente",
+                                    "Negar o crédito imediatamente",
+                                    "Encaminhar a decisão com todas as informações coletadas",
+                                    "Reduzir o limite de crédito"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
