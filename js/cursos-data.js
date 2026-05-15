@@ -1750,52 +1750,59 @@ const cursos = [
                     },
                     {
                         tipo: "video",
-                        titulo: "Conversão de Milímetros para Metros",
+                        titulo: "Área de Quadrado",
                         url: "https://www.youtube.com/watch?v=aIKxhaxynJ8",
                         duracao: "6min",
-                        descricao: "Como converter corretamente as medidas para calcular m²."
+                        descricao: "Como calcular a área de figuras quadradas."
                     },
                     {
                         tipo: "video",
-                        titulo: "Regra de Arredondamento Cristal Sete",
+                        titulo: "Área de Retângulo",
                         url: "https://www.youtube.com/watch?v=UXoBHQBT5OE",
                         duracao: "7min",
-                        descricao: "Arredondamento de 50 em 50mm e aplicação prática."
+                        descricao: "Fórmula e aplicação prática para retângulos."
                     },
                     {
                         tipo: "video",
-                        titulo: "Medida Real vs Medida de Cobrança",
+                        titulo: "Área de Triângulo",
                         url: "https://www.youtube.com/watch?v=wkyLfHIYP9w",
-                        duracao: "5min",
-                        descricao: "Diferenças e quando usar cada tipo de medida."
-                    },
-                    {
-                        tipo: "video",
-                        titulo: "Cálculo de Transpasse",
-                        url: "https://www.youtube.com/watch?v=8QjE6LON_Y0",
-                        duracao: "6min",
-                        descricao: "Como calcular quando duas peças se sobrepõem."
-                    },
-                    {
-                        tipo: "video",
-                        titulo: "Área de Peças Circulares",
-                        url: "https://www.youtube.com/watch?v=R-sjOtYdmHs",
-                        duracao: "8min",
-                        descricao: "Cálculo correto usando raio e fórmula do círculo."
-                    },
-                    {
-                        tipo: "video",
-                        titulo: "Área de Triângulos",
-                        url: "https://www.youtube.com/watch?v=9wJcIcqw8Q0",
                         duracao: "5min",
                         descricao: "Aplicação da fórmula (base × altura) ÷ 2."
                     },
                     {
                         tipo: "video",
-                        titulo: "Projetos com Múltiplas Peças",
+                        titulo: "Área de Losango",
+                        url: "https://www.youtube.com/watch?v=8QjE6LON_Y0",
+                        duracao: "6min",
+                        descricao: "Cálculo usando diagonal maior e diagonal menor."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Área de Trapézio",
+                        url: "https://www.youtube.com/watch?v=R-sjOtYdmHs",
+                        duracao: "8min",
+                        descricao: "Fórmula com base maior, base menor e altura."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Área de Círculo",
+                        url: "https://www.youtube.com/watch?v=9wJcIcqw8Q0",
+                        duracao: "5min",
+                        descricao: "Cálculo usando raio e fórmula π × r²."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Como Calcular Perímetro",
                         url: "https://www.youtube.com/watch?v=ItA_X8fT0bY",
                         duracao: "10min",
-                        descricao: "Como somar corretamente áreas de várias peças no mesmo projeto."
+                        descricao: "Diferença entre perímetro e área, e como calcular corretamente."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Qual é o Tamanho de um m²",
+                        url: "https://www.youtube.com/watch?v=ItA_X8fT0bY",
+                        duracao: "8min",
+                        descricao: "Visualização prática do metro quadrado e suas dimensões."
                     },
                     {
                         tipo: "quiz",
