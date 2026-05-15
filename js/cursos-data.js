@@ -1743,65 +1743,58 @@ const cursos = [
                     },
                     {
                         tipo: "video",
-                        titulo: "Introdução ao Cálculo de Área",
+                        titulo: "Área do quadrado",
                         url: "https://www.youtube.com/watch?v=vdQMamMsPN4",
                         duracao: "8min",
-                        descricao: "Conceitos básicos e importância do cálculo correto."
-                    },
-                    {
-                        tipo: "video",
-                        titulo: "Área de Quadrado",
-                        url: "https://www.youtube.com/watch?v=aIKxhaxynJ8",
-                        duracao: "6min",
                         descricao: "Como calcular a área de figuras quadradas."
                     },
                     {
                         tipo: "video",
                         titulo: "Área de Retângulo",
-                        url: "https://www.youtube.com/watch?v=UXoBHQBT5OE",
-                        duracao: "7min",
+                        url: "https://www.youtube.com/watch?v=aIKxhaxynJ8",
+                        duracao: "6min",
                         descricao: "Fórmula e aplicação prática para retângulos."
                     },
                     {
                         tipo: "video",
                         titulo: "Área de Triângulo",
-                        url: "https://www.youtube.com/watch?v=wkyLfHIYP9w",
-                        duracao: "5min",
+                        url: "https://www.youtube.com/watch?v=UXoBHQBT5OE",
+                        duracao: "7min",
                         descricao: "Aplicação da fórmula (base × altura) ÷ 2."
                     },
                     {
                         tipo: "video",
                         titulo: "Área de Losango",
-                        url: "https://www.youtube.com/watch?v=8QjE6LON_Y0",
-                        duracao: "6min",
+                        url: "https://www.youtube.com/watch?v=wkyLfHIYP9w",
+                        duracao: "5min",
                         descricao: "Cálculo usando diagonal maior e diagonal menor."
                     },
                     {
                         tipo: "video",
                         titulo: "Área de trapézio",
-                        url: "https://www.youtube.com/watch?v=R-sjOtYdmHs",
-                        duracao: "8min",
+                        url: "https://www.youtube.com/watch?v=8QjE6LON_Y0",
+                        duracao: "6min",
                         descricao: "Fórmula com base maior, base menor e altura."
                     },
                     {
                         tipo: "video",
                         titulo: "Área de Círculo",
-                        url: "https://www.youtube.com/watch?v=9wJcIcqw8Q0",
-                        duracao: "5min",
+                        url: "https://www.youtube.com/watch?v=R-sjOtYdmHs",
+                        duracao: "8min",
                         descricao: "Cálculo usando raio e fórmula π × r²."
                     },
                     {
                         tipo: "video",
                         titulo: "Como calcular perímetro",
-                        url: "https://www.youtube.com/watch?v=ItA_X8fT0bY",
-                        duracao: "10min",
+                        url: "https://www.youtube.com/watch?v=9wJcIcqw8Q0",
+                        duracao: "5min",
                         descricao: "Diferença entre perímetro e área, e como calcular corretamente."
                     },
                     {
                         tipo: "video",
                         titulo: "Qual é o tamanho de um m²",
                         url: "https://www.youtube.com/watch?v=ItA_X8fT0bY",
-                        duracao: "8min",
+                        duracao: "10min",
                         descricao: "Visualização prática do metro quadrado e suas dimensões."
                     },
                     {
