@@ -2351,6 +2351,152 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 17: DADOS CADASTRAIS E DOCUMENTAÇÃO (FINANCEIRO)
+    // ============================================
+    {
+        id: 17,
+        titulo: "Dados Cadastrais e Documentação",
+        descricao: "Aprenda a validar empresas através de consultas ao CNPJ, CADESP (SP), SINTEGRA (PR) e análise de contrato social. Identifique situações de risco, verifique regularidade e aplique o checklist completo de análise cadastral.",
+        categoria: "Financeiro",
+        nivel: "Intermediário",
+        duracao: "40min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-dados-cadastrais.jpg",
+        obrigatorio: true,
+        objetivos: [
+            "Realizar consultas ao CNPJ e interpretar resultados",
+            "Validar inscrição estadual no CADESP e SINTEGRA",
+            "Analisar contrato social e estrutura societária",
+            "Identificar situações de risco: CNPJ suspenso ou baixado",
+            "Aplicar checklist completo de validação cadastral"
+        ],
+        prerequisitos: [
+            "Curso 'Birôs de Crédito e Análise de Risco'"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Validação Cadastral Completa",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Dados Cadastrais e Documentação",
+                        url: "https://docs.google.com/presentation/d/1IbjfoZhygXJuLaN-BKVNiLOnWIk9ucMI/edit?slide=id.p1#slide=id.p1",
+                        slides: 20,
+                        descricao: "CNPJ, CADESP, SINTEGRA, contrato social e checklist de validação."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Dados Cadastrais",
+                        perguntas: [
+                            {
+                                pergunta: "O principal objetivo das consultas cadastrais é:",
+                                opcoes: [
+                                    "Aumentar o volume de vendas",
+                                    "Definir preços de negociação",
+                                    "Validar a existência e regularidade da empresa",
+                                    "Reduzir o tempo de atendimento"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Um CNPJ com situação 'suspensa' ou 'baixada' indica que:",
+                                opcoes: [
+                                    "A empresa está em crescimento",
+                                    "A empresa pode operar normalmente",
+                                    "A empresa apresenta alto risco e não deve ter crédito aprovado",
+                                    "A empresa precisa apenas de atualização cadastral"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O sistema CADESP é utilizado para:",
+                                opcoes: [
+                                    "Consulta de crédito bancário",
+                                    "Validação da situação estadual em São Paulo",
+                                    "Verificação de faturamento da empresa",
+                                    "Consulta de score financeiro"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O SINTEGRA tem como principal função:",
+                                opcoes: [
+                                    "Consultar dados federais do CNPJ",
+                                    "Validar a situação da Inscrição Estadual no Paraná",
+                                    "Gerar contratos sociais",
+                                    "Analisar histórico de pagamento"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O contrato social é importante porque permite:",
+                                opcoes: [
+                                    "Calcular o preço do produto",
+                                    "Identificar sócios, capital e atividades da empresa",
+                                    "Definir prazo de pagamento",
+                                    "Verificar apenas o endereço"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Uma empresa com Inscrição Estadual suspensa deve ser interpretada como:",
+                                opcoes: [
+                                    "Empresa regular",
+                                    "Situação normal para qualquer negócio",
+                                    "Alerta de risco elevado",
+                                    "Empresa em expansão"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Segundo o checklist, a consulta ao CNPJ deve ser feita:",
+                                opcoes: [
+                                    "Apenas em clientes novos",
+                                    "Apenas em vendas acima de determinado valor",
+                                    "Sempre, em toda análise de crédito",
+                                    "Apenas quando houver dúvida"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Ao analisar o CNPJ, um ponto de atenção importante é:",
+                                opcoes: [
+                                    "O tamanho da empresa",
+                                    "A quantidade de funcionários",
+                                    "A compatibilidade da atividade econômica",
+                                    "O tempo de resposta do cliente"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O principal objetivo de consultar o contrato social em análises mais profundas é:",
+                                opcoes: [
+                                    "Verificar o preço praticado pela empresa",
+                                    "Confirmar estrutura societária e possíveis riscos",
+                                    "Avaliar concorrentes",
+                                    "Definir condições comerciais"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "A 'regra de ouro' do processo de análise de crédito afirma que:",
+                                opcoes: [
+                                    "Toda venda deve ser aprovada",
+                                    "É melhor aprovar com risco do que perder venda",
+                                    "Na dúvida, deve-se escalar com todas as informações",
+                                    "Apenas o score define a decisão"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
