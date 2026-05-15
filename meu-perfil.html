@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/global.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="font-inter bg-gray-50">
     
@@ -16,18 +15,17 @@
         <nav class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                <div class="flex items-center space-x-3">
                     <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12">
                     <div>
                         <h1 class="text-xl font-bold text-primary">Universidade Cristal Sete</h1>
                         <p class="text-xs text-gray-600">Conhecimento com Propósito</p>
                     </div>
-                </a>
+                </div>
                 
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="index.html" class="nav-link">Início</a>
-                    <a href="integracao.html" class="nav-link">Integração</a>
                     <a href="cursos.html" class="nav-link">Cursos</a>
                     <a href="biblioteca.html" class="nav-link">📚 Biblioteca</a>
                     <a href="meu-perfil.html" class="nav-link active">Meu Perfil</a>
@@ -45,7 +43,6 @@
             <!-- Menu Mobile -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
                 <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Início</a>
-                <a href="integracao.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Integração</a>
                 <a href="cursos.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cursos</a>
                 <a href="biblioteca.html" class="block px-4 py-2 hover:bg-gray-100 rounded">📚 Biblioteca</a>
                 <a href="meu-perfil.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Meu Perfil</a>
@@ -55,7 +52,7 @@
     </header>
 
     <!-- HERO SECTION COM INFORMAÇÕES DO USUÁRIO -->
-    <section class="bg-gradient-to-br from-primary to-primary-dark py-12">
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
                 <!-- Avatar -->
@@ -70,13 +67,13 @@
                 
                 <!-- Informações -->
                 <div class="text-center md:text-left flex-1">
-                    <h1 id="user-name" class="text-3xl md:text-4xl font-bold mb-2" style="font-family: 'Montserrat', sans-serif; color: #2F60AB;">Aluno Cristal Sete</h1>
-                    <p id="user-email" class="text-xl mb-4" style="font-family: 'Montserrat', sans-serif; color: #2F60AB;">aluno@cristalsete.com.br</p>
+                    <h1 id="user-name" class="text-3xl md:text-4xl font-bold mb-2">Aluno Cristal Sete</h1>
+                    <p id="user-email" class="text-xl opacity-90 mb-4">aluno@cristalsete.com.br</p>
                     <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-                        <span class="bg-white px-4 py-2 rounded-full text-sm font-medium" style="color: #2F60AB;">
+                        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
                             👤 Setor: Comercial
                         </span>
-                        <span class="bg-white px-4 py-2 rounded-full text-sm font-medium" style="color: #2F60AB;">
+                        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
                             📅 Membro desde: Jan 2025
                         </span>
                     </div>
@@ -85,16 +82,16 @@
                 <!-- Estatísticas Rápidas -->
                 <div class="grid grid-cols-3 gap-4 md:gap-6 text-center">
                     <div>
-                        <div id="stats-cursos-concluidos" class="text-3xl font-bold" style="color: #2F60AB;">0</div>
-                        <div class="text-sm" style="color: #2F60AB;">Cursos Concluídos</div>
+                        <div id="stats-cursos-concluidos" class="text-3xl font-bold">0</div>
+                        <div class="text-sm opacity-80">Cursos Concluídos</div>
                     </div>
                     <div>
-                        <div id="stats-cursos-andamento" class="text-3xl font-bold" style="color: #2F60AB;">0</div>
-                        <div class="text-sm" style="color: #2F60AB;">Em Andamento</div>
+                        <div id="stats-cursos-andamento" class="text-3xl font-bold">0</div>
+                        <div class="text-sm opacity-80">Em Andamento</div>
                     </div>
                     <div>
-                        <div id="stats-certificados" class="text-3xl font-bold" style="color: #2F60AB;">0</div>
-                        <div class="text-sm" style="color: #2F60AB;">Certificados</div>
+                        <div id="stats-certificados" class="text-3xl font-bold">0</div>
+                        <div class="text-sm opacity-80">Certificados</div>
                     </div>
                 </div>
             </div>
@@ -260,7 +257,6 @@
                     <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="index.html" class="hover:text-white">Início</a></li>
-                        <li><a href="integracao.html" class="hover:text-white">Integração</a></li>
                         <li><a href="cursos.html" class="hover:text-white">Cursos</a></li>
                         <li><a href="meu-perfil.html" class="hover:text-white">Meu Perfil</a></li>
                         <li><a href="admin.html" class="hover:text-white">Administração</a></li>
@@ -269,13 +265,10 @@
                 
                 <div>
                     <h3 class="text-lg font-bold mb-4">Parceiros</h3>
-                    <div class="flex items-center justify-start space-x-6 mb-4">
-                        <img src="assets/logos/cristal-sete.png" alt="Cristal Sete" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
-                        <img src="assets/logos/blindex.png" alt="Blindex" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
+                    <div class="flex items-center space-x-4">
+                        <img src="assets/logos/cristal-sete.png" alt="Cristal Sete" class="h-8 opacity-80 hover:opacity-100">
+                        <img src="assets/logos/blindex.png" alt="Blindex" class="h-8 opacity-80 hover:opacity-100">
                     </div>
-                    <p class="text-gray-400 text-sm">
-                        Desenvolvendo talentos e construindo o futuro da excelência em vidros de segurança.
-                    </p>
                 </div>
             </div>
             

@@ -5,264 +5,316 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca - Universidade Cristal Sete</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="global.css">
-    <style>
-        .card-ebook {
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .card-ebook:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(43, 95, 166, 0.15);
-        }
-        .filtro-btn {
-            background: white;
-            color: #374151;
-            border: 2px solid #e5e7eb;
-        }
-        .filtro-btn.active {
-            background: #2B5FA6;
-            color: white;
-            border-color: #2B5FA6;
-        }
-        .badge-categoria {
-            background: #EEF2FF;
-            color: #2B5FA6;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-    </style>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cursos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50">
-    <!-- NAVIGATION -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-8">
-                    <a href="index.html" class="flex items-center">
-                        <img src="universidade.png" alt="Universidade Cristal Sete" class="h-12">
-                    </a>
-                    <div class="hidden md:flex space-x-6">
-                        <a href="index.html" class="text-gray-700 hover:text-primary transition">Início</a>
-                        <a href="cursos.html" class="text-gray-700 hover:text-primary transition">Cursos</a>
-                        <a href="biblioteca.html" class="text-primary font-semibold">📚 Biblioteca</a>
+<body class="font-inter bg-gray-50">
+    
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12">
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">Universidade Cristal Sete</h1>
+                        <p class="text-xs text-gray-600">Conhecimento com Propósito</p>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="meu-perfil.html" class="text-gray-700 hover:text-primary transition">Meu Perfil</a>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="cursos.html" class="nav-link">Cursos</a>
+                    <a href="biblioteca.html" class="nav-link active">📚 Biblioteca</a>
+                    <a href="meu-perfil.html" class="nav-link">Meu Perfil</a>
+                    <a href="admin.html" class="nav-link">Admin</a>
                 </div>
+                
+                <!-- Botão Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </div>
-    </nav>
+            
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Início</a>
+                <a href="cursos.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cursos</a>
+                <a href="biblioteca.html" class="block px-4 py-2 bg-gray-100 rounded font-semibold">📚 Biblioteca</a>
+                <a href="meu-perfil.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Meu Perfil</a>
+                <a href="admin.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Admin</a>
+            </div>
+        </nav>
+    </header>
 
-    <!-- HERO SECTION -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+    <!-- HEADER DA PÁGINA -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: #2F60AB;">
-                    📚 Biblioteca de Conhecimento
-                </h1>
-                <p class="text-xl text-gray-600">
-                    E-books, manuais, guias e materiais complementares para aprofundar seu conhecimento.
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">📚 Biblioteca de E-books</h1>
+                <p class="text-lg md:text-xl opacity-90">
+                    Materiais complementares para aprofundar seu conhecimento
                 </p>
             </div>
         </div>
     </section>
 
     <!-- FILTROS -->
-    <section class="py-8 bg-white border-b">
+    <section class="bg-white py-6 shadow-sm sticky top-[72px] z-40">
         <div class="container mx-auto px-4">
-            <div class="flex flex-wrap gap-3">
-                <button onclick="filtrarCategoria('todos')" id="filtro-todos" class="filtro-btn active px-4 py-2 rounded-lg font-semibold transition-colors">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button class="filter-btn active" data-category="todos">
                     Todos
                 </button>
-                <button onclick="filtrarCategoria('Técnico')" id="filtro-Técnico" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
-                    Técnico
+                <button class="filter-btn" data-category="Técnico">
+                    📐 Técnico
                 </button>
-                <button onclick="filtrarCategoria('Vendas')" id="filtro-Vendas" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
-                    Vendas
+                <button class="filter-btn" data-category="Vendas">
+                    💼 Vendas
                 </button>
-                <button onclick="filtrarCategoria('Financeiro')" id="filtro-Financeiro" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
-                    Financeiro
+                <button class="filter-btn" data-category="Financeiro">
+                    💰 Financeiro
                 </button>
-                <button onclick="filtrarCategoria('Segurança')" id="filtro-Segurança" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
-                    Segurança
+                <button class="filter-btn" data-category="Segurança">
+                    🛡️ Segurança
                 </button>
-                <button onclick="filtrarCategoria('Liderança')" id="filtro-Liderança" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
-                    Liderança
+                <button class="filter-btn" data-category="Liderança">
+                    👔 Liderança
                 </button>
-                <button onclick="filtrarCategoria('Qualidade')" id="filtro-Qualidade" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
-                    Qualidade
-                </button>
-                <button onclick="filtrarCategoria('Produtos')" id="filtro-Produtos" class="filtro-btn px-4 py-2 rounded-lg font-semibold transition-colors">
-                    Produtos
+                <button class="filter-btn" data-category="Processos">
+                    ⚙️ Processos
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- LISTA DE E-BOOKS -->
+    <!-- GRID DE E-BOOKS -->
     <section class="py-12">
         <div class="container mx-auto px-4">
             <div id="ebooks-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- E-books serão carregados aqui via JavaScript -->
+                <!-- E-books serão carregados dinamicamente via JavaScript -->
             </div>
             
-            <!-- Mensagem quando não houver e-books -->
-            <div id="sem-ebooks" class="text-center py-16 hidden">
-                <div class="text-6xl mb-4">📚</div>
-                <h3 class="text-2xl font-bold text-gray-700 mb-2">Nenhum e-book encontrado</h3>
-                <p class="text-gray-500">Aguarde! Em breve teremos materiais nesta categoria.</p>
+            <!-- Mensagem quando não houver resultados -->
+            <div id="no-results" class="hidden text-center py-12">
+                <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Nenhum e-book encontrado</h3>
+                <p class="text-gray-500">Tente selecionar outra categoria</p>
             </div>
         </div>
     </section>
 
-    <!-- MODAL VISUALIZADOR DE PDF -->
-    <div id="pdf-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+    <!-- MODAL DE VISUALIZAÇÃO -->
+    <div id="pdf-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg w-full max-w-6xl h-[90vh] flex flex-col">
             <!-- Header do Modal -->
             <div class="flex items-center justify-between p-4 border-b">
-                <h3 id="modal-titulo" class="text-xl font-bold text-gray-800"></h3>
-                <div class="flex items-center gap-3">
-                    <a id="btn-download" href="#" download class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                        </svg>
-                        Baixar PDF
-                    </a>
-                    <button onclick="fecharModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                <div class="flex-1">
+                    <h3 id="modal-title" class="text-xl font-bold text-gray-900"></h3>
+                    <p id="modal-category" class="text-sm text-gray-500"></p>
                 </div>
+                <button id="close-modal" class="ml-4 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
             </div>
-            <!-- Visualizador PDF -->
+            
+            <!-- Iframe do PDF -->
             <div class="flex-1 overflow-hidden">
-                <iframe id="pdf-viewer" class="w-full h-full" frameborder="0"></iframe>
+                <iframe id="pdf-viewer" class="w-full h-full border-0"></iframe>
+            </div>
+            
+            <!-- Footer do Modal -->
+            <div class="p-4 border-t bg-gray-50 flex justify-between items-center">
+                <div class="text-sm text-gray-600">
+                    <span id="modal-pages"></span>
+                </div>
+                <a id="download-link" href="#" target="_blank" class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Baixar PDF
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Universidade Cristal Sete</h3>
+                    <p class="text-gray-400 text-sm">
+                        Capacitação contínua e crescimento profissional para todos os colaboradores.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white">Início</a></li>
+                        <li><a href="cursos.html" class="hover:text-white">Cursos</a></li>
+                        <li><a href="biblioteca.html" class="hover:text-white">Biblioteca</a></li>
+                        <li><a href="meu-perfil.html" class="hover:text-white">Meu Perfil</a></li>
+                        <li><a href="admin.html" class="hover:text-white">Administração</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Parceiros</h3>
+                    <div class="flex items-center justify-start space-x-6 mb-4">
+                        <img src="assets/logos/cristal-sete.png" alt="Cristal Sete" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
+                        <img src="assets/logos/blindex.png" alt="Blindex" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Desenvolvendo talentos e construindo o futuro da excelência em vidros de segurança.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2020-2026 Universidade Cristal Sete. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- JAVASCRIPT -->
+    <script src="js/navigation.js"></script>
     <script src="js/ebooks-data.js"></script>
     <script>
-        // Variável global para armazenar categoria ativa
-        let categoriaAtiva = 'todos';
-
-        // Função para filtrar por categoria
-        function filtrarCategoria(categoria) {
-            categoriaAtiva = categoria;
-            
-            // Atualizar botões ativos
-            document.querySelectorAll('.filtro-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.getElementById('filtro-' + categoria).classList.add('active');
-            
-            // Renderizar e-books
-            renderizarEbooks();
-        }
-
-        // Função para renderizar e-books
-        function renderizarEbooks() {
+        // RENDERIZAR E-BOOKS
+        function renderEbooks(filter = 'todos') {
             const grid = document.getElementById('ebooks-grid');
-            const semEbooks = document.getElementById('sem-ebooks');
+            const noResults = document.getElementById('no-results');
             
-            // Filtrar e-books
-            let ebooksFiltrados = ebooks;
-            if (categoriaAtiva !== 'todos') {
-                ebooksFiltrados = ebooks.filter(e => e.categoria === categoriaAtiva);
+            let filteredEbooks = ebooks;
+            
+            if (filter !== 'todos') {
+                filteredEbooks = ebooks.filter(ebook => ebook.categoria === filter);
             }
             
-            // Verificar se há e-books
-            if (ebooksFiltrados.length === 0) {
-                grid.classList.add('hidden');
-                semEbooks.classList.remove('hidden');
+            if (filteredEbooks.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
                 return;
             }
             
-            grid.classList.remove('hidden');
-            semEbooks.classList.add('hidden');
+            noResults.classList.add('hidden');
             
-            // Renderizar cards
-            grid.innerHTML = ebooksFiltrados.map(ebook => `
-                <div class="card-ebook bg-white rounded-xl shadow-md overflow-hidden" onclick="abrirEbook(${ebook.id})">
-                    <div class="relative h-64 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
+            grid.innerHTML = filteredEbooks.map(ebook => `
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer" data-ebook-id="${ebook.id}">
+                    <div class="aspect-[3/4] bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center p-6">
                         ${ebook.capa ? 
                             `<img src="${ebook.capa}" alt="${ebook.titulo}" class="w-full h-full object-cover">` :
-                            `<div class="text-6xl">📄</div>`
+                            `<svg class="w-24 h-24 text-primary opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>`
                         }
-                        <div class="absolute top-3 right-3">
-                            <span class="badge-categoria">${ebook.categoria}</span>
-                        </div>
                     </div>
-                    <div class="p-5">
-                        <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${ebook.titulo}</h3>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">${ebook.descricao}</p>
-                        <div class="flex items-center justify-between text-sm text-gray-500">
-                            <span>📄 ${ebook.paginas} páginas</span>
-                            <span class="text-primary font-semibold">Abrir →</span>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                                ${ebook.categoria}
+                            </span>
+                            <span class="text-xs text-gray-500">${ebook.paginas} páginas</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2">${ebook.titulo}</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2">${ebook.descricao}</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 btn-visualizar px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-sm font-semibold">
+                                Visualizar
+                            </button>
+                            <a href="${ebook.arquivo.replace('/view', '/export?format=pdf')}" target="_blank" class="px-4 py-2 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
             `).join('');
-        }
-
-        // Função para abrir e-book no modal
-        function abrirEbook(id) {
-            const ebook = ebooks.find(e => e.id === id);
-            if (!ebook) return;
             
+            // Adicionar event listeners aos cards
+            document.querySelectorAll('[data-ebook-id]').forEach(card => {
+                const ebookId = parseInt(card.dataset.ebookId);
+                const ebook = ebooks.find(e => e.id === ebookId);
+                
+                card.querySelector('.btn-visualizar').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openPdfModal(ebook);
+                });
+            });
+        }
+        
+        // ABRIR MODAL DE VISUALIZAÇÃO
+        function openPdfModal(ebook) {
             const modal = document.getElementById('pdf-modal');
             const viewer = document.getElementById('pdf-viewer');
-            const titulo = document.getElementById('modal-titulo');
-            const btnDownload = document.getElementById('btn-download');
-            
-            // Configurar modal
-            titulo.textContent = ebook.titulo;
+            const title = document.getElementById('modal-title');
+            const category = document.getElementById('modal-category');
+            const pages = document.getElementById('modal-pages');
+            const downloadLink = document.getElementById('download-link');
             
             // Converter link do Google Drive para embed
-            const driveId = ebook.arquivo.match(/\/d\/(.+?)\//)?.[1] || ebook.arquivo.match(/id=(.+?)(&|$)/)?.[1];
-            if (driveId) {
-                viewer.src = `https://drive.google.com/file/d/${driveId}/preview`;
-                btnDownload.href = `https://drive.google.com/uc?export=download&id=${driveId}`;
-            } else {
-                viewer.src = ebook.arquivo;
-                btnDownload.href = ebook.arquivo;
-            }
+            const embedUrl = ebook.arquivo.replace('/view', '/preview');
             
-            // Abrir modal
+            viewer.src = embedUrl;
+            title.textContent = ebook.titulo;
+            category.textContent = ebook.categoria;
+            pages.textContent = `${ebook.paginas} páginas`;
+            downloadLink.href = ebook.arquivo.replace('/view', '/export?format=pdf');
+            
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
-
-        // Função para fechar modal
-        function fecharModal() {
+        
+        // FECHAR MODAL
+        function closePdfModal() {
             const modal = document.getElementById('pdf-modal');
             const viewer = document.getElementById('pdf-viewer');
             
             modal.classList.add('hidden');
             viewer.src = '';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = '';
         }
-
-        // Fechar modal ao clicar fora
-        document.getElementById('pdf-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                fecharModal();
+        
+        // FILTROS
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderEbooks(btn.dataset.category);
+            });
+        });
+        
+        // EVENT LISTENERS DO MODAL
+        document.getElementById('close-modal').addEventListener('click', closePdfModal);
+        
+        document.getElementById('pdf-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'pdf-modal') {
+                closePdfModal();
             }
         });
-
-        // Fechar modal com tecla ESC
-        document.addEventListener('keydown', function(e) {
+        
+        // ESC para fechar modal
+        document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                fecharModal();
+                closePdfModal();
             }
         });
-
-        // Renderizar e-books ao carregar a página
-        document.addEventListener('DOMContentLoaded', function() {
-            renderizarEbooks();
-        });
+        
+        // RENDERIZAR E-BOOKS AO CARREGAR
+        renderEbooks();
     </script>
+    
 </body>
 </html>
