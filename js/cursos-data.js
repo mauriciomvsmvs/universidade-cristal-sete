@@ -2052,6 +2052,159 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 15: COMO CONTORNAR OBJEÇÕES E VENDER MAIS (VENDAS)
+    // ============================================
+    {
+        id: 15,
+        titulo: "Como Contornar Objeções e Vender Mais",
+        descricao: "Domine técnicas para lidar com objeções de preço, prazo, concorrência e qualidade. Aprenda a validar preocupações, reposicionar valor, mudar critérios de decisão e criar microcompromissos para fechar vendas.",
+        categoria: "Vendas",
+        nivel: "Intermediário",
+        duracao: "50min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-objecoes.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Interpretar objeções como interesse mal resolvido",
+            "Aplicar a estrutura: validar → perguntar → reposicionar → propor",
+            "Contornar objeções de preço demonstrando valor",
+            "Lidar com comparações de concorrência",
+            "Usar microcompromissos para avançar negociações"
+        ],
+        prerequisitos: [
+            "Recomendado: Curso 'SDR: Conceito e o Papel na Cristal Sete'"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Técnicas de Contorno de Objeções",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Como Contornar Objeções e Vender Mais",
+                        url: "https://docs.google.com/presentation/d/1S5PsqcHSzDmWJsS9qOezia570EX38cV2/edit?slide=id.p1#slide=id.p1",
+                        slides: 28,
+                        descricao: "Estrutura completa para lidar com objeções e fechar vendas."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Técnicas de Contorno de Objeções",
+                        url: "https://www.youtube.com/watch?v=EWvg2vnoxHQ",
+                        duracao: "15min",
+                        descricao: "Veja na prática como transformar objeções em oportunidades de venda."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - Contorno de Objeções",
+                        perguntas: [
+                            {
+                                pergunta: "Segundo o treinamento, uma objeção deve ser interpretada como:",
+                                opcoes: [
+                                    "Falta de interesse do cliente",
+                                    "Resistência definitiva à compra",
+                                    "Interesse mal resolvido",
+                                    "Problema exclusivo de preço"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Quando o cliente diz 'está caro', o problema geralmente é:",
+                                opcoes: [
+                                    "O custo do produto",
+                                    "A concorrência agressiva",
+                                    "Falta de valor percebido",
+                                    "Margem de lucro elevada"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O primeiro passo ao responder uma objeção é:",
+                                opcoes: [
+                                    "Reposicionar o produto",
+                                    "Validar a preocupação do cliente",
+                                    "Apresentar argumentos técnicos",
+                                    "Oferecer desconto"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O objetivo de 'mudar o critério de decisão' é:",
+                                opcoes: [
+                                    "Reduzir o preço final",
+                                    "Evitar negociação",
+                                    "Tirar o foco do preço e levar para valor",
+                                    "Encerrar a conversa rapidamente"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Um comprador que sempre pergunta o preço por m² é classificado como:",
+                                opcoes: [
+                                    "Comprador técnico",
+                                    "Comprador de relacionamento",
+                                    "Comprador de urgência",
+                                    "Comprador de preço"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Ao lidar com objeção de prazo, a melhor estratégia é:",
+                                opcoes: [
+                                    "Prometer entrega mais rápida que o concorrente",
+                                    "Reduzir o prazo sem avaliar risco",
+                                    "Posicionar prazo como previsibilidade e segurança",
+                                    "Evitar falar sobre prazo"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Quando o cliente diz 'vidro é tudo igual', a melhor abordagem é:",
+                                opcoes: [
+                                    "Concordar para evitar conflito",
+                                    "Oferecer desconto imediato",
+                                    "Demonstrar diferenças técnicas e normativas",
+                                    "Encerrar a negociação"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Ao lidar com concorrência que 'vende mais barato', o ideal é:",
+                                opcoes: [
+                                    "Igualar o preço imediatamente",
+                                    "Criticar o concorrente",
+                                    "Validar e mostrar critérios como rastreabilidade e qualidade",
+                                    "Ignorar a comparação"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "A estrutura correta para responder objeções é:",
+                                opcoes: [
+                                    "Perguntar → responder → fechar → validar",
+                                    "Validar → perguntar → reposicionar → propor",
+                                    "Responder → justificar → negociar → fechar",
+                                    "Perguntar → negociar → responder → fechar"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O microcompromisso ao final da resposta serve para:",
+                                opcoes: [
+                                    "Encerrar a conversa",
+                                    "Reduzir objeções futuras",
+                                    "Definir o próximo passo e avançar a negociação",
+                                    "Diminuir o tempo de atendimento"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
