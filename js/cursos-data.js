@@ -1778,7 +1778,7 @@ const cursos = [
                     },
                     {
                         tipo: "video",
-                        titulo: "Área de Trapézio",
+                        titulo: "Área de trapézio",
                         url: "https://www.youtube.com/watch?v=R-sjOtYdmHs",
                         duracao: "8min",
                         descricao: "Fórmula com base maior, base menor e altura."
@@ -1792,14 +1792,14 @@ const cursos = [
                     },
                     {
                         tipo: "video",
-                        titulo: "Como Calcular Perímetro",
+                        titulo: "Como calcular perímetro",
                         url: "https://www.youtube.com/watch?v=ItA_X8fT0bY",
                         duracao: "10min",
                         descricao: "Diferença entre perímetro e área, e como calcular corretamente."
                     },
                     {
                         tipo: "video",
-                        titulo: "Qual é o Tamanho de um m²",
+                        titulo: "Qual é o tamanho de um m²",
                         url: "https://www.youtube.com/watch?v=ItA_X8fT0bY",
                         duracao: "8min",
                         descricao: "Visualização prática do metro quadrado e suas dimensões."
