@@ -100,29 +100,43 @@ function atualizarHeaderUsuario() {
     });
     
     // Adicionar botão de logout se não existir
+    if (document.getElementById('btn-logout')) return; // Já existe
+    
     const headerNav = document.querySelector('header nav');
-    if (headerNav && !document.getElementById('btn-logout')) {
-        const menuDesktop = headerNav.querySelector('.hidden.md\\:flex');
-        const menuMobile = headerNav.querySelector('#mobile-menu');
-        
-        // Botão desktop
-        if (menuDesktop) {
-            const btnLogout = document.createElement('button');
-            btnLogout.id = 'btn-logout';
-            btnLogout.className = 'nav-link text-red-600 hover:text-red-700';
-            btnLogout.innerHTML = '🚪 Sair';
-            btnLogout.onclick = fazerLogout;
-            menuDesktop.appendChild(btnLogout);
-        }
-        
-        // Botão mobile
-        if (menuMobile) {
-            const btnLogoutMobile = document.createElement('button');
-            btnLogoutMobile.className = 'block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 rounded';
-            btnLogoutMobile.innerHTML = '🚪 Sair';
-            btnLogoutMobile.onclick = fazerLogout;
-            menuMobile.appendChild(btnLogoutMobile);
-        }
+    if (!headerNav) return;
+    
+    // Procurar menu desktop (várias possibilidades)
+    const menuDesktop = headerNav.querySelector('.hidden.md\\:flex') || 
+                       headerNav.querySelector('.md\\:flex') ||
+                       headerNav.querySelector('nav > div > div:last-child') ||
+                       headerNav.querySelector('.flex.items-center.space-x-6');
+    
+    // Adicionar botão desktop
+    if (menuDesktop) {
+        const btnLogout = document.createElement('a');
+        btnLogout.id = 'btn-logout';
+        btnLogout.href = '#';
+        btnLogout.className = 'nav-link text-red-600 hover:text-red-700 font-medium';
+        btnLogout.innerHTML = '🚪 Sair';
+        btnLogout.onclick = function(e) {
+            e.preventDefault();
+            fazerLogout();
+        };
+        menuDesktop.appendChild(btnLogout);
+    }
+    
+    // Adicionar botão mobile
+    const menuMobile = headerNav.querySelector('#mobile-menu');
+    if (menuMobile) {
+        const btnLogoutMobile = document.createElement('a');
+        btnLogoutMobile.href = '#';
+        btnLogoutMobile.className = 'block px-4 py-2 text-red-600 hover:bg-gray-100 rounded font-medium';
+        btnLogoutMobile.innerHTML = '🚪 Sair';
+        btnLogoutMobile.onclick = function(e) {
+            e.preventDefault();
+            fazerLogout();
+        };
+        menuMobile.appendChild(btnLogoutMobile);
     }
 }
 
