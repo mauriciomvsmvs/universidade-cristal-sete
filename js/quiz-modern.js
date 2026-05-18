@@ -195,3 +195,13 @@ function carregarQuiz(aula, container) {
     // INICIAR QUIZ
     renderizarPergunta();
 }
+
+// Alias para compatibilidade com player.js
+function iniciarQuiz(perguntas) {
+    const container = document.getElementById('quiz-player');
+    const aulaSimulada = {
+        titulo: 'Quiz',
+        perguntas: perguntas
+    };
+    carregarQuiz(aulaSimulada, container);
+}
