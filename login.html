@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Universidade Cristal Sete</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #2B5FA6 0%, #1e4378 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .input-field {
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #2B5FA6;
+            box-shadow: 0 0 0 3px rgba(43, 95, 166, 0.1);
+        }
+        
+        .btn-login {
+            background: #2B5FA6;
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-login:hover {
+            background: #1e4378;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(43, 95, 166, 0.3);
+        }
+        
+        .btn-login:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #dc2626;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="login-card w-full max-w-md mx-4">
+        <!-- Header com Logo -->
+        <div class="bg-gradient-to-r from-[#2B5FA6] to-[#1e4378] p-8 text-center">
+            <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-20 mx-auto mb-4">
+            <h1 class="text-2xl font-bold text-white" style="font-family: 'Montserrat', sans-serif;">
+                Universidade Cristal Sete
+            </h1>
+            <p class="text-white/80 text-sm mt-2">Conhecimento com Propósito</p>
+        </div>
+        
+        <!-- Formulário -->
+        <div class="p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Bem-vindo de volta!</h2>
+            <p class="text-gray-600 mb-6">Entre com suas credenciais para acessar a plataforma</p>
+            
+            <!-- Mensagem de Erro -->
+            <div id="error-message" class="error-message">
+                <strong>Erro:</strong> <span id="error-text"></span>
+            </div>
+            
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <!-- Email -->
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Email
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        class="input-field" 
+                        placeholder="seu.email@cristalsete.com.br"
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+                
+                <!-- Senha -->
+                <div class="mb-4">
+                    <label for="senha" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Senha
+                    </label>
+                    <input 
+                        type="password" 
+                        id="senha" 
+                        name="senha"
+                        class="input-field" 
+                        placeholder="Digite sua senha"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+                
+                <!-- Lembrar-me -->
+                <div class="flex items-center justify-between mb-6">
+                    <label class="flex items-center">
+                        <input 
+                            type="checkbox" 
+                            id="lembrar" 
+                            name="lembrar"
+                            class="w-4 h-4 text-[#2B5FA6] border-gray-300 rounded focus:ring-[#2B5FA6]"
+                        >
+                        <span class="ml-2 text-sm text-gray-700">Lembrar-me</span>
+                    </label>
+                    
+                    <a href="#" class="text-sm text-[#2B5FA6] hover:underline" onclick="mostrarRecuperarSenha(); return false;">
+                        Esqueci minha senha
+                    </a>
+                </div>
+                
+                <!-- Botão Entrar -->
+                <button type="submit" class="btn-login" id="btn-entrar">
+                    Entrar
+                </button>
+            </form>
+            
+            <!-- Info adicional -->
+            <div class="mt-6 pt-6 border-t border-gray-200 text-center">
+                <p class="text-sm text-gray-600">
+                    Problemas para acessar? Entre em contato com o RH
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/users-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Verificar se já está logado
+        window.addEventListener('DOMContentLoaded', function() {
+            const usuario = verificarLogin();
+            if (usuario) {
+                // Já está logado, redirecionar
+                const paginaAnterior = sessionStorage.getItem('paginaAnterior');
+                if (paginaAnterior && paginaAnterior !== '/login.html') {
+                    window.location.href = paginaAnterior;
+                } else {
+                    window.location.href = 'index.html';
+                }
+            }
+        });
+        
+        // Função para mostrar erro
+        function mostrarErro(mensagem) {
+            const errorDiv = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+            
+            errorText.textContent = mensagem;
+            errorDiv.classList.add('show');
+            
+            // Esconder após 5 segundos
+            setTimeout(() => {
+                errorDiv.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Função de login
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value;
+            const lembrar = document.getElementById('lembrar').checked;
+            const btnEntrar = document.getElementById('btn-entrar');
+            
+            // Validações básicas
+            if (!email || !senha) {
+                mostrarErro('Por favor, preencha todos os campos');
+                return;
+            }
+            
+            // Desabilitar botão
+            btnEntrar.disabled = true;
+            btnEntrar.textContent = 'Entrando...';
+            
+            // Tentar fazer login
+            setTimeout(() => {
+                const resultado = fazerLogin(email, senha, lembrar);
+                
+                if (resultado.sucesso) {
+                    // Sucesso! Redirecionar
+                    const paginaAnterior = sessionStorage.getItem('paginaAnterior');
+                    sessionStorage.removeItem('paginaAnterior');
+                    
+                    if (paginaAnterior && paginaAnterior !== '/login.html') {
+                        window.location.href = paginaAnterior;
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                } else {
+                    // Erro
+                    mostrarErro(resultado.erro);
+                    btnEntrar.disabled = false;
+                    btnEntrar.textContent = 'Entrar';
+                }
+            }, 500); // Pequeno delay para UX
+        }
+        
+        // Função para recuperar senha (placeholder)
+        function mostrarRecuperarSenha() {
+            alert('Para recuperar sua senha, entre em contato com o departamento de RH:\n\nrh@cristalsete.com.br\nTelefone: (XX) XXXX-XXXX');
+        }
+    </script>
+    
+</body>
+</html>
