@@ -23,6 +23,15 @@ const ebooks = [
         paginas: 6,
         capa: "assets/ebooks/capa-normas-pratica.png",
         arquivo: "https://drive.google.com/file/d/1jHytIllSZLEua76yZGgza3HPeGCn7kq7/view"
+    },
+    {
+        id: 3,
+        titulo: "Guia de Espessuras",
+        descricao: "Guia rápido baseado na NBR 7199:2016 com tabela prática de espessuras recomendadas para cada tipo de aplicação de vidros temperados.",
+        categoria: "Técnico",
+        paginas: 5,
+        capa: "assets/ebooks/capa-guia-espessuras.png",
+        arquivo: "https://drive.google.com/file/d/1J2DlIYQI_kND2bNqZbgZDykGatTcbj-v/view"
     }
     
     // ============================================
@@ -31,10 +40,10 @@ const ebooks = [
     /*
     ,
     {
-        id: 3,
+        id: 4,
         titulo: "Nome do E-book",
         descricao: "Descrição do conteúdo",
-        categoria: "Técnico",
+        categoria: "Técnico", // Opções: Técnico, Vendas, Financeiro, Segurança, Liderança, Processos
         paginas: 20,
         capa: "assets/ebooks/nome-da-capa.png",
         arquivo: "https://drive.google.com/file/d/SEU_ID/view"
