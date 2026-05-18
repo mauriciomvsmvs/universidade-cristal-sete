@@ -169,12 +169,12 @@
                 <div class="text-sm text-gray-600">
                     <span id="modal-pages"></span>
                 </div>
-                <a id="download-link" href="#" target="_blank" class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
+                <button id="download-modal-btn" class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                     </svg>
                     Baixar PDF
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -224,6 +224,22 @@
     <script src="js/navigation.js"></script>
     <script src="js/ebooks-data.js"></script>
     <script>
+        // Função para forçar download do PDF
+        function downloadPDF(url, filename) {
+            // Converter URL do Google Drive para link de download direto
+            const fileId = url.match(/\/file\/d\/([^\/]+)/)[1];
+            const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+            
+            // Criar link temporário e forçar download
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = filename || 'ebook.pdf';
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
         // RENDERIZAR E-BOOKS
         function renderEbooks(filter = 'todos') {
             const grid = document.getElementById('ebooks-grid');
@@ -266,11 +282,11 @@
                             <button class="flex-1 btn-visualizar px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-sm font-semibold">
                                 Visualizar
                             </button>
-                            <a href="${ebook.arquivo.replace('/view', '/export?format=pdf')}" target="_blank" class="px-4 py-2 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors flex items-center justify-center">
+                            <button class="btn-download px-4 py-2 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors flex items-center justify-center" title="Baixar PDF">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                                 </svg>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -285,6 +301,11 @@
                     e.stopPropagation();
                     openPdfModal(ebook);
                 });
+                
+                card.querySelector('.btn-download').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    downloadPDF(ebook.arquivo, `${ebook.titulo}.pdf`);
+                });
             });
         }
         
@@ -295,7 +316,7 @@
             const title = document.getElementById('modal-title');
             const category = document.getElementById('modal-category');
             const pages = document.getElementById('modal-pages');
-            const downloadLink = document.getElementById('download-link');
+            const downloadBtn = document.getElementById('download-modal-btn');
             
             // Converter link do Google Drive para embed
             const embedUrl = ebook.arquivo.replace('/view', '/preview');
@@ -304,7 +325,9 @@
             title.textContent = ebook.titulo;
             category.textContent = ebook.categoria;
             pages.textContent = `${ebook.paginas} páginas`;
-            downloadLink.href = ebook.arquivo.replace('/view', '/export?format=pdf');
+            
+            // Configurar botão de download do modal
+            downloadBtn.onclick = () => downloadPDF(ebook.arquivo, `${ebook.titulo}.pdf`);
             
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
