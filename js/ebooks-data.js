@@ -6,6 +6,9 @@
  */
 
 const ebooks = [
+    // ========================================
+    // E-BOOKS TÉCNICOS
+    // ========================================
     {
         id: 1,
         titulo: "Guia de Empenamento",
@@ -32,21 +35,45 @@ const ebooks = [
         paginas: 5,
         capa: "assets/ebooks/capa-guia-espessuras.png",
         arquivo: "https://drive.google.com/file/d/1J2DlIYQI_kND2bNqZbgZDykGatTcbj-v/view"
-    }
+    },
     
-    // ============================================
-    // COMO ADICIONAR MAIS E-BOOKS NO FUTURO:
-    // ============================================
-    /*
-    ,
+    // ========================================
+    // E-BOOKS DE VENDAS E GESTÃO
+    // ========================================
     {
         id: 4,
-        titulo: "Nome do E-book",
-        descricao: "Descrição do conteúdo",
-        categoria: "Técnico", // Opções: Técnico, Vendas, Financeiro, Segurança, Liderança, Processos
-        paginas: 20,
-        capa: "assets/ebooks/nome-da-capa.png",
-        arquivo: "https://drive.google.com/file/d/SEU_ID/view"
+        titulo: "7 Dicas para Aumentar Suas Vendas",
+        descricao: "Estratégias práticas e de baixo custo para reativar clientes antigos, usar redes sociais, criar promoções e treinar sua equipe de atendimento.",
+        categoria: "Vendas",
+        paginas: 9,
+        capa: "assets/ebooks/capa-7-dicas-vendas.png",
+        arquivo: "https://drive.google.com/file/d/1WrRRN4zlOmvbgAoUfjJRJVgFiEj4ldyP/view"
+    },
+    {
+        id: 5,
+        titulo: "Como Anunciar no Instagram",
+        descricao: "Guia completo para criar campanhas pagas no Instagram: configure público, orçamento, criativos e transforme likes em orçamentos reais.",
+        categoria: "Vendas",
+        paginas: 17,
+        capa: "assets/ebooks/capa-anunciar-instagram.png",
+        arquivo: "https://drive.google.com/file/d/1RsBu_dUzAkR5Gap0DNfeF7n_pJaAg2QB/view"
+    },
+    {
+        id: 6,
+        titulo: "Marketing Sensorial",
+        descricao: "Desperte os 5 sentidos (visão, audição, tato, olfato e paladar) para criar experiências memoráveis e aumentar as vendas na sua loja física.",
+        categoria: "Vendas",
+        paginas: 10,
+        capa: "assets/ebooks/capa-marketing-sensorial.png",
+        arquivo: "https://drive.google.com/file/d/16mKcL1BFk3G1d6VyPKdmz6ZRLnSNAh29/view"
+    },
+    {
+        id: 7,
+        titulo: "3 Passos para Melhorar Sua Empresa",
+        descricao: "Aprenda, Domine e Transforme: descubra os 3 pilares fundamentais para impulsionar o crescimento e a excelência da sua empresa.",
+        categoria: "Liderança",
+        paginas: 5,
+        capa: "assets/ebooks/capa-3-passos-melhorar-empresa.png",
+        arquivo: "https://drive.google.com/file/d/156rk3cEI6NIwFCj68Dj0nGRgpSWBX9Tf/view"
     }
-    */
 ];
