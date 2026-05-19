@@ -295,6 +295,15 @@ class Cristalito {
 // Inicializar Cristalito quando a página carregar
 let cristalito;
 document.addEventListener('DOMContentLoaded', function() {
-    cristalito = new Cristalito();
-    console.log('🤖 Cristalito carregado e pronto para ajudar!');
+    // NÃO INICIALIZAR na página inicial (index.html)
+    const isIndexPage = window.location.pathname.includes('index.html') || 
+                        window.location.pathname === '/' ||
+                        window.location.pathname.endsWith('/');
+    
+    if (!isIndexPage) {
+        cristalito = new Cristalito();
+        console.log('🤖 Cristalito carregado e pronto para ajudar!');
+    } else {
+        console.log('🏠 Página inicial - Cristalito não carregado');
+    }
 });

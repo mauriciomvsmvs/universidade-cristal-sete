@@ -7,34 +7,48 @@
 #cristalito-button {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
-    width: 80px;
-    height: 80px;
+    left: 2rem; /* MUDOU PARA ESQUERDA */
+    width: 120px; /* AUMENTADO */
+    height: 120px; /* AUMENTADO */
     cursor: pointer;
     z-index: 9998;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     animation: cristalito-float 3s ease-in-out infinite;
-    filter: drop-shadow(0 8px 16px rgba(43, 95, 166, 0.3));
+    filter: drop-shadow(0 10px 25px rgba(43, 95, 166, 0.4));
+    transform-style: preserve-3d;
 }
 
 #cristalito-button:hover {
-    transform: scale(1.1) translateY(-5px);
-    filter: drop-shadow(0 12px 24px rgba(43, 95, 166, 0.4));
+    transform: scale(1.15) translateY(-10px) rotate(-5deg);
+    filter: drop-shadow(0 15px 35px rgba(43, 95, 166, 0.5));
+    animation-play-state: paused;
 }
 
 #cristalito-button img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.4s ease;
 }
 
-/* Animação de flutuação */
+#cristalito-button:hover img {
+    transform: perspective(1000px) rotateY(10deg) rotateX(-5deg);
+}
+
+/* Animação de flutuação - mais realista */
 @keyframes cristalito-float {
     0%, 100% {
-        transform: translateY(0px);
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(-2deg);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-20px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(2deg);
     }
 }
 
@@ -70,20 +84,20 @@
 #cristalito-panel {
     position: fixed;
     top: 0;
-    right: -420px;
+    left: -420px; /* MUDOU PARA ESQUERDA */
     width: 400px;
     height: 100vh;
     background: white;
-    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15); /* SOMBRA INVERTIDA */
     z-index: 9999;
-    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
 #cristalito-panel.open {
-    right: 0;
+    left: 0; /* MUDOU */
 }
 
 /* Overlay de fundo */
@@ -135,12 +149,14 @@
     font-size: 1.25rem;
     font-weight: 700;
     margin: 0 0 0.25rem 0;
+    color: white; /* BRANCO para contrastar com fundo azul */
 }
 
 .cristalito-header-info p {
     font-size: 0.875rem;
     margin: 0;
-    opacity: 0.9;
+    opacity: 0.95;
+    color: white;
 }
 
 .cristalito-close {
@@ -408,14 +424,14 @@
 @media (max-width: 768px) {
     #cristalito-panel {
         width: 100%;
-        right: -100%;
+        left: -100%; /* MUDOU */
     }
     
     #cristalito-button {
-        width: 70px;
-        height: 70px;
+        width: 100px; /* MOBILE MENOR MAS AINDA GRANDE */
+        height: 100px;
         bottom: 1.5rem;
-        right: 1.5rem;
+        left: 1.5rem; /* ESQUERDA */
     }
 }
 
