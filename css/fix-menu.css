@@ -33,11 +33,19 @@
     margin-right: 0;
 }
 
-/* GARANTIR VISIBILIDADE DO BOTÃO SAIR */
+/* GARANTIR VISIBILIDADE E ESTILO DO BOTÃO SAIR */
 a[onclick*="fazerLogout"] {
     display: inline-block !important;
-    color: #ef4444 !important;
+    color: #dc2626 !important;
     font-weight: 600 !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+a[onclick*="fazerLogout"]:hover {
+    color: #991b1b !important;
+    background-color: rgba(220, 38, 38, 0.05) !important;
+    border-radius: 0.375rem !important;
 }
 
 /* NO MOBILE */

@@ -99,45 +99,8 @@ function atualizarHeaderUsuario() {
         el.textContent = usuario.nome.split(' ')[0]; // Primeiro nome
     });
     
-    // Adicionar botão de logout se não existir
-    if (document.getElementById('btn-logout')) return; // Já existe
-    
-    const headerNav = document.querySelector('header nav');
-    if (!headerNav) return;
-    
-    // Procurar menu desktop (várias possibilidades)
-    const menuDesktop = headerNav.querySelector('.hidden.md\\:flex') || 
-                       headerNav.querySelector('.md\\:flex') ||
-                       headerNav.querySelector('nav > div > div:last-child') ||
-                       headerNav.querySelector('.flex.items-center.space-x-6');
-    
-    // Adicionar botão desktop
-    if (menuDesktop) {
-        const btnLogout = document.createElement('a');
-        btnLogout.id = 'btn-logout';
-        btnLogout.href = '#';
-        btnLogout.className = 'nav-link text-red-600 hover:text-red-700 font-medium';
-        btnLogout.innerHTML = '🚪 Sair';
-        btnLogout.onclick = function(e) {
-            e.preventDefault();
-            fazerLogout();
-        };
-        menuDesktop.appendChild(btnLogout);
-    }
-    
-    // Adicionar botão mobile
-    const menuMobile = headerNav.querySelector('#mobile-menu');
-    if (menuMobile) {
-        const btnLogoutMobile = document.createElement('a');
-        btnLogoutMobile.href = '#';
-        btnLogoutMobile.className = 'block px-4 py-2 text-red-600 hover:bg-gray-100 rounded font-medium';
-        btnLogoutMobile.innerHTML = '🚪 Sair';
-        btnLogoutMobile.onclick = function(e) {
-            e.preventDefault();
-            fazerLogout();
-        };
-        menuMobile.appendChild(btnLogoutMobile);
-    }
+    // BOTÃO DE SAIR JÁ ESTÁ NO HTML, NÃO PRECISA ADICIONAR!
+    // A função fazerLogout() já está vinculada via onclick no HTML
 }
 
 /**
