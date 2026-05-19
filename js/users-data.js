@@ -77,6 +77,18 @@ const usuarios = [
         foto: "",
         ativo: true,
         tipo: "aluno"
+    },
+    {
+        id: 6,
+        nome: "Ângelo Gracioli",
+        email: "angelo@cristalsete.com.br",
+        senha: "cristal2026",
+        departamento: "Comercial",
+        cargo: "Gerente Comercial",
+        dataAdmissao: "2024-01-01",
+        foto: "",
+        ativo: true,
+        tipo: "aluno"
     }
     
     // ========================================
