@@ -15,35 +15,31 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
+            padding: 2rem;
         }
         
-        /* Overlay escuro sobre a foto para melhorar legibilidade */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(43, 95, 166, 0.1) 0%, rgba(30, 67, 120, 0.15) 100%);
-            z-index: 0;
+        .login-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
         }
         
         .login-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(25px);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
             border-radius: 1rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             overflow: hidden;
             animation: slideUp 0.5s ease-out;
-            position: relative;
-            z-index: 1;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
         
         @keyframes slideUp {
@@ -58,11 +54,14 @@
         }
         
         .input-field {
-            border: 2px solid #e5e7eb;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
             border-radius: 0.5rem;
             padding: 0.75rem 1rem;
             width: 100%;
             transition: all 0.3s;
+            color: #1f2937;
         }
         
         .input-field:focus {
@@ -115,93 +114,101 @@
             25% { transform: translateX(-10px); }
             75% { transform: translateX(10px); }
         }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
     
-    <div class="login-card w-full max-w-md mx-4">
-        <!-- Header com Logo -->
-        <div class="p-8 text-center" style="background: rgba(43, 95, 166, 0.65); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.3); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-            <div class="bg-white rounded-full w-28 h-28 mx-auto mb-4 p-4 shadow-xl">
-                <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="w-full h-full object-contain">
-            </div>
-            <h1 class="text-2xl font-bold text-white" style="font-family: 'Montserrat', sans-serif; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-                Universidade Cristal Sete
-            </h1>
-            <p class="text-white text-sm mt-2" style="text-shadow: 0 1px 6px rgba(0,0,0,0.4);">Conhecimento com Propósito</p>
-        </div>
-        
-        <!-- Formulário -->
-        <div class="p-8" style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(15px);">
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">Bem-vindo de volta!</h2>
-            <p class="text-gray-600 mb-6">Entre com suas credenciais para acessar a plataforma</p>
-            
-            <!-- Mensagem de Erro -->
-            <div id="error-message" class="error-message">
-                <strong>Erro:</strong> <span id="error-text"></span>
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Header com Logo -->
+            <div class="p-8 text-center" style="background: rgba(43, 95, 166, 0.15); backdrop-filter: blur(15px) saturate(180%); -webkit-backdrop-filter: blur(15px) saturate(180%); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
+                <div class="bg-white/95 rounded-full w-28 h-28 mx-auto mb-4 p-4 shadow-xl backdrop-blur-sm">
+                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="w-full h-full object-contain">
+                </div>
+                <h1 class="text-2xl font-bold text-white" style="font-family: 'Montserrat', sans-serif; text-shadow: 0 3px 15px rgba(0,0,0,0.7), 0 0 30px rgba(0,0,0,0.5);">
+                    Universidade Cristal Sete
+                </h1>
+                <p class="text-white text-sm mt-2 font-medium" style="text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4);">Conhecimento com Propósito</p>
             </div>
             
-            <form id="login-form" onsubmit="handleLogin(event)">
-                <!-- Email -->
-                <div class="mb-4">
-                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-                        Email
-                    </label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email"
-                        class="input-field" 
-                        placeholder="seu.email@cristalsete.com.br"
-                        required
-                        autocomplete="email"
-                    >
+            <!-- Formulário -->
+            <div class="p-8" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px) saturate(180%); -webkit-backdrop-filter: blur(15px) saturate(180%);">
+                <h2 class="text-2xl font-bold mb-2" style="color: white; text-shadow: 0 3px 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);">Bem-vindo de volta!</h2>
+                <p class="mb-6 font-medium" style="color: rgba(255,255,255,0.95); text-shadow: 0 2px 10px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.5);">Entre com suas credenciais para acessar a plataforma</p>
+                
+                <!-- Mensagem de Erro -->
+                <div id="error-message" class="error-message">
+                    <strong>Erro:</strong> <span id="error-text"></span>
                 </div>
                 
-                <!-- Senha -->
-                <div class="mb-4">
-                    <label for="senha" class="block text-sm font-semibold text-gray-700 mb-2">
-                        Senha
-                    </label>
-                    <input 
-                        type="password" 
-                        id="senha" 
-                        name="senha"
-                        class="input-field" 
-                        placeholder="Digite sua senha"
-                        required
-                        autocomplete="current-password"
-                    >
-                </div>
-                
-                <!-- Lembrar-me -->
-                <div class="flex items-center justify-between mb-6">
-                    <label class="flex items-center">
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-bold mb-2" style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.6);">
+                            Email
+                        </label>
                         <input 
-                            type="checkbox" 
-                            id="lembrar" 
-                            name="lembrar"
-                            class="w-4 h-4 text-[#2B5FA6] border-gray-300 rounded focus:ring-[#2B5FA6]"
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            class="input-field" 
+                            placeholder="seu.email@cristalsete.com.br"
+                            required
+                            autocomplete="email"
                         >
-                        <span class="ml-2 text-sm text-gray-700">Lembrar-me</span>
-                    </label>
+                    </div>
                     
-                    <a href="#" class="text-sm text-[#2B5FA6] hover:underline" onclick="mostrarRecuperarSenha(); return false;">
-                        Esqueci minha senha
-                    </a>
-                </div>
+                    <!-- Senha -->
+                    <div class="mb-4">
+                        <label for="senha" class="block text-sm font-bold mb-2" style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.6);">
+                            Senha
+                        </label>
+                        <input 
+                            type="password" 
+                            id="senha" 
+                            name="senha"
+                            class="input-field" 
+                            placeholder="Digite sua senha"
+                            required
+                            autocomplete="current-password"
+                        >
+                    </div>
+                    
+                    <!-- Lembrar-me -->
+                    <div class="flex items-center justify-between mb-6">
+                        <label class="flex items-center">
+                            <input 
+                                type="checkbox" 
+                                id="lembrar" 
+                                name="lembrar"
+                                class="w-4 h-4 text-[#2B5FA6] border-gray-300 rounded focus:ring-[#2B5FA6]"
+                            >
+                            <span class="ml-2 text-sm font-semibold" style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.6);">Lembrar-me</span>
+                        </label>
+                        
+                        <a href="#" class="text-sm font-semibold hover:underline" style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.6);" onclick="mostrarRecuperarSenha(); return false;">
+                            Esqueci minha senha
+                        </a>
+                    </div>
+                    
+                    <!-- Botão Entrar -->
+                    <button type="submit" class="btn-login" id="btn-entrar">
+                        Entrar
+                    </button>
+                </form>
                 
-                <!-- Botão Entrar -->
-                <button type="submit" class="btn-login" id="btn-entrar">
-                    Entrar
-                </button>
-            </form>
-            
-            <!-- Info adicional -->
-            <div class="mt-6 pt-6 border-t border-gray-200 text-center">
-                <p class="text-sm text-gray-600">
-                    Problemas para acessar? Entre em contato com o RH
-                </p>
+                <!-- Info adicional -->
+                <div class="mt-6 pt-6 border-t border-gray-200 text-center">
+                    <p class="text-sm font-medium" style="color: rgba(255,255,255,0.95); text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 15px rgba(0,0,0,0.6);">
+                        Problemas para acessar? Entre em contato com o RH
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -214,7 +221,6 @@
         window.addEventListener('DOMContentLoaded', function() {
             const usuario = verificarLogin();
             if (usuario) {
-                // Já está logado, redirecionar
                 const paginaAnterior = sessionStorage.getItem('paginaAnterior');
                 if (paginaAnterior && paginaAnterior !== '/login.html') {
                     window.location.href = paginaAnterior;
@@ -224,67 +230,50 @@
             }
         });
         
-        // Função para mostrar erro
         function mostrarErro(mensagem) {
             const errorDiv = document.getElementById('error-message');
             const errorText = document.getElementById('error-text');
-            
             errorText.textContent = mensagem;
             errorDiv.classList.add('show');
-            
-            // Esconder após 5 segundos
-            setTimeout(() => {
-                errorDiv.classList.remove('show');
-            }, 5000);
+            setTimeout(() => errorDiv.classList.remove('show'), 5000);
         }
         
-        // Função de login
         function handleLogin(event) {
             event.preventDefault();
-            
             const email = document.getElementById('email').value.trim();
             const senha = document.getElementById('senha').value;
             const lembrar = document.getElementById('lembrar').checked;
             const btnEntrar = document.getElementById('btn-entrar');
             
-            // Validações básicas
             if (!email || !senha) {
                 mostrarErro('Por favor, preencha todos os campos');
                 return;
             }
             
-            // Desabilitar botão
             btnEntrar.disabled = true;
             btnEntrar.textContent = 'Entrando...';
             
-            // Tentar fazer login
             setTimeout(() => {
                 const resultado = fazerLogin(email, senha, lembrar);
-                
                 if (resultado.sucesso) {
-                    // Sucesso! Redirecionar
                     const paginaAnterior = sessionStorage.getItem('paginaAnterior');
                     sessionStorage.removeItem('paginaAnterior');
-                    
                     if (paginaAnterior && paginaAnterior !== '/login.html') {
                         window.location.href = paginaAnterior;
                     } else {
                         window.location.href = 'index.html';
                     }
                 } else {
-                    // Erro
                     mostrarErro(resultado.erro);
                     btnEntrar.disabled = false;
                     btnEntrar.textContent = 'Entrar';
                 }
-            }, 500); // Pequeno delay para UX
+            }, 500);
         }
         
-        // Função para recuperar senha (placeholder)
         function mostrarRecuperarSenha() {
             alert('Para recuperar sua senha, entre em contato com o departamento de RH:\n\nrh@cristalsete.com.br\nTelefone: (XX) XXXX-XXXX');
         }
     </script>
-    
 </body>
 </html>
