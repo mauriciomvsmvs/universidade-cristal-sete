@@ -295,12 +295,18 @@ class Cristalito {
 // Inicializar Cristalito quando a página carregar
 let cristalito;
 document.addEventListener('DOMContentLoaded', function() {
-    // NÃO INICIALIZAR na página inicial (index.html)
-    const isIndexPage = window.location.pathname.includes('index.html') || 
-                        window.location.pathname === '/' ||
-                        window.location.pathname.endsWith('/');
+    // SEMPRE INICIALIZAR, exceto se for especificamente a página index.html
+    const path = window.location.pathname.toLowerCase();
     
-    if (!isIndexPage) {
+    // Lista de páginas onde o Cristalito NÃO deve aparecer
+    const paginasSemCristalito = ['index.html', '/'];
+    
+    // Verifica se a URL atual corresponde a alguma página da lista
+    const naoMostrar = paginasSemCristalito.some(pagina => {
+        return path === pagina || path.endsWith(pagina);
+    });
+    
+    if (!naoMostrar) {
         cristalito = new Cristalito();
         console.log('🤖 Cristalito carregado e pronto para ajudar!');
     } else {
