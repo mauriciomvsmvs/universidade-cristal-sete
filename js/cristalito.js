@@ -177,8 +177,17 @@ class Cristalito {
 // INICIALIZAR - SÓ NÃO CARREGAR SE FOR index.html
 let cristalito;
 document.addEventListener('DOMContentLoaded', function() {
-    const pagina = window.location.pathname.split('/').pop();
-    if (pagina !== 'index.html') {
+    const path = window.location.pathname;
+    const pagina = path.split('/').pop() || '';
+    
+    // NÃO carregar APENAS se for especificamente index.html OU raiz vazia
+    const ehIndex = pagina === 'index.html' || 
+                    (pagina === '' && (path === '/' || path.endsWith('/universidade-cristal-sete') || path.endsWith('/universidade-cristal-sete/')));
+    
+    if (!ehIndex) {
         cristalito = new Cristalito();
+        console.log('✅ Cristalito carregado em:', pagina || 'página');
+    } else {
+        console.log('🏠 Index detectado - Cristalito não carregado');
     }
 });
