@@ -1,0 +1,63 @@
+/* ============================================
+   FIX-MENU.CSS
+   Correção para forçar exibição do menu
+   ============================================ */
+
+/* FORÇAR MENU DESKTOP A APARECER */
+@media (min-width: 768px) {
+    .hidden.md\:flex {
+        display: flex !important;
+    }
+}
+
+/* GARANTIR QUE O MENU MOBILE FIQUE ESCONDIDO NO DESKTOP */
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: none !important;
+    }
+}
+
+/* GARANTIR QUE O BOTÃO MOBILE FIQUE ESCONDIDO NO DESKTOP */
+@media (min-width: 768px) {
+    #mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+/* ESPAÇAMENTO ENTRE LINKS DO MENU */
+.nav-link {
+    margin-right: 1.5rem;
+}
+
+.nav-link:last-child {
+    margin-right: 0;
+}
+
+/* GARANTIR VISIBILIDADE DO BOTÃO SAIR */
+a[onclick*="fazerLogout"] {
+    display: inline-block !important;
+    color: #ef4444 !important;
+    font-weight: 600 !important;
+}
+
+/* NO MOBILE */
+@media (max-width: 767px) {
+    /* Menu desktop escondido */
+    .hidden.md\:flex {
+        display: none !important;
+    }
+    
+    /* Menu mobile visível quando ativo */
+    #mobile-menu.hidden {
+        display: none;
+    }
+    
+    #mobile-menu:not(.hidden) {
+        display: block !important;
+    }
+    
+    /* Botão mobile visível */
+    #mobile-menu-btn {
+        display: block !important;
+    }
+}
