@@ -36,6 +36,15 @@ const ebooks = [
         capa: "assets/ebooks/capa-guia-espessuras.png",
         arquivo: "https://drive.google.com/file/d/1J2DlIYQI_kND2bNqZbgZDykGatTcbj-v/view"
     },
+    {
+        id: 8,
+        titulo: "18 Diferenciais do Box Blindex",
+        descricao: "Conheça os 18 diferenciais técnicos exclusivos do Box Blindex que o tornam referência em segurança e qualidade no mercado nacional. Material essencial para argumentação comercial.",
+        categoria: "Técnico",
+        paginas: 22,
+        capa: "assets/ebooks/capa-18-diferenciais-blindex.png",
+        arquivo: "https://drive.google.com/file/d/16EnuIzSMbQJHFNrAL40Ea2cMXuaVqNoc/view"
+    },
     
     // ========================================
     // E-BOOKS DE VENDAS E GESTÃO
