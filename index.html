@@ -6,11 +6,8 @@
     <title>Universidade Cristal Sete - Conhecimento com Propósito</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/fix-menu.css">
     <link rel="stylesheet" href="css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/cristalito.css">
 </head>
 <body class="font-inter bg-gray-50">
     
@@ -19,13 +16,13 @@
         <nav class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                <div class="flex items-center space-x-3">
                     <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12">
                     <div>
                         <h1 class="text-xl font-bold text-primary">Universidade Cristal Sete</h1>
                         <p class="text-xs text-gray-600">Conhecimento com Propósito</p>
                     </div>
-                </a>
+                </div>
                 
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-6">
@@ -35,7 +32,7 @@
                     <a href="cursos.html" class="nav-link">Cursos</a>
                     <a href="meu-perfil.html" class="nav-link">Meu Perfil</a>
                     <a href="admin.html" class="nav-link">Admin</a>
-                    <a href="#" onclick="fazerLogout(); return false;" class="nav-link">Sair</a>
+                    <a href="login.html" class="nav-link">Sair</a>
                 </div>
                 
                 <!-- Botão Mobile -->
@@ -54,7 +51,7 @@
                 <a href="cursos.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cursos</a>
                 <a href="meu-perfil.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Meu Perfil</a>
                 <a href="admin.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Admin</a>
-                <a href="#" onclick="fazerLogout(); return false;" class="block px-4 py-2 hover:bg-gray-100 rounded">Sair</a>
+                <a href="login.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Sair</a>
             </div>
         </nav>
     </header>
@@ -193,7 +190,7 @@
     </section>
 
     <!-- CTA FINAL -->
-    <section class="py-16 bg-gradient-to-r from-primary to-primary-dark">
+    <section class="py-16 bg-gradient-to-r from-primary to-primary-dark text-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; color: #2F60AB;">
                 Pronto para Começar?
@@ -222,8 +219,6 @@
                     <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="index.html" class="hover:text-white">Início</a></li>
-                        <li><a href="integracao.html" class="hover:text-white">Integração</a></li>
-                        <li><a href="biblioteca.html" class="hover:text-white">Biblioteca</a></li>
                         <li><a href="cursos.html" class="hover:text-white">Cursos</a></li>
                         <li><a href="meu-perfil.html" class="hover:text-white">Meu Perfil</a></li>
                         <li><a href="admin.html" class="hover:text-white">Administração</a></li>
@@ -251,10 +246,5 @@
     <!-- JAVASCRIPT -->
     <script src="js/navigation.js"></script>
     
-    <!-- Sistema de Autenticação -->
-    <script src="js/users-data.js"></script>
-    <script src="js/auth.js"></script>
-    <!-- Cristalito - Assistente Virtual -->
-    <script src="js/cristalito.js"></script>
 </body>
 </html>
