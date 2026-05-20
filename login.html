@@ -25,62 +25,69 @@
             height: 100vh;
         }
         
-        /* LADO ESQUERDO - AZUL COM FORMULÁRIO */
+        /* LADO ESQUERDO - LOGIN TRANSPARENTE COM FOTO DA FÁBRICA */
         .login-left {
             flex: 0 0 45%;
-            background: linear-gradient(135deg, #2B5FA6 0%, #1e4378 100%);
+            background-image: url('assets/fabrica-cristal-sete.jpg');
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 60px;
             position: relative;
-            overflow: hidden;
         }
         
+        /* Overlay azul sutil sobre a foto da fábrica */
         .login-left::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 50%;
-        }
-        
-        .login-left::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(43, 95, 166, 0.75) 0%, rgba(30, 67, 120, 0.85) 100%);
+            z-index: 0;
         }
         
         .login-content {
+            position: relative;
+            z-index: 1;
             max-width: 420px;
             width: 100%;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
+        
         
         .logo-container {
             margin-bottom: 50px;
+            text-align: center;
         }
         
-        .logo-container img {
-            height: 60px;
+        .logo-wrapper {
+            display: inline-block;
             margin-bottom: 20px;
         }
         
+        .logo-container img {
+            height: 150px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
+        }
+        
         .logo-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            display: none;
+        }
+        
+        .logo-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
         }
         
         .welcome-text h1 {
@@ -263,10 +270,10 @@
             margin-top: 2px;
         }
         
-        /* LADO DIREITO - FOTO */
+        /* LADO DIREITO - FOTO DOS COLABORADORES */
         .login-right {
             flex: 1;
-            background-image: url('equipe-treinamento.png');
+            background-image: url('assets/equipe-treinamento.png');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -279,7 +286,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(43, 95, 166, 0.1) 0%, rgba(30, 67, 120, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(43, 95, 166, 0.05) 0%, rgba(30, 67, 120, 0.1) 100%);
         }
         
         /* RESPONSIVO */
@@ -307,6 +314,12 @@
             .welcome-text h1 {
                 font-size: 28px;
             }
+            
+            .logo-wrapper {
+                width: 120px;
+                height: 120px;
+                padding: 20px;
+            }
         }
         
         /* ANIMAÇÃO DE ENTRADA */
@@ -329,12 +342,14 @@
 <body>
     
     <div class="login-wrapper">
-        <!-- LADO ESQUERDO - FORMULÁRIO -->
+        <!-- LADO ESQUERDO - LOGIN COM FOTO DA FÁBRICA -->
         <div class="login-left">
             <div class="login-content">
                 <!-- Logo -->
                 <div class="logo-container">
-                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete">
+                    <div class="logo-wrapper">
+                        <img src="assets/logo-universidade-branca.png" alt="Universidade Cristal Sete">
+                    </div>
                     <div class="logo-subtitle">VIDROS DE SEGURANÇA</div>
                 </div>
                 
@@ -410,7 +425,7 @@
             </div>
         </div>
         
-        <!-- LADO DIREITO - FOTO -->
+        <!-- LADO DIREITO - FOTO DOS COLABORADORES -->
         <div class="login-right"></div>
     </div>
     
