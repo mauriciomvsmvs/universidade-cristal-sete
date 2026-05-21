@@ -177,6 +177,7 @@
     font-weight: 700;
     margin: 0 0 0.25rem 0;
     color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .cristalito-header-info p {
@@ -184,6 +185,7 @@
     margin: 0;
     opacity: 0.9;
     color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .cristalito-close {
