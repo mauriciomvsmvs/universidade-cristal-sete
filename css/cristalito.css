@@ -144,7 +144,7 @@
 
 /* HEADER DO PAINEL */
 .cristalito-header {
-    background: linear-gradient(135deg, rgba(43, 95, 166, 0.95) 0%, rgba(30, 67, 120, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(43, 95, 166, 0.75) 0%, rgba(30, 67, 120, 0.75) 100%);
     backdrop-filter: blur(10px);
     color: white;
     padding: 1.5rem;
