@@ -264,8 +264,18 @@ Suas anotações ficam salvas automaticamente!"></textarea>
             button.style.cursor = 'grabbing';
             button.style.animation = 'none'; // Parar flutuação
             
-            // Pegar posição inicial do BOTÃO (não do mouse)
+            // Limpar bottom/right para não conflitar
+            button.style.bottom = 'auto';
+            button.style.right = 'auto';
+            
+            // IMPORTANTE: Capturar posições DEPOIS de limpar bottom/right
             const rect = button.getBoundingClientRect();
+            initialLeft = rect.left;
+            initialTop = rect.top;
+            
+            // Garantir que left/top estão setados
+            button.style.left = initialLeft + 'px';
+            button.style.top = initialTop + 'px';
             
             if (e.type === 'mousedown') {
                 startX = e.clientX;
@@ -274,10 +284,6 @@ Suas anotações ficam salvas automaticamente!"></textarea>
                 startX = e.touches[0].clientX;
                 startY = e.touches[0].clientY;
             }
-            
-            // Guardar posição inicial do botão
-            initialLeft = rect.left;
-            initialTop = rect.top;
             
             e.preventDefault();
         };
