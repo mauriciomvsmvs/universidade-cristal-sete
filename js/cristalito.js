@@ -53,48 +53,107 @@ class Cristalito {
             
             <div class="cristalito-content">
                 <div class="cristalito-section">
-                    <p style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 0.5rem;">
-                        👋 Oi! Como posso te ajudar?
-                    </p>
-                    <p style="color: #6b7280; font-size: 0.875rem;">
-                        Estou aqui para facilitar seus estudos na Universidade Cristal Sete!
-                    </p>
-                </div>
-                
-                <div class="cristalito-section">
-                    <div class="cristalito-section-title">📝 Minhas Anotações</div>
-                    <textarea id="cristalito-notes" placeholder="Anote aqui suas ideias, resumos e lembretes de estudo...&#10;&#10;Suas anotações ficam salvas automaticamente! 💾"></textarea>
-                    <div class="cristalito-notes-actions">
-                        <button class="cristalito-btn cristalito-btn-primary" onclick="cristalito.saveNotes()">💾 Salvar</button>
-                        <button class="cristalito-btn cristalito-btn-secondary" onclick="cristalito.clearNotes()">🗑️ Limpar</button>
+                    <div class="cristalito-welcome">
+                        <svg class="cristalito-icon-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                        </svg>
+                        <h3>Oi! Como posso te ajudar?</h3>
+                        <p>Estou aqui para facilitar seus estudos na Universidade Cristal Sete!</p>
                     </div>
                 </div>
                 
                 <div class="cristalito-section">
-                    <div class="cristalito-section-title">❓ Perguntas Frequentes</div>
+                    <div class="cristalito-section-title">
+                        <svg class="cristalito-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                        Minhas Anotações
+                    </div>
+                    <textarea id="cristalito-notes" placeholder="Anote aqui suas ideias, resumos e lembretes de estudo...
+
+Suas anotações ficam salvas automaticamente!"></textarea>
+                    <div class="cristalito-notes-actions">
+                        <button class="cristalito-btn cristalito-btn-primary" onclick="cristalito.saveNotes()">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                            </svg>
+                            Salvar
+                        </button>
+                        <button class="cristalito-btn cristalito-btn-secondary" onclick="cristalito.clearNotes()">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                            Limpar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="cristalito-section">
+                    <div class="cristalito-section-title">
+                        <svg class="cristalito-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Perguntas Frequentes
+                    </div>
                     <div class="cristalito-faq">${this.getFAQHTML()}</div>
                 </div>
                 
                 <div class="cristalito-section">
-                    <div class="cristalito-section-title">🔍 Busca Rápida</div>
+                    <div class="cristalito-section-title">
+                        <svg class="cristalito-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        Busca Rápida
+                    </div>
                     <div class="cristalito-search">
+                        <svg class="cristalito-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                         <input type="text" id="cristalito-search" placeholder="Buscar cursos, materiais..." onkeypress="if(event.key === 'Enter') cristalito.search()" />
                     </div>
                 </div>
                 
                 <div class="cristalito-section">
-                    <div class="cristalito-section-title">🚀 Atalhos Úteis</div>
+                    <div class="cristalito-section-title">
+                        <svg class="cristalito-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        Atalhos Úteis
+                    </div>
                     <div class="cristalito-shortcuts">
-                        <a href="cursos.html" class="cristalito-shortcut"><span class="cristalito-shortcut-icon">📚</span><span class="cristalito-shortcut-label">Meus Cursos</span></a>
-                        <a href="biblioteca.html" class="cristalito-shortcut"><span class="cristalito-shortcut-icon">📖</span><span class="cristalito-shortcut-label">Biblioteca</span></a>
-                        <a href="meu-perfil.html" class="cristalito-shortcut"><span class="cristalito-shortcut-icon">👤</span><span class="cristalito-shortcut-label">Meu Progresso</span></a>
-                        <a href="integracao.html" class="cristalito-shortcut"><span class="cristalito-shortcut-icon">🎯</span><span class="cristalito-shortcut-label">Integração</span></a>
+                        <a href="cursos.html" class="cristalito-shortcut">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                            <span>Meus Cursos</span>
+                        </a>
+                        <a href="biblioteca.html" class="cristalito-shortcut">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                            <span>Biblioteca</span>
+                        </a>
+                        <a href="meu-perfil.html" class="cristalito-shortcut">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                            <span>Meu Progresso</span>
+                        </a>
+                        <a href="integracao.html" class="cristalito-shortcut">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Integração</span>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="cristalito-section">
                     <div class="cristalito-contact">
-                        <h3>💬 Precisa de mais ajuda?</h3>
+                        <svg class="cristalito-icon-contact" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <h3>Precisa de mais ajuda?</h3>
                         <a href="mailto:rh@cristalsete.com.br">Falar com RH</a>
                     </div>
                 </div>
@@ -111,7 +170,17 @@ class Cristalito {
             { question: "Minhas anotações ficam salvas?", answer: "Sim! Suas anotações aqui no Cristalito ficam salvas automaticamente no seu navegador. Basta clicar em 'Salvar'!" },
             { question: "Como tirar dúvidas sobre o conteúdo?", answer: "Entre em contato com o RH através do email rh@cristalsete.com.br ou use o botão 'Falar com RH' aqui embaixo!" }
         ];
-        return faqs.map((faq, index) => `<div class="cristalito-faq-item" onclick="cristalito.toggleFAQ(${index})"><div class="cristalito-faq-question">${faq.question}</div><div class="cristalito-faq-answer">${faq.answer}</div></div>`).join('');
+        return faqs.map((faq, index) => `
+            <div class="cristalito-faq-item" onclick="cristalito.toggleFAQ(${index})">
+                <div class="cristalito-faq-question">
+                    <svg class="cristalito-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span>${faq.question}</span>
+                </div>
+                <div class="cristalito-faq-answer">${faq.answer}</div>
+            </div>
+        `).join('');
     }
     
     attachEvents() {
