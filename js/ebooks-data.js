@@ -45,6 +45,15 @@ const ebooks = [
         capa: "assets/ebooks/capa-18-diferenciais-blindex.png",
         arquivo: "https://drive.google.com/file/d/16EnuIzSMbQJHFNrAL40Ea2cMXuaVqNoc/view"
     },
+    {
+        id: 9,
+        titulo: "Como Instalar o Box Blindex",
+        descricao: "Manual completo de instalação do Box Blindex com orientações técnicas, ferramentas necessárias, normas ABNT e boas práticas de atendimento ao cliente. Guia essencial para instaladores especializados.",
+        categoria: "Técnico",
+        paginas: 15,
+        capa: "assets/ebooks/capa-como-instalar-box-blindex.png",
+        arquivo: "https://drive.google.com/file/d/1-UBxh0I3gzW9RjIKlxK23jQXCG0DsNe6/view"
+    },
     
     // ========================================
     // E-BOOKS DE VENDAS E GESTÃO
