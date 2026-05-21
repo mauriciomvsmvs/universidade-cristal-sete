@@ -195,10 +195,8 @@ class Cristalito {
             button.style.cursor = 'grabbing';
             button.style.animation = 'none'; // Parar flutuação
             
-            // Pegar posição inicial
+            // Pegar posição inicial do BOTÃO (não do mouse)
             const rect = button.getBoundingClientRect();
-            initialLeft = rect.left;
-            initialTop = rect.top;
             
             if (e.type === 'mousedown') {
                 startX = e.clientX;
@@ -207,6 +205,10 @@ class Cristalito {
                 startX = e.touches[0].clientX;
                 startY = e.touches[0].clientY;
             }
+            
+            // Guardar posição inicial do botão
+            initialLeft = rect.left;
+            initialTop = rect.top;
             
             e.preventDefault();
         };
@@ -225,9 +227,11 @@ class Cristalito {
                 currentY = e.touches[0].clientY;
             }
             
+            // Delta = posição atual do mouse - posição inicial do mouse
             const deltaX = currentX - startX;
             const deltaY = currentY - startY;
             
+            // Nova posição = posição inicial do botão + quanto o mouse moveu
             const newLeft = initialLeft + deltaX;
             const newTop = initialTop + deltaY;
             
