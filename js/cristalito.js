@@ -14,6 +14,7 @@ class Cristalito {
         this.createElements();
         this.loadNotes();
         this.attachEvents();
+        this.startCollisionDetection(); // NOVO: Detectar elementos importantes
     }
     
     createElements() {
@@ -171,6 +172,87 @@ class Cristalito {
         document.body.appendChild(toast);
         setTimeout(() => toast.classList.add('show'), 100);
         setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 300); }, 3000);
+    }
+    
+    // DETECTAR ELEMENTOS IMPORTANTES E AJUSTAR TRANSPARÊNCIA
+    startCollisionDetection() {
+        const button = document.getElementById('cristalito-button');
+        if (!button) return;
+        
+        const checkCollision = () => {
+            // Não fazer nada se o painel estiver aberto
+            if (this.isOpen) {
+                button.classList.remove('over-important');
+                return;
+            }
+            
+            const buttonRect = button.getBoundingClientRect();
+            
+            // Seletores de elementos importantes (botões, links, controles)
+            const importantSelectors = [
+                'button:not(#cristalito-button):not(.cristalito-close)',
+                'a[href]',
+                '.btn',
+                '.btn-primary',
+                '.btn-secondary',
+                '[onclick]',
+                'input',
+                'select',
+                'textarea',
+                '.nav-link',
+                '.course-card',
+                '.player-controls'
+            ];
+            
+            let isOverImportant = false;
+            
+            // Verificar cada tipo de elemento
+            importantSelectors.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => {
+                    const elRect = el.getBoundingClientRect();
+                    
+                    // Verificar se há sobreposição
+                    const overlap = !(
+                        buttonRect.right < elRect.left ||
+                        buttonRect.left > elRect.right ||
+                        buttonRect.bottom < elRect.top ||
+                        buttonRect.top > elRect.bottom
+                    );
+                    
+                    if (overlap && isElementVisible(el)) {
+                        isOverImportant = true;
+                    }
+                });
+            });
+            
+            // Aplicar ou remover classe
+            if (isOverImportant) {
+                button.classList.add('over-important');
+            } else {
+                button.classList.remove('over-important');
+            }
+        };
+        
+        // Verificar se elemento está visível
+        function isElementVisible(el) {
+            const style = window.getComputedStyle(el);
+            return style.display !== 'none' && 
+                   style.visibility !== 'hidden' && 
+                   style.opacity !== '0';
+        }
+        
+        // Verificar periodicamente
+        setInterval(checkCollision, 500);
+        
+        // Verificar ao scroll
+        window.addEventListener('scroll', checkCollision);
+        
+        // Verificar ao resize
+        window.addEventListener('resize', checkCollision);
+        
+        // Primeira verificação
+        setTimeout(checkCollision, 1000);
     }
 }
 

@@ -16,12 +16,26 @@
     animation: cristalito-float 3s ease-in-out infinite;
     filter: drop-shadow(0 10px 25px rgba(43, 95, 166, 0.4));
     transform-style: preserve-3d;
+    opacity: 1;
 }
 
+/* TRANSPARÊNCIA quando mouse passa por cima */
 #cristalito-button:hover {
     transform: scale(1.15) translateY(-10px) rotate(-5deg);
     filter: drop-shadow(0 15px 35px rgba(43, 95, 166, 0.5));
     animation-play-state: paused;
+    opacity: 0.5; /* SEMI-TRANSPARENTE */
+}
+
+/* Quando NÃO está em hover mas está sobre algo importante - FICA TRANSPARENTE */
+#cristalito-button.over-important {
+    opacity: 0.3;
+    filter: drop-shadow(0 5px 15px rgba(43, 95, 166, 0.2));
+}
+
+/* Quando está sobre algo importante E mouse passa por cima - FICA MAIS VISÍVEL */
+#cristalito-button.over-important:hover {
+    opacity: 0.6;
 }
 
 #cristalito-button img {
