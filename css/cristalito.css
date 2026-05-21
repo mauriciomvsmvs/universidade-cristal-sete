@@ -10,13 +10,22 @@
     left: 2rem; /* MUDOU PARA ESQUERDA */
     width: 120px; /* AUMENTADO */
     height: 120px; /* AUMENTADO */
-    cursor: pointer;
+    cursor: grab; /* Indicar que pode arrastar */
     z-index: 9998;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     animation: cristalito-float 3s ease-in-out infinite;
     filter: drop-shadow(0 10px 25px rgba(43, 95, 166, 0.4));
     transform-style: preserve-3d;
     opacity: 1;
+    user-select: none; /* Não selecionar ao arrastar */
+    -webkit-user-drag: none; /* Safari */
+}
+
+/* Quando está sendo arrastado */
+#cristalito-button:active {
+    cursor: grabbing;
+    animation: none; /* Parar animação durante arrasto */
+    filter: drop-shadow(0 20px 40px rgba(43, 95, 166, 0.6));
 }
 
 /* TRANSPARÊNCIA quando mouse passa por cima */

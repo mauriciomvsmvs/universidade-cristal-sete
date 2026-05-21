@@ -15,6 +15,7 @@ class Cristalito {
         this.loadNotes();
         this.attachEvents();
         this.startCollisionDetection(); // NOVO: Detectar elementos importantes
+        this.makeDraggable(); // NOVO: Tornar arrastável
     }
     
     createElements() {
@@ -172,6 +173,133 @@ class Cristalito {
         document.body.appendChild(toast);
         setTimeout(() => toast.classList.add('show'), 100);
         setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 300); }, 3000);
+    }
+    
+    // TORNAR O CRISTALITO ARRASTÁVEL
+    makeDraggable() {
+        const button = document.getElementById('cristalito-button');
+        if (!button) return;
+        
+        let isDragging = false;
+        let startX, startY, initialLeft, initialTop;
+        
+        // Adicionar cursor de movimento
+        button.style.cursor = 'grab';
+        
+        // Mouse/Touch down - Começar arrasto
+        const startDrag = (e) => {
+            // Prevenir se já estiver aberto o painel
+            if (this.isOpen) return;
+            
+            isDragging = true;
+            button.style.cursor = 'grabbing';
+            button.style.animation = 'none'; // Parar flutuação
+            
+            // Pegar posição inicial
+            const rect = button.getBoundingClientRect();
+            initialLeft = rect.left;
+            initialTop = rect.top;
+            
+            if (e.type === 'mousedown') {
+                startX = e.clientX;
+                startY = e.clientY;
+            } else if (e.type === 'touchstart') {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }
+            
+            e.preventDefault();
+        };
+        
+        // Mouse/Touch move - Arrastar
+        const drag = (e) => {
+            if (!isDragging) return;
+            
+            let currentX, currentY;
+            
+            if (e.type === 'mousemove') {
+                currentX = e.clientX;
+                currentY = e.clientY;
+            } else if (e.type === 'touchmove') {
+                currentX = e.touches[0].clientX;
+                currentY = e.touches[0].clientY;
+            }
+            
+            const deltaX = currentX - startX;
+            const deltaY = currentY - startY;
+            
+            const newLeft = initialLeft + deltaX;
+            const newTop = initialTop + deltaY;
+            
+            // Limites da tela (não deixar sair)
+            const maxLeft = window.innerWidth - button.offsetWidth;
+            const maxTop = window.innerHeight - button.offsetHeight;
+            
+            const boundedLeft = Math.max(0, Math.min(newLeft, maxLeft));
+            const boundedTop = Math.max(0, Math.min(newTop, maxTop));
+            
+            button.style.left = boundedLeft + 'px';
+            button.style.top = boundedTop + 'px';
+            button.style.bottom = 'auto';
+            button.style.right = 'auto';
+            
+            e.preventDefault();
+        };
+        
+        // Mouse/Touch up - Soltar
+        const stopDrag = () => {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            button.style.cursor = 'grab';
+            button.style.animation = 'cristalito-float 3s ease-in-out infinite';
+            
+            // Salvar posição no localStorage
+            const rect = button.getBoundingClientRect();
+            localStorage.setItem('cristalito-position', JSON.stringify({
+                left: rect.left,
+                top: rect.top
+            }));
+        };
+        
+        // Events para mouse
+        button.addEventListener('mousedown', startDrag);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', stopDrag);
+        
+        // Events para touch (mobile)
+        button.addEventListener('touchstart', startDrag, { passive: false });
+        document.addEventListener('touchmove', drag, { passive: false });
+        document.addEventListener('touchend', stopDrag);
+        
+        // Restaurar posição salva
+        this.restorePosition();
+        
+        // Prevenir que o clique para abrir aconteça durante arrasto
+        button.addEventListener('click', (e) => {
+            if (isDragging) {
+                e.stopPropagation();
+                e.preventDefault();
+            }
+        });
+    }
+    
+    // RESTAURAR POSIÇÃO SALVA
+    restorePosition() {
+        const button = document.getElementById('cristalito-button');
+        const savedPos = localStorage.getItem('cristalito-position');
+        
+        if (savedPos) {
+            try {
+                const pos = JSON.parse(savedPos);
+                button.style.left = pos.left + 'px';
+                button.style.top = pos.top + 'px';
+                button.style.bottom = 'auto';
+                button.style.right = 'auto';
+            } catch (e) {
+                console.log('Erro ao restaurar posição do Cristalito');
+            }
+        }
     }
     
     // DETECTAR ELEMENTOS IMPORTANTES E AJUSTAR TRANSPARÊNCIA
