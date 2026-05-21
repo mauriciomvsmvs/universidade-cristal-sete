@@ -2497,6 +2497,151 @@ const cursos = [
                 ]
             }
         ]
+    },
+    
+    // ============================================
+    // CURSO 18: PROCEDIMENTOS DE ENTREGA E REPOSIÇÃO
+    // ============================================
+    {
+        id: 18,
+        titulo: "Procedimentos de Entrega e Reposição",
+        descricao: "Aprenda os procedimentos corretos para entrega segura, armazenamento adequado de vidros e as regras do Programa de Reposição e Confiança da Cristal Sete.",
+        categoria: "Técnico",
+        nivel: "Iniciante",
+        duracao: "30min",
+        instrutor: "Equipe Cristal Sete",
+        thumbnail: "assets/cursos/curso-procedimentos-entrega.jpg",
+        obrigatorio: false,
+        objetivos: [
+            "Conhecer os procedimentos de segurança para entrega de vidros",
+            "Entender o armazenamento correto de peças de vidro",
+            "Aprender as especificações de moldes e materiais adequados",
+            "Dominar as regras do Programa de Reposição e Confiança"
+        ],
+        prerequisitos: [
+            "Nenhum pré-requisito necessário"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Procedimentos de Entrega e Reposição",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "Procedimentos de Entrega e Reposição",
+                        url: "https://docs.google.com/presentation/d/1FFiPLKvjSw5DlMm9PfDWfUwQv63prSDi/edit?slide=id.p1#slide=id.p1",
+                        slides: 14,
+                        descricao: "Manual completo com procedimentos de segurança, armazenamento correto, especificações de moldes e política de devoluções."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Avaliação: Procedimentos de Entrega",
+                        perguntas: [
+                            {
+                                pergunta: "Qual é o compromisso máximo da Cristal Sete em relação às entregas?",
+                                opcoes: [
+                                    "Velocidade de entrega",
+                                    "Segurança em primeiro lugar",
+                                    "Baixo custo",
+                                    "Quantidade de entregas"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é a quantidade MÁXIMA de peças de vidro que podem ser sobrepostas no armazenamento?",
+                                opcoes: [
+                                    "5 peças",
+                                    "15 peças",
+                                    "Menos de 10 peças",
+                                    "20 peças"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Quais materiais SÃO ACEITOS para fazer moldes?",
+                                opcoes: [
+                                    "Papelão e compensado",
+                                    "Duratex, MDF liso e compensado rígido",
+                                    "Qualquer material disponível",
+                                    "Apenas papelão reforçado"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Quando deve ser comunicada uma mudança de endereço de entrega?",
+                                opcoes: [
+                                    "Depois do faturamento",
+                                    "Na hora da entrega",
+                                    "No momento do pedido",
+                                    "Não é necessário comunicar"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é o prazo para solicitar reposição de peças com riscos, lascas e manchas?",
+                                opcoes: [
+                                    "7 dias úteis",
+                                    "2 dias úteis",
+                                    "1 semana",
+                                    "30 dias"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O que é OBRIGATÓRIO fazer para identificar defeitos em peças de vidro?",
+                                opcoes: [
+                                    "Tirar foto do defeito",
+                                    "Marcar com caneta piloto",
+                                    "Enviar e-mail descrevendo",
+                                    "Ligar para o fornecedor"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Durante a descarga dos vidros, é obrigatório:",
+                                opcoes: [
+                                    "Ter uma equipe de 5 pessoas",
+                                    "Estar presente durante toda a descarga",
+                                    "Usar equipamento especial",
+                                    "Filmar todo o processo"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Os cavaletes para armazenamento de vidros devem ter:",
+                                opcoes: [
+                                    "Superfície de madeira lisa",
+                                    "Proteção emborrachada",
+                                    "Base de concreto",
+                                    "Altura mínima de 2 metros"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Peças com riscos e manchas serão repostas SOMENTE se:",
+                                opcoes: [
+                                    "Forem vidros caros",
+                                    "O cliente reclamar muito",
+                                    "NÃO saírem do estoque interno do cliente",
+                                    "Estiverem instaladas há menos de 1 mês"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O que NÃO pode conter nos moldes de vidro?",
+                                opcoes: [
+                                    "Madeira lisa",
+                                    "Parafusos expostos e pregos",
+                                    "MDF",
+                                    "Duratex"
+                                ],
+                                correta: 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
