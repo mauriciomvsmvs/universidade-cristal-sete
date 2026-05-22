@@ -73,11 +73,19 @@ class GeradorCertificado {
         doc.rect(0, 0, width, height, 'F');
 
         // ============================================
-        // MARCA D'ÁGUA - Logo Universidade (QUASE INVISÍVEL)
+        // MARCA D'ÁGUA - Logo Universidade (COM OVERLAY)
         // ============================================
         if (this.logoUniversidade) {
-            // Marca d'água extremamente sutil (1% de opacidade = quase invisível)
-            doc.addImage(this.logoUniversidade, 'PNG', width/2 - 70, height/2 - 70, 140, 140, '', 'NONE', 0.01);
+            // Adicionar logo em tamanho grande
+            doc.addImage(this.logoUniversidade, 'PNG', width/2 - 70, height/2 - 70, 140, 140);
+            
+            // Overlay branco semi-transparente por cima (98% opacidade = logo fica 2% visível)
+            doc.setFillColor(255, 255, 255);
+            doc.setGState(new doc.GState({ opacity: 0.98 }));
+            doc.rect(0, 0, width, height, 'F');
+            
+            // Resetar opacidade para o resto do documento
+            doc.setGState(new doc.GState({ opacity: 1 }));
         }
 
         // ============================================
