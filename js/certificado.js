@@ -1,11 +1,43 @@
 /**
- * CERTIFICADO.JS - VERSÃO CORRIGIDA
- * Sistema de Geração de Certificados da Universidade Cristal Sete
+ * CERTIFICADO.JS - MODELO PREMIUM CRISTAL SETE
+ * Baseado no template oficial da Universidade
  */
 
 class GeradorCertificado {
     constructor() {
         this.usuario = verificarLogin();
+        
+        // Carregar logos como Base64
+        this.logoUniversidade = null;
+        this.logoCristalSete = null;
+        this.carregarLogos();
+    }
+
+    async carregarLogos() {
+        try {
+            // Converter logos para Base64
+            this.logoUniversidade = await this.imagemParaBase64('assets/logo-universidade.png');
+            this.logoCristalSete = await this.imagemParaBase64('assets/logo-cristal-sete.png');
+        } catch (error) {
+            console.log('Logos não carregadas, usando placeholders');
+        }
+    }
+
+    imagemParaBase64(url) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            };
+            img.onerror = reject;
+            img.src = url;
+        });
     }
 
     gerarCertificado(cursoId) {
@@ -15,7 +47,7 @@ class GeradorCertificado {
             return;
         }
 
-        // Verificar progresso (se a função existir)
+        // Verificar progresso (se existir)
         if (typeof obterProgressoCurso === 'function') {
             const progresso = obterProgressoCurso(this.usuario.id, cursoId);
             if (progresso < 100) {
@@ -34,112 +66,187 @@ class GeradorCertificado {
         const width = 297;
         const height = 210;
 
+        // ============================================
         // FUNDO BRANCO
+        // ============================================
         doc.setFillColor(255, 255, 255);
         doc.rect(0, 0, width, height, 'F');
 
-        // BORDA DUPLA AZUL
-        doc.setDrawColor(43, 95, 166);
+        // ============================================
+        // MARCA D'ÁGUA - Logo Universidade
+        // ============================================
+        if (this.logoUniversidade) {
+            doc.addImage(this.logoUniversidade, 'PNG', width/2 - 50, height/2 - 50, 100, 100, '', 'NONE', 0.05);
+        } else {
+            // Placeholder marca d'água (círculo azul translúcido)
+            doc.setFillColor(43, 95, 166);
+            doc.setGState(new doc.GState({ opacity: 0.03 }));
+            doc.circle(width/2, height/2, 60, 'F');
+            doc.setGState(new doc.GState({ opacity: 1 }));
+        }
+
+        // ============================================
+        // BORDA CINZA ELEGANTE
+        // ============================================
+        doc.setDrawColor(150, 150, 150);
         doc.setLineWidth(2);
         doc.rect(10, 10, width - 20, height - 20);
-        doc.setLineWidth(0.5);
-        doc.rect(15, 15, width - 30, height - 30);
 
+        // ============================================
+        // LOGOS NO TOPO
+        // ============================================
+        
+        // Logo Universidade (esquerda)
+        if (this.logoUniversidade) {
+            doc.addImage(this.logoUniversidade, 'PNG', 25, 20, 35, 35);
+        } else {
+            doc.setFillColor(43, 95, 166);
+            doc.circle(42.5, 37.5, 17.5, 'F');
+        }
+
+        // Logo Cristal Sete (direita)
+        if (this.logoCristalSete) {
+            doc.addImage(this.logoCristalSete, 'PNG', width - 95, 25, 70, 25);
+        } else {
+            doc.setFillColor(43, 95, 166);
+            doc.rect(width - 95, 25, 70, 25, 'F');
+        }
+
+        // ============================================
         // TÍTULO "CERTIFICADO"
+        // ============================================
         doc.setFont('helvetica', 'bold');
-        doc.setFontSize(40);
+        doc.setFontSize(50);
         doc.setTextColor(43, 95, 166);
-        doc.text('CERTIFICADO', width / 2, 40, { align: 'center' });
+        doc.text('CERTIFICADO', width / 2, 55, { align: 'center' });
 
-        // Subtítulo
+        // ============================================
+        // SUBTÍTULO
+        // ============================================
         doc.setFontSize(14);
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(100, 100, 100);
-        doc.text('DE CONCLUSÃO DE CURSO', width / 2, 50, { align: 'center' });
-
-        // Linha decorativa
+        doc.setTextColor(43, 95, 166);
+        
+        // Linhas decorativas
         doc.setDrawColor(43, 95, 166);
         doc.setLineWidth(0.5);
-        doc.line(50, 60, width - 50, 60);
+        doc.line(width/2 - 70, 63, width/2 - 10, 63);
+        doc.line(width/2 + 10, 63, width/2 + 70, 63);
+        
+        doc.text('DE CONCLUSÃO DE CURSO', width / 2, 66, { align: 'center' });
 
+        // ============================================
         // "Certificamos que"
-        doc.setFontSize(14);
+        // ============================================
+        doc.setFontSize(13);
         doc.setTextColor(80, 80, 80);
         doc.setFont('helvetica', 'normal');
-        doc.text('Certificamos que', width / 2, 75, { align: 'center' });
+        doc.text('Certificamos que', width / 2, 80, { align: 'center' });
 
-        // NOME DO ALUNO
-        doc.setFontSize(28);
-        doc.setFont('helvetica', 'bold');
+        // ============================================
+        // NOME DO ALUNO (Estilo Cursivo/Script)
+        // ============================================
+        doc.setFont('times', 'italic');
+        doc.setFontSize(32);
         doc.setTextColor(43, 95, 166);
-        doc.text(this.usuario.nome.toUpperCase(), width / 2, 90, { align: 'center' });
+        doc.text(this.usuario.nome, width / 2, 95, { align: 'center' });
 
-        // "concluiu com êxito o curso"
-        doc.setFontSize(14);
+        // ============================================
+        // TEXTO: "concluiu com êxito o curso"
+        // ============================================
         doc.setFont('helvetica', 'normal');
+        doc.setFontSize(13);
         doc.setTextColor(80, 80, 80);
-        doc.text('concluiu com êxito o curso', width / 2, 105, { align: 'center' });
+        doc.text('concluiu com êxito o curso', width / 2, 107, { align: 'center' });
 
+        // ============================================
         // NOME DO CURSO
-        doc.setFontSize(20);
+        // ============================================
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(30, 30, 30);
-        doc.text(curso.titulo, width / 2, 120, { align: 'center' });
+        doc.setFontSize(20);
+        doc.setTextColor(43, 95, 166);
+        doc.text(curso.titulo, width / 2, 118, { align: 'center' });
 
         // Categoria e carga horária
-        doc.setFontSize(12);
         doc.setFont('helvetica', 'normal');
+        doc.setFontSize(11);
         doc.setTextColor(100, 100, 100);
-        doc.text(`${curso.categoria} | Carga horária: ${curso.duracao}`, width / 2, 130, { align: 'center' });
+        doc.text(`${curso.categoria} | Carga horária: ${curso.duracao}`, width / 2, 126, { align: 'center' });
 
+        // ============================================
+        // TEXTO MOTIVACIONAL
+        // ============================================
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
+        doc.setTextColor(70, 70, 70);
+        
+        const textoMotivacional = [
+            'Sua participação reforça o compromisso com o desenvolvimento, a inovação',
+            'e a construção de um ambiente cada vez mais preparado e eficiente.'
+        ];
+        
+        let yMotivacional = 138;
+        textoMotivacional.forEach(linha => {
+            doc.text(linha, width / 2, yMotivacional, { align: 'center' });
+            yMotivacional += 6;
+        });
+
+        // ============================================
+        // SLOGAN
+        // ============================================
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(11);
+        doc.setTextColor(43, 95, 166);
+        doc.text('Conhecimento que fortalece pessoas, processos e resultados.', width / 2, 155, { align: 'center' });
+
+        // ============================================
         // DATA
+        // ============================================
         const dataEmissao = new Date().toLocaleDateString('pt-BR', {
             day: '2-digit',
             month: 'long',
             year: 'numeric'
         });
 
-        doc.setFontSize(11);
         doc.setFont('helvetica', 'italic');
+        doc.setFontSize(11);
         doc.setTextColor(100, 100, 100);
-        doc.text(`Apucarana, ${dataEmissao}`, width / 2, height - 45, { align: 'center' });
+        doc.text(`Apucarana, ${dataEmissao}`, width / 2, 168, { align: 'center' });
 
-        // ASSINATURAS
-        const assinaturaY = height - 30;
-        const espacoAssinatura = 80;
-
-        // Assinatura 1
-        doc.setLineWidth(0.5);
+        // ============================================
+        // ASSINATURA ÚNICA
+        // ============================================
+        const assinaturaY = height - 25;
+        
+        // Linha de assinatura
         doc.setDrawColor(43, 95, 166);
-        doc.line(40, assinaturaY, 40 + espacoAssinatura, assinaturaY);
-        doc.setFontSize(10);
-        doc.setFont('helvetica', 'bold');
-        doc.setTextColor(43, 95, 166);
-        doc.text('Ângelo Gracioli', 40 + (espacoAssinatura / 2), assinaturaY + 6, { align: 'center' });
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(9);
-        doc.setTextColor(100, 100, 100);
-        doc.text('Gerente Comercial', 40 + (espacoAssinatura / 2), assinaturaY + 12, { align: 'center' });
-
-        // Assinatura 2
         doc.setLineWidth(0.5);
-        doc.line(width - 40 - espacoAssinatura, assinaturaY, width - 40, assinaturaY);
-        doc.setFontSize(10);
+        doc.line(width/2 - 45, assinaturaY, width/2 + 45, assinaturaY);
+        
+        // Nome
         doc.setFont('helvetica', 'bold');
+        doc.setFontSize(11);
         doc.setTextColor(43, 95, 166);
-        doc.text('Universidade Cristal Sete', width - 40 - (espacoAssinatura / 2), assinaturaY + 6, { align: 'center' });
+        doc.text('Universidade Cristal Sete', width / 2, assinaturaY + 6, { align: 'center' });
+        
+        // Cargo
         doc.setFont('helvetica', 'normal');
-        doc.setFontSize(9);
+        doc.setFontSize(10);
         doc.setTextColor(100, 100, 100);
-        doc.text('Departamento de RH', width - 40 - (espacoAssinatura / 2), assinaturaY + 12, { align: 'center' });
+        doc.text('Departamento de RH', width / 2, assinaturaY + 11, { align: 'center' });
 
+        // ============================================
         // CÓDIGO DE VERIFICAÇÃO
+        // ============================================
         const codigoVerificacao = this.gerarCodigoVerificacao(this.usuario.id, cursoId);
-        doc.setFontSize(8);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(7);
         doc.setTextColor(150, 150, 150);
-        doc.text(`Código de verificação: ${codigoVerificacao}`, width / 2, height - 8, { align: 'center' });
+        doc.text(`Código de verificação: ${codigoVerificacao}`, width / 2, height - 7, { align: 'center' });
 
+        // ============================================
         // SALVAR PDF
+        // ============================================
         const nomeArquivo = `Certificado_${curso.titulo.replace(/\s+/g, '_')}_${this.usuario.nome.replace(/\s+/g, '_')}.pdf`;
         doc.save(nomeArquivo);
 
