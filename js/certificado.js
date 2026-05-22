@@ -79,9 +79,9 @@ class GeradorCertificado {
             // Adicionar logo em tamanho grande
             doc.addImage(this.logoUniversidade, 'PNG', width/2 - 70, height/2 - 70, 140, 140);
             
-            // Overlay branco semi-transparente por cima (98% opacidade = logo fica 2% visível)
+            // Overlay branco semi-transparente por cima (95% opacidade = logo fica 5% visível)
             doc.setFillColor(255, 255, 255);
-            doc.setGState(new doc.GState({ opacity: 0.98 }));
+            doc.setGState(new doc.GState({ opacity: 0.95 }));
             doc.rect(0, 0, width, height, 'F');
             
             // Resetar opacidade para o resto do documento
@@ -118,19 +118,20 @@ class GeradorCertificado {
         doc.text('CERTIFICADO', width / 2, 55, { align: 'center' });
 
         // ============================================
-        // SUBTÍTULO
+        // SUBTÍTULO COM LINHAS DECORATIVAS
         // ============================================
         doc.setFontSize(14);
         doc.setFont('helvetica', 'normal');
         doc.setTextColor(43, 95, 166);
         
-        // Linhas decorativas
+        // Texto primeiro
+        doc.text('DE CONCLUSÃO DE CURSO', width / 2, 66, { align: 'center' });
+        
+        // Linhas decorativas ABAIXO do texto
         doc.setDrawColor(43, 95, 166);
         doc.setLineWidth(0.5);
-        doc.line(width/2 - 70, 63, width/2 - 10, 63);
-        doc.line(width/2 + 10, 63, width/2 + 70, 63);
-        
-        doc.text('DE CONCLUSÃO DE CURSO', width / 2, 66, { align: 'center' });
+        doc.line(width/2 - 70, 69, width/2 - 10, 69);
+        doc.line(width/2 + 10, 69, width/2 + 70, 69);
 
         // ============================================
         // "Certificamos que"
