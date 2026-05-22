@@ -154,35 +154,17 @@ function carregarQuiz(aula, container) {
         const respostaUsuario = respostas[perguntaAtual];
         const respostaCorreta = pergunta.correta;
         
-        // Verificar se acertou
+        // Verificar se acertou (SEM mostrar feedback visual)
         const acertou = respostaUsuario === respostaCorreta;
         if (acertou) acertos++;
         
-        // Mostrar feedback visual
-        document.querySelectorAll('.opcao-btn').forEach((btn, idx) => {
-            btn.disabled = true;
-            btn.classList.remove('hover:border-primary', 'hover:bg-primary/5');
-            
-            if (idx === respostaCorreta) {
-                btn.classList.remove('border-gray-200', 'border-primary');
-                btn.classList.add('border-green-500', 'bg-green-50');
-            } else if (idx === respostaUsuario && !acertou) {
-                btn.classList.remove('border-gray-200', 'border-primary');
-                btn.classList.add('border-red-500', 'bg-red-50');
-            }
-        });
-        
-        // Atualizar botão
-        const btnConfirmar = document.getElementById('btn-confirmar');
-        btnConfirmar.textContent = perguntaAtual < aula.perguntas.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado';
-        btnConfirmar.onclick = function() {
-            if (perguntaAtual < aula.perguntas.length - 1) {
-                perguntaAtual++;
-                renderizarPergunta();
-            } else {
-                renderizarResultado();
-            }
-        };
+        // Avançar direto para próxima pergunta OU resultado final
+        if (perguntaAtual < aula.perguntas.length - 1) {
+            perguntaAtual++;
+            renderizarPergunta();
+        } else {
+            renderizarResultado();
+        }
     };
     
     window.reiniciarQuiz = function() {
