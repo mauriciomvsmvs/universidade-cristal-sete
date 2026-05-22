@@ -308,14 +308,40 @@
         }
         
         function atualizarProgressoDisplay() {
-            const progresso = 0; // Implementar cálculo real
-            document.getElementById('progresso-texto').textContent = progresso + '%';
-            document.getElementById('progresso-barra').style.width = progresso + '%';
+            const usuario = verificarLogin();
+            if (!usuario) return;
+            
+            const progresso = obterProgressoCurso(usuario.id, cursoId);
+            
+            const progressoTexto = document.getElementById('progresso-texto');
+            const progressoBarra = document.getElementById('progresso-barra');
+            
+            if (progressoTexto) {
+                progressoTexto.textContent = progresso + '%';
+            }
+            
+            if (progressoBarra) {
+                progressoBarra.style.width = progresso + '%';
+            }
+            
+            console.log(`📊 Progresso atualizado: ${progresso}%`);
         }
         
         function marcarConcluida() {
-            alert('Aula marcada como concluída!');
-            proximaAula();
+            // 🔧 SALVAR PROGRESSO
+            const salvou = salvarProgressoAula(cursoId, moduloNumero, aulaNumero, true);
+            
+            if (salvou) {
+                console.log('✅ Aula marcada como concluída!');
+                
+                // Atualizar display
+                atualizarProgressoDisplay();
+                
+                // Ir para próxima aula
+                proximaAula();
+            } else {
+                alert('❌ Erro ao salvar progresso. Tente novamente.');
+            }
         }
         
         function proximaAula() {
