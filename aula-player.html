@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula - Universidade Cristal Sete</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/fix-menu.css">
     <link rel="stylesheet" href="css/cristalito.css">
@@ -328,10 +329,50 @@
                 if (proximoModulo) {
                     window.location.href = `aula-player.html?curso=${cursoId}&modulo=${proximoModulo.numero}&aula=1`;
                 } else {
-                    alert('Parabéns! Você concluiu o curso!');
-                    window.location.href = `curso-detalhe.html?id=${cursoId}`;
+                    // CURSO COMPLETO! Mostrar modal de certificado
+                    mostrarModalCertificado(curso);
                 }
             }
+        }
+        
+        function mostrarModalCertificado(curso) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(0, 0, 0, 0.8); z-index: 10000;
+                display: flex; align-items: center; justify-content: center;
+                padding: 2rem;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; border-radius: 1.5rem; padding: 3rem; max-width: 500px; text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: #10b981; border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <svg style="width: 48px; height: 48px; color: white;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    
+                    <h2 style="font-size: 2rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">
+                        🎉 Parabéns!
+                    </h2>
+                    
+                    <p style="font-size: 1.125rem; color: #6b7280; margin-bottom: 2rem;">
+                        Você concluiu o curso<br>
+                        <strong style="color: #2B5FA6; font-size: 1.25rem;">${curso.titulo}</strong>
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <button onclick="baixarCertificado(${curso.id})" style="background: #2B5FA6; color: white; padding: 1rem 2rem; border-radius: 0.75rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem;">
+                            📜 Baixar Certificado
+                        </button>
+                        <button onclick="window.location.href='curso-detalhe.html?id=${curso.id}'" style="background: #f3f4f6; color: #374151; padding: 1rem 2rem; border-radius: 0.75rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem;">
+                            Ver Curso
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
         }
         
         function aulaAnterior() {
@@ -350,6 +391,9 @@
     <!-- Sistema de Autenticação -->
     <script src="js/users-data.js"></script>
     <script src="js/auth.js"></script>
+    
+    <!-- Sistema de Certificados -->
+    <script src="js/certificado.js"></script>
     
     <!-- Cristalito - Assistente Virtual -->
     <script src="js/cristalito.js"></script>
