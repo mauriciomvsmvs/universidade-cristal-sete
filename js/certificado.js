@@ -73,22 +73,17 @@ class GeradorCertificado {
         doc.rect(0, 0, width, height, 'F');
 
         // ============================================
-        // MARCA D'ÁGUA - Logo Universidade
+        // MARCA D'ÁGUA - Logo Universidade (QUASE INVISÍVEL)
         // ============================================
         if (this.logoUniversidade) {
-            doc.addImage(this.logoUniversidade, 'PNG', width/2 - 50, height/2 - 50, 100, 100, '', 'NONE', 0.05);
-        } else {
-            // Placeholder marca d'água (círculo azul translúcido)
-            doc.setFillColor(43, 95, 166);
-            doc.setGState(new doc.GState({ opacity: 0.03 }));
-            doc.circle(width/2, height/2, 60, 'F');
-            doc.setGState(new doc.GState({ opacity: 1 }));
+            // Marca d'água bem sutil (2% de opacidade)
+            doc.addImage(this.logoUniversidade, 'PNG', width/2 - 60, height/2 - 60, 120, 120, '', 'NONE', 0.02);
         }
 
         // ============================================
-        // BORDA CINZA ELEGANTE
+        // BORDA AZUL ELEGANTE
         // ============================================
-        doc.setDrawColor(150, 150, 150);
+        doc.setDrawColor(43, 95, 166); // Azul corporativo
         doc.setLineWidth(2);
         doc.rect(10, 10, width - 20, height - 20);
 
@@ -96,20 +91,14 @@ class GeradorCertificado {
         // LOGOS NO TOPO
         // ============================================
         
-        // Logo Universidade (esquerda)
+        // Logo Universidade (esquerda) - Tamanho médio
         if (this.logoUniversidade) {
-            doc.addImage(this.logoUniversidade, 'PNG', 25, 20, 35, 35);
-        } else {
-            doc.setFillColor(43, 95, 166);
-            doc.circle(42.5, 37.5, 17.5, 'F');
+            doc.addImage(this.logoUniversidade, 'PNG', 25, 22, 30, 30);
         }
 
-        // Logo Cristal Sete (direita)
+        // Logo Cristal Sete (direita) - MENOR e melhor qualidade
         if (this.logoCristalSete) {
-            doc.addImage(this.logoCristalSete, 'PNG', width - 95, 25, 70, 25);
-        } else {
-            doc.setFillColor(43, 95, 166);
-            doc.rect(width - 95, 25, 70, 25, 'F');
+            doc.addImage(this.logoCristalSete, 'PNG', width - 75, 28, 50, 18);
         }
 
         // ============================================
