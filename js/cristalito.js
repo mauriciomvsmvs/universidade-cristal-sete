@@ -105,6 +105,31 @@ Suas anotações ficam salvas automaticamente!"></textarea>
                 <div class="cristalito-section">
                     <div class="cristalito-section-title">
                         <svg class="cristalito-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        Pergunte ao Cristalito
+                        <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.7; margin-left: 0.5rem;">(Em breve)</span>
+                    </div>
+                    <div style="background: #f9fafb; border: 1px dashed #d1d5db; border-radius: 0.5rem; padding: 1.5rem; text-align: center;">
+                        <svg style="width: 48px; height: 48px; margin: 0 auto 1rem; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">
+                            Em breve você poderá fazer perguntas ao Cristalito e receber respostas inteligentes sobre os cursos!
+                        </p>
+                        <textarea id="pergunta-ia" placeholder="Digite sua dúvida aqui... O Cristalito vai te ajudar em breve!" disabled style="width: 100%; min-height: 80px; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; font-size: 0.875rem; background: white; opacity: 0.6; cursor: not-allowed;"></textarea>
+                        <button class="cristalito-btn cristalito-btn-secondary" disabled style="margin-top: 0.75rem; cursor: not-allowed; opacity: 0.5;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Perguntar ao Cristalito
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="cristalito-section">
+                    <div class="cristalito-section-title">
+                        <svg class="cristalito-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         Perguntas Frequentes
