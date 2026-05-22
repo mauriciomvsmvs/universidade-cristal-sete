@@ -84,6 +84,19 @@ function carregarQuiz(aula, container) {
         const porcentagem = Math.round((acertos / aula.perguntas.length) * 100);
         const aprovado = porcentagem >= 70;
         
+        // 🔧 SALVAR PROGRESSO DO QUIZ SE APROVADO
+        if (aprovado && typeof salvarProgressoAula === 'function') {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cursoId = urlParams.get('curso');
+            const moduloNum = parseInt(urlParams.get('modulo'));
+            const aulaNum = parseInt(urlParams.get('aula'));
+            
+            if (cursoId && moduloNum && aulaNum) {
+                salvarProgressoAula(parseInt(cursoId), moduloNum, aulaNum, true);
+                console.log('✅ Quiz concluído e salvo!');
+            }
+        }
+        
         container.innerHTML = `
             <div class="w-full h-full flex items-center justify-center p-8">
                 <div class="bg-white rounded-xl p-8 max-w-2xl w-full text-center">
