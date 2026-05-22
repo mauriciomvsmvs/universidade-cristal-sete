@@ -127,11 +127,10 @@ class GeradorCertificado {
         // Texto primeiro
         doc.text('DE CONCLUSÃO DE CURSO', width / 2, 66, { align: 'center' });
         
-        // Linhas decorativas ABAIXO do texto
+        // Linha decorativa contínua ABAIXO do texto
         doc.setDrawColor(43, 95, 166);
         doc.setLineWidth(0.5);
-        doc.line(width/2 - 70, 69, width/2 - 10, 69);
-        doc.line(width/2 + 10, 69, width/2 + 70, 69);
+        doc.line(width/2 - 90, 69, width/2 + 90, 69);  // Linha única contínua
 
         // ============================================
         // "Certificamos que"
