@@ -56,14 +56,14 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="bg-gradient-to-br from-primary to-primary-dark py-12">
+    <section class="bg-white py-12">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <svg class="w-20 h-20 mx-auto mb-4" style="color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-20 h-20 mx-auto mb-4" style="color: #2B5FA6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                 </svg>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; color: white;">Cristal League</h1>
-                <p class="text-xl" style="color: rgba(255,255,255,0.9);">Liga de Talentos - Celebrando a excelência em aprendizado</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; color: #2B5FA6;">Cristal League</h1>
+                <p class="text-xl" style="color: #2B5FA6;">Liga de Talentos - Celebrando a excelência em aprendizado</p>
             </div>
         </div>
     </section>
@@ -72,7 +72,7 @@
     <section class="bg-white py-6 shadow-sm">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
-                <button onclick="filtrarRanking('todos')" id="filtro-todos" class="px-4 py-2 rounded-lg font-semibold bg-primary text-white">
+                <button onclick="filtrarRanking('todos')" id="filtro-todos" class="px-4 py-2 rounded-lg font-semibold text-white" style="background-color: #2B5FA6;">
                     Todos os Departamentos
                 </button>
                 <button onclick="filtrarRanking('Comercial')" id="filtro-Comercial" class="px-4 py-2 rounded-lg font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300">
@@ -101,7 +101,7 @@
                 
                 <!-- RESTO DO RANKING -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-                    <div class="bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-4">
+                    <div style="background: linear-gradient(135deg, #2B5FA6 0%, #1e4378 100%);" class="text-white px-6 py-4">
                         <h2 class="text-xl font-bold" style="font-family: 'Montserrat', sans-serif;">Top 10</h2>
                     </div>
                     <div id="ranking-lista" class="divide-y divide-gray-200"></div>
@@ -136,11 +136,14 @@
             
             // Atualizar botões
             document.querySelectorAll('[id^="filtro-"]').forEach(btn => {
-                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.remove('text-white');
                 btn.classList.add('bg-gray-200', 'text-gray-700');
+                btn.style.backgroundColor = '';
             });
-            document.getElementById('filtro-' + filtro).classList.remove('bg-gray-200', 'text-gray-700');
-            document.getElementById('filtro-' + filtro).classList.add('bg-primary', 'text-white');
+            const btnAtivo = document.getElementById('filtro-' + filtro);
+            btnAtivo.classList.remove('bg-gray-200', 'text-gray-700');
+            btnAtivo.classList.add('text-white');
+            btnAtivo.style.backgroundColor = '#2B5FA6';
             
             renderizarRanking();
         }
@@ -179,7 +182,7 @@
             const proximoPontos = posicao > 5 ? ranking[4].pontos - dados.pontosTotais : 0;
             
             document.getElementById('sua-posicao').innerHTML = `
-                <div class="bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl p-6">
+                <div style="background: linear-gradient(135deg, #2B5FA6 0%, #1e4378 100%);" class="text-white rounded-xl p-6">
                     <div class="flex items-center justify-between">
                         <div>
                             <div class="text-sm opacity-90 mb-1">Sua Posição</div>
