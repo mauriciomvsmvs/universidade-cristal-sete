@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil - Universidade Cristal Sete</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/fix-menu.css">
     <link rel="stylesheet" href="css/cristalito.css">
@@ -58,19 +57,21 @@
             </div>
         </nav>
     </header>
-
+            
     <!-- HERO SECTION COM INFORMAÇÕES DO USUÁRIO -->
     <section class="bg-gradient-to-br from-primary to-primary-dark py-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
                 <!-- Avatar -->
                 <div class="relative">
-                    <img id="user-avatar" src="https://ui-avatars.com/api/?name=Aluno&background=ffffff&color=2B5FA6&size=120" alt="Avatar" class="w-32 h-32 rounded-full border-4 border-white shadow-lg">
-                    <button class="absolute bottom-0 right-0 bg-white text-primary p-2 rounded-full shadow-lg hover:scale-110 transition-transform">
+                    <img id="user-avatar" src="https://ui-avatars.com/api/?name=Aluno&background=ffffff&color=2B5FA6&size=120" alt="Avatar" class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover">
+                    <button onclick="document.getElementById('upload-avatar').click()" class="absolute bottom-0 right-0 bg-white text-primary p-2 rounded-full shadow-lg hover:scale-110 transition-transform" title="Alterar foto">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </button>
+                    <input type="file" id="upload-avatar" accept="image/*" class="hidden" onchange="alterarFotoPerfil(event)">
                 </div>
                 
                 <!-- Informações -->
@@ -321,6 +322,25 @@
         
         // CARREGAR DADOS DO PERFIL
         function carregarPerfil() {
+            // CARREGAR DADOS DO USUÁRIO LOGADO
+            const usuario = verificarLogin();
+            if (usuario) {
+                // Atualizar nome
+                document.getElementById('user-name').textContent = usuario.nome;
+                
+                // Atualizar email
+                document.getElementById('user-email').textContent = usuario.email;
+                
+                // Carregar foto personalizada (se existir) ou avatar padrão
+                const fotoSalva = localStorage.getItem(`foto_perfil_${usuario.id}`);
+                if (fotoSalva) {
+                    document.getElementById('user-avatar').src = fotoSalva;
+                } else {
+                    // Avatar padrão com iniciais
+                    document.getElementById('user-avatar').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(usuario.nome)}&background=2B5FA6&color=ffffff&size=120&bold=true`;
+                }
+            }
+            
             // Estatísticas gerais
             const cursosAndamento = getCursosEmAndamento();
             const cursosConcluidos = getCursosConcluidos();
@@ -340,6 +360,61 @@
             
             // Renderizar estatísticas
             renderizarEstatisticas();
+        }
+        
+        // Função para alterar foto de perfil
+        function alterarFotoPerfil(event) {
+            const arquivo = event.target.files[0];
+            if (!arquivo) return;
+            
+            // Validar tipo de arquivo
+            if (!arquivo.type.startsWith('image/')) {
+                alert('Por favor, selecione apenas arquivos de imagem.');
+                return;
+            }
+            
+            // Validar tamanho (máximo 2MB)
+            if (arquivo.size > 2 * 1024 * 1024) {
+                alert('A imagem deve ter no máximo 2MB.');
+                return;
+            }
+            
+            // Ler arquivo e converter para Base64
+            const leitor = new FileReader();
+            leitor.onload = function(e) {
+                const fotoBase64 = e.target.result;
+                const usuario = verificarLogin();
+                
+                // Salvar no localStorage
+                localStorage.setItem(`foto_perfil_${usuario.id}`, fotoBase64);
+                
+                // Atualizar imagem na tela
+                document.getElementById('user-avatar').src = fotoBase64;
+                
+                // Feedback visual
+                mostrarMensagemSucesso('Foto de perfil atualizada com sucesso!');
+            };
+            leitor.readAsDataURL(arquivo);
+        }
+        
+        // Mensagem de sucesso
+        function mostrarMensagemSucesso(mensagem) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed; top: 20px; right: 20px; z-index: 10000;
+                background: white; padding: 1rem 1.5rem; border-radius: 0.75rem;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+                display: flex; align-items: center; gap: 0.75rem;
+                animation: slideIn 0.3s ease-out;
+            `;
+            toast.innerHTML = `
+                <svg style="width: 24px; height: 24px; color: #10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span style="color: #1f2937; font-weight: 600;">${mensagem}</span>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
         }
         
         function getCursosEmAndamento() {
@@ -545,9 +620,6 @@
     <!-- Sistema de Autenticação -->
     <script src="js/users-data.js"></script>
     <script src="js/auth.js"></script>
-    
-    <!-- Sistema de Certificados -->
-    <script src="js/certificado.js"></script>
     
     <!-- Cristalito - Assistente Virtual -->
     <script src="js/cristalito.js"></script>
