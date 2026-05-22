@@ -7,6 +7,9 @@ class Cristalito {
     constructor() {
         this.isOpen = false;
         this.notesKey = 'cristalito_notes';
+        this.gravando = false;
+        this.recognition = null;
+        this.transcricaoAtual = '';
         this.init();
     }
     
@@ -69,21 +72,89 @@ class Cristalito {
                         </svg>
                         Minhas Anotações
                     </div>
-                    <textarea id="cristalito-notes" placeholder="Anote aqui suas ideias, resumos e lembretes de estudo...
+                    
+                    <!-- Botões de Modo -->
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <button id="btn-modo-texto" class="cristalito-btn cristalito-btn-primary" onclick="cristalito.mudarModo('texto')" style="flex: 1; font-size: 0.875rem;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            </svg>
+                            Escrever
+                        </button>
+                        <button id="btn-modo-audio" class="cristalito-btn cristalito-btn-secondary" onclick="cristalito.mudarModo('audio')" style="flex: 1; font-size: 0.875rem;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                            </svg>
+                            Gravar Áudio
+                        </button>
+                    </div>
+                    
+                    <!-- Área de Texto -->
+                    <div id="area-texto">
+                        <textarea id="cristalito-notes" placeholder="Anote aqui suas ideias, resumos e lembretes de estudo...
 
 Suas anotações ficam salvas automaticamente!"></textarea>
-                    <div class="cristalito-notes-actions">
-                        <button class="cristalito-btn cristalito-btn-primary" onclick="cristalito.saveNotes()">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                        <div class="cristalito-notes-actions">
+                            <button class="cristalito-btn cristalito-btn-primary" onclick="cristalito.saveNotes()">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                                </svg>
+                                Salvar
+                            </button>
+                            <button class="cristalito-btn cristalito-btn-secondary" onclick="cristalito.clearNotes()">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                </svg>
+                                Limpar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Área de Gravação de Áudio -->
+                    <div id="area-audio" style="display: none;">
+                        <div style="text-align: center; padding: 2rem 1rem;">
+                            <button id="btn-gravar" class="cristalito-btn cristalito-btn-primary" onclick="cristalito.toggleGravacao()" style="width: 80px; height: 80px; border-radius: 50%; font-size: 2rem; padding: 0; display: inline-flex; align-items: center; justify-content: center;">
+                                <svg id="icon-mic" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 36px; height: 36px;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                                </svg>
+                            </button>
+                            <p id="status-gravacao" style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">Clique para começar a gravar</p>
+                            <div id="transcricao-preview" style="margin-top: 1.5rem; padding: 1rem; background: #f3f4f6; border-radius: 0.5rem; min-height: 60px; text-align: left; font-size: 0.875rem; display: none;">
+                                <strong style="color: #2B5FA6;">Transcrição:</strong>
+                                <p id="texto-transcrito" style="margin-top: 0.5rem; color: #374151;"></p>
+                            </div>
+                            <button id="btn-salvar-audio" class="cristalito-btn cristalito-btn-primary" onclick="cristalito.salvarTranscricao()" style="margin-top: 1rem; display: none;">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                                </svg>
+                                Adicionar às Anotações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PERGUNTAS PARA IA (PREPARADO PARA API) -->
+                <div class="cristalito-section">
+                    <div class="cristalito-section-title">
+                        <svg class="cristalito-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Perguntar à IA
+                        <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.7; margin-left: 0.5rem;">(Em breve)</span>
+                    </div>
+                    <div style="background: #f9fafb; border: 1px dashed #d1d5db; border-radius: 0.5rem; padding: 1.5rem; text-align: center;">
+                        <svg style="width: 48px; height: 48px; margin: 0 auto 1rem; color: #9ca3af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">
+                            Em breve você poderá fazer perguntas e receber respostas inteligentes sobre os cursos!
+                        </p>
+                        <textarea id="pergunta-ia" placeholder="Digite sua dúvida aqui... (funcionalidade em desenvolvimento)" disabled style="width: 100%; min-height: 80px; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; font-size: 0.875rem; background: white; opacity: 0.6; cursor: not-allowed;"></textarea>
+                        <button class="cristalito-btn cristalito-btn-secondary" disabled style="margin-top: 0.75rem; cursor: not-allowed; opacity: 0.5;">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
-                            Salvar
-                        </button>
-                        <button class="cristalito-btn cristalito-btn-secondary" onclick="cristalito.clearNotes()">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                            </svg>
-                            Limpar
+                            Perguntar (API em breve)
                         </button>
                     </div>
                 </div>
@@ -228,6 +299,147 @@ Suas anotações ficam salvas automaticamente!"></textarea>
             const t = document.getElementById('cristalito-notes');
             if(t) { t.value = ''; localStorage.removeItem(this.notesKey); this.showToast('🗑️ Anotações limpas!'); }
         }
+    }
+    
+    // ============================================
+    // SISTEMA DE GRAVAÇÃO DE ÁUDIO
+    // ============================================
+    
+    mudarModo(modo) {
+        const areaTexto = document.getElementById('area-texto');
+        const areaAudio = document.getElementById('area-audio');
+        const btnTexto = document.getElementById('btn-modo-texto');
+        const btnAudio = document.getElementById('btn-modo-audio');
+        
+        if (modo === 'texto') {
+            areaTexto.style.display = 'block';
+            areaAudio.style.display = 'none';
+            btnTexto.classList.remove('cristalito-btn-secondary');
+            btnTexto.classList.add('cristalito-btn-primary');
+            btnAudio.classList.remove('cristalito-btn-primary');
+            btnAudio.classList.add('cristalito-btn-secondary');
+        } else {
+            areaTexto.style.display = 'none';
+            areaAudio.style.display = 'block';
+            btnAudio.classList.remove('cristalito-btn-secondary');
+            btnAudio.classList.add('cristalito-btn-primary');
+            btnTexto.classList.remove('cristalito-btn-primary');
+            btnTexto.classList.add('cristalito-btn-secondary');
+            
+            // Verificar suporte do navegador
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                this.showToast('⚠️ Seu navegador não suporta reconhecimento de voz. Use Chrome ou Edge!');
+            }
+        }
+    }
+    
+    toggleGravacao() {
+        if (this.gravando) {
+            this.pararGravacao();
+        } else {
+            this.iniciarGravacao();
+        }
+    }
+    
+    iniciarGravacao() {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        
+        if (!SpeechRecognition) {
+            this.showToast('⚠️ Gravação de áudio não suportada neste navegador!');
+            return;
+        }
+        
+        this.recognition = new SpeechRecognition();
+        this.recognition.lang = 'pt-BR';
+        this.recognition.continuous = true;
+        this.recognition.interimResults = true;
+        
+        this.recognition.onstart = () => {
+            this.gravando = true;
+            document.getElementById('btn-gravar').style.background = '#ef4444';
+            document.getElementById('status-gravacao').textContent = '🎙️ Gravando... Fale agora!';
+            document.getElementById('status-gravacao').style.color = '#ef4444';
+            document.getElementById('transcricao-preview').style.display = 'block';
+        };
+        
+        this.recognition.onresult = (event) => {
+            let transcricaoFinal = '';
+            let transcricaoInterim = '';
+            
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                const transcript = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                    transcricaoFinal += transcript + ' ';
+                } else {
+                    transcricaoInterim += transcript;
+                }
+            }
+            
+            this.transcricaoAtual = transcricaoFinal || transcricaoInterim;
+            document.getElementById('texto-transcrito').textContent = this.transcricaoAtual;
+        };
+        
+        this.recognition.onerror = (event) => {
+            console.error('Erro na gravação:', event.error);
+            this.pararGravacao();
+            this.showToast('❌ Erro ao gravar: ' + event.error);
+        };
+        
+        this.recognition.onend = () => {
+            if (this.gravando) {
+                this.pararGravacao();
+            }
+        };
+        
+        try {
+            this.recognition.start();
+        } catch (error) {
+            console.error('Erro ao iniciar gravação:', error);
+            this.showToast('❌ Não foi possível iniciar a gravação!');
+        }
+    }
+    
+    pararGravacao() {
+        if (this.recognition) {
+            this.recognition.stop();
+        }
+        
+        this.gravando = false;
+        document.getElementById('btn-gravar').style.background = '';
+        document.getElementById('status-gravacao').textContent = 'Gravação finalizada!';
+        document.getElementById('status-gravacao').style.color = '#10b981';
+        
+        if (this.transcricaoAtual && this.transcricaoAtual.trim()) {
+            document.getElementById('btn-salvar-audio').style.display = 'inline-flex';
+        }
+    }
+    
+    salvarTranscricao() {
+        if (!this.transcricaoAtual || !this.transcricaoAtual.trim()) {
+            this.showToast('⚠️ Nenhuma transcrição para salvar!');
+            return;
+        }
+        
+        const textarea = document.getElementById('cristalito-notes');
+        if (textarea) {
+            const dataHora = new Date().toLocaleString('pt-BR');
+            const novaAnotacao = `\n\n📝 ${dataHora}\n${this.transcricaoAtual.trim()}\n`;
+            textarea.value += novaAnotacao;
+            this.autoSaveNotes();
+        }
+        
+        // Limpar
+        this.transcricaoAtual = '';
+        document.getElementById('texto-transcrito').textContent = '';
+        document.getElementById('transcricao-preview').style.display = 'none';
+        document.getElementById('btn-salvar-audio').style.display = 'none';
+        document.getElementById('status-gravacao').textContent = 'Clique para começar a gravar';
+        document.getElementById('status-gravacao').style.color = '#6b7280';
+        
+        this.showToast('✅ Transcrição adicionada às anotações!');
+        
+        // Voltar para modo texto
+        this.mudarModo('texto');
     }
     
     search() {
