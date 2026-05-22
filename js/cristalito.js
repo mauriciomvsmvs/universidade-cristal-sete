@@ -57,15 +57,6 @@ class Cristalito {
             </div>
             
             <div class="cristalito-content">
-                <div class="cristalito-section">
-                    <div class="cristalito-welcome">
-                        <svg class="cristalito-icon-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-                        </svg>
-                        <h3>Oi! Como posso te ajudar?</h3>
-                        <p>Estou aqui para facilitar seus estudos na Universidade Cristal Sete!</p>
-                    </div>
-                </div>
                 
                 <div class="cristalito-section">
                     <div class="cristalito-section-title">
@@ -110,11 +101,11 @@ Suas anotações ficam salvas automaticamente!"></textarea>
                         Pergunte ao Cristalito
                         <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.7; margin-left: 0.5rem;">(Em breve)</span>
                     </div>
-                    <div style="background: url('assets/CRISTALITO_PROFESSOR.png') no-repeat center center; background-size: cover; border: 2px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem; min-height: 400px; display: flex; flex-direction: column; justify-content: flex-end; position: relative;">
-                        <div style="background: rgba(255, 255, 255, 0.98); border-radius: 0.75rem; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                            <textarea id="pergunta-ia" placeholder="Digite sua dúvida aqui... O Cristalito vai te ajudar em breve!" disabled style="width: 100%; min-height: 70px; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem; font-size: 0.875rem; background: white; cursor: not-allowed; resize: none;"></textarea>
-                            <button class="cristalito-btn cristalito-btn-primary" disabled style="margin-top: 0.5rem; cursor: not-allowed; opacity: 0.6; width: 100%;">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                    <div style="background: url('assets/CRISTALITO_PROFESSOR.png') no-repeat center center; background-size: cover; border: 2px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem; min-height: 420px; display: flex; flex-direction: column; justify-content: flex-end; position: relative;">
+                        <div style="background: rgba(255, 255, 255, 0.85); border-radius: 0.75rem; padding: 0.875rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); backdrop-filter: blur(10px);">
+                            <textarea id="pergunta-ia" placeholder="Digite sua dúvida aqui..." disabled style="width: 100%; min-height: 60px; padding: 0.625rem; border: 1px solid rgba(209, 213, 219, 0.6); border-radius: 0.5rem; font-size: 0.875rem; background: rgba(255, 255, 255, 0.9); cursor: not-allowed; resize: none;"></textarea>
+                            <button class="cristalito-btn cristalito-btn-primary" disabled style="margin-top: 0.5rem; cursor: not-allowed; opacity: 0.7; width: 100%; font-size: 0.875rem; padding: 0.5rem;">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 16px; height: 16px;">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
                                 Perguntar
