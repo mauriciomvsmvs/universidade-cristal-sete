@@ -1,0 +1,110 @@
+=======================================================
+INTEGRAÇÃO DO SISTEMA DE GAMIFICAÇÃO
+=======================================================
+
+ARQUIVOS CRIADOS:
+1. gamificacao.js - Sistema completo de pontuação
+2. ranking.html - Página de ranking profissional
+
+=======================================================
+INSTRUÇÕES DE INTEGRAÇÃO:
+=======================================================
+
+1. ADICIONAR GAMIFICACAO.JS EM TODAS AS PÁGINAS
+   
+   Adicione ANTES do </body> em:
+   - index.html
+   - cursos.html  
+   - curso-detalhe.html
+   - aula-player.html
+   - meu-perfil.html
+   
+   <script src="js/gamificacao.js"></script>
+
+2. INTEGRAR COM PROGRESS.JS
+   
+   No arquivo progress.js, adicione pontos quando:
+   
+   a) Aula concluída (função salvarProgressoAula):
+   
+   // Adicionar após salvar progresso
+   if (concluida && typeof gamificacao !== 'undefined') {
+       gamificacao.adicionarPontos(usuario.id, 'aulaCompleta', {
+           cursoId: cursoId,
+           moduloNum: moduloNum,
+           aulaNum: aulaNum
+       });
+   }
+   
+   b) Curso 100% concluído (função obterProgressoCurso):
+   
+   // Adicionar quando progresso = 100%
+   if (percentual === 100 && typeof gamificacao !== 'undefined') {
+       gamificacao.adicionarPontos(usuarioId, 'cursoCompleto', {
+           cursoId: cursoId
+       });
+   }
+
+3. INTEGRAR COM QUIZ-MODERN.JS
+   
+   No arquivo quiz-modern.js (função renderizarResultado):
+   
+   // Adicionar quando aprovado
+   if (aprovado && typeof gamificacao !== 'undefined') {
+       const usuario = verificarLogin();
+       const tipo = porcentagem === 100 ? 'quizPerfeito' : 'quizAprovado';
+       gamificacao.adicionarPontos(usuario.id, tipo, {
+           cursoId: cursoId,
+           pontuacao: porcentagem
+       });
+   }
+
+4. INTEGRAR COM CERTIFICADO.JS
+   
+   No arquivo certificado.js (função gerarCertificado):
+   
+   // Adicionar após gerar certificado
+   if (typeof gamificacao !== 'undefined') {
+       gamificacao.adicionarPontos(this.usuario.id, 'certificadoEmitido', {
+           cursoId: cursoId
+       });
+   }
+
+5. ADICIONAR LINK NO MENU
+   
+   Em todos os arquivos HTML, adicionar no menu:
+   
+   <a href="ranking.html" class="nav-link">Ranking</a>
+
+6. ADICIONAR CARD NO MEU-PERFIL.HTML
+   
+   Vou criar esse card separadamente!
+
+=======================================================
+TABELA DE PONTOS:
+=======================================================
+
+Aula Completa:        10 pontos
+Quiz Aprovado (70%+): 50 pontos  
+Quiz Perfeito (100%): 100 pontos
+Curso Completo:       200 pontos
+Certificado Emitido:  300 pontos
+Streak Diário:        20 pontos/dia
+
+=======================================================
+BADGES DISPONÍVEIS:
+=======================================================
+
+✓ Primeiro Passo - 1º curso completo
+✓ Estudante Dedicado - 5 cursos completos
+✓ Mestre do Conhecimento - 10 cursos completos
+✓ Perfeccionista - 3 quizzes com 100%
+✓ Persistente - 7 dias consecutivos
+✓ Maratonista - 30 dias consecutivos
+✓ Desbravador - 1.000 pontos
+✓ Expert - 5.000 pontos
+✓ Lenda - 10.000 pontos
+✓ Técnico Master - Todos cursos técnicos
+✓ Vendedor Master - Todos cursos de vendas
+
+=======================================================

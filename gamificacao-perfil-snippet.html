@@ -1,0 +1,181 @@
+<!-- ============================================
+     ADICIONAR ESTA ABA NO MEU-PERFIL.HTML
+     Adicionar após a aba "Estatísticas"
+     ============================================ -->
+
+<!-- Na seção TABS DE NAVEGAÇÃO (linha ~130), adicionar: -->
+<button onclick="switchTab('conquistas')" id="tab-conquistas" class="tab-button py-4 px-2 border-b-2 border-transparent font-semibold text-gray-600 hover:text-primary whitespace-nowrap">
+    Conquistas
+</button>
+
+<!-- ============================================
+     ADICIONAR NO CONTEÚDO DAS ABAS (linha ~300)
+     Antes da aba de Estatísticas
+     ============================================ -->
+
+<!-- ABA: CONQUISTAS E GAMIFICAÇÃO -->
+<div id="content-conquistas" class="tab-content hidden">
+    <h2 class="text-2xl font-bold mb-6" style="color: #2B5FA6;">Suas Conquistas</h2>
+    
+    <!-- CARD DE RESUMO -->
+    <div class="bg-gradient-to-br from-primary to-primary-dark text-white rounded-xl p-8 mb-8">
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center">
+                <svg class="w-12 h-12 mx-auto mb-2 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <div id="total-pontos" class="text-4xl font-bold mb-1" style="font-family: 'Montserrat', sans-serif;">0</div>
+                <div class="text-sm opacity-90">Pontos Totais</div>
+            </div>
+            <div class="text-center">
+                <svg class="w-12 h-12 mx-auto mb-2 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <div id="posicao-ranking" class="text-4xl font-bold mb-1" style="font-family: 'Montserrat', sans-serif;">-</div>
+                <div class="text-sm opacity-90">Posição no Ranking</div>
+            </div>
+            <div class="text-center">
+                <svg class="w-12 h-12 mx-auto mb-2 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13v6l5.25 3.15.75-1.23-4.5-2.67V7H11z"></path>
+                </svg>
+                <div id="streak-dias" class="text-4xl font-bold mb-1" style="font-family: 'Montserrat', sans-serif;">0</div>
+                <div class="text-sm opacity-90">Dias Consecutivos</div>
+            </div>
+            <div class="text-center">
+                <svg class="w-12 h-12 mx-auto mb-2 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+                <div id="total-badges" class="text-4xl font-bold mb-1" style="font-family: 'Montserrat', sans-serif;">0</div>
+                <div class="text-sm opacity-90">Badges Desbloqueadas</div>
+            </div>
+        </div>
+        
+        <div class="mt-6 pt-6 border-t border-white/20 text-center">
+            <a href="ranking.html" class="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                Ver Ranking Completo
+            </a>
+        </div>
+    </div>
+    
+    <!-- BADGES CONQUISTADAS -->
+    <div class="mb-8">
+        <h3 class="text-xl font-bold mb-4" style="color: #2B5FA6;">Badges Conquistadas</h3>
+        <div id="badges-conquistadas" class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Preenchido pelo JavaScript -->
+        </div>
+        <div id="empty-badges" class="hidden bg-gray-50 rounded-lg p-8 text-center">
+            <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+            <p class="text-gray-600">Você ainda não conquistou nenhuma badge.</p>
+            <p class="text-sm text-gray-500 mt-2">Complete cursos e obtenha boas notas para desbloquear conquistas!</p>
+        </div>
+    </div>
+    
+    <!-- BADGES BLOQUEADAS -->
+    <div>
+        <h3 class="text-xl font-bold mb-4 text-gray-700">Badges Bloqueadas</h3>
+        <div id="badges-bloqueadas" class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Preenchido pelo JavaScript -->
+        </div>
+    </div>
+    
+    <!-- HISTÓRICO DE PONTOS (OPCIONAL) -->
+    <div class="mt-8">
+        <h3 class="text-xl font-bold mb-4" style="color: #2B5FA6;">Histórico Recente</h3>
+        <div id="historico-pontos" class="bg-white rounded-lg shadow-sm divide-y">
+            <!-- Preenchido pelo JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     JAVASCRIPT PARA A ABA DE CONQUISTAS
+     Adicionar no final do arquivo, antes do </body>
+     ============================================ -->
+
+<script>
+// Função para carregar dados de gamificação
+function carregarConquistas() {
+    const usuario = verificarLogin();
+    if (!usuario || typeof gamificacao === 'undefined') return;
+    
+    const dados = gamificacao.obterDadosUsuario(usuario.id);
+    const posicao = gamificacao.obterPosicaoUsuario(usuario.id);
+    const streak = gamificacao.obterStreak(usuario.id);
+    const badgesUsuario = gamificacao.obterBadgesUsuario(usuario.id);
+    const todasBadges = gamificacao.definirBadges();
+    
+    // Atualizar resumo
+    document.getElementById('total-pontos').textContent = dados.pontosTotais.toLocaleString('pt-BR');
+    document.getElementById('posicao-ranking').textContent = posicao ? `#${posicao}` : '-';
+    document.getElementById('streak-dias').textContent = streak;
+    document.getElementById('total-badges').textContent = badgesUsuario.length;
+    
+    // Renderizar badges conquistadas
+    const badgesConquistadasDiv = document.getElementById('badges-conquistadas');
+    const emptyBadges = document.getElementById('empty-badges');
+    
+    if (badgesUsuario.length === 0) {
+        badgesConquistadasDiv.classList.add('hidden');
+        emptyBadges.classList.remove('hidden');
+    } else {
+        badgesConquistadasDiv.classList.remove('hidden');
+        emptyBadges.classList.add('hidden');
+        badgesConquistadasDiv.innerHTML = badgesUsuario.map(badge => `
+            <div class="bg-gradient-to-br from-primary to-primary-dark text-white rounded-lg p-4 text-center transform hover:scale-105 transition-transform">
+                <div class="mb-2">${gamificacao.getIconeSVG(badge.icone, 'white', 48)}</div>
+                <h4 class="font-bold mb-1">${badge.nome}</h4>
+                <p class="text-xs opacity-90">${badge.descricao}</p>
+            </div>
+        `).join('');
+    }
+    
+    // Renderizar badges bloqueadas
+    const badgesBloqueadas = todasBadges.filter(b => !dados.badges.includes(b.id));
+    document.getElementById('badges-bloqueadas').innerHTML = badgesBloqueadas.map(badge => `
+        <div class="bg-gray-100 rounded-lg p-4 text-center opacity-60">
+            <div class="mb-2 grayscale">${gamificacao.getIconeSVG(badge.icone, '#9CA3AF', 48)}</div>
+            <h4 class="font-bold text-gray-700 mb-1">${badge.nome}</h4>
+            <p class="text-xs text-gray-600">${badge.descricao}</p>
+        </div>
+    `).join('');
+    
+    // Histórico (últimos 10)
+    const historico = dados.historico.slice(-10).reverse();
+    document.getElementById('historico-pontos').innerHTML = historico.map(item => {
+        const data = new Date(item.data);
+        const nomes = {
+            'aulaCompleta': 'Aula Completa',
+            'quizAprovado': 'Quiz Aprovado',
+            'quizPerfeito': 'Quiz Perfeito',
+            'cursoCompleto': 'Curso Concluído',
+            'certificadoEmitido': 'Certificado Emitido',
+            'streakDiario': 'Streak Diário'
+        };
+        
+        return `
+            <div class="px-6 py-4 hover:bg-gray-50">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <div class="font-semibold text-gray-900">${nomes[item.tipo]}</div>
+                        <div class="text-sm text-gray-600">${data.toLocaleDateString('pt-BR')} às ${data.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</div>
+                    </div>
+                    <div class="text-xl font-bold text-primary">+${item.pontos}</div>
+                </div>
+            </div>
+        `;
+    }).join('') || '<div class="p-8 text-center text-gray-500">Nenhuma atividade recente</div>';
+}
+
+// Carregar quando abrir a aba
+document.addEventListener('DOMContentLoaded', function() {
+    const tabConquistas = document.getElementById('tab-conquistas');
+    if (tabConquistas) {
+        tabConquistas.addEventListener('click', carregarConquistas);
+    }
+});
+</script>
