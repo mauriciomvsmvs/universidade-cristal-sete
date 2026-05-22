@@ -620,8 +620,25 @@
         }
         
         function baixarCertificado(cursoId) {
-            const curso = cursos.find(c => c.id === cursoId);
-            alert(`Gerando certificado de "${curso.titulo}"...\n\nEm breve, esta funcionalidade permitirá o download do certificado em PDF!`);
+            // Verificar se geradorCertificado está disponível
+            if (typeof geradorCertificado === 'undefined' || !geradorCertificado) {
+                console.error('❌ Sistema de certificados não carregado!');
+                alert('Erro: Sistema de certificados não está disponível. Recarregue a página (F5).');
+                return;
+            }
+            
+            // Verificar se o curso está 100% concluído
+            const usuario = verificarLogin();
+            const progresso = obterProgressoCurso(usuario.id, cursoId);
+            
+            if (progresso < 100) {
+                alert('❌ Você precisa completar 100% do curso para gerar o certificado!\n\nProgresso atual: ' + progresso + '%');
+                return;
+            }
+            
+            // Gerar certificado
+            console.log('📄 Gerando certificado do curso:', cursoId);
+            geradorCertificado.gerarCertificado(cursoId);
         }
         
         // INICIAR
@@ -631,6 +648,12 @@
     <!-- Sistema de Autenticação -->
     <script src="js/users-data.js"></script>
     <script src="js/auth.js"></script>
+    
+    <!-- jsPDF para geração de certificados -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Sistema de Certificados -->
+    <script src="js/certificado.js"></script>
     
     <!-- Cristalito - Assistente Virtual -->
     <script src="js/cristalito.js"></script>
