@@ -424,15 +424,17 @@
         }
         
         function getCursosEmAndamento() {
+            const usuario = verificarLogin();
             return cursos.filter(curso => {
-                const progresso = obterProgressoCurso(curso.id);
+                const progresso = obterProgressoCurso(usuario.id, curso.id);
                 return progresso > 0 && progresso < 100;
             });
         }
         
         function getCursosConcluidos() {
+            const usuario = verificarLogin();
             return cursos.filter(curso => {
-                const progresso = obterProgressoCurso(curso.id);
+                const progresso = obterProgressoCurso(usuario.id, curso.id);
                 return progresso === 100;
             });
         }
@@ -440,6 +442,7 @@
         function renderizarCursosAndamento(cursosAndamento) {
             const container = document.getElementById('cursos-andamento-lista');
             const empty = document.getElementById('empty-andamento');
+            const usuario = verificarLogin();
             
             if (cursosAndamento.length === 0) {
                 container.classList.add('hidden');
@@ -451,7 +454,7 @@
             container.classList.remove('hidden');
             
             container.innerHTML = cursosAndamento.map(curso => {
-                const progresso = obterProgressoCurso(curso.id);
+                const progresso = obterProgressoCurso(usuario.id, curso.id);
                 return `
                     <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                         <img src="${curso.thumbnail}" alt="${curso.titulo}" class="w-full h-40 object-cover">
@@ -565,10 +568,12 @@
         }
         
         function renderizarEstatisticas() {
+            const usuario = verificarLogin();
+            
             // Total de horas (simulado)
             const totalHoras = cursos.reduce((acc, curso) => {
                 const horas = parseInt(curso.duracao.match(/\d+/)[0]);
-                const progresso = obterProgressoCurso(curso.id);
+                const progresso = obterProgressoCurso(usuario.id, curso.id);
                 return acc + (horas * progresso / 100);
             }, 0);
             document.getElementById('stats-total-horas').textContent = Math.round(totalHoras) + 'h';
@@ -598,7 +603,7 @@
                 const cursosCat = cursos.filter(c => c.categoria === cat);
                 if (cursosCat.length === 0) return '';
                 
-                const progressoMedio = cursosCat.reduce((acc, c) => acc + obterProgressoCurso(c.id), 0) / cursosCat.length;
+                const progressoMedio = cursosCat.reduce((acc, c) => acc + obterProgressoCurso(usuario.id, c.id), 0) / cursosCat.length;
                 
                 return `
                     <div>
