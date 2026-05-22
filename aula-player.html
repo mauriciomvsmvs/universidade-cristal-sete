@@ -339,40 +339,58 @@
             const modal = document.createElement('div');
             modal.style.cssText = `
                 position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-                background: rgba(0, 0, 0, 0.8); z-index: 10000;
+                background: rgba(0, 0, 0, 0.7); z-index: 10000;
                 display: flex; align-items: center; justify-content: center;
-                padding: 2rem;
+                padding: 2rem; backdrop-filter: blur(4px);
             `;
             
             modal.innerHTML = `
-                <div style="background: white; border-radius: 1.5rem; padding: 3rem; max-width: 500px; text-align: center; position: relative;">
-                    <div style="width: 80px; height: 80px; background: #10b981; border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
-                        <svg style="width: 48px; height: 48px; color: white;" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                <div style="background: white; border-radius: 1.5rem; padding: 3rem; max-width: 500px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); position: relative;">
+                    <!-- Ícone de sucesso -->
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);">
+                        <svg style="width: 48px; height: 48px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     
-                    <h2 style="font-size: 2rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">
-                        🎉 Parabéns!
+                    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem;">
+                        Parabéns!
                     </h2>
                     
-                    <p style="font-size: 1.125rem; color: #6b7280; margin-bottom: 2rem;">
-                        Você concluiu o curso<br>
-                        <strong style="color: #2B5FA6; font-size: 1.25rem;">${curso.titulo}</strong>
+                    <p style="font-size: 1rem; color: #6b7280; margin-bottom: 0.5rem;">
+                        Você concluiu o curso
                     </p>
                     
-                    <div style="display: flex; gap: 1rem; justify-content: center;">
-                        <button onclick="baixarCertificado(${curso.id})" style="background: #2B5FA6; color: white; padding: 1rem 2rem; border-radius: 0.75rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem;">
-                            📜 Baixar Certificado
+                    <p style="font-size: 1.25rem; font-weight: 700; color: #2B5FA6; margin-bottom: 2rem;">
+                        ${curso.titulo}
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button onclick="gerarCertificadoAgora(${curso.id})" style="background: #2B5FA6; color: white; padding: 0.875rem 2rem; border-radius: 0.75rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s;">
+                            <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Baixar Certificado
                         </button>
-                        <button onclick="window.location.href='curso-detalhe.html?id=${curso.id}'" style="background: #f3f4f6; color: #374151; padding: 1rem 2rem; border-radius: 0.75rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem;">
-                            Ver Curso
+                        <button onclick="window.location.href='meu-perfil.html'" style="background: #f3f4f6; color: #374151; padding: 0.875rem 2rem; border-radius: 0.75rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem; transition: all 0.3s;">
+                            Meu Perfil
                         </button>
                     </div>
                 </div>
             `;
             
             document.body.appendChild(modal);
+        }
+        
+        // Função auxiliar para gerar certificado (evita problemas de escopo)
+        function gerarCertificadoAgora(cursoId) {
+            if (typeof baixarCertificado === 'function') {
+                baixarCertificado(cursoId);
+            } else if (typeof geradorCertificado !== 'undefined') {
+                geradorCertificado.gerarCertificado(cursoId);
+            } else {
+                alert('Sistema de certificados não carregado. Por favor, recarregue a página.');
+            }
         }
         
         function aulaAnterior() {
