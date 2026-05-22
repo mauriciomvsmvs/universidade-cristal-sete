@@ -76,8 +76,8 @@ class GeradorCertificado {
         // MARCA D'ÁGUA - Logo Universidade (QUASE INVISÍVEL)
         // ============================================
         if (this.logoUniversidade) {
-            // Marca d'água bem sutil (2% de opacidade)
-            doc.addImage(this.logoUniversidade, 'PNG', width/2 - 60, height/2 - 60, 120, 120, '', 'NONE', 0.02);
+            // Marca d'água extremamente sutil (1% de opacidade = quase invisível)
+            doc.addImage(this.logoUniversidade, 'PNG', width/2 - 70, height/2 - 70, 140, 140, '', 'NONE', 0.01);
         }
 
         // ============================================
