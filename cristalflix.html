@@ -154,36 +154,47 @@
             background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             position: relative;
             overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
         }
         
-        .hero-banner::before {
-            content: '';
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-mascot {
             position: absolute;
-            right: -100px;
+            right: 80px;
             top: 50%;
             transform: translateY(-50%);
-            width: 400px;
-            height: 400px;
-            background: url('assets/cristalito-cinema.png') no-repeat center;
-            background-size: contain;
-            opacity: 0.15;
-            pointer-events: none;
+            max-width: 350px;
+            z-index: 1;
+            opacity: 0.95;
         }
         
-        @media (min-width: 1024px) {
-            .hero-banner::after {
-                content: '';
-                position: absolute;
-                right: 60px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 300px;
-                height: 300px;
-                background: url('assets/cristalito-cinema.png') no-repeat center;
-                background-size: contain;
-                opacity: 1;
-                pointer-events: none;
+        @media (max-width: 1024px) {
+            .hero-mascot {
+                opacity: 0.2;
+                right: 20px;
+                max-width: 250px;
             }
+        }
+        
+        .feature-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-badge:hover {
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -214,17 +225,44 @@
 
     <!-- HERO BANNER -->
     <section class="hero-banner py-20 px-4">
-        <div class="container mx-auto max-w-4xl relative z-10">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">
-                🍿 CristalFlix
-            </h1>
-            <p class="text-xl text-gray-300 mb-8">
-                Sua plataforma de vídeos de treinamento da Universidade Cristal Sete
-            </p>
-            <div class="flex gap-4 flex-wrap">
-                <span class="px-4 py-2 bg-blue-600 rounded-full text-sm">📹 19 Vídeos</span>
-                <span class="px-4 py-2 bg-gray-700 rounded-full text-sm">🎯 Aprenda no seu ritmo</span>
-                <span class="px-4 py-2 bg-gray-700 rounded-full text-sm">✅ Continue de onde parou</span>
+        <div class="container mx-auto max-w-7xl">
+            <div class="flex items-center justify-between">
+                <div class="hero-content max-w-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-12 h-12 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                        </svg>
+                        <h1 class="text-5xl md:text-6xl font-bold">CristalFlix</h1>
+                    </div>
+                    
+                    <p class="text-xl text-gray-300 mb-8">
+                        Sua plataforma de vídeos de treinamento da Universidade Cristal Sete
+                    </p>
+                    
+                    <div class="flex gap-4 flex-wrap">
+                        <div class="feature-badge bg-blue-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                            </svg>
+                            19 Vídeos
+                        </div>
+                        <div class="feature-badge bg-gray-700">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                            Aprenda no seu ritmo
+                        </div>
+                        <div class="feature-badge bg-gray-700">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Continue de onde parou
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CRISTALITO NO CINEMA -->
+                <img src="assets/cristalito-cinema.png" alt="Cristalito no Cinema" class="hero-mascot hidden lg:block">
             </div>
         </div>
     </section>
@@ -232,7 +270,12 @@
     <!-- CONTINUAR ASSISTINDO -->
     <section class="py-12 px-4" id="continuar-assistindo-section" style="display: none; background: #0a0a0a;">
         <div class="container mx-auto">
-            <h2 class="text-2xl font-bold mb-6">▶️ Continuar Assistindo</h2>
+            <div class="flex items-center gap-3 mb-6">
+                <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
+                </svg>
+                <h2 class="text-2xl font-bold">Continuar Assistindo</h2>
+            </div>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="continuar-assistindo"></div>
         </div>
     </section>
@@ -241,7 +284,12 @@
     <section class="py-12 px-4" style="background: #141414;">
         <div class="container mx-auto">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold">🎥 Todos os Vídeos</h2>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                    </svg>
+                    <h2 class="text-2xl font-bold">Todos os Vídeos</h2>
+                </div>
                 <div class="text-sm text-gray-400">
                     <span id="total-videos">0</span> vídeos disponíveis
                 </div>
