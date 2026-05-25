@@ -227,3 +227,129 @@ class CristalFlixProgress {
 
 // Instância global
 const cristalflixProgress = new CristalFlixProgress();
+
+// ============================================
+// RENDERIZAÇÃO DOS VÍDEOS
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
+    
+    if (!usuarioAtual) {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    // Renderizar todos os vídeos
+    renderizarTodosVideos();
+    
+    // Renderizar continuar assistindo
+    renderizarContinuarAssistindo();
+});
+
+function renderizarTodosVideos() {
+    const container = document.getElementById('todos-videos');
+    const totalElement = document.getElementById('total-videos');
+    
+    if (!container) return;
+    
+    // Atualizar contador
+    if (totalElement) {
+        totalElement.textContent = videosData.length;
+    }
+    
+    // Renderizar cards
+    container.innerHTML = videosData.map(video => criarCardVideo(video)).join('');
+}
+
+function renderizarContinuarAssistindo() {
+    const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
+    if (!usuarioAtual) return;
+    
+    const section = document.getElementById('continuar-assistindo-section');
+    const container = document.getElementById('continuar-assistindo');
+    
+    if (!section || !container) return;
+    
+    const videosEmAndamento = cristalflixProgress.obterVideosEmAndamento(usuarioAtual.id);
+    
+    if (videosEmAndamento.length > 0) {
+        section.style.display = 'block';
+        
+        container.innerHTML = videosEmAndamento.map(item => {
+            const video = videosData.find(v => v.id === item.videoId);
+            return video ? criarCardVideo(video, item.progresso) : '';
+        }).join('');
+    }
+}
+
+function criarCardVideo(video, progresso = 0) {
+    const thumbnail = `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`;
+    const progressoPercent = Math.round(progresso * 100);
+    
+    return `
+        <div class="video-card" onclick="abrirVideo('${video.id}')">
+            <img src="${thumbnail}" alt="Thumbnail" loading="lazy">
+            <div class="play-icon">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="video-duration">Short</div>
+            ${progresso > 0 ? `<div class="progress-bar" style="width: ${progressoPercent}%"></div>` : ''}
+            <div class="video-info">
+                <div class="text-sm font-semibold line-clamp-2">Vídeo ${video.id.substring(0, 6)}</div>
+            </div>
+        </div>
+    `;
+}
+
+function abrirVideo(videoId) {
+    const modal = document.getElementById('video-modal');
+    const container = document.getElementById('video-container');
+    const titulo = document.getElementById('modal-title');
+    const descricao = document.getElementById('modal-description');
+    
+    if (!modal || !container) return;
+    
+    // Definir conteúdo
+    titulo.textContent = `Vídeo de Treinamento`;
+    descricao.textContent = 'Conteúdo educativo da Universidade Cristal Sete';
+    
+    // Criar player YouTube
+    container.innerHTML = `
+        <iframe 
+            class="video-player" 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    `;
+    
+    modal.classList.add('active');
+    
+    // Simular progresso (em produção, usar YouTube API)
+    const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
+    if (usuarioAtual) {
+        setTimeout(() => {
+            cristalflixProgress.salvarProgresso(usuarioAtual.id, videoId, 0.9, false);
+        }, 5000);
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('video-modal');
+    const container = document.getElementById('video-container');
+    
+    if (modal) modal.classList.remove('active');
+    if (container) container.innerHTML = '';
+    
+    // Atualizar listas
+    renderizarContinuarAssistindo();
+}
+
+// Fechar modal com ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
