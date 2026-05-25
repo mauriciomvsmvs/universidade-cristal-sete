@@ -233,7 +233,8 @@ const cristalflixProgress = new CristalFlixProgress();
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
+    // ✅ CORREÇÃO: Usar verificarLogin() do auth.js ao invés de localStorage direto
+    const usuarioAtual = verificarLogin();
     
     if (!usuarioAtual) {
         window.location.href = 'login.html';
@@ -263,7 +264,8 @@ function renderizarTodosVideos() {
 }
 
 function renderizarContinuarAssistindo() {
-    const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
+    // ✅ CORREÇÃO: Usar verificarLogin() consistentemente
+    const usuarioAtual = verificarLogin();
     if (!usuarioAtual) return;
     
     const section = document.getElementById('continuar-assistindo-section');
@@ -328,7 +330,8 @@ function abrirVideo(videoId) {
     modal.classList.add('active');
     
     // Simular progresso (em produção, usar YouTube API)
-    const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
+    // ✅ CORREÇÃO: Usar verificarLogin() consistentemente
+    const usuarioAtual = verificarLogin();
     if (usuarioAtual) {
         setTimeout(() => {
             cristalflixProgress.salvarProgresso(usuarioAtual.id, videoId, 0.9, false);
