@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #f9fafb;
+            background: #141414;
+            color: white;
         }
         
         .video-card {
@@ -21,13 +22,13 @@
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #1a1a1a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .video-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(43, 95, 166, 0.3);
+            box-shadow: 0 10px 30px rgba(43, 95, 166, 0.5);
         }
         
         .video-card img {
@@ -211,19 +212,19 @@
     </section>
 
     <!-- CONTINUAR ASSISTINDO -->
-    <section class="py-12 px-4 bg-white" id="continuar-assistindo-section" style="display: none;">
+    <section class="py-12 px-4" style="background: #1a1a1a;" id="continuar-assistindo-section" style="display: none;">
         <div class="container mx-auto">
-            <h2 class="text-2xl font-bold mb-6 text-gray-900">▶️ Continuar Assistindo</h2>
+            <h2 class="text-2xl font-bold mb-6 text-white">▶️ Continuar Assistindo</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="continuar-assistindo"></div>
         </div>
     </section>
 
     <!-- TODOS OS VÍDEOS -->
-    <section class="py-12 px-4 bg-gray-50">
+    <section class="py-12 px-4" style="background: #141414;">
         <div class="container mx-auto">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-900">🎥 Todos os Vídeos</h2>
-                <div class="text-sm text-gray-600">
+                <h2 class="text-2xl font-bold text-white">🎥 Todos os Vídeos</h2>
+                <div class="text-sm text-gray-400">
                     <span id="total-videos">0</span> vídeos disponíveis
                 </div>
             </div>
@@ -240,8 +241,8 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white py-12 px-4 mt-12">
-        <div class="container mx-auto text-center">
+    <footer class="py-12 px-4 mt-12" style="background: #0a0a0a;">
+        <div class="container mx-auto text-center text-gray-400">
             <p>&copy; 2020-2026 Universidade Cristal Sete. Todos os direitos reservados.</p>
         </div>
     </footer>
@@ -251,7 +252,7 @@
     <script src="js/users-data.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/gamificacao.js"></script>
-    <script src="cristalflix-data.js"></script>
+    <script src="js/cristalflix-data.js"></script>
     
     <script>
         let usuarioAtual = null;
