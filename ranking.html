@@ -22,20 +22,9 @@
             backdrop-filter: blur(10px);
         }
         
-        /* Hero section com fundo branco */
-        .hero-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-        }
-        
         /* Cards transparentes */
         .card-transparente {
             background: rgba(255, 255, 255, 0.75) !important;
-            backdrop-filter: blur(8px);
-        }
-        
-        /* Botões de filtro transparentes */
-        button[id^="filtro-"] {
             backdrop-filter: blur(8px);
         }
     </style>
@@ -43,7 +32,7 @@
 <body class="font-inter">
     
     <!-- HEADER / NAVEGAÇÃO -->
-    <header class="glass-effect sticky top-0 z-50">
+    <header class="sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
@@ -96,19 +85,19 @@
     </section>
 
     <!-- FILTROS -->
-    <section class="glass-effect py-6">
+    <section class="py-6">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
                 <button onclick="filtrarRanking('todos')" id="filtro-todos" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(43, 95, 166, 0.5); backdrop-filter: blur(10px);">
                     Todos os Departamentos
                 </button>
-                <button onclick="filtrarRanking('Comercial')" id="filtro-Comercial" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.15); color: white; backdrop-filter: blur(8px);">
+                <button onclick="filtrarRanking('Comercial')" id="filtro-Comercial" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">
                     Comercial
                 </button>
-                <button onclick="filtrarRanking('Produção')" id="filtro-Produção" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.15); color: white; backdrop-filter: blur(8px);">
+                <button onclick="filtrarRanking('Produção')" id="filtro-Produção" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">
                     Produção
                 </button>
-                <button onclick="filtrarRanking('Expedição')" id="filtro-Expedição" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.15); color: white; backdrop-filter: blur(8px);">
+                <button onclick="filtrarRanking('Expedição')" id="filtro-Expedição" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">
                     Expedição
                 </button>
             </div>
@@ -116,7 +105,7 @@
     </section>
 
     <!-- RANKING -->
-    <section class="glass-effect py-12">
+    <section class="py-12">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 
@@ -128,7 +117,7 @@
                 
                 <!-- RESTO DO RANKING -->
                 <div class="card-transparente rounded-xl shadow-sm overflow-hidden">
-                    <div class="text-white px-6 py-4" style="background: rgba(43, 95, 166, 0.5); backdrop-filter: blur(10px);">
+                    <div style="background: rgba(43, 95, 166, 0.5); backdrop-filter: blur(10px);" class="px-6 py-4">
                         <h2 class="text-xl font-bold text-white" style="font-family: 'Montserrat', sans-serif;">Top 10</h2>
                     </div>
                     <div id="ranking-lista" class="divide-y divide-gray-200"></div>
@@ -163,14 +152,12 @@
             
             // Atualizar botões
             document.querySelectorAll('[id^="filtro-"]').forEach(btn => {
-                btn.classList.remove('text-white');
-                btn.classList.add('bg-gray-200', 'text-gray-700');
-                btn.style.backgroundColor = '';
+                btn.style.background = 'rgba(255, 255, 255, 0.15)';
+                btn.style.backdropFilter = 'blur(8px)';
             });
             const btnAtivo = document.getElementById('filtro-' + filtro);
-            btnAtivo.classList.remove('bg-gray-200', 'text-gray-700');
-            btnAtivo.classList.add('text-white');
-            btnAtivo.style.backgroundColor = '#2B5FA6';
+            btnAtivo.style.background = 'rgba(43, 95, 166, 0.5)';
+            btnAtivo.style.backdropFilter = 'blur(10px)';
             
             renderizarRanking();
         }
