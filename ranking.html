@@ -33,6 +33,11 @@
             background: rgba(255, 255, 255, 0.75) !important;
             backdrop-filter: blur(8px);
         }
+        
+        /* Botões de filtro transparentes */
+        button[id^="filtro-"] {
+            backdrop-filter: blur(8px);
+        }
     </style>
 </head>
 <body class="font-inter">
@@ -83,7 +88,7 @@
     <!-- HERO SECTION -->
     <section class="py-12">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center" style="padding-top: 5rem;">
+            <div class="max-w-4xl mx-auto text-center" style="padding-top: 7rem;">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white" style="font-family: 'Montserrat', sans-serif; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Cristal League</h1>
                 <p class="text-xl text-white" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Liga de Talentos - Celebrando a excelência em aprendizado</p>
             </div>
@@ -94,16 +99,16 @@
     <section class="glass-effect py-6">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
-                <button onclick="filtrarRanking('todos')" id="filtro-todos" class="px-4 py-2 rounded-lg font-semibold text-white" style="background-color: #2B5FA6;">
+                <button onclick="filtrarRanking('todos')" id="filtro-todos" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(43, 95, 166, 0.7); backdrop-filter: blur(8px);">
                     Todos os Departamentos
                 </button>
-                <button onclick="filtrarRanking('Comercial')" id="filtro-Comercial" class="px-4 py-2 rounded-lg font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300">
+                <button onclick="filtrarRanking('Comercial')" id="filtro-Comercial" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.25); color: white;">
                     Comercial
                 </button>
-                <button onclick="filtrarRanking('Produção')" id="filtro-Produção" class="px-4 py-2 rounded-lg font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300">
+                <button onclick="filtrarRanking('Produção')" id="filtro-Produção" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.25); color: white;">
                     Produção
                 </button>
-                <button onclick="filtrarRanking('Expedição')" id="filtro-Expedição" class="px-4 py-2 rounded-lg font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300">
+                <button onclick="filtrarRanking('Expedição')" id="filtro-Expedição" class="px-4 py-2 rounded-lg font-semibold text-white" style="background: rgba(255, 255, 255, 0.25); color: white;">
                     Expedição
                 </button>
             </div>
