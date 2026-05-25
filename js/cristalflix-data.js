@@ -233,19 +233,18 @@ const cristalflixProgress = new CristalFlixProgress();
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // ✅ CORREÇÃO: Usar verificarLogin() do auth.js ao invés de localStorage direto
+    // ✅ CORREÇÃO: auth.js JÁ FAZ A VERIFICAÇÃO AUTOMÁTICA!
+    // Não precisamos verificar novamente aqui, apenas pegar o usuário
     const usuarioAtual = verificarLogin();
     
-    if (!usuarioAtual) {
-        window.location.href = 'login.html';
-        return;
+    // Se o auth.js não redirecionou, é porque o usuário está logado
+    if (usuarioAtual) {
+        // Renderizar todos os vídeos
+        renderizarTodosVideos();
+        
+        // Renderizar continuar assistindo
+        renderizarContinuarAssistindo();
     }
-    
-    // Renderizar todos os vídeos
-    renderizarTodosVideos();
-    
-    // Renderizar continuar assistindo
-    renderizarContinuarAssistindo();
 });
 
 function renderizarTodosVideos() {
@@ -264,7 +263,6 @@ function renderizarTodosVideos() {
 }
 
 function renderizarContinuarAssistindo() {
-    // ✅ CORREÇÃO: Usar verificarLogin() consistentemente
     const usuarioAtual = verificarLogin();
     if (!usuarioAtual) return;
     
@@ -330,7 +328,6 @@ function abrirVideo(videoId) {
     modal.classList.add('active');
     
     // Simular progresso (em produção, usar YouTube API)
-    // ✅ CORREÇÃO: Usar verificarLogin() consistentemente
     const usuarioAtual = verificarLogin();
     if (usuarioAtual) {
         setTimeout(() => {
