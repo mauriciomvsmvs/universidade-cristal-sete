@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CristalFlix - Universidade Cristal Sete</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/fix-menu.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         body {
             background: #141414;
@@ -37,6 +35,26 @@
             object-fit: cover;
         }
         
+        .video-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 12px;
+        }
+        
+        .video-duration {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.8);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
         .progress-bar {
             position: absolute;
             bottom: 0;
@@ -46,175 +64,175 @@
             transition: width 0.3s ease;
         }
         
-        .badge-assistido {
+        .play-icon {
             position: absolute;
-            top: 8px;
-            right: 8px;
-            background: rgba(34, 197, 94, 0.9);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(43, 95, 166, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
-        .badge-novo {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            background: rgba(239, 68, 68, 0.9);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: bold;
+        .video-card:hover .play-icon {
+            opacity: 1;
         }
         
-        /* Modal do Player */
-        .modal-player {
+        .modal {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            overflow-y: auto;
         }
         
-        .modal-player.active {
-            display: flex;
+        .modal.active {
+            display: block;
         }
         
-        .player-container {
-            position: relative;
-            width: 90%;
-            max-width: 500px;
-            aspect-ratio: 9/16;
-        }
-        
-        .player-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .modal-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: #1a1a1a;
             border-radius: 8px;
+            overflow: hidden;
         }
         
-        .close-player {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .close-modal {
+            font-size: 28px;
             color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
             cursor: pointer;
-            font-size: 18px;
+            background: none;
+            border: none;
         }
         
-        .close-player:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: black;
         }
         
-        @keyframes slide-in {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
+        .header-white {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            color: #1f2937;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #2B5FA6;
+        }
+        
+        .nav-link.active {
+            color: #2B5FA6;
+            font-weight: 600;
+        }
+        
+        .hero-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 400px;
+            background: url('assets/cristalito-cinema.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-banner::after {
+                content: '';
+                position: absolute;
+                right: 60px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 300px;
+                height: 300px;
+                background: url('assets/cristalito-cinema.png') no-repeat center;
+                background-size: contain;
                 opacity: 1;
+                pointer-events: none;
             }
-        }
-        
-        @keyframes slide-out {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
-        
-        .animate-slide-in {
-            animation: slide-in 0.3s ease-out;
         }
     </style>
 </head>
-<body class="font-inter">
-    
-    <!-- HEADER -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-                    <img src="assets/logos/universidade.png" alt="Universidade Cristal Sete" class="h-12">
-                    <div>
-                        <h1 class="text-xl font-bold text-primary">Universidade Cristal Sete</h1>
-                        <p class="text-xs text-gray-600">Conhecimento com Propósito</p>
-                    </div>
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="index.html" class="nav-link">Início</a>
-                    <a href="integracao.html" class="nav-link">Integração</a>
-                    <a href="biblioteca.html" class="nav-link">Biblioteca</a>
-                    <a href="cursos.html" class="nav-link">Cursos</a>
-                    <a href="cristalflix.html" class="nav-link active">CristalFlix</a>
-                    <a href="ranking.html" class="nav-link">Cristal League</a>
-                    <a href="meu-perfil.html" class="nav-link">Meu Perfil</a>
-                    <a href="admin.html" class="nav-link">Admin</a>
-                    <a href="#" onclick="fazerLogout(); return false;" class="nav-link text-red-600 hover:text-red-700 font-semibold">Sair</a>
-                </div>
-                
-                <button id="mobile-menu-btn" class="md:hidden">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+<body class="font-sans">
+
+    <!-- HEADER BRANCO -->
+    <header class="header-white py-4 px-6 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="assets/logos/logouniversidadebranca.png" alt="Universidade Cristal Sete" class="h-12">
+                <h1 class="text-xl font-bold" style="color: #2B5FA6;">Universidade Cristal Sete</h1>
             </div>
             
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
-                <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Início</a>
-                <a href="integracao.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Integração</a>
-                <a href="biblioteca.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Biblioteca</a>
-                <a href="cursos.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cursos</a>
-                <a href="cristalflix.html" class="block px-4 py-2 hover:bg-gray-100 rounded">CristalFlix</a>
-                <a href="ranking.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Cristal League</a>
-                <a href="meu-perfil.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Meu Perfil</a>
-                <a href="admin.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Admin</a>
-                <a href="#" onclick="fazerLogout(); return false;" class="block px-4 py-2 text-red-600 hover:bg-red-50 rounded font-semibold">Sair</a>
-            </div>
-        </nav>
+            <nav class="hidden md:flex gap-8">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="cursos.html" class="nav-link">Cursos</a>
+                <a href="cristalflix.html" class="nav-link active">CristalFlix</a>
+                <a href="biblioteca.html" class="nav-link">Biblioteca</a>
+                <a href="meu-perfil.html" class="nav-link">Meu Perfil</a>
+                <button onclick="logout()" class="nav-link hover:text-red-600">Sair</button>
+            </nav>
+            
+            <button class="md:hidden">
+                <i class="fas fa-bars text-2xl" style="color: #2B5FA6;"></i>
+            </button>
+        </div>
     </header>
 
     <!-- HERO BANNER -->
-    <section class="relative h-[400px] overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark opacity-90"></div>
-        <div class="absolute inset-0 flex items-center">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif;">
-                        🎬 CristalFlix
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-100 mb-6">
-                        Sua plataforma de vídeos de treinamento
-                    </p>
-                    <p class="text-gray-200">
-                        Assista shorts e vídeos educativos da Cristal Sete e ganhe pontos no Cristal League!
-                    </p>
-                </div>
+    <section class="hero-banner py-20 px-4">
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">
+                🍿 CristalFlix
+            </h1>
+            <p class="text-xl text-gray-300 mb-8">
+                Sua plataforma de vídeos de treinamento da Universidade Cristal Sete
+            </p>
+            <div class="flex gap-4 flex-wrap">
+                <span class="px-4 py-2 bg-blue-600 rounded-full text-sm">📹 19 Vídeos</span>
+                <span class="px-4 py-2 bg-gray-700 rounded-full text-sm">🎯 Aprenda no seu ritmo</span>
+                <span class="px-4 py-2 bg-gray-700 rounded-full text-sm">✅ Continue de onde parou</span>
             </div>
         </div>
     </section>
 
     <!-- CONTINUAR ASSISTINDO -->
-    <section class="py-12 px-4" style="background: #1a1a1a;" id="continuar-assistindo-section" style="display: none;">
+    <section class="py-12 px-4" id="continuar-assistindo-section" style="display: none; background: #0a0a0a;">
         <div class="container mx-auto">
-            <h2 class="text-2xl font-bold mb-6 text-white">▶️ Continuar Assistindo</h2>
+            <h2 class="text-2xl font-bold mb-6">▶️ Continuar Assistindo</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="continuar-assistindo"></div>
         </div>
     </section>
@@ -223,7 +241,7 @@
     <section class="py-12 px-4" style="background: #141414;">
         <div class="container mx-auto">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-white">🎥 Todos os Vídeos</h2>
+                <h2 class="text-2xl font-bold">🎥 Todos os Vídeos</h2>
                 <div class="text-sm text-gray-400">
                     <span id="total-videos">0</span> vídeos disponíveis
                 </div>
@@ -232,11 +250,17 @@
         </div>
     </section>
 
-    <!-- MODAL DO PLAYER -->
-    <div id="modal-player" class="modal-player">
-        <div class="player-container">
-            <button class="close-player" onclick="fecharPlayer()">✕ Fechar</button>
-            <iframe id="video-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- MODAL PLAYER -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modal-title" class="text-2xl font-bold">Título do Vídeo</h3>
+                    <p id="modal-description" class="text-gray-400 mt-2"></p>
+                </div>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="video-container"></div>
         </div>
     </div>
 
@@ -247,117 +271,11 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
     <script src="js/navigation.js"></script>
     <script src="js/users-data.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/gamificacao.js"></script>
     <script src="js/cristalflix-data.js"></script>
-    
-    <script>
-        let usuarioAtual = null;
-        
-        // Inicializar
-        document.addEventListener('DOMContentLoaded', function() {
-            usuarioAtual = verificarLogin();
-            if (!usuarioAtual) return;
-            
-            carregarVideos();
-            carregarContinuarAssistindo();
-        });
-        
-        // Carregar todos os vídeos
-        function carregarVideos() {
-            const container = document.getElementById('todos-videos');
-            const videosAssistidos = cristalflixProgress.obterVideosAssistidos(usuarioAtual.id);
-            
-            document.getElementById('total-videos').textContent = videosData.length;
-            
-            container.innerHTML = videosData.map(video => {
-                const progresso = cristalflixProgress.obterProgresso(usuarioAtual.id, video.id);
-                const assistido = videosAssistidos.includes(video.id);
-                const isNovo = isVideoNovo(video.dataPublicacao);
-                
-                return `
-                    <div class="video-card" onclick="abrirPlayer('${video.id}')">
-                        <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" alt="Vídeo">
-                        ${assistido ? '<div class="badge-assistido">✓ ASSISTIDO</div>' : ''}
-                        ${isNovo ? '<div class="badge-novo">NOVO</div>' : ''}
-                        ${progresso.progresso > 0 ? `<div class="progress-bar" style="width: ${progresso.progresso * 100}%"></div>` : ''}
-                    </div>
-                `;
-            }).join('');
-        }
-        
-        // Carregar continuar assistindo
-        function carregarContinuarAssistindo() {
-            const videosEmAndamento = cristalflixProgress.obterVideosEmAndamento(usuarioAtual.id);
-            
-            if (videosEmAndamento.length === 0) {
-                document.getElementById('continuar-assistindo-section').style.display = 'none';
-                return;
-            }
-            
-            document.getElementById('continuar-assistindo-section').style.display = 'block';
-            
-            const container = document.getElementById('continuar-assistindo');
-            container.innerHTML = videosEmAndamento.map(item => {
-                const video = videosData.find(v => v.id === item.videoId);
-                if (!video) return '';
-                
-                return `
-                    <div class="video-card" onclick="abrirPlayer('${video.id}')">
-                        <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" alt="Vídeo">
-                        <div class="progress-bar" style="width: ${item.progresso * 100}%"></div>
-                    </div>
-                `;
-            }).join('');
-        }
-        
-        // Verificar se vídeo é novo (últimos 7 dias)
-        function isVideoNovo(dataPublicacao) {
-            const data = new Date(dataPublicacao);
-            const hoje = new Date();
-            const diffDias = Math.floor((hoje - data) / (1000 * 60 * 60 * 24));
-            return diffDias <= 7;
-        }
-        
-        // Abrir player
-        function abrirPlayer(videoId) {
-            const modal = document.getElementById('modal-player');
-            const iframe = document.getElementById('video-iframe');
-            
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1`;
-            modal.classList.add('active');
-            
-            // Simular progresso (YouTube API requer configuração adicional)
-            // Por enquanto, marcar como assistido após 30 segundos
-            setTimeout(() => {
-                cristalflixProgress.salvarProgresso(usuarioAtual.id, videoId, 0.5);
-            }, 30000);
-            
-            setTimeout(() => {
-                cristalflixProgress.salvarProgresso(usuarioAtual.id, videoId, 1.0, true);
-                carregarVideos();
-                carregarContinuarAssistindo();
-            }, 60000);
-        }
-        
-        // Fechar player
-        function fecharPlayer() {
-            const modal = document.getElementById('modal-player');
-            const iframe = document.getElementById('video-iframe');
-            
-            iframe.src = '';
-            modal.classList.remove('active');
-        }
-        
-        // Fechar ao clicar fora
-        document.getElementById('modal-player').addEventListener('click', function(e) {
-            if (e.target === this) {
-                fecharPlayer();
-            }
-        });
-    </script>
+
 </body>
 </html>
