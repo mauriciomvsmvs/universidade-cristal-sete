@@ -129,7 +129,8 @@ const reelsInstagramData = [
         tipo: 'reel',
         categoria: 'processos',
         dataPublicacao: '2025-01-01',
-        thumbnail: 'https://www.instagram.com/reel/DWhRUxBj3Bz/media/?size=l'
+        thumbnail: 'assets/thumbnails/reel-pedido-parte1.jpg', // Você pode adicionar imagem real depois
+        instagramUrl: 'https://www.instagram.com/reel/DWhRUxBj3Bz/'
     },
     {
         id: 'DXHdmJ6B33R',
@@ -138,7 +139,8 @@ const reelsInstagramData = [
         tipo: 'reel',
         categoria: 'processos',
         dataPublicacao: '2025-01-02',
-        thumbnail: 'https://www.instagram.com/reel/DXHdmJ6B33R/media/?size=l'
+        thumbnail: 'assets/thumbnails/reel-pedido-parte2.jpg',
+        instagramUrl: 'https://www.instagram.com/reel/DXHdmJ6B33R/'
     },
     {
         id: 'DYPiK4jhG24',
@@ -147,7 +149,8 @@ const reelsInstagramData = [
         tipo: 'reel',
         categoria: 'processos',
         dataPublicacao: '2025-01-03',
-        thumbnail: 'https://www.instagram.com/reel/DYPiK4jhG24/media/?size=l'
+        thumbnail: 'assets/thumbnails/reel-pedido-parte3.jpg',
+        instagramUrl: 'https://www.instagram.com/reel/DYPiK4jhG24/'
     }
 ];
 
@@ -410,9 +413,26 @@ function criarCardReel(reel, progresso = 0) {
     const thumbnail = reel.thumbnail;
     const progressoPercent = Math.round(progresso * 100);
     
+    // Placeholder com gradiente da Cristal Sete
+    const placeholderStyle = `
+        background: linear-gradient(135deg, #2B5FA6 0%, #1a4278 50%, #E87722 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+    `;
+    
     return `
         <div class="video-card" onclick="abrirReel('${reel.id}')">
-            <img src="${thumbnail}" alt="${reel.titulo}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x700/2B5FA6/FFFFFF?text=Instagram+Reel'">
+            <img 
+                src="${thumbnail}" 
+                alt="${reel.titulo}" 
+                loading="lazy" 
+                onerror="this.style.display='none'; this.parentElement.querySelector('.thumb-fallback').style.display='flex';"
+            >
+            <div class="thumb-fallback" style="display: none; position: absolute; inset: 0; ${placeholderStyle}">
+                <i class="fab fa-instagram" style="color: white; font-size: 4rem; opacity: 0.8;"></i>
+            </div>
             <div class="play-icon">
                 <i class="fab fa-instagram"></i>
             </div>
