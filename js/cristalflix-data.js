@@ -385,7 +385,7 @@ function criarCardVideo(video, progresso = 0) {
             <div class="video-duration">Short</div>
             ${progresso > 0 ? `<div class="progress-bar" style="width: ${progressoPercent}%"></div>` : ''}
             <div class="video-info">
-                <div class="text-sm font-semibold line-clamp-2">Vídeo ${video.id.substring(0, 6)}</div>
+                <div class="text-sm font-semibold line-clamp-2 text-white">Vídeo ${video.id.substring(0, 6)}</div>
             </div>
         </div>
     `;
@@ -439,7 +439,7 @@ function criarCardReel(reel, progresso = 0) {
             <div class="video-duration">Reel</div>
             ${progresso > 0 ? `<div class="progress-bar" style="width: ${progressoPercent}%"></div>` : ''}
             <div class="video-info">
-                <div class="text-sm font-semibold line-clamp-2">${reel.titulo}</div>
+                <div class="text-sm font-semibold line-clamp-2 text-white">${reel.titulo}</div>
             </div>
         </div>
     `;
