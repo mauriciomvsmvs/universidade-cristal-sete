@@ -4,116 +4,135 @@
 const videosData = [
     {
         id: 'Fdkz7RRLUmo',
+        titulo: '3 Vidros Resistentes para Aquários',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-01'
     },
     {
         id: 'YciT8rShEnk',
+        titulo: 'Como Sofisticar o seu Negócio com Escadas de Vidro',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'vendas',
         dataPublicacao: '2024-01-02'
     },
     {
         id: '1gd3rsIScWc',
+        titulo: '3 Erros Básicos de uma Vidraçaria',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'gestão',
         dataPublicacao: '2024-01-03'
     },
     {
         id: '2owOg0FOsR4',
+        titulo: 'Como Escolher seu Espelho',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-04'
     },
     {
         id: '2pSo5pYH5dk',
+        titulo: 'As Melhores Mesas de Vidro para uma Decoração Moderna',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'vendas',
         dataPublicacao: '2024-01-05'
     },
     {
         id: 'claPBWmT6lg',
+        titulo: '3 Dicas Essenciais para Crescer a sua Vidraçaria',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'gestão',
         dataPublicacao: '2024-01-06'
     },
     {
         id: 'hXRnYpiNBFY',
+        titulo: 'Vidro Laminado e Vidro Temperado: Diferenças',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-07'
     },
     {
         id: 'mZHoSRLjHjQ',
+        titulo: 'Como o Vidro Temperado é Feito',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-08'
     },
     {
         id: 'kp7TGMFFBIg',
+        titulo: 'Desafios e Vantagens de Empreender em um Negócio Familiar',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'gestão',
         dataPublicacao: '2024-01-09'
     },
     {
         id: 'At8O0m4SQyQ',
+        titulo: '5 Pontos de Atenção na Hora de Comprar Janelas de Vidro Temperado',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-10'
     },
     {
         id: '5E3nlRKuVr0',
+        titulo: 'Estratégias Comerciais Práticas para Aumentar o Lucro de uma Vidraçaria',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'vendas',
         dataPublicacao: '2024-01-11'
     },
     {
         id: 'gZb4QLVTxkY',
+        titulo: 'Como Fazer o Isolamento Acústico de Janelas e Acabar com o Barulho?',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-12'
     },
     {
         id: 'K0E0fWzay88',
+        titulo: 'Guarda-corpo: Qual Tipo de Vidro Usar?',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-13'
     },
     {
         id: 'Lnb1SsUQOjA',
+        titulo: 'Todo Vidro Temperado é Blindex?',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-14'
     },
     {
         id: 'T8qLC2_Y8yI',
+        titulo: 'Da Estética à Segurança: Diferentes Tipos de Vidro e suas Aplicações',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-15'
     },
     {
         id: '1w8DysbLvtU',
+        titulo: 'Vidros para Ter Mais Privacidade e Conforto na sua Casa',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-16'
     },
     {
         id: 'GcNY6fbGv20',
+        titulo: 'Conforto Térmico: Isole a Temperatura do Ambiente com o Vidro Certo',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-17'
     },
     {
         id: 'bZBJUbzrwCs',
+        titulo: 'Tudo que Você Precisa Saber Antes de Escolher o Vidro para seu Ambiente',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'técnico',
         dataPublicacao: '2024-01-18'
     },
     {
         id: 'lh6aXv1Bt44',
+        titulo: '3 Estratégias para Aumentar a Produtividade da sua Vidraçaria e Serralheria',
         tipo: 'short',
-        categoria: 'geral',
+        categoria: 'gestão',
         dataPublicacao: '2024-01-19'
     }
 ];
@@ -375,17 +394,18 @@ function renderizarContinuarAssistindo() {
 function criarCardVideo(video, progresso = 0) {
     const thumbnail = `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`;
     const progressoPercent = Math.round(progresso * 100);
+    const titulo = video.titulo || `Vídeo ${video.id.substring(0, 6)}`;
     
     return `
         <div class="video-card" onclick="abrirVideo('${video.id}')">
-            <img src="${thumbnail}" alt="Thumbnail" loading="lazy">
+            <img src="${thumbnail}" alt="${titulo}" loading="lazy">
             <div class="play-icon">
                 <i class="fas fa-play"></i>
             </div>
             <div class="video-duration">Short</div>
             ${progresso > 0 ? `<div class="progress-bar" style="width: ${progressoPercent}%"></div>` : ''}
             <div class="video-info">
-                <div class="text-sm font-semibold line-clamp-2 text-white">Vídeo ${video.id.substring(0, 6)}</div>
+                <div class="text-sm font-semibold line-clamp-2 text-white">${titulo}</div>
             </div>
         </div>
     `;
@@ -439,7 +459,7 @@ function criarCardReel(reel, progresso = 0) {
             <div class="video-duration">Reel</div>
             ${progresso > 0 ? `<div class="progress-bar" style="width: ${progressoPercent}%"></div>` : ''}
             <div class="video-info">
-                <div class="text-sm font-semibold line-clamp-2 text-white">${reel.titulo}</div>
+                <div class="text-sm font-semibold line-clamp-2">${reel.titulo}</div>
             </div>
         </div>
     `;
