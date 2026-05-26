@@ -118,6 +118,39 @@ const videosData = [
     }
 ];
 
+// ============================================
+// REELS DO INSTAGRAM
+// ============================================
+const reelsInstagramData = [
+    {
+        id: 'DWhRUxBj3Bz',
+        titulo: 'Do Pedido à Entrega - Parte 1',
+        descricao: 'Conheça a primeira etapa do fluxo completo: desde o recebimento do pedido até a produção.',
+        tipo: 'reel',
+        categoria: 'processos',
+        dataPublicacao: '2025-01-01',
+        thumbnail: 'https://www.instagram.com/reel/DWhRUxBj3Bz/media/?size=l'
+    },
+    {
+        id: 'DXHdmJ6B33R',
+        titulo: 'Do Pedido à Entrega - Parte 2',
+        descricao: 'Acompanhe a segunda etapa: produção, controle de qualidade e preparação para expedição.',
+        tipo: 'reel',
+        categoria: 'processos',
+        dataPublicacao: '2025-01-02',
+        thumbnail: 'https://www.instagram.com/reel/DXHdmJ6B33R/media/?size=l'
+    },
+    {
+        id: 'DYPiK4jhG24',
+        titulo: 'Do Pedido à Entrega - Parte 3',
+        descricao: 'Etapa final: expedição, logística e entrega ao cliente com segurança e qualidade.',
+        tipo: 'reel',
+        categoria: 'processos',
+        dataPublicacao: '2025-01-03',
+        thumbnail: 'https://www.instagram.com/reel/DYPiK4jhG24/media/?size=l'
+    }
+];
+
 // Sistema de Progresso de Visualização
 class CristalFlixProgress {
     constructor() {
@@ -242,10 +275,63 @@ document.addEventListener('DOMContentLoaded', function() {
         // Renderizar todos os vídeos
         renderizarTodosVideos();
         
+        // Renderizar reels do Instagram
+        renderizarTodosReels();
+        
         // Renderizar continuar assistindo
         renderizarContinuarAssistindo();
+        
+        // Inicializar sistema de abas
+        inicializarAbas();
+        
+        // Atualizar contadores
+        atualizarContadores();
     }
 });
+
+// ============================================
+// SISTEMA DE ABAS
+// ============================================
+function inicializarAbas() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            
+            // Remover active de todos os botões
+            tabBtns.forEach(b => b.classList.remove('active'));
+            
+            // Adicionar active ao botão clicado
+            this.classList.add('active');
+            
+            // Esconder todos os conteúdos
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Mostrar conteúdo da aba clicada
+            const content = document.getElementById(tabId + '-content');
+            if (content) {
+                content.classList.add('active');
+            }
+        });
+    });
+}
+
+function atualizarContadores() {
+    // Atualizar contador de shorts
+    const countShorts = document.getElementById('count-shorts');
+    if (countShorts) {
+        countShorts.textContent = videosData.length;
+    }
+    
+    // Atualizar contador de reels
+    const countReels = document.getElementById('count-reels');
+    if (countReels) {
+        countReels.textContent = reelsInstagramData.length;
+    }
+}
 
 function renderizarTodosVideos() {
     const container = document.getElementById('todos-videos');
@@ -300,6 +386,80 @@ function criarCardVideo(video, progresso = 0) {
             </div>
         </div>
     `;
+}
+
+// ============================================
+// RENDERIZAÇÃO DOS REELS DO INSTAGRAM
+// ============================================
+function renderizarTodosReels() {
+    const container = document.getElementById('todos-reels');
+    const totalElement = document.getElementById('total-reels');
+    
+    if (!container) return;
+    
+    // Atualizar contador
+    if (totalElement) {
+        totalElement.textContent = reelsInstagramData.length;
+    }
+    
+    // Renderizar cards
+    container.innerHTML = reelsInstagramData.map(reel => criarCardReel(reel)).join('');
+}
+
+function criarCardReel(reel, progresso = 0) {
+    const thumbnail = reel.thumbnail;
+    const progressoPercent = Math.round(progresso * 100);
+    
+    return `
+        <div class="video-card" onclick="abrirReel('${reel.id}')">
+            <img src="${thumbnail}" alt="${reel.titulo}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x700/2B5FA6/FFFFFF?text=Instagram+Reel'">
+            <div class="play-icon">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="video-duration">Reel</div>
+            ${progresso > 0 ? `<div class="progress-bar" style="width: ${progressoPercent}%"></div>` : ''}
+            <div class="video-info">
+                <div class="text-sm font-semibold line-clamp-2">${reel.titulo}</div>
+            </div>
+        </div>
+    `;
+}
+
+function abrirReel(reelId) {
+    const modal = document.getElementById('video-modal');
+    const container = document.getElementById('video-container');
+    const titulo = document.getElementById('modal-title');
+    const descricao = document.getElementById('modal-description');
+    
+    if (!modal || !container) return;
+    
+    // Encontrar reel
+    const reel = reelsInstagramData.find(r => r.id === reelId);
+    if (!reel) return;
+    
+    // Definir conteúdo
+    titulo.textContent = reel.titulo;
+    descricao.textContent = reel.descricao;
+    
+    // Criar embed do Instagram
+    container.innerHTML = `
+        <iframe 
+            class="video-player" 
+            src="https://www.instagram.com/reel/${reelId}/embed/" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+    `;
+    
+    modal.classList.add('active');
+    
+    // Simular progresso
+    const usuarioAtual = verificarLogin();
+    if (usuarioAtual) {
+        setTimeout(() => {
+            cristalflixProgress.salvarProgresso(usuarioAtual.id, 'reel_' + reelId, 0.9, false);
+        }, 5000);
+    }
 }
 
 function abrirVideo(videoId) {
