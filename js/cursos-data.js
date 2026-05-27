@@ -66,10 +66,10 @@ const cursos = [
                             {
                                 pergunta: "Quem fundou a primeira vidraçaria de Apucarana, dando início à história da Cristal Sete?",
                                 opcoes: [
-                                    "Sandro Henriques",
-                                    "Marcus Pezotti",
-                                    "Milton Bastos Henriquis",
-                                    "Rosângela Henriques"
+                                    "Sandro Eduardo Henriques",
+                                    "Marcus Aurelius de Andrade Pezotti",
+                                    "Milton Bastos Henriques",
+                                    "Rosângela A. Henriques Pezotti"
                                 ],
                                 correta: 2
                             },
