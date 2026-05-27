@@ -209,6 +209,23 @@ const usuarios = [
         ativo: true,
         tipo: "aluno",
         gestorId: 7 // Pierre
+    },
+
+    // ========================================
+    // VINICIUS PEZOTTI - CONSULTOR COMERCIAL
+    // ========================================
+    {
+        id: 17,
+        nome: "Vinicius Pezotti",
+        email: "teste@cristalsete.com.br",
+        senha: "cristal2026",
+        departamento: "Comercial",
+        cargo: "Consultor Comercial",
+        dataAdmissao: "2025-05-27",
+        foto: "",
+        ativo: true,
+        tipo: "aluno",
+        gestorId: 6 // Ângelo
     }
 
     // ========================================
