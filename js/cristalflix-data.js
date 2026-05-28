@@ -134,6 +134,41 @@ const videosData = [
         tipo: 'short',
         categoria: 'gestão',
         dataPublicacao: '2024-01-19'
+    },
+    {
+        id: 'lrsn27IWSao',
+        titulo: 'Do Pedido à Entrega - Parte 1',
+        tipo: 'short',
+        categoria: 'processos',
+        dataPublicacao: '2025-01-01'
+    },
+    {
+        id: 'hOqYAh2ZYJc',
+        titulo: 'Do Pedido à Entrega - Parte 2',
+        tipo: 'short',
+        categoria: 'processos',
+        dataPublicacao: '2025-01-02'
+    },
+    {
+        id: 'cnArhF_LoVQ',
+        titulo: 'Do Pedido à Entrega - Parte 3',
+        tipo: 'short',
+        categoria: 'processos',
+        dataPublicacao: '2025-01-03'
+    },
+    {
+        id: 'jMvnA2RIkPU',
+        titulo: 'Reciclagem: Nosso Compromisso!',
+        tipo: 'short',
+        categoria: 'institucional',
+        dataPublicacao: '2025-01-04'
+    },
+    {
+        id: 'mXfhBmA7VgU',
+        titulo: 'Vidro é Tudo Igual?',
+        tipo: 'short',
+        categoria: 'técnico',
+        dataPublicacao: '2025-01-05'
     }
 ];
 
