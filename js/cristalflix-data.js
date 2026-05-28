@@ -437,7 +437,7 @@ function criarCardVideo(video, progresso = 0) {
             <div class="play-icon">
                 <i class="fas fa-play"></i>
             </div>
-            <div class="video-duration">Short</div>
+            
             ${progresso > 0 ? `<div class="progress-bar" style="width: ${progressoPercent}%"></div>` : ''}
             <div class="video-info">
                 <div class="text-sm font-semibold line-clamp-2 text-white">${titulo}</div>
