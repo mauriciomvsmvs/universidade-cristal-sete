@@ -2642,8 +2642,7 @@ const cursos = [
                 ]
             }
         ]
-    }
-,
+    },
     // ========================================
     // CURSO 19: COMO PROSPECTAR E VENDER MAIS COM COLD CALL
     // ========================================
@@ -2670,30 +2669,24 @@ const cursos = [
             {
                 numero: 1,
                 titulo: "Como Prospectar e Vender Mais com Cold Call",
-                descricao: "Aprenda do zero o método completo de prospecção ativa com Cold Call",
                 aulas: [
                     {
-                        numero: 1,
-                        titulo: "Como Prospectar e Vender Mais com Cold Call",
                         tipo: "slide",
-                        duracao: "10min",
-                        slideUrl: "https://docs.google.com/presentation/d/1USTYO5Qf7b8GzcokKTmO89a6Or-EWr6i/embed?start=false&loop=false&delayms=3000",
-                        descricao: "Revise o conteúdo completo: o que é Cold Call, como estudar o cliente, gancho inicial, conexão, filtro D.O.P., agendamento e como lidar com objeções."
+                        titulo: "Como Prospectar e Vender Mais com Cold Call",
+                        url: "https://docs.google.com/presentation/d/1USTYO5Qf7b8GzcokKTmO89a6Or-EWr6i/edit?slide=id.p1#slide=id.p1",
+                        slides: 20,
+                        descricao: "Conteúdo completo do curso: o que é Cold Call, como preparar a ligação, gancho inicial, conexão, filtro D.O.P., agendamento e como lidar com objeções."
                     },
                     {
-                        numero: 2,
-                        titulo: "Como Acertar nos 30 Primeiros Segundos de uma Chamada Fria",
                         tipo: "video",
+                        titulo: "Como Acertar nos 30 Primeiros Segundos de uma Chamada Fria",
+                        url: "https://www.youtube.com/watch?v=ZPSv41d-bMM",
                         duracao: "15min",
-                        videoUrl: "https://www.youtube.com/embed/ZPSv41d-bMM",
-                        descricao: "Entenda o conceito de prospecção ativa e aprenda o método completo da Cold Call: preparação, gancho, conexão, qualificação e agendamento."
+                        descricao: "Aprenda na prática como dominar os primeiros 30 segundos de uma Cold Call e aumentar suas chances de agendar reuniões."
                     },
                     {
-                        numero: 3,
-                        titulo: "Quiz: Cold Call",
                         tipo: "quiz",
-                        duracao: "15min",
-                        descricao: "Teste seus conhecimentos sobre todo o conteúdo do curso.",
+                        titulo: "Quiz - Cold Call",
                         perguntas: [
                             {
                                 pergunta: "Qual é o principal objetivo de uma Cold Call?",
@@ -2801,7 +2794,6 @@ const cursos = [
             }
         ]
     }
-
 ];
 
 // FUNÇÕES AUXILIARES
