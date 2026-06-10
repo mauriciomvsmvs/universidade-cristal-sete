@@ -2643,6 +2643,165 @@ const cursos = [
             }
         ]
     }
+,
+    // ========================================
+    // CURSO 19: COMO PROSPECTAR E VENDER MAIS COM COLD CALL
+    // ========================================
+    {
+        id: 19,
+        titulo: "Como Prospectar e Vender Mais com Cold Call",
+        descricao: "Aprenda a técnica de prospecção ativa que transforma ligações em oportunidades reais de negócio. Neste curso você vai dominar o método completo da Cold Call: como se preparar antes de ligar, criar conexão com o cliente, qualificar oportunidades usando o filtro D.O.P. (Decisor, Orçamento e Prioridade) e agendar reuniões com segurança. Com scripts prontos e adaptados à realidade da Cristal Sete, você vai sair fazendo mais ligações, ligações melhores e fechando mais negócios.",
+        categoria: "Vendas",
+        nivel: "Iniciante",
+        duracao: "45min",
+        thumbnail: "assets/cursos/curso-coldcall.jpg",
+        instrutor: "Equipe Comercial Cristal Sete",
+        objetivos: [
+            "Entender o conceito e objetivo da Cold Call",
+            "Aprender a pesquisar e preparar cada ligação",
+            "Dominar o gancho inicial e criar conexão com o cliente",
+            "Fazer perguntas que revelam a necessidade do cliente",
+            "Qualificar oportunidades com o filtro D.O.P.",
+            "Agendar reuniões usando a técnica da escassez",
+            "Lidar com objeções comuns de forma profissional",
+            "Executar os 5 passos da Cold Call perfeita"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "Como Prospectar e Vender Mais com Cold Call",
+                descricao: "Aprenda do zero o método completo de prospecção ativa com Cold Call",
+                aulas: [
+                    {
+                        numero: 1,
+                        titulo: "Como Prospectar e Vender Mais com Cold Call",
+                        tipo: "slide",
+                        duracao: "10min",
+                        slideUrl: "https://docs.google.com/presentation/d/1USTYO5Qf7b8GzcokKTmO89a6Or-EWr6i/embed?start=false&loop=false&delayms=3000",
+                        descricao: "Revise o conteúdo completo: o que é Cold Call, como estudar o cliente, gancho inicial, conexão, filtro D.O.P., agendamento e como lidar com objeções."
+                    },
+                    {
+                        numero: 2,
+                        titulo: "Como Acertar nos 30 Primeiros Segundos de uma Chamada Fria",
+                        tipo: "video",
+                        duracao: "15min",
+                        videoUrl: "https://www.youtube.com/embed/ZPSv41d-bMM",
+                        descricao: "Entenda o conceito de prospecção ativa e aprenda o método completo da Cold Call: preparação, gancho, conexão, qualificação e agendamento."
+                    },
+                    {
+                        numero: 3,
+                        titulo: "Quiz: Cold Call",
+                        tipo: "quiz",
+                        duracao: "15min",
+                        descricao: "Teste seus conhecimentos sobre todo o conteúdo do curso.",
+                        perguntas: [
+                            {
+                                pergunta: "Qual é o principal objetivo de uma Cold Call?",
+                                opcoes: [
+                                    "Fechar a venda imediatamente durante a ligação",
+                                    "Gerar consciência, identificar oportunidade e agendar uma reunião",
+                                    "Enviar um catálogo de produtos por e-mail",
+                                    "Descobrir o preço que o concorrente cobra"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Por que a Cold Call é considerada poderosa para crescer vendas?",
+                                opcoes: [
+                                    "Porque substitui completamente o marketing digital",
+                                    "Porque o cliente sempre compra na hora",
+                                    "Porque o total de vendas é um percentual do total de pessoas com quem você fala",
+                                    "Porque é a forma mais cara de prospecção"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O que você DEVE fazer antes de realizar uma Cold Call?",
+                                opcoes: [
+                                    "Ligar imediatamente sem nenhuma preparação",
+                                    "Decorar um script genérico igual para todos os clientes",
+                                    "Esperar o cliente ligar primeiro",
+                                    "Pesquisar quem é o cliente, porte, produtos que compra e possível problema"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Qual é a melhor estratégia ANTES de realizar a ligação de prospecção?",
+                                opcoes: [
+                                    "Ligar sem aviso e apresentar todos os produtos de uma vez",
+                                    "Enviar um WhatsApp ou e-mail antes de ligar para criar um gancho",
+                                    "Pedir indicação para outro cliente primeiro",
+                                    "Aguardar o cliente entrar em contato espontaneamente"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O que significa o filtro D.O.P. na qualificação de oportunidades?",
+                                opcoes: [
+                                    "Data, Objetivo e Produto",
+                                    "Demanda, Oferta e Preço",
+                                    "Decisor, Orçamento e Prioridade",
+                                    "Diagnóstico, Operação e Proposta"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Quais são as 3 formas de criar conexão com o cliente apresentadas no curso?",
+                                opcoes: [
+                                    "Preço, Prazo e Produto",
+                                    "Evento ou Contexto, Velocidade de fala e Experiência no nicho",
+                                    "WhatsApp, E-mail e Telefone",
+                                    "Desconto, Brinde e Promoção"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual técnica deve ser usada na hora de agendar a reunião?",
+                                opcoes: [
+                                    "Perguntar ao cliente quando ele tiver tempo livre",
+                                    "Oferecer apenas um horário fixo sem alternativa",
+                                    "Usar a técnica da escassez oferecendo duas opções específicas de horário",
+                                    "Deixar o cliente decidir o formato e o horário"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é a ordem correta dos 5 passos da Cold Call perfeita?",
+                                opcoes: [
+                                    "Gancho, Prepare-se, Conexão, Qualifique, Agende",
+                                    "Conexão, Prepare-se, Gancho, Agende, Qualifique",
+                                    "Agende, Prepare-se, Gancho, Conexão, Qualifique",
+                                    "Prepare-se, Gancho, Conexão, Qualifique, Agende"
+                                ],
+                                correta: 3
+                            },
+                            {
+                                pergunta: "Como responder à objeção: já tenho fornecedor?",
+                                opcoes: [
+                                    "Encerrar a ligação educadamente",
+                                    "Oferecer um desconto imediato para convencer",
+                                    "A maioria dos nossos clientes também tinha. Começamos como segunda opção e hoje somos a principal. Posso mostrar o motivo em 30 minutos?",
+                                    "Perguntar qual é o nome do fornecedor concorrente"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "O que fazer imediatamente após o cliente confirmar o agendamento?",
+                                opcoes: [
+                                    "Ligar novamente para confirmar no dia seguinte",
+                                    "Aguardar o cliente entrar em contato para confirmar",
+                                    "Enviar apenas o catálogo de produtos por e-mail",
+                                    "Enviar o convite imediatamente com data, hora e pauta da reunião"
+                                ],
+                                correta: 3
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+
 ];
 
 // FUNÇÕES AUXILIARES
