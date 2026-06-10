@@ -2793,6 +2793,156 @@ const cursos = [
                 ]
             }
         ]
+    },
+    // ========================================
+    // CURSO 20: 6 TÉCNICAS PARA VENCER O SILÊNCIO
+    // ========================================
+    {
+        id: 20,
+        titulo: "6 Técnicas para Vencer o Silêncio",
+        descricao: "Aprenda a lidar com o silêncio do cliente que visualizou e não respondeu. Domine as 6 técnicas práticas para retomar contato com processo, inteligência e profissionalismo.",
+        categoria: "Vendas",
+        nivel: "Iniciante",
+        duracao: "40min",
+        thumbnail: "assets/cursos/curso-silencio-cliente.jpg",
+        instrutor: "Equipe Comercial Cristal Sete",
+        objetivos: [
+            "Entender por que o cliente visualiza e não responde",
+            "Analisar a trilha da conversa antes de agir",
+            "Identificar a rotina do cliente para escolher o momento certo",
+            "Criar mensagens que terminam com perguntas e estimulam resposta",
+            "Usar emojis estrategicamente para se destacar",
+            "Montar um fluxo de cadência com etapas definidas",
+            "Encerrar o contato com elegância e profissionalismo"
+        ],
+        modulos: [
+            {
+                numero: 1,
+                titulo: "6 Técnicas para Vencer o Silêncio",
+                aulas: [
+                    {
+                        tipo: "slide",
+                        titulo: "6 Técnicas para Vencer o Silêncio",
+                        url: "https://docs.google.com/presentation/d/1MnzOnXOjUA5iBQiQAZ9tGI7tfNZ8aBCE/edit?slide=id.p1#slide=id.p1",
+                        slides: 10,
+                        descricao: "As 6 técnicas completas: análise da trilha, rotina do cliente, mensagens com perguntas, uso de emojis, fluxo de cadência e encerramento profissional."
+                    },
+                    {
+                        tipo: "video",
+                        titulo: "Cliente Visualizou e Não Respondeu? 6 Técnicas para Usar",
+                        url: "https://www.youtube.com/watch?v=B337-JzY6wc",
+                        duracao: "15min",
+                        descricao: "Aprenda na prática como aplicar as 6 técnicas para retomar o contato com clientes que visualizaram e não responderam."
+                    },
+                    {
+                        tipo: "quiz",
+                        titulo: "Quiz - 6 Técnicas para Vencer o Silêncio",
+                        perguntas: [
+                            {
+                                pergunta: "O que o silêncio do cliente que visualizou e não respondeu significa, segundo o treinamento?",
+                                opcoes: [
+                                    "Que o cliente não tem interesse e você deve desistir",
+                                    "Que o preço está muito alto e deve ser reduzido",
+                                    "Que silêncio não é rejeição — é falta de processo da sua parte",
+                                    "Que o cliente escolheu o concorrente"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Qual é o primeiro passo recomendado pela Técnica 1 antes de agir?",
+                                opcoes: [
+                                    "Ligar imediatamente para o cliente",
+                                    "Enviar uma proposta de desconto",
+                                    "Analisar a trilha da conversa e revisar o histórico de mensagens",
+                                    "Encerrar o contato e partir para outro cliente"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Segundo a Técnica 2, o que você deve fazer ANTES de enviar mensagens para evitar o silêncio?",
+                                opcoes: [
+                                    "Enviar o orçamento por e-mail em vez de WhatsApp",
+                                    "Validar com antecedência qual é o melhor horário para conversar",
+                                    "Esperar o cliente entrar em contato no horário dele",
+                                    "Reduzir a frequência de mensagens enviadas"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é a Regra de Ouro da Técnica 3?",
+                                opcoes: [
+                                    "Toda mensagem deve ter no mínimo 3 parágrafos",
+                                    "Sempre envie o orçamento no início da conversa",
+                                    "Toda mensagem deve terminar com uma pergunta",
+                                    "Use apenas mensagens de voz para criar conexão"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Por que a mensagem SEM pergunta é considerada fraca?",
+                                opcoes: [
+                                    "Porque é muito longa e cansa o cliente",
+                                    "Porque o cliente não sente necessidade de responder e a conversa morre",
+                                    "Porque demonstra insegurança do vendedor",
+                                    "Porque não menciona o preço do produto"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Como os emojis funcionam na Técnica 4?",
+                                opcoes: [
+                                    "Substituem as palavras e tornam a mensagem mais curta",
+                                    "Demonstram informalidade e proximidade com o cliente",
+                                    "Quebram o padrão visual da conversa e chamam atenção, provocando resposta quase automática",
+                                    "Aumentam a credibilidade da mensagem no WhatsApp"
+                                ],
+                                correta: 2
+                            },
+                            {
+                                pergunta: "Quais são os emojis mais eficazes indicados no treinamento?",
+                                opcoes: [
+                                    "😊 ❤️ 👏 🎉",
+                                    "🙋 ⚠️ 👆 ❓",
+                                    "💰 🏆 ✅ 🔥",
+                                    "📱 💬 📧 📞"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O que é o Fluxo de Cadência da Técnica 5?",
+                                opcoes: [
+                                    "Um roteiro de desconto progressivo para o cliente",
+                                    "Uma sequência de tentativas de contato predefinidas que você segue sem improvisar",
+                                    "Um modelo de proposta comercial em etapas",
+                                    "Um sistema de agendamento automático de mensagens"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual é a ordem correta do Fluxo de Cadência apresentado no treinamento?",
+                                opcoes: [
+                                    "Ligação, mensagem com pergunta, reenvio com emoji, encerramento",
+                                    "Mensagem com pergunta, reenvio com emoji, nova pergunta, ligação, encerramento",
+                                    "Nova pergunta, emoji, ligação, mensagem com pergunta, encerramento",
+                                    "Encerramento, ligação, emoji, mensagem com pergunta, nova pergunta"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Por que a mensagem de encerramento da Técnica 6 funciona?",
+                                opcoes: [
+                                    "Porque oferece um desconto especial de última hora",
+                                    "Porque ameaça o cliente de perder o produto",
+                                    "Porque é honesta, profissional e muitos clientes respondem justamente neste momento",
+                                    "Porque encerra definitivamente o relacionamento com o cliente"
+                                ],
+                                correta: 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
 
