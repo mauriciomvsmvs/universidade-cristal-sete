@@ -2505,7 +2505,7 @@ const cursos = [
     {
         id: 18,
         titulo: "Procedimentos de Entrega e Reposição",
-        descricao: "Aprenda os procedimentos corretos para entrega segura, armazenamento adequado de vidros e as regras do Programa de Reposição e Confiança da Cristal Sete.",
+        descricao: "Aprenda os procedimentos corretos para entrega segura, armazenamento adequado de vidros e as regras do Programa de Reposição e Confiança da Cristal Sete. Garanta qualidade no atendimento do início ao fim.",
         categoria: "Técnico",
         nivel: "Iniciante",
         duracao: "30min",
