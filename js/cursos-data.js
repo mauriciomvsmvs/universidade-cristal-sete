@@ -2649,7 +2649,7 @@ const cursos = [
     {
         id: 19,
         titulo: "Como Prospectar e Vender Mais com Cold Call",
-        descricao: "Aprenda a técnica de prospecção ativa que transforma ligações em oportunidades reais de negócio. Neste curso você vai dominar o método completo da Cold Call: como se preparar antes de ligar, criar conexão com o cliente, qualificar oportunidades usando o filtro D.O.P. (Decisor, Orçamento e Prioridade) e agendar reuniões com segurança. Com scripts prontos e adaptados à realidade da Cristal Sete, você vai sair fazendo mais ligações, ligações melhores e fechando mais negócios.",
+        descricao: "Aprenda a prospectar clientes ativamente com Cold Call. Domine o método completo: preparação, gancho inicial, conexão, qualificação D.O.P. e agendamento de reuniões com scripts prontos para a realidade da Cristal Sete.",
         categoria: "Vendas",
         nivel: "Iniciante",
         duracao: "45min",
