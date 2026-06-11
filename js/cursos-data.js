@@ -2795,146 +2795,146 @@ const cursos = [
         ]
     },
     // ========================================
-    // CURSO 20: 6 TÉCNICAS PARA VENCER O SILÊNCIO
+    // CURSO 21: RAPPORT EM VENDAS
     // ========================================
     {
-        id: 20,
-        titulo: "6 Técnicas para Vencer o Silêncio",
-        descricao: "Aprenda a lidar com o silêncio do cliente que visualizou e não respondeu. Domine as 6 técnicas práticas para retomar contato com processo, inteligência e profissionalismo.",
+        id: 21,
+        titulo: "Rapport em Vendas",
+        descricao: "Aprenda a criar conexão genuína com o cliente antes de apresentar qualquer produto. Domine os 4 passos do rapport e aumente sua taxa de conversão em vendas.",
         categoria: "Vendas",
         nivel: "Iniciante",
         duracao: "40min",
-        thumbnail: "assets/cursos/curso-silencio-cliente.jpg",
+        thumbnail: "assets/cursos/curso-rapport-vendas.jpg",
         instrutor: "Equipe Comercial Cristal Sete",
         objetivos: [
-            "Entender por que o cliente visualiza e não responde",
-            "Analisar a trilha da conversa antes de agir",
-            "Identificar a rotina do cliente para escolher o momento certo",
-            "Criar mensagens que terminam com perguntas e estimulam resposta",
-            "Usar emojis estrategicamente para se destacar",
-            "Montar um fluxo de cadência com etapas definidas",
-            "Encerrar o contato com elegância e profissionalismo"
+            "Entender o conceito de rapport e por que ele funciona",
+            "Compreender a psicologia por trás da conexão com o cliente",
+            "Aplicar técnicas para quebrar o gelo nos primeiros 2 minutos",
+            "Praticar a escuta ativa e usar o nome do cliente",
+            "Usar o espelhamento de fala, palavras e linguagem corporal",
+            "Sorrir estrategicamente e buscar conexões em comum",
+            "Aplicar rapport nas situações reais da Cristal Sete"
         ],
         modulos: [
             {
                 numero: 1,
-                titulo: "6 Técnicas para Vencer o Silêncio",
+                titulo: "Rapport em Vendas",
                 aulas: [
                     {
                         tipo: "slide",
-                        titulo: "6 Técnicas para Vencer o Silêncio",
-                        url: "https://docs.google.com/presentation/d/1MnzOnXOjUA5iBQiQAZ9tGI7tfNZ8aBCE/edit?slide=id.p1#slide=id.p1",
+                        titulo: "Rapport em Vendas",
+                        url: "https://docs.google.com/presentation/d/14aAiSvNG90M0em0akcWxr2F295SZ_SLz/edit?slide=id.p1#slide=id.p1",
                         slides: 10,
-                        descricao: "As 6 técnicas completas: análise da trilha, rotina do cliente, mensagens com perguntas, uso de emojis, fluxo de cadência e encerramento profissional."
+                        descricao: "Os 4 passos completos do rapport: quebrar o gelo, escuta ativa, espelhamento e como sorrir e buscar conexões para criar confiança com o cliente."
                     },
                     {
                         tipo: "video",
-                        titulo: "Cliente Visualizou e Não Respondeu? 6 Técnicas para Usar",
-                        url: "https://www.youtube.com/watch?v=B337-JzY6wc",
+                        titulo: "Rapport em Vendas - Passos Simples para Dominar Essa Técnica",
+                        url: "https://www.youtube.com/watch?v=Hym6EO-cpDI",
                         duracao: "15min",
-                        descricao: "Aprenda na prática como aplicar as 6 técnicas para retomar o contato com clientes que visualizaram e não responderam."
+                        descricao: "Aprenda na prática como aplicar as técnicas de rapport para criar conexão genuína com o cliente e aumentar sua taxa de conversão."
                     },
                     {
                         tipo: "quiz",
-                        titulo: "Quiz - 6 Técnicas para Vencer o Silêncio",
+                        titulo: "Quiz - Rapport em Vendas",
                         perguntas: [
                             {
-                                pergunta: "O que o silêncio do cliente que visualizou e não respondeu significa, segundo o treinamento?",
+                                pergunta: "O que significa a palavra rapport?",
                                 opcoes: [
-                                    "Que o cliente não tem interesse e você deve desistir",
-                                    "Que o preço está muito alto e deve ser reduzido",
-                                    "Que silêncio não é rejeição — é falta de processo da sua parte",
-                                    "Que o cliente escolheu o concorrente"
+                                    "Técnica de negociação de preços",
+                                    "Aproximação — tornar-se próximo",
+                                    "Método de apresentação de produtos",
+                                    "Estratégia de fechamento de vendas"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "Qual mensagem inconsciente o rapport cria na mente do cliente?",
+                                opcoes: [
+                                    "Este produto é o mais barato do mercado",
+                                    "Esta empresa é a maior do setor",
+                                    "Esta pessoa é confiável, parecida comigo e pode me ajudar",
+                                    "Esta proposta tem o melhor prazo de entrega"
                                 ],
                                 correta: 2
                             },
                             {
-                                pergunta: "Qual é o primeiro passo recomendado pela Técnica 1 antes de agir?",
+                                pergunta: "Qual é o objetivo do Passo 1 — Quebrar o Gelo?",
                                 opcoes: [
-                                    "Ligar imediatamente para o cliente",
-                                    "Enviar uma proposta de desconto",
-                                    "Analisar a trilha da conversa e revisar o histórico de mensagens",
-                                    "Encerrar o contato e partir para outro cliente"
+                                    "Apresentar o produto logo no início para economizar tempo",
+                                    "Criar um ambiente confortável ANTES de falar sobre produto ou preço",
+                                    "Descobrir o orçamento disponível do cliente",
+                                    "Falar sobre os diferenciais da empresa"
+                                ],
+                                correta: 1
+                            },
+                            {
+                                pergunta: "O que você deve EVITAR ao quebrar o gelo?",
+                                opcoes: [
+                                    "Perguntar sobre a região ou o negócio do cliente",
+                                    "Demonstrar interesse genuíno pela pessoa",
+                                    "Entrar direto no produto, falar de preço e ser formal demais",
+                                    "Mencionar algo que esteja em alta no momento"
                                 ],
                                 correta: 2
                             },
                             {
-                                pergunta: "Segundo a Técnica 2, o que você deve fazer ANTES de enviar mensagens para evitar o silêncio?",
+                                pergunta: "Segundo o Passo 2, por que chamar o cliente pelo nome é poderoso?",
                                 opcoes: [
-                                    "Enviar o orçamento por e-mail em vez de WhatsApp",
-                                    "Validar com antecedência qual é o melhor horário para conversar",
-                                    "Esperar o cliente entrar em contato no horário dele",
-                                    "Reduzir a frequência de mensagens enviadas"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "Qual é a Regra de Ouro da Técnica 3?",
-                                opcoes: [
-                                    "Toda mensagem deve ter no mínimo 3 parágrafos",
-                                    "Sempre envie o orçamento no início da conversa",
-                                    "Toda mensagem deve terminar com uma pergunta",
-                                    "Use apenas mensagens de voz para criar conexão"
+                                    "Porque demonstra que você memorizou os dados do cadastro",
+                                    "Porque é uma exigência do protocolo de atendimento",
+                                    "Porque não há som mais agradável para o ser humano do que o próprio nome, gerando confiança imediata",
+                                    "Porque evita confusões quando há mais de um cliente no atendimento"
                                 ],
                                 correta: 2
                             },
                             {
-                                pergunta: "Por que a mensagem SEM pergunta é considerada fraca?",
+                                pergunta: "Quais são as 3 formas de espelhamento apresentadas no Passo 3?",
                                 opcoes: [
-                                    "Porque é muito longa e cansa o cliente",
-                                    "Porque o cliente não sente necessidade de responder e a conversa morre",
-                                    "Porque demonstra insegurança do vendedor",
-                                    "Porque não menciona o preço do produto"
+                                    "Preço, prazo e produto",
+                                    "Velocidade de fala, palavras e expressões, e linguagem corporal",
+                                    "Tom de voz, e-mail e WhatsApp",
+                                    "Sorriso, postura e vestuário"
                                 ],
                                 correta: 1
                             },
                             {
-                                pergunta: "Como os emojis funcionam na Técnica 4?",
+                                pergunta: "O que é espelhamento segundo o treinamento?",
                                 opcoes: [
-                                    "Substituem as palavras e tornam a mensagem mais curta",
-                                    "Demonstram informalidade e proximidade com o cliente",
-                                    "Quebram o padrão visual da conversa e chamam atenção, provocando resposta quase automática",
-                                    "Aumentam a credibilidade da mensagem no WhatsApp"
+                                    "Repetir exatamente o que o cliente diz para mostrar que está ouvindo",
+                                    "Imitar os gestos do cliente de forma exagerada",
+                                    "Adaptação natural e sutil da linguagem e comportamento ao estilo do cliente",
+                                    "Usar o mesmo tom formal do cliente em todas as situações"
                                 ],
                                 correta: 2
                             },
                             {
-                                pergunta: "Quais são os emojis mais eficazes indicados no treinamento?",
+                                pergunta: "Por que o sorriso é uma ferramenta poderosa no rapport?",
                                 opcoes: [
-                                    "😊 ❤️ 👏 🎉",
-                                    "🙋 ⚠️ 👆 ❓",
-                                    "💰 🏆 ✅ 🔥",
-                                    "📱 💬 📧 📞"
+                                    "Porque demonstra que o produto é de boa qualidade",
+                                    "Porque você sorri apenas para pessoas de quem gosta, passando que o cliente é bem-vindo",
+                                    "Porque deixa o cliente com menos poder de negociação",
+                                    "Porque é obrigatório no protocolo de atendimento da Cristal Sete"
                                 ],
                                 correta: 1
                             },
                             {
-                                pergunta: "O que é o Fluxo de Cadência da Técnica 5?",
+                                pergunta: "Como aplicar rapport no WhatsApp segundo o treinamento?",
                                 opcoes: [
-                                    "Um roteiro de desconto progressivo para o cliente",
-                                    "Uma sequência de tentativas de contato predefinidas que você segue sem improvisar",
-                                    "Um modelo de proposta comercial em etapas",
-                                    "Um sistema de agendamento automático de mensagens"
+                                    "Sempre usar linguagem formal e profissional independente do cliente",
+                                    "Enviar apenas mensagens de texto, nunca áudios",
+                                    "Chamar pelo nome, usar o mesmo vocabulário do cliente e adaptar o tom ao estilo dele",
+                                    "Responder apenas nos horários comerciais para passar profissionalismo"
                                 ],
-                                correta: 1
+                                correta: 2
                             },
                             {
-                                pergunta: "Qual é a ordem correta do Fluxo de Cadência apresentado no treinamento?",
+                                pergunta: "Qual é a principal conclusão sobre o rapport no treinamento?",
                                 opcoes: [
-                                    "Ligação, mensagem com pergunta, reenvio com emoji, encerramento",
-                                    "Mensagem com pergunta, reenvio com emoji, nova pergunta, ligação, encerramento",
-                                    "Nova pergunta, emoji, ligação, mensagem com pergunta, encerramento",
-                                    "Encerramento, ligação, emoji, mensagem com pergunta, nova pergunta"
-                                ],
-                                correta: 1
-                            },
-                            {
-                                pergunta: "Por que a mensagem de encerramento da Técnica 6 funciona?",
-                                opcoes: [
-                                    "Porque oferece um desconto especial de última hora",
-                                    "Porque ameaça o cliente de perder o produto",
-                                    "Porque é honesta, profissional e muitos clientes respondem justamente neste momento",
-                                    "Porque encerra definitivamente o relacionamento com o cliente"
+                                    "É uma técnica pontual usada apenas no primeiro contato",
+                                    "Deve ser usado somente em visitas presenciais",
+                                    "É uma postura de atendimento que deve estar presente em todo contato com o cliente",
+                                    "Funciona apenas com clientes novos, não com clientes antigos"
                                 ],
                                 correta: 2
                             }
