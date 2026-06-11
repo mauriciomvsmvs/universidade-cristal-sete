@@ -332,8 +332,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Renderizar todos os vídeos
         renderizarTodosVideos();
         
-        // Renderizar reels do Instagram
-        renderizarTodosReels();
         
         // Renderizar continuar assistindo
         renderizarContinuarAssistindo();
@@ -383,11 +381,6 @@ function atualizarContadores() {
         countShorts.textContent = videosData.length;
     }
     
-    // Atualizar contador de reels
-    const countReels = document.getElementById('count-reels');
-    if (countReels) {
-        countReels.textContent = reelsInstagramData.length;
-    }
 }
 
 function renderizarTodosVideos() {
