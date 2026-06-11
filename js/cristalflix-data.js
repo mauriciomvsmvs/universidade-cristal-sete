@@ -403,6 +403,62 @@ const videosVendasData = [
         tipo: 'video',
         categoria: 'vendas',
         dataPublicacao: '2025-01-03'
+    },
+    {
+        id: 'w7gtrxyji00',
+        titulo: 'Como Fazer a Primeira Abordagem com o Cliente',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-04'
+    },
+    {
+        id: 'DNRd2TaQROY',
+        titulo: 'Como Fazer Seus Clientes se Apaixonarem por Você Logo de Cara',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-05'
+    },
+    {
+        id: 'v_oXXDpXRXw',
+        titulo: 'É Assim que Você vai Vender para um Cliente que te Enrola',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-06'
+    },
+    {
+        id: 'xX4QgbYJqEc',
+        titulo: 'SPIN Selling - A Técnica que Separa Vendedor Mediano de Alta Performance',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-07'
+    },
+    {
+        id: 'sdT322qgBGE',
+        titulo: '4 Técnicas Poderosas da Neurociência para Vender com Confiança',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-08'
+    },
+    {
+        id: 'VdqJzeXvXR0',
+        titulo: 'O Tipo de Atendimento que os Clientes Adoram',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-09'
+    },
+    {
+        id: 'sQHRaP-Kl2o',
+        titulo: '4 Gatilhos Psicológicos que Fazem o Cliente Dizer Sim',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-10'
+    },
+    {
+        id: 'cIj2xhOEsdU',
+        titulo: 'Aprenda a Vender Igual o Lobo de Wall Street',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-11'
     }
 ];
 
