@@ -334,6 +334,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Renderizar vídeos de vendas
         renderizarVideosVendas();
+
+        // Renderizar vídeos de liderança
+        renderizarVideosLideranca();
         
         // Renderizar continuar assistindo
         renderizarContinuarAssistindo();
@@ -380,15 +383,47 @@ function inicializarAbas() {
 // VÍDEOS DE VENDAS
 // ============================================
 const videosVendasData = [
-    // Adicione os vídeos de vendas aqui
-    // Exemplo:
-    // {
-    //     id: 'YOUTUBE_ID',
-    //     titulo: 'Título do Vídeo',
-    //     tipo: 'video',
-    //     categoria: 'vendas',
-    //     dataPublicacao: '2025-01-01'
-    // }
+    {
+        id: 'CvqE6vATDwA',
+        titulo: 'Como Vender Mais e Melhor',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-01'
+    },
+    {
+        id: 'aZG9j4eqG3E',
+        titulo: 'O que Fazer Quando o Cliente Diz: Tá Caro!',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-02'
+    },
+    {
+        id: 'EWvg2vnoxHQ',
+        titulo: 'Como Lidar com Objeções e Aumentar Suas Taxas de Conversão',
+        tipo: 'video',
+        categoria: 'vendas',
+        dataPublicacao: '2025-01-03'
+    }
+];
+
+// ============================================
+// VÍDEOS DE LIDERANÇA
+// ============================================
+const videosLiderancaData = [
+    {
+        id: 'tjz_Mr3YSaE',
+        titulo: 'A Fórmula de um Líder de Sucesso',
+        tipo: 'video',
+        categoria: 'liderança',
+        dataPublicacao: '2025-01-01'
+    },
+    {
+        id: 'Szm36stT7jw',
+        titulo: 'Como Liderar Pessoas, Entreguei Tudo',
+        tipo: 'video',
+        categoria: 'liderança',
+        dataPublicacao: '2025-01-02'
+    }
 ];
 
 function renderizarVideosVendas() {
@@ -417,18 +452,41 @@ function renderizarVideosVendas() {
     container.innerHTML = videosVendasData.map(video => criarCardVideo(video)).join('');
 }
 
-function atualizarContadores() {
-    // Atualizar contador de shorts
-    const countShorts = document.getElementById('count-shorts');
-    if (countShorts) {
-        countShorts.textContent = videosData.length;
+function renderizarVideosLideranca() {
+    const container = document.getElementById('todos-videos-lideranca');
+    const totalElement = document.getElementById('total-lideranca');
+    const countLideranca = document.getElementById('count-lideranca');
+
+    if (!container) return;
+
+    if (totalElement) totalElement.textContent = videosLiderancaData.length;
+    if (countLideranca) countLideranca.textContent = videosLiderancaData.length;
+
+    if (videosLiderancaData.length === 0) {
+        container.innerHTML = `
+            <div class="col-span-full text-center py-16 text-gray-400">
+                <svg class="w-16 h-16 mx-auto mb-4 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <p class="text-lg font-semibold">Em breve novos vídeos!</p>
+                <p class="text-sm mt-1">Conteúdos de liderança chegando em breve.</p>
+            </div>
+        `;
+        return;
     }
 
-    // Atualizar contador de vendas
+    container.innerHTML = videosLiderancaData.map(video => criarCardVideo(video)).join('');
+}
+
+function atualizarContadores() {
+    const countShorts = document.getElementById('count-shorts');
+    if (countShorts) countShorts.textContent = videosData.length;
+
     const countVendas = document.getElementById('count-vendas');
-    if (countVendas) {
-        countVendas.textContent = videosVendasData.length;
-    }
+    if (countVendas) countVendas.textContent = videosVendasData.length;
+
+    const countLideranca = document.getElementById('count-lideranca');
+    if (countLideranca) countLideranca.textContent = videosLiderancaData.length;
 }
 
 function renderizarTodosVideos() {
