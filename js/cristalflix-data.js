@@ -332,6 +332,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Renderizar todos os vídeos
         renderizarTodosVideos();
         
+        // Renderizar vídeos de vendas
+        renderizarVideosVendas();
         
         // Renderizar continuar assistindo
         renderizarContinuarAssistindo();
@@ -374,13 +376,59 @@ function inicializarAbas() {
     });
 }
 
+// ============================================
+// VÍDEOS DE VENDAS
+// ============================================
+const videosVendasData = [
+    // Adicione os vídeos de vendas aqui
+    // Exemplo:
+    // {
+    //     id: 'YOUTUBE_ID',
+    //     titulo: 'Título do Vídeo',
+    //     tipo: 'video',
+    //     categoria: 'vendas',
+    //     dataPublicacao: '2025-01-01'
+    // }
+];
+
+function renderizarVideosVendas() {
+    const container = document.getElementById('todos-videos-vendas');
+    const totalElement = document.getElementById('total-vendas');
+    const countVendas = document.getElementById('count-vendas');
+
+    if (!container) return;
+
+    if (totalElement) totalElement.textContent = videosVendasData.length;
+    if (countVendas) countVendas.textContent = videosVendasData.length;
+
+    if (videosVendasData.length === 0) {
+        container.innerHTML = `
+            <div class="col-span-full text-center py-16 text-gray-400">
+                <svg class="w-16 h-16 mx-auto mb-4 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
+                </svg>
+                <p class="text-lg font-semibold">Em breve novos vídeos!</p>
+                <p class="text-sm mt-1">Conteúdos de vendas chegando em breve.</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = videosVendasData.map(video => criarCardVideo(video)).join('');
+}
+
 function atualizarContadores() {
     // Atualizar contador de shorts
     const countShorts = document.getElementById('count-shorts');
     if (countShorts) {
         countShorts.textContent = videosData.length;
     }
-    
+
+    // Atualizar contador de vendas
+    const countVendas = document.getElementById('count-vendas');
+    if (countVendas) {
+        countVendas.textContent = videosVendasData.length;
+    }
 }
 
 function renderizarTodosVideos() {

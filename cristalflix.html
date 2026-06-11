@@ -358,6 +358,13 @@
                     Originais CristalFlix
                     <span class="tab-count" id="count-shorts">24</span>
                 </button>
+                <button class="tab-btn" data-tab="vendas">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                    Vendas
+                    <span class="tab-count" id="count-vendas">0</span>
+                </button>
 
             </div>
         </div>
@@ -370,12 +377,6 @@
         <div class="py-12 px-4">
             <div class="container mx-auto">
                 <div class="flex justify-between items-center mb-6">
-                    <div class="flex items-center gap-3">
-                        <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
-                        </svg>
-                        <h2 class="text-2xl font-bold text-white">Shorts do YouTube</h2>
-                    </div>
                     <div class="text-sm text-gray-400">
                         <span id="total-videos">24</span> vídeos disponíveis
                     </div>
@@ -385,6 +386,19 @@
         </div>
     </section>
 
+    <!-- ABA: VENDAS -->
+    <section class="tab-content" id="vendas-content" style="background: #141414;">
+        <div class="py-12 px-4">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="text-sm text-gray-400">
+                        <span id="total-vendas">0</span> vídeos disponíveis
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="todos-videos-vendas"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- MODAL PLAYER -->
     <div id="video-modal" class="modal">
